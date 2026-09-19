@@ -23,59 +23,104 @@
    LINK IN BIO & HUB SHOWCASE ENHANCEMENTS
    ========================================================================== */
 .product-page.hub-page {
-  --primary: #38bdf8;
-  --primary-light: #7dd3fc;
-  --primary-glow: rgba(56, 189, 248, 0.22);
-  --cyan-accent: #818cf8;
+  /* Warm brass/ink identity for the studio hub itself — deliberately not
+     another blue-glow "dev tool" palette, since every app already owns a
+     saturated color (blue/green/orange/purple/cyan). The hub reads as the
+     restrained, editorial "umbrella" the apps sit under. */
+  --primary: #cfa15e;
+  --primary-light: #e6c081;
+  --primary-glow: rgba(207, 161, 94, 0.24);
+  --cyan-accent: #e9d9b8;
+  --text-highlight: #e6c081;
+}
+
+/* Editorial display type + left-aligned hero, scoped to the hub only —
+   every other page keeps the original centered/sans-only treatment. */
+.hub-page .hero {
+  text-align: left;
+  padding-top: 7rem;
+}
+
+.hub-page .hero-heading {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-style: normal;
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hub-page .hero-gradient-text {
+  font-style: italic;
+  font-weight: 440;
+}
+
+.hub-page .hero-subtext {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 560px;
+}
+
+.hub-page .brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.hub-page .card-app-title {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.hub-page .featured-card .card-app-title {
+  font-size: 1.9rem;
 }
 
 .bio-profile-header {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 720px;
+  margin: 0;
+}
+
+.hub-eyebrow-row {
+  display: flex;
   align-items: center;
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto;
+  gap: 12px;
+  margin-bottom: 1.75rem;
 }
 
-.bio-avatar-wrapper {
-  position: relative;
-  margin-bottom: 1.25rem;
-}
-
-.bio-avatar {
-  width: 84px;
-  height: 84px;
-  border-radius: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 36px -8px var(--primary-glow), 0 0 0 1px rgba(255, 255, 255, 0.08);
+.hub-avatar-inline {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   display: block;
-  background: #080c14;
+  flex-shrink: 0;
 }
 
-.bio-creator-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 5px 14px;
-  border-radius: 9999px;
+.hub-eyebrow-label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #94a3b8;
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
   letter-spacing: 0.02em;
 }
 
-.bio-creator-tag strong {
-  color: #f1f5f9;
+.hub-eyebrow-label strong {
+  color: var(--text-main);
+  font-weight: 700;
 }
 
 .bio-social-bar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   margin-top: 1.5rem;
 }
@@ -272,14 +317,12 @@
 .trust-strip {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 28px;
   flex-wrap: wrap;
-  margin-top: 2.25rem;
-  padding: 14px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.02);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .trust-strip-item {
@@ -308,9 +351,8 @@
 @media (max-width: 720px) {
   .trust-strip {
     flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
-    padding: 18px 22px;
-    border-radius: 20px;
   }
   .trust-strip-divider {
     display: none;

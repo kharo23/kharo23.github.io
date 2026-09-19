@@ -71,6 +71,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img, svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark);
@@ -105,6 +117,12 @@ body {
   padding: 0 1.5rem;
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 /* ==========================================================================
@@ -351,6 +369,19 @@ body {
   gap: 1.25rem;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .store-buttons-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .apple-store-btn, .google-play-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
 }
 
 /* Authentic App Store Badge */

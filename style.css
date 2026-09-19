@@ -394,6 +394,80 @@ body {
 }
 
 /* ==========================================================================
+   HERO WITH SCREENSHOT (split layout for product pages with a real device shot)
+   ========================================================================== */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+}
+
+.hero-split .pill-badge,
+.hero-split .hero-heading,
+.hero-split .hero-subtext {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hero-split .store-buttons-container {
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, var(--primary-glow) 0%, transparent 70%);
+  filter: blur(70px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-screenshot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-highlight);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-split .pill-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-split .store-buttons-container {
+    justify-content: center;
+  }
+  .hero-visual {
+    order: -1;
+  }
+  .hero-screenshot {
+    max-width: 220px;
+  }
+}
+
+/* ==========================================================================
    OFFICIAL STORE BUTTONS (Pixel-perfect Apple & Google guidelines)
    ========================================================================== */
 .store-buttons-container {

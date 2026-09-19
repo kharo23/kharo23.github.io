@@ -93,19 +93,17 @@ function initHubInteractions() {
     });
   });
 
-  // 5. Ambient cursor spotlight across hero and apps
-  const mainTarget = document.querySelector('#main') || document.querySelector('.hero');
+  // 5. Ambient cursor spotlight across entire page
   const spotlight = document.querySelector('.hero-spotlight');
-  if (mainTarget && spotlight) {
-    mainTarget.addEventListener('pointermove', (e) => {
-      const rect = mainTarget.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
+  if (spotlight) {
+    window.addEventListener('pointermove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
       spotlight.style.setProperty('--mx', `${x}%`);
       spotlight.style.setProperty('--my', `${y}%`);
       spotlight.classList.add('is-active');
-    });
-    mainTarget.addEventListener('pointerleave', () => {
+    }, { passive: true });
+    document.addEventListener('pointerleave', () => {
       spotlight.classList.remove('is-active');
     });
   }

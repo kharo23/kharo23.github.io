@@ -37,7 +37,8 @@
 /* Editorial display type + centered hero for the studio hub */
 .hub-page .hero {
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 5.5rem;
+  padding-bottom: 2rem;
 }
 
 .hub-page .hero-heading {

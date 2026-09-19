@@ -1,6 +1,6 @@
 .product-page.food{--primary:#059669;--primary-light:#10b981;--primary-glow:rgba(16,185,129,0.25);--cyan-accent:#34d399}.product-page.padel{--primary:#f06400;--primary-light:#ff7a1a;--primary-glow:rgba(240,100,0,0.28);--cyan-accent:#fbbf24}.product-page.aegis{--primary:#a78bfa;--primary-light:#c4b5fd;--primary-glow:#a78bfa33;--cyan-accent:#67e8f9}.product-page.flipeven{--primary:#06b6d4;--primary-light:#22d3ee;--primary-glow:#06b6d433;--cyan-accent:#67e8f9}.product-page .hero-gradient-text{background-image:linear-gradient(110deg,var(--primary-light),var(--cyan-accent))}.product-page .hero{padding-bottom:64px}.hub-link{color:var(--text-main);font-weight:700;text-decoration:none}.product-demo,.product-plans{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:48px;border:1px solid var(--border-highlight);border-radius:24px;background:var(--bg-card);box-shadow:0 0 90px -45px var(--primary)}.product-demo h2,.product-plans h2{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.25;margin:16px 0}.product-demo p,.product-plans p{color:var(--text-secondary);margin:16px 0}.product-demo label{display:block;margin:18px 0 8px;font-weight:600}.product-demo input{width:100%;padding:14px;border-radius:10px;border:1px solid var(--border-highlight);background:#06080e;color:white;font:inherit}.demo-result{background:radial-gradient(ellipse at center,var(--primary-glow),transparent 75%);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px}.demo-result>strong{font-size:clamp(3rem,7vw,5rem);color:var(--primary-light)}.demo-result small,.demo-note,.wellness-note{color:var(--text-secondary);font-size:.85rem}.wellness-note{max-width:640px;margin:24px auto 0}.feature-number{display:block;font-family:var(--font-mono);color:var(--primary-light);margin-bottom:24px}.product-faq{border-bottom:1px solid var(--border-highlight);padding:24px 0}.product-faq summary{font-size:1.1rem;font-weight:700;cursor:pointer}.product-faq p{color:var(--text-secondary);margin:16px 0 0}.product-page button{cursor:pointer;font:inherit;border:0}.product-page .nav-cta-button{margin-top:20px;color:#06080e;background:var(--primary-light)}.match{border-bottom:1px solid var(--border-highlight);padding-bottom:16px}.match b{color:white}.breathing-orb{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#c4b5fd,#6354a0 60%,#242343);box-shadow:0 0 65px #a78bfa44;transition:transform 4s linear}.breathing-orb.expanded{transform:scale(1.18)}.skip-link{position:fixed;top:-100px;left:16px;z-index:1000;padding:14px;background:white;color:black}.skip-link:focus{top:12px}.product-page :focus-visible{outline:3px solid var(--primary-light);outline-offset:5px}.product-page section{scroll-margin-top:100px}.product-page .brand-name{font-size:1.1rem}.studio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.studio-grid .bento-card{display:flex;flex-direction:column;align-items:flex-start}.studio-grid .bento-text{flex:1;margin-bottom:24px}.studio-grid img{width:64px;height:64px;border-radius:16px;margin-bottom:24px}.studio-grid h2{font-size:1.5rem;margin-bottom:12px}
 @media(max-width:800px){.product-demo,.product-plans{grid-template-columns:1fr;padding:24px;gap:24px}.studio-grid{grid-template-columns:1fr 1fr}.product-page .brand-name{max-width:160px;line-height:1.2}.product-page .hub-link{font-size:.85rem}.product-page .hero-heading{font-size:clamp(2.3rem,8vw,3.5rem)}.product-page .pill-badge{font-size:.65rem}.product-page .nav-inner{gap:12px}.product-page .brand-logo-img{width:36px;height:36px}}
-@media(max-width:680px){.product-page .hub-link{display:none!important}.product-page .nav-cta-button{display:none!important}}
+@media(max-width:680px){.product-page .site-nav .hub-link{display:none!important}.product-page .site-nav .nav-cta-button{display:none!important}}
 @media(max-width:500px){.studio-grid{grid-template-columns:1fr}.product-page .nav-links{display:none}.product-page .hero{padding-top:110px}.product-demo,.product-plans{padding:20px 16px;gap:20px}.demo-result{padding:20px 16px;min-height:240px}.demo-result>strong{font-size:clamp(2.2rem,7vw,3.5rem);word-break:break-all}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product-page *, .product-page *::before,.product-page *::after{animation:none!important;transition:none!important}.breathing-orb.expanded{transform:none}}
 
@@ -18,3 +18,262 @@
 .product-page .section-label{color:var(--primary-light)}
 .product-page .nav-cta-button:hover{box-shadow:0 8px 25px var(--primary-glow)}
 @media(forced-colors:active){.product-page .hero-gradient-text{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}}
+
+/* ==========================================================================
+   LINK IN BIO & HUB SHOWCASE ENHANCEMENTS
+   ========================================================================== */
+.product-page.hub-page {
+  --primary: #38bdf8;
+  --primary-light: #7dd3fc;
+  --primary-glow: rgba(56, 189, 248, 0.22);
+  --cyan-accent: #818cf8;
+}
+
+.bio-profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.bio-avatar-wrapper {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.bio-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 36px -8px var(--primary-glow), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  display: block;
+  background: #080c14;
+}
+
+.bio-creator-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.bio-creator-tag strong {
+  color: #f1f5f9;
+}
+
+.bio-social-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.bio-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bio-social-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.bio-social-pill svg {
+  flex-shrink: 0;
+}
+
+/* Enhanced Bento Cards */
+.studio-grid .bento-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.studio-grid .bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.6);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.card-app-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  margin-bottom: 0 !important;
+}
+
+.card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.card-category-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--pill-color, #38bdf8);
+  background: var(--pill-bg, rgba(56, 189, 248, 0.12));
+  border: 1px solid var(--pill-border, rgba(56, 189, 248, 0.2));
+  padding: 2px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.card-app-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.2;
+  margin: 0 !important;
+}
+
+.card-actions-wrapper {
+  margin-top: auto;
+  padding-top: 18px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card-primary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.card-primary-action:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.card-store-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.card-store-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 8px;
+  border-radius: 10px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.card-store-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  background: #0d0d0d;
+  transform: translateY(-1px);
+}
+
+.card-store-btn svg {
+  flex-shrink: 0;
+}
+
+.creator-banner-card {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.creator-banner-info {
+  max-width: 600px;
+}
+
+.creator-banner-info h3 {
+  font-size: 1.35rem;
+  margin: 0 0 8px;
+  color: #f8fafc;
+}
+
+.creator-banner-info p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.creator-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}

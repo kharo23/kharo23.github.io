@@ -1,658 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preventivi Facili — Presupuestos y PDF Profesionales en 30 Segundos</title>
-  <meta name="description" content="La app definitiva para autónomos, artesanos y profesionales. Crea presupuestos en PDF con tu logo y cálculo automático de impuestos. Tus datos siempre en tu dispositivo, sin suscripción.">
-  <meta name="keywords" content="app de presupuestos, presupuesto electricista, presupuesto fontanero, generador pdf presupuesto, app autonomos presupuestos">
-  <meta name="google-site-verification" content="1a0cAiTA-WZ7sMMRC3xgLdN3Pe8T8sZED02hS9oVVIo">
-
-  <!-- OpenGraph Metadata -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kharonte Studio — Todas las Apps de @kharonteAppDev</title>
+  <meta name="description" content="Descubre las apps móviles nativas de Kharonte Studio creadas por @kharonteAppDev para iOS y Android: Preventivi Facili, Foodlio, Padel Match Manager, Aegis y FlipEven.">
+  <link rel="canonical" href="https://kharo23.github.io/es/">
+  <link rel="alternate" hreflang="it" href="https://kharo23.github.io/">
+  <link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/">
+  <link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Preventivi Facili">
-  <meta property="og:title" content="Preventivi Facili — Presupuestos y PDF Profesionales en 30 Segundos">
-  <meta property="og:description" content="Genera presupuestos en PDF con el logo de tu empresa y cálculo automático de impuestos. Tus datos siempre en tu dispositivo, sin suscripción.">
-  <meta property="og:url" content="https://kharo23.github.io/es/index.html">
+  <meta property="og:site_name" content="Kharonte Studio">
+  <meta property="og:title" content="Kharonte Studio — Todas las Apps de @kharonteAppDev">
+  <meta property="og:description" content="Descubre las apps móviles nativas de Kharonte Studio creadas por @kharonteAppDev para iOS y Android: Preventivi Facili, Foodlio, Padel Match Manager, Aegis y FlipEven.">
+  <meta property="og:url" content="https://kharo23.github.io/es/">
   <meta property="og:image" content="https://kharo23.github.io/assets/icon.png">
   <meta property="og:locale" content="es_ES">
-
-  <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Preventivi Facili — Presupuestos y PDF Profesionales en 30 Segundos">
-  <meta name="twitter:description" content="Genera presupuestos en PDF con el logo de tu empresa y cálculo automático de impuestos. Tus datos siempre en tu dispositivo, sin suscripción.">
+  <meta name="twitter:title" content="Kharonte Studio — @kharonteAppDev">
+  <meta name="twitter:description" content="Apps nativas para productividad, deporte y bienestar creadas por @kharonteAppDev para iOS y Android.">
   <meta name="twitter:image" content="https://kharo23.github.io/assets/icon.png">
-
-  <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" href="../style.css">
-  <link rel="canonical" href="https://kharo23.github.io/es/index.html">
-  <link rel="alternate" hreflang="it" href="https://kharo23.github.io/">
-  <link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/index.html">
-  <link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/">
-
-  <!-- Structured Data (JSON-LD) -->
+  <link rel="stylesheet" href="../products.css">
+  <link rel="icon" href="../assets/favicon.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Preventivi Facili",
-    "operatingSystem": "iOS, Android",
-    "applicationCategory": "BusinessApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Kharonte Studio",
-      "url": "https://kharo23.github.io/es/apps.html",
-      "sameAs": [
-        "https://www.tiktok.com/@kharonteappdev",
-        "https://www.instagram.com/kharonteappdev",
-        "https://www.youtube.com/@kharonteappdev",
-        "https://github.com/kharo23"
-      ]
-    },
-    "description": "App para autónomos y profesionales para crear presupuestos en PDF con logo y cálculo automático de impuestos."
+    "@type": "Organization",
+    "name": "Kharonte Studio",
+    "url": "https://kharo23.github.io/es/",
+    "logo": "https://kharo23.github.io/assets/icon.png",
+    "sameAs": [
+      "https://github.com/kharo23",
+      "https://www.tiktok.com/@kharonteappdev",
+      "https://www.instagram.com/kharonteappdev",
+      "https://www.youtube.com/@kharonteappdev"
+    ],
+    "description": "Kharonte Studio diseña aplicaciones nativas independientes, rápidas y sin suscripciones para el trabajo, el deporte y el bienestar."
   }
   </script>
-  <meta name="apple-itunes-app" content="app-id=6775595665">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo funciona la prueba gratuita?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Puedes descargar la app gratis y crear tus primeros 3 presupuestos sin introducir ninguna tarjeta de crédito. Si te gusta la app, puedes desbloquear la versión ilimitada con una única compra dentro de la app gestionada por tu cuenta de Apple o Google."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Los datos y precios de mis clientes están seguros?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Al 100%. Preventivi Facili funciona con almacenamiento exclusivamente local en tu smartphone. Ningún servidor externo recoge los nombres de tus clientes ni tus listas de precios, lo que garantiza total privacidad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Si cambio de móvil, ¿tengo que volver a comprar la app?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "¡No! Basta con pulsar \"Restaurar compras anteriores\" en la pantalla Premium del nuevo dispositivo con la misma cuenta de la tienda: la licencia de por vida se reactivará al instante sin coste adicional."
-      }
-    }
-  ]
-}
-  </script>
 </head>
-<body>
+<body class="product-page hub-page">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
 
-  <!-- Background Canvas -->
-  <div class="bg-grid-pattern"></div>
-
-  <!-- Navigation Bar -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <a href="./index.html" class="brand-wrapper">
-        <img src="../assets/icon.png" alt="Preventivi Facili" class="brand-logo-img">
-        <span class="brand-name">Preventivi <span>Facili</span></span>
+    <nav class="container nav-inner" aria-label="Navegación principal">
+      <a class="brand-wrapper" href="./" aria-current="page">
+        <span class="brand-name">Kharonte <span>Studio</span></span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="#anteprima" class="nav-item-link">Simulador</a></li>
-        <li><a href="#bento-features" class="nav-item-link">Funciones</a></li>
-        <li><a href="#calcolatore" class="nav-item-link">Tiempo Ahorrado</a></li>
-        <li><a href="#prezzi" class="nav-item-link">Precios</a></li>
-        <li><a href="#faq" class="nav-item-link">FAQ</a></li>
-      </ul>
-
       <div class="nav-right-group">
         <div class="lang-switch" aria-label="Idioma / Language / Lingua">
-          <a href="../index.html" class="lang-link">IT</a>
-          <a href="../en/index.html" class="lang-link">EN</a>
-          <a href="./index.html" class="lang-link active" aria-current="page">ES</a>
+          <a href="../apps.html" class="lang-link">IT</a>
+          <a href="../en/apps.html" class="lang-link">EN</a>
+          <a href="./apps.html" class="lang-link active" aria-current="page">ES</a>
         </div>
-
-        <a href="#scarica" class="nav-cta-button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          Descargar App
-        </a>
+        <a class="hub-link" href="mailto:kharonte.appdev@gmail.com">Contacto ↗</a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="scarica">
-    <div class="container">
-      <div class="pill-badge">
-        <span class="pill-dot"></span>
-        <span>Novedad 2026: Exportación PDF Inmediata y Sello Automático</span>
-      </div>
-
-      <h1 class="hero-heading">
-        Tu presupuesto listo<br>
-        <span class="hero-gradient-text">antes de dejar al cliente.</span>
-      </h1>
-
-      <p class="hero-subtext">
-        Se acabaron las noches perdidas peleando con Excel o Word. Crea presupuestos en PDF impecables en 30 segundos con tu logo y cálculo automático de IVA. Tus datos se quedan en tu dispositivo, sin suscripciones mensuales.
-      </p>
-
-      <!-- Authentic Store Buttons -->
-      <div class="store-buttons-container">
-        <!-- Official Apple App Store Button -->
-        <a href="https://apps.apple.com/es/app/preventivi-facili-artigiani/id6775595665?ct=kharo23_site" target="_blank" rel="noopener noreferrer" class="apple-store-btn" id="btn-apple-store">
-          <svg viewBox="0 0 170 170">
-            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.7-11.73-13.97-6.03-9.12-10.74-19.14-14.13-30.04-3.39-10.9-5.09-21.36-5.09-31.39 0-14.54 3.73-26.6 11.19-36.19 7.46-9.58 17.06-14.49 28.8-14.73 4.89 0 10.5 1.25 16.84 3.76 6.34 2.51 10.37 3.82 12.1 3.93 1.83-.11 5.96-1.42 12.39-3.93 6.43-2.51 11.94-3.71 16.53-3.6 12.24.47 22.18 4.7 29.83 12.71-10.88 6.64-16.19 15.75-15.93 27.32.26 9.07 3.66 16.84 10.2 23.3 6.54 6.46 14.35 10.08 23.42 10.87-2.3 6.84-5.14 13.88-8.52 21.11zM119.22 31.84c0-7.39 2.65-14.3 7.94-20.73 5.3-6.43 11.89-10.42 19.78-11.96.22 1.3.33 2.45.33 3.44 0 7.33-2.73 14.39-8.2 21.17-5.46 6.78-12.18 10.71-20.17 11.8-.22-1.08-.34-2.32-.34-3.72z"/>
-          </svg>
-          <div class="btn-typography">
-            <span class="store-tagline">Disponible en</span>
-            <span class="store-name">App Store</span>
-          </div>
-        </a>
-
-        <!-- Official Google Play Store Button with 4-Color Vector -->
-        <a href="https://play.google.com/store/apps/details?id=com.kharonte.preventivifacili&hl=es&referrer=utm_source%3Dkharo23_site%26utm_medium%3Dlanding%26utm_campaign%3Ddirect" target="_blank" rel="noopener noreferrer" class="google-play-btn" id="btn-google-store">
-          <svg viewBox="0 0 512 512">
-            <path fill="#00e5ff" d="M31.2 17.5c-4.4 4.7-7 11.8-7 20.7v435.6c0 8.9 2.6 16 7 20.7l1.1 1.1 244.1-244.1v-5.8L32.3 16.4l-1.1 1.1z"/>
-            <path fill="#ff3a44" d="M358.3 361.3l-81.9-81.9v-5.8l81.9-81.9 1.8 1 97 55.1c27.7 15.7 27.7 41.5 0 57.3l-97 55.1-1.8 1.1z"/>
-            <path fill="#00e676" d="M360.1 360.2L276.4 276.5 32.3 520.6c9.2 9.7 24.3 10.8 41.2 1.3l286.6-161.7z"/>
-            <path fill="#ffd600" d="M360.1 151.8L73.5 30.1C56.6 20.5 41.5 21.6 32.3 31.4l244.1 244.1 83.7-83.7z"/>
-          </svg>
-          <div class="btn-typography">
-            <span class="store-tagline">DISPONIBLE EN</span>
-            <span class="store-name">Google Play</span>
-          </div>
-        </a>
-      </div>
-
-      <!-- Trust Badges -->
-      <div class="trust-indicators">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-          <span><strong>Datos en tu dispositivo:</strong> ningún presupuesto sale de tu móvil</span>
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="m9 12 2 2 4-4"></path>
-          </svg>
-          <span><strong>Compra única de por vida:</strong> sin cuotas</span>
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          <span><strong>3 presupuestos incluidos</strong> gratis</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Live PDF Stage Simulator -->
-  <section class="container" id="anteprima">
-    <div class="hero-stage">
-      <div class="stage-glow-effect"></div>
-      <div class="stage-card">
-        <div class="stage-header-bar">
-          <div class="dots-group">
-            <div class="window-dot dot-close"></div>
-            <div class="window-dot dot-min"></div>
-            <div class="window-dot dot-max"></div>
-          </div>
-          <div class="stage-status-title">
-            <span>Motor de Renderizado de PDF de Preventivi Facili</span>
-          </div>
-          <div class="pulse-badge">Live Interactive</div>
+  <main id="main">
+    <section class="hero">
+      <div class="container bio-profile-header">
+        <div class="bio-avatar-wrapper">
+          <img class="bio-avatar" src="../assets/icon.png" alt="Icono de Kharonte Studio" width="84" height="84">
         </div>
 
-        <div class="stage-body-grid">
-          <!-- Live Interactive Document PDF Sheet -->
-          <div class="pdf-sheet" id="liveQuoteSheet">
-            <div class="pdf-header">
-              <div>
-                <div class="pdf-company-name" id="docCompany">INSTALACIONES ELÉCTRICAS MARIO ROSSI</div>
-                <div class="pdf-company-sub">NIF 02849180921 • Milán • Tel. 347 1234567</div>
-              </div>
-              <div class="pdf-badge-quote">PRES #2026-088</div>
-            </div>
-
-            <div class="pdf-client-block">
-              <div class="pdf-client-label">Destinatario</div>
-              <div class="pdf-client-name" id="docClient">Estudio Profesional Brambilla &amp; C.</div>
-              <div style="font-size: 0.74rem; color: #64748b;">Via Dante 18, Milán</div>
-            </div>
-
-            <table class="pdf-table">
-              <thead>
-                <tr>
-                  <th>Descripción del Trabajo</th>
-                  <th>Cant.</th>
-                  <th style="text-align: right;">Precio</th>
-                </tr>
-              </thead>
-              <tbody id="quoteItemsTable">
-                <tr>
-                  <td>Renovación del cuadro eléctrico</td>
-                  <td>1 unidad</td>
-                  <td style="text-align: right;">€ 480,00</td>
-                </tr>
-                <tr>
-                  <td>Focos LED empotrables 18W</td>
-                  <td>8 uds</td>
-                  <td style="text-align: right;">€ 240,00</td>
-                </tr>
-                <tr id="extraRowLabor" style="display: none;">
-                  <td>Mano de obra especializada y pruebas</td>
-                  <td>4 horas</td>
-                  <td style="text-align: right;">€ 160,00</td>
-                </tr>
-                <tr id="extraRowMaterials" style="display: none;">
-                  <td>Canalizaciones y cables ignífugos FG16</td>
-                  <td>1 lote</td>
-                  <td style="text-align: right;">€ 190,00</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="pdf-total-bar">
-              <div class="pdf-tax-info" id="taxCalculationMeta">
-                Base imponible: <span id="valTaxable">€ 720,00</span><br>
-                IVA <span id="valVatRate">22%</span>: <span id="valVatAmount">€ 158,40</span> • Recargo previsional: Incluido
-              </div>
-              <div style="text-align: right;">
-                <div style="font-size: 0.7rem; color: #64748b; font-weight: 700; text-transform: uppercase;">TOTAL A PAGAR</div>
-                <div class="pdf-sum-amount" id="docGrandTotal">€ 878,40</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Simulator Controls -->
-          <div class="interactive-simulator">
-            <h3 class="sim-headline">Prueba el motor de cálculo en tiempo real</h3>
-            <p class="sim-desc">
-              Toca los botones para añadir conceptos o cambiar el régimen fiscal y observa cómo se actualiza el PDF al instante:
-            </p>
-
-            <div class="sim-buttons-group">
-              <button type="button" class="sim-trigger-btn" id="btnToggleLabor"
-                data-label-off="+ Añadir 4 horas de mano de obra (+€160)"
-                data-label-on="✓ 4 horas de mano de obra añadidas (+€160)">
-                <span>+ Añadir 4 horas de mano de obra (+€160)</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </button>
-
-              <button type="button" class="sim-trigger-btn" id="btnToggleMaterials"
-                data-label-off="+ Añadir cables y materiales (+€190)"
-                data-label-on="✓ Cables y materiales añadidos (+€190)">
-                <span>+ Añadir cables y materiales (+€190)</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </button>
-
-              <button type="button" class="sim-trigger-btn" id="btnToggleTaxRegime"
-                data-label-off="Cambiar a régimen simplificado (0% IVA)"
-                data-label-on="✓ Régimen simplificado activo (0% IVA)">
-                <span>Cambiar a régimen simplificado (0% IVA)</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-              </button>
-            </div>
-          </div>
+        <div class="bio-creator-tag">
+          <span>Creado por</span>
+          <strong>@kharonteAppDev</strong>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Bento Grid Section: Creative & Non-banal Features -->
-  <section class="section-wrapper" id="bento-features">
-    <div class="container">
-      <div class="section-title-area">
-        <span class="section-label">Arquitectura Inteligente</span>
-        <h2 class="section-title">Cada detalle pensado para quien trabaja de verdad</h2>
-        <p class="section-description">
-          Desde la agenda de clientes hasta el envío instantáneo: un flujo lineal y sin fricciones.
+        <h1 class="hero-heading">Kharonte <span class="hero-gradient-text">Studio</span></h1>
+        <p class="hero-subtext">
+          Aplicaciones nativas independientes, rápidas y sin suscripciones ocultas. Diseñadas al detalle para optimizar tu trabajo, el pádel y tu tranquilidad diaria.
         </p>
-      </div>
 
-      <div class="bento-grid">
-        <!-- Bento 1: Envío instantáneo (col-8) -->
-        <div class="bento-card col-8">
-          <div class="bento-icon-frame">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-            </svg>
-          </div>
-          <h3 class="bento-title">Comparte el presupuesto donde quieras, nada más terminar la visita</h3>
-          <p class="bento-text">
-            Nada de esperar días: la app genera el PDF al instante y copia un mensaje listo en el portapapeles. Compártelo por WhatsApp, email o AirDrop con el menú de compartir nativo del teléfono.
-          </p>
-
-          <div class="whatsapp-bubble">
-            <div style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4;">
-              Buenas, le adjunto el presupuesto #2026-088 para los trabajos acordados. Quedo a su disposición.
-            </div>
-            <div class="wa-preview-doc">
-              <div class="wa-pdf-icon">PDF</div>
-              <div>
-                <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff;">Presupuesto_2026_088.pdf</div>
-                <div style="font-size: 0.72rem; color: #94a3b8;">142 KB • Documento protegido</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bento 2: Sello y firma en el PDF (col-4) -->
-        <div class="bento-card col-4">
-          <div class="bento-icon-frame">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-              <path d="M2 2l7.586 7.586"></path>
-              <circle cx="11" cy="11" r="2"></circle>
-            </svg>
-          </div>
-          <h3 class="bento-title">Sello y Firma en Cada PDF</h3>
-          <p class="bento-text">
-            Sube una sola vez tu firma o el sello de tu empresa: aparecerá automáticamente en cada presupuesto, listo para la firma de aceptación del cliente.
-          </p>
-
-          <div class="signature-sim-area">
-            <svg width="220" height="60" viewBox="0 0 220 60" fill="none">
-              <path class="signature-svg-stroke" d="M10 45 C 30 10, 45 50, 70 25 C 90 5, 110 50, 130 30 C 150 15, 170 45, 200 20" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="transparent"/>
-            </svg>
-            <div style="font-size: 0.72rem; color: #64748b; margin-top: 4px;">Tu firma, en cada presupuesto</div>
-          </div>
-        </div>
-
-        <!-- Bento 3: Sin nube obligatoria (col-4) -->
-        <div class="bento-card col-4">
-          <div class="bento-icon-frame">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-          </div>
-          <h3 class="bento-title">Sin Nube Obligatoria</h3>
-          <p class="bento-text">
-            Tus clientes, tus precios y tus tarifas se quedan en tu dispositivo: ningún presupuesto ni dato de tu negocio termina en servidores externos.
-          </p>
-        </div>
-
-        <!-- Bento 4: Cálculo de impuestos (col-4) -->
-        <div class="bento-card col-4">
-          <div class="bento-icon-frame">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3 class="bento-title">IVA y Varios Regímenes Fiscales</h3>
-          <p class="bento-text">
-            Régimen general, simplificado o con recargos previsionales. La app desglosa y suma base imponible e impuestos automáticamente, sin riesgo de errores de cálculo.
-          </p>
-        </div>
-
-        <!-- Bento 5: Agenda de clientes (col-4) -->
-        <div class="bento-card col-4">
-          <div class="bento-icon-frame">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <h3 class="bento-title">Agenda de Clientes con 1 Toque</h3>
-          <p class="bento-text">
-            Recupera los datos de clientes habituales con un toque para rellenar nuevos presupuestos al vuelo. Llama o escribe directamente desde la app.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dynamic Savings Simulator Section -->
-  <section class="section-wrapper" id="calcolatore">
-    <div class="container">
-      <div class="calc-card-container"
-        data-unit-label="presupuestos"
-        data-hours-label="horas / mes"
-        data-narrative-low="Ahorras unas {hours} horas al año para dedicarlas a tu tiempo libre."
-        data-narrative-mid="Equivale a más de {hours} horas al año liberadas para tu familia o tus obras."
-        data-narrative-high="¡Más de {hours} horas al año ahorradas! Prácticamente un mes entero de trabajo de oficina evitado.">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-          <span class="section-label">Calculadora de Eficiencia</span>
-          <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;">¿Cuánto tiempo pierdes cada mes?</h2>
-          <p style="color: var(--text-secondary);">
-            Rellenar presupuestos por la noche en Word o en el ordenador te cuesta horas de descanso y fines de semana.
-          </p>
-        </div>
-
-        <div class="calc-flex-grid">
-          <div>
-            <label for="quoteRangeInput" style="font-weight: 700; font-size: 1.05rem;">¿Cuántos presupuestos emites al mes?</label>
-            <div class="calc-display-hero" id="quoteNumberVisual">15 presupuestos</div>
-            <input type="range" min="1" max="40" value="15" class="range-slider-element" id="quoteRangeInput">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
-              <span>1 al mes</span>
-              <span>20 al mes</span>
-              <span>40 al mes</span>
-            </div>
-          </div>
-
-          <div class="calc-stat-box">
-            <div class="stat-metric-title">Horas de libertad recuperadas</div>
-            <div class="stat-metric-number" id="hoursSavedVisual">~11 horas / mes</div>
-            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 0;" id="stressNarrative">
-              Equivale a más de 130 horas al año liberadas para tu familia o tus obras.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Comparison Section -->
-  <section class="section-wrapper" id="prezzi">
-    <div class="container">
-      <div class="section-title-area">
-        <span class="section-label">Cero Suscripciones</span>
-        <h2 class="section-title">Empieza gratis, compra una sola vez</h2>
-        <p class="section-description">Sin costes recurrentes que se renuevan cada mes sin que te des cuenta.</p>
-      </div>
-
-      <div class="pricing-flex-wrapper">
-        <!-- Free Plan -->
-        <div class="price-card">
-          <h3 class="price-card-title">Versión Básica</h3>
-          <p class="price-card-sub">Ideal para probar lo cómodos que son los PDF sobre el terreno.</p>
-
-          <div class="amount-tag">€ 0</div>
-          <span class="amount-note">Gratis para siempre</span>
-
-          <ul class="feature-checklist">
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Hasta 3 presupuestos completos
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Generador de PDF en alta resolución
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Compartir por WhatsApp y Email
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Almacenamiento 100% local
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Logo, sello y firma personalizados en el PDF
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Copia de seguridad y restauración
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              Presupuestos ilimitados
-            </li>
-          </ul>
-
-          <a href="#scarica" class="btn-plan-action btn-plan-outline">Descargar Gratis</a>
-        </div>
-
-        <!-- Premium Lifetime Plan -->
-        <div class="price-card highlighted">
-          <div class="shine-badge">Compra Única de por Vida</div>
-          <h3 class="price-card-title">Premium de por Vida</h3>
-          <p class="price-card-sub">Acceso ilimitado sin cuotas mensuales, para siempre.</p>
-
-          <div class="amount-tag">Pago Único</div>
-          <span class="amount-note">Deducible al 100% como gasto de tu negocio</span>
-
-          <ul class="feature-checklist">
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <strong>Presupuestos ilimitados</strong>, sin límite de tiempo
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              PDF sin marca de agua de "Preventivi Facili"
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Todas las funciones de la Versión Básica incluidas
-            </li>
-            <li class="enabled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Todas las futuras actualizaciones incluidas
-            </li>
-          </ul>
-
-          <a href="#scarica" class="btn-plan-action btn-plan-solid">Desbloquear para Siempre</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Accordion Section -->
-  <section class="section-wrapper" id="faq">
-    <div class="container">
-      <div class="section-title-area">
-        <span class="section-label">Soporte y Transparencia</span>
-        <h2 class="section-title">Preguntas Frecuentes</h2>
-      </div>
-
-      <div class="faq-accordion-group">
-        <div class="faq-card-unit">
-          <button class="faq-trigger-button" type="button">
-            <span>¿Cómo funciona la prueba gratuita?</span>
-            <svg class="faq-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-collapsible-body">
-            <p>Puedes descargar la app gratis y crear tus primeros 3 presupuestos sin introducir ninguna tarjeta de crédito. Si te gusta la app, puedes desbloquear la versión ilimitada con una única compra dentro de la app gestionada por tu cuenta de Apple o Google.</p>
-          </div>
-        </div>
-
-        <div class="faq-card-unit">
-          <button class="faq-trigger-button" type="button">
-            <span>¿Los datos y precios de mis clientes están seguros?</span>
-            <svg class="faq-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-collapsible-body">
-            <p>Al 100%. Preventivi Facili funciona con almacenamiento exclusivamente local en tu smartphone. Ningún servidor externo recoge los nombres de tus clientes ni tus listas de precios, lo que garantiza total privacidad.</p>
-          </div>
-        </div>
-
-        <div class="faq-card-unit">
-          <button class="faq-trigger-button" type="button">
-            <span>Si cambio de móvil, ¿tengo que volver a comprar la app?</span>
-            <svg class="faq-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-collapsible-body">
-            <p>¡No! Basta con pulsar "Restaurar compras anteriores" en la pantalla Premium del nuevo dispositivo con la misma cuenta de la tienda: la licencia de por vida se reactivará al instante sin coste adicional.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Global Footer -->
-  <footer class="global-footer">
-    <div class="container">
-      <div class="footer-columns-grid">
-        <div>
-          <a href="./index.html" class="brand-wrapper">
-            <img src="../assets/icon.png" alt="Preventivi Facili Logo" class="brand-logo-img">
-            <span class="brand-name">Preventivi <span>Facili</span></span>
+        <!-- Social Bar / Link in Bio Chips -->
+        <div class="bio-social-bar" aria-label="Canales sociales y contacto">
+          <a class="bio-social-pill" href="https://www.tiktok.com/@kharonteappdev" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.31 0 .61.05.88.13V9.4a6.34 6.34 0 0 0-.88-.06A6.33 6.33 0 0 0 3 15.67 6.33 6.33 0 0 0 9.34 22a6.33 6.33 0 0 0 6.33-6.33V8.89a8.18 8.18 0 0 0 4.79 1.54V6.99a4.85 4.85 0 0 1-.87-.3z"/></svg>
+            <span>TikTok</span>
           </a>
-          <p class="footer-bio-p">
-            La herramienta nativa y ultrarrápida para crear y enviar presupuestos profesionales en PDF en 30 segundos, directamente desde tu móvil.
-          </p>
-        </div>
-
-        <div>
-          <h5 class="footer-nav-header">Producto</h5>
-          <ul class="footer-nav-list">
-            <li><a href="#anteprima">Simulador de PDF</a></li>
-            <li><a href="#bento-features">Funciones</a></li>
-            <li><a href="#calcolatore">Ahorro de Tiempo</a></li>
-            <li><a href="#prezzi">Precios y Planes</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="footer-nav-header">Otras Apps</h5>
-          <ul class="footer-nav-list">
-            <li><a href="./apps.html">Kharonte App Hub</a></li>
-            <li><a href="../padel-match-manager/es/">Padel Match Manager</a></li>
-            <li><a href="../foodlio/es/">Foodlio</a></li>
-            <li><a href="../aegis/es/">Aegis</a></li>
-            <li><a href="../flipeven/es/">FlipEven</a></li>
-            <li><a href="./apps.html">Todas las apps</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="footer-nav-header">Soporte y Legal</h5>
-          <ul class="footer-nav-list">
-            <li><a href="./support.html">Ayuda y Soporte</a></li>
-            <li><a href="./privacy.html">Política de Privacidad</a></li>
-            <li><a href="./support.html#termini">Términos de Servicio (EULA)</a></li>
-          </ul>
+          <a class="bio-social-pill" href="https://www.instagram.com/kharonteappdev" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="bio-social-pill" href="https://www.youtube.com/@kharonteappdev" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a class="bio-social-pill" href="https://github.com/kharo23" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a class="bio-social-pill" href="mailto:kharonte.appdev@gmail.com">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"/></svg>
+            <span>Email</span>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom-row">
-        <div>&copy; <span id="yearField">2026</span> Preventivi Facili • Kharonte Studio by <a href="./apps.html" style="color:var(--text-main); font-weight:600; text-decoration:none;">@kharonteAppDev</a></div>
-        <div class="footer-social-row">
-          <a href="https://www.tiktok.com/@kharonteappdev" target="_blank" rel="noopener noreferrer">TikTok</a>
-          <span>·</span>
-          <a href="https://www.instagram.com/kharonteappdev" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <span>·</span>
-          <a href="https://www.youtube.com/@kharonteappdev" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <span>·</span>
-          <a href="https://github.com/kharo23" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <!-- Apps Bento Showcase -->
+    <section class="container studio-grid" aria-label="Todas nuestras aplicaciones">
+      <!-- Preventivi Facili -->
+      <article class="bento-card">
+        <div class="card-top-row">
+          <img class="card-app-icon" src="../assets/icon.png" alt="Icono Preventivi Facili" width="58" height="58">
+          <div class="card-title-group">
+            <span class="card-category-pill" style="--pill-color: #38bdf8; --pill-bg: rgba(56,189,248,0.12); --pill-border: rgba(56,189,248,0.25);">Negocios &amp; Facturación</span>
+            <h2 class="card-app-title">Preventivi Facili</h2>
+          </div>
         </div>
-      </div>
+        <p class="bento-text">Presupuestos y facturas en PDF profesionales en 30 segundos directamente desde el móvil. 100% offline y sin suscripción.</p>
+        <div class="card-actions-wrapper">
+          <a class="card-primary-action" href="../preventivi-facili/es/">
+            <span>Ver Detalles y Calculadora</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="card-store-row">
+            <a class="card-store-btn" href="https://apps.apple.com/it/app/preventivi-facili-artigiani/id6775595665?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer" aria-label="Descargar Preventivi Facili en App Store">
+              <svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.7-11.73-13.97-6.03-9.12-10.74-19.14-14.13-30.04-3.39-10.9-5.09-21.36-5.09-31.39 0-14.54 3.73-26.6 11.19-36.19 7.46-9.58 17.06-14.49 28.8-14.73 4.89 0 10.5 1.25 16.84 3.76 6.34 2.51 10.37 3.82 12.1 3.93 1.83-.11 5.96-1.42 12.39-3.93 6.43-2.51 11.94-3.71 16.53-3.6 12.24.47 22.18 4.7 29.83 12.71-10.88 6.64-16.19 15.75-15.93 27.32.26 9.07 3.66 16.84 10.2 23.3 6.54 6.46 14.35 10.08 23.42 10.87-2.3 6.84-5.14 13.88-8.52 21.11zM119.22 31.84c0-7.39 2.65-14.3 7.94-20.73 5.3-6.43 11.89-10.42 19.78-11.96.22 1.3.33 2.45.33 3.44 0 7.33-2.73 14.39-8.2 21.17-5.46 6.78-12.18 10.71-20.17 11.8-.22-1.08-.34-2.32-.34-3.72z"/></svg>
+              <span>App Store</span>
+            </a>
+            <a class="card-store-btn" href="https://play.google.com/store/apps/details?id=com.kharonte.preventivifacili&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub_es%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer" aria-label="Descargar Preventivi Facili en Google Play">
+              <svg viewBox="0 0 512 512" width="13" height="13" aria-hidden="true"><path fill="#00e5ff" d="M31.2 17.5c-4.4 4.7-7 11.8-7 20.7v435.6c0 8.9 2.6 16 7 20.7l1.1 1.1 244.1-244.1v-5.8L32.3 16.4l-1.1 1.1z"/><path fill="#ff3a44" d="M358.3 361.3l-81.9-81.9v-5.8l81.9-81.9 1.8 1 97 55.1c27.7 15.7 27.7 41.5 0 57.3l-97 55.1-1.8 1.1z"/><path fill="#00e676" d="M360.1 360.2L276.4 276.5 32.3 520.6c9.2 9.7 24.3 10.8 41.2 1.3l286.6-161.7z"/><path fill="#ffd600" d="M360.1 151.8L73.5 30.1C56.6 20.5 41.5 21.6 32.3 31.4l244.1 244.1 83.7-83.7z"/></svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Foodlio -->
+      <article class="bento-card">
+        <div class="card-top-row">
+          <img class="card-app-icon" src="../foodlio/icon.png" alt="Icono Foodlio" width="58" height="58">
+          <div class="card-title-group">
+            <span class="card-category-pill" style="--pill-color: #10b981; --pill-bg: rgba(16,185,129,0.12); --pill-border: rgba(16,185,129,0.25);">Gastronomía &amp; Food Cost</span>
+            <h2 class="card-app-title">Foodlio</h2>
+          </div>
+        </div>
+        <p class="bento-text">Cálculo real de costes de ingredientes, márgenes de beneficio e ingeniería de menús para restaurantes y chefs.</p>
+        <div class="card-actions-wrapper">
+          <a class="card-primary-action" href="../foodlio/es/">
+            <span>Ver Detalles y Demo en Vivo</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="card-store-row">
+            <a class="card-store-btn" href="https://apps.apple.com/it/app/id6777711571?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer" aria-label="Descargar Foodlio en App Store">
+              <svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.7-11.73-13.97-6.03-9.12-10.74-19.14-14.13-30.04-3.39-10.9-5.09-21.36-5.09-31.39 0-14.54 3.73-26.6 11.19-36.19 7.46-9.58 17.06-14.49 28.8-14.73 4.89 0 10.5 1.25 16.84 3.76 6.34 2.51 10.37 3.82 12.1 3.93 1.83-.11 5.96-1.42 12.39-3.93 6.43-2.51 11.94-3.71 16.53-3.6 12.24.47 22.18 4.7 29.83 12.71-10.88 6.64-16.19 15.75-15.93 27.32.26 9.07 3.66 16.84 10.2 23.3 6.54 6.46 14.35 10.08 23.42 10.87-2.3 6.84-5.14 13.88-8.52 21.11zM119.22 31.84c0-7.39 2.65-14.3 7.94-20.73 5.3-6.43 11.89-10.42 19.78-11.96.22 1.3.33 2.45.33 3.44 0 7.33-2.73 14.39-8.2 21.17-5.46 6.78-12.18 10.71-20.17 11.8-.22-1.08-.34-2.32-.34-3.72z"/></svg>
+              <span>App Store</span>
+            </a>
+            <a class="card-store-btn" href="https://play.google.com/store/apps/details?id=com.kharonte.food_cost_pro&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub_es%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer" aria-label="Descargar Foodlio en Google Play">
+              <svg viewBox="0 0 512 512" width="13" height="13" aria-hidden="true"><path fill="#00e5ff" d="M31.2 17.5c-4.4 4.7-7 11.8-7 20.7v435.6c0 8.9 2.6 16 7 20.7l1.1 1.1 244.1-244.1v-5.8L32.3 16.4l-1.1 1.1z"/><path fill="#ff3a44" d="M358.3 361.3l-81.9-81.9v-5.8l81.9-81.9 1.8 1 97 55.1c27.7 15.7 27.7 41.5 0 57.3l-97 55.1-1.8 1.1z"/><path fill="#00e676" d="M360.1 360.2L276.4 276.5 32.3 520.6c9.2 9.7 24.3 10.8 41.2 1.3l286.6-161.7z"/><path fill="#ffd600" d="M360.1 151.8L73.5 30.1C56.6 20.5 41.5 21.6 32.3 31.4l244.1 244.1 83.7-83.7z"/></svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Padel Match Manager -->
+      <article class="bento-card">
+        <div class="card-top-row">
+          <img class="card-app-icon" src="../padel-match-manager/icon.png" alt="Icono Padel Match Manager" width="58" height="58">
+          <div class="card-title-group">
+            <span class="card-category-pill" style="--pill-color: #f06400; --pill-bg: rgba(240,100,0,0.12); --pill-border: rgba(240,100,0,0.25);">Deporte &amp; Torneos</span>
+            <h2 class="card-app-title">Padel Match Manager</h2>
+          </div>
+        </div>
+        <p class="bento-text">Torneos Americano, Mexicano y liguillas sin líos de papel. Rondas equilibradas y clasificación en vivo desde la pista.</p>
+        <div class="card-actions-wrapper">
+          <a class="card-primary-action" href="../padel-match-manager/es/">
+            <span>Ver Detalles y Funciones</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="card-store-row">
+            <a class="card-store-btn" href="https://apps.apple.com/it/app/id6775152321?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer" aria-label="Descargar Padel Match Manager en App Store">
+              <svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.7-11.73-13.97-6.03-9.12-10.74-19.14-14.13-30.04-3.39-10.9-5.09-21.36-5.09-31.39 0-14.54 3.73-26.6 11.19-36.19 7.46-9.58 17.06-14.49 28.8-14.73 4.89 0 10.5 1.25 16.84 3.76 6.34 2.51 10.37 3.82 12.1 3.93 1.83-.11 5.96-1.42 12.39-3.93 6.43-2.51 11.94-3.71 16.53-3.6 12.24.47 22.18 4.7 29.83 12.71-10.88 6.64-16.19 15.75-15.93 27.32.26 9.07 3.66 16.84 10.2 23.3 6.54 6.46 14.35 10.08 23.42 10.87-2.3 6.84-5.14 13.88-8.52 21.11zM119.22 31.84c0-7.39 2.65-14.3 7.94-20.73 5.3-6.43 11.89-10.42 19.78-11.96.22 1.3.33 2.45.33 3.44 0 7.33-2.73 14.39-8.2 21.17-5.46 6.78-12.18 10.71-20.17 11.8-.22-1.08-.34-2.32-.34-3.72z"/></svg>
+              <span>App Store</span>
+            </a>
+            <a class="card-store-btn" href="https://play.google.com/store/apps/details?id=it.kharonte.padel_tournament_organizer&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub_es%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer" aria-label="Descargar Padel Match Manager en Google Play">
+              <svg viewBox="0 0 512 512" width="13" height="13" aria-hidden="true"><path fill="#00e5ff" d="M31.2 17.5c-4.4 4.7-7 11.8-7 20.7v435.6c0 8.9 2.6 16 7 20.7l1.1 1.1 244.1-244.1v-5.8L32.3 16.4l-1.1 1.1z"/><path fill="#ff3a44" d="M358.3 361.3l-81.9-81.9v-5.8l81.9-81.9 1.8 1 97 55.1c27.7 15.7 27.7 41.5 0 57.3l-97 55.1-1.8 1.1z"/><path fill="#00e676" d="M360.1 360.2L276.4 276.5 32.3 520.6c9.2 9.7 24.3 10.8 41.2 1.3l286.6-161.7z"/><path fill="#ffd600" d="M360.1 151.8L73.5 30.1C56.6 20.5 41.5 21.6 32.3 31.4l244.1 244.1 83.7-83.7z"/></svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Aegis -->
+      <article class="bento-card">
+        <div class="card-top-row">
+          <img class="card-app-icon" src="../aegis/icon.png" alt="Icono Aegis" width="58" height="58">
+          <div class="card-title-group">
+            <span class="card-category-pill" style="--pill-color: #a78bfa; --pill-bg: rgba(167,139,250,0.12); --pill-border: rgba(167,139,250,0.25);">Mindfulness &amp; Calma</span>
+            <h2 class="card-app-title">Aegis</h2>
+          </div>
+        </div>
+        <p class="bento-text">Respiración guiada, paisajes sonoros y diario personal íntimo. Sin anuncios, privado y diseñado para desconectar.</p>
+        <div class="card-actions-wrapper">
+          <a class="card-primary-action" href="../aegis/es/">
+            <span>Ver Detalles y Esfera de Respiración</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="card-store-row">
+            <a class="card-store-btn" href="https://apps.apple.com/it/app/id6791089198?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer" aria-label="Descargar Aegis en App Store">
+              <svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.7-11.73-13.97-6.03-9.12-10.74-19.14-14.13-30.04-3.39-10.9-5.09-21.36-5.09-31.39 0-14.54 3.73-26.6 11.19-36.19 7.46-9.58 17.06-14.49 28.8-14.73 4.89 0 10.5 1.25 16.84 3.76 6.34 2.51 10.37 3.82 12.1 3.93 1.83-.11 5.96-1.42 12.39-3.93 6.43-2.51 11.94-3.71 16.53-3.6 12.24.47 22.18 4.7 29.83 12.71-10.88 6.64-16.19 15.75-15.93 27.32.26 9.07 3.66 16.84 10.2 23.3 6.54 6.46 14.35 10.08 23.42 10.87-2.3 6.84-5.14 13.88-8.52 21.11zM119.22 31.84c0-7.39 2.65-14.3 7.94-20.73 5.3-6.43 11.89-10.42 19.78-11.96.22 1.3.33 2.45.33 3.44 0 7.33-2.73 14.39-8.2 21.17-5.46 6.78-12.18 10.71-20.17 11.8-.22-1.08-.34-2.32-.34-3.72z"/></svg>
+              <span>App Store</span>
+            </a>
+            <a class="card-store-btn" href="https://play.google.com/store/apps/details?id=com.mindfulspace.mindful_space&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub_es%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer" aria-label="Descargar Aegis en Google Play">
+              <svg viewBox="0 0 512 512" width="13" height="13" aria-hidden="true"><path fill="#00e5ff" d="M31.2 17.5c-4.4 4.7-7 11.8-7 20.7v435.6c0 8.9 2.6 16 7 20.7l1.1 1.1 244.1-244.1v-5.8L32.3 16.4l-1.1 1.1z"/><path fill="#ff3a44" d="M358.3 361.3l-81.9-81.9v-5.8l81.9-81.9 1.8 1 97 55.1c27.7 15.7 27.7 41.5 0 57.3l-97 55.1-1.8 1.1z"/><path fill="#00e676" d="M360.1 360.2L276.4 276.5 32.3 520.6c9.2 9.7 24.3 10.8 41.2 1.3l286.6-161.7z"/><path fill="#ffd600" d="M360.1 151.8L73.5 30.1C56.6 20.5 41.5 21.6 32.3 31.4l244.1 244.1 83.7-83.7z"/></svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FlipEven -->
+      <article class="bento-card">
+        <div class="card-top-row">
+          <img class="card-app-icon" src="../flipeven/icon.png" alt="Icono FlipEven" width="58" height="58">
+          <div class="card-title-group">
+            <span class="card-category-pill" style="--pill-color: #06b6d4; --pill-bg: rgba(6,182,212,0.12); --pill-border: rgba(6,182,212,0.25);">Reventa &amp; Márgenes</span>
+            <h2 class="card-app-title">FlipEven</h2>
+          </div>
+        </div>
+        <p class="bento-text">Evita vender con pérdidas: calcula punto de equilibrio, comisiones de plataforma y beneficio neto para Vinted y eBay.</p>
+        <div class="card-actions-wrapper">
+          <a class="card-primary-action" href="../flipeven/es/">
+            <span>Ver Vista Previa y Simulador</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="coming-soon-label" style="display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 12px; width:100%; border-radius:10px;">
+            <span style="font-size:0.78rem; font-weight:600;">Próximamente en App Store y Google Play</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Creator & Community Banner -->
+      <section class="creator-banner-card" aria-label="Entre bastidores y comunidad">
+        <div class="creator-banner-info">
+          <span class="card-category-pill" style="--pill-color: #f59e0b; --pill-bg: rgba(245,158,11,0.12); --pill-border: rgba(245,158,11,0.25); margin-bottom: 10px;">Entre Bastidores</span>
+          <h3>Creando software en público con @kharonteAppDev</h3>
+          <p>Comparto arquitectura móvil, tutoriales de programación y el proceso real de desarrollo en YouTube y TikTok. ¡Acompáñame o propón ideas para las próximas apps!</p>
+        </div>
+        <div class="creator-banner-actions">
+          <a class="bio-social-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);" href="https://www.tiktok.com/@kharonteappdev" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.31 0 .61.05.88.13V9.4a6.34 6.34 0 0 0-.88-.06A6.33 6.33 0 0 0 3 15.67 6.33 6.33 0 0 0 9.34 22a6.33 6.33 0 0 0 6.33-6.33V8.89a8.18 8.18 0 0 0 4.79 1.54V6.99a4.85 4.85 0 0 1-.87-.3z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a class="bio-social-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);" href="https://www.instagram.com/kharonteappdev" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="bio-social-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);" href="https://www.youtube.com/@kharonteappdev" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Canal de YouTube</span>
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+    <div class="container footer-bottom-row">
+      © 2026 Kharonte Studio · Creado por <a class="hub-link" href="https://github.com/kharo23" target="_blank" rel="noopener noreferrer">@kharonteAppDev</a> · <a class="hub-link" href="mailto:kharonte.appdev@gmail.com">Soporte y Contacto</a>
     </div>
   </footer>
-
-  <script src="../main.js"></script>
 </body>
 </html>

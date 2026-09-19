@@ -265,3 +265,64 @@
   color: rgba(255, 255, 255, 0.2);
   font-size: 0.8rem;
 }
+
+/* ==========================================================================
+   TRUST STRIP — social-proof bar under the hub hero
+   ========================================================================== */
+.trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 2.25rem;
+  padding: 14px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.trust-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.trust-strip-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-light);
+  flex-shrink: 0;
+}
+
+.trust-strip-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 720px) {
+  .trust-strip {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 22px;
+    border-radius: 20px;
+  }
+  .trust-strip-divider {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   CATEGORY PILL VARIANTS — replaces per-instance inline custom properties
+   so the palette lives in one place per app category.
+   ========================================================================== */
+.pill-work { --pill-color: #38bdf8; --pill-bg: rgba(56, 189, 248, 0.12); --pill-border: rgba(56, 189, 248, 0.25); }
+.pill-food { --pill-color: #10b981; --pill-bg: rgba(16, 185, 129, 0.12); --pill-border: rgba(16, 185, 129, 0.25); }
+.pill-sport { --pill-color: #f06400; --pill-bg: rgba(240, 100, 0, 0.12); --pill-border: rgba(240, 100, 0, 0.25); }
+.pill-wellness { --pill-color: #a78bfa; --pill-bg: rgba(167, 139, 250, 0.12); --pill-border: rgba(167, 139, 250, 0.25); }
+.pill-reselling { --pill-color: #06b6d4; --pill-bg: rgba(6, 182, 212, 0.12); --pill-border: rgba(6, 182, 212, 0.25); }

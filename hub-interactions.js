@@ -93,19 +93,19 @@ function initHubInteractions() {
     });
   });
 
-  // 5. Hero cursor spotlight
-  const hero = document.querySelector('.hero');
+  // 5. Ambient cursor spotlight across hero and apps
+  const mainTarget = document.querySelector('#main') || document.querySelector('.hero');
   const spotlight = document.querySelector('.hero-spotlight');
-  if (hero && spotlight) {
-    hero.addEventListener('pointermove', (e) => {
-      const rect = hero.getBoundingClientRect();
+  if (mainTarget && spotlight) {
+    mainTarget.addEventListener('pointermove', (e) => {
+      const rect = mainTarget.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
       spotlight.style.setProperty('--mx', `${x}%`);
       spotlight.style.setProperty('--my', `${y}%`);
       spotlight.classList.add('is-active');
     });
-    hero.addEventListener('pointerleave', () => {
+    mainTarget.addEventListener('pointerleave', () => {
       spotlight.classList.remove('is-active');
     });
   }

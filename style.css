@@ -117,12 +117,15 @@ body::after {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 12% 10%, rgba(0, 82, 255, 0.28), transparent 42%),
-    radial-gradient(circle at 88% 6%, rgba(0, 242, 254, 0.20), transparent 40%),
-    radial-gradient(circle at 48% 30%, rgba(167, 139, 250, 0.14), transparent 46%);
-  background-size: 56px 56px, 56px 56px, auto, auto, auto;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 85%);
+    radial-gradient(circle at 12% 14%, rgba(0, 82, 255, 0.28), transparent 42%),
+    radial-gradient(circle at 88% 12%, rgba(0, 242, 254, 0.20), transparent 40%),
+    radial-gradient(circle at 50% 36%, rgba(167, 139, 250, 0.14), transparent 46%),
+    radial-gradient(circle at 14% 68%, rgba(0, 82, 255, 0.22), transparent 45%),
+    radial-gradient(circle at 86% 76%, rgba(16, 185, 129, 0.16), transparent 42%),
+    radial-gradient(circle at 48% 90%, rgba(207, 161, 94, 0.14), transparent 46%);
+  background-size: 56px 56px, 56px 56px, auto, auto, auto, auto, auto, auto;
+  mask-image: linear-gradient(to bottom, black 0%, black 86%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 86%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -381,6 +384,11 @@ body::after {
   opacity: 0.6;
 }
 
+#main {
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-mesh-blob.b1 {
   width: 420px;
   height: 420px;
@@ -402,10 +410,28 @@ body::after {
 .hero-mesh-blob.b3 {
   width: 340px;
   height: 340px;
-  top: 140px;
+  top: 280px;
   left: 36%;
   background: radial-gradient(circle, #a78bfa 0%, transparent 72%);
   animation: driftC 25s ease-in-out infinite alternate;
+}
+
+.hero-mesh-blob.b4 {
+  width: 440px;
+  height: 440px;
+  top: 55%;
+  left: -80px;
+  background: radial-gradient(circle, rgba(0, 82, 255, 0.42) 0%, transparent 70%);
+  animation: driftA 22s ease-in-out infinite alternate;
+}
+
+.hero-mesh-blob.b5 {
+  width: 420px;
+  height: 420px;
+  top: 75%;
+  right: -80px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.32) 0%, transparent 70%);
+  animation: driftB 26s ease-in-out infinite alternate;
 }
 
 @keyframes driftA {
@@ -428,7 +454,7 @@ body::after {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 15%), rgba(125, 211, 252, 0.16), transparent 60%);
+  background: radial-gradient(640px circle at var(--mx, 50%) var(--my, 20%), rgba(125, 211, 252, 0.18), transparent 60%);
 }
 
 .hero-spotlight.is-active {

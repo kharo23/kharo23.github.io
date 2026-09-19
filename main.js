@@ -31,24 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const hoursVisual = document.getElementById('hoursSavedVisual');
   const stressNarrative = document.getElementById('stressNarrative');
 
+  // Localized strings live as data-attributes on the calculator card so this
+  // script stays identical across the it/en/es pages.
+  const calcCard = document.querySelector('.calc-card-container');
+  const i18n = calcCard ? calcCard.dataset : {};
+
   function calculateSavings(quotes) {
-    if (quoteVisual) quoteVisual.textContent = `${quotes} preventivi`;
+    if (quoteVisual) quoteVisual.textContent = `${quotes} ${i18n.unitLabel || 'preventivi'}`;
     // ~45 mins manual in Word/Excel vs ~3 mins in Preventivi Facili = ~0.70h saved per quote
     const hoursMonth = Math.round(quotes * 0.72);
     const hoursYear = hoursMonth * 12;
 
     if (hoursVisual) {
-      hoursVisual.textContent = `~${hoursMonth} ore / mese`;
+      hoursVisual.textContent = `~${hoursMonth} ${i18n.hoursLabel || 'ore / mese'}`;
     }
 
     if (stressNarrative) {
-      if (quotes <= 6) {
-        stressNarrative.textContent = `Risparmi circa ${hoursYear} ore all'anno da dedicare al tuo tempo libero.`;
-      } else if (quotes <= 18) {
-        stressNarrative.textContent = `Equivalente a oltre ${hoursYear} ore all'anno liberate per la tua famiglia o per i tuoi cantieri.`;
-      } else {
-        stressNarrative.textContent = `Oltre ${hoursYear} ore all'anno risparmiate! Praticamente un intero mese di lavoro d'ufficio evitato.`;
-      }
+      const template = quotes <= 6
+        ? (i18n.narrativeLow || `Risparmi circa {hours} ore all'anno da dedicare al tuo tempo libero.`)
+        : quotes <= 18
+          ? (i18n.narrativeMid || `Equivalente a oltre {hours} ore all'anno liberate per la tua famiglia o per i tuoi cantieri.`)
+          : (i18n.narrativeHigh || `Oltre {hours} ore all'anno risparmiate! Praticamente un intero mese di lavoro d'ufficio evitato.`);
+      stressNarrative.textContent = template.replace('{hours}', hoursYear);
     }
   }
 
@@ -103,32 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (btnToggleLabor && extraRowLabor) {
-    btnToggleLabor.addEventListener('click', () => {
-      state.hasLabor = !state.hasLabor;
-      extraRowLabor.style.display = state.hasLabor ? 'table-row' : 'none';
-      btnToggleLabor.style.background = state.hasLabor ? 'rgba(0, 82, 255, 0.25)' : 'rgba(255, 255, 255, 0.04)';
-      btnToggleLabor.querySelector('span').textContent = state.hasLabor ? '✓ 4 ore Manodopera aggiunte (+€160)' : '+ Aggiungi 4 ore Manodopera (+€160)';
+  // Toggle button labels come from data-label-on/off so the markup carries
+  // the translation and this script needs no per-language branching.
+  function bindToggle(btn, extraRow, stateKey, activeBg) {
+    if (!btn) return;
+    const span = btn.querySelector('span');
+    btn.addEventListener('click', () => {
+      state[stateKey] = !state[stateKey];
+      if (extraRow) extraRow.style.display = state[stateKey] ? 'table-row' : 'none';
+      btn.style.background = state[stateKey] ? activeBg : 'rgba(255, 255, 255, 0.04)';
+      if (span) span.textContent = state[stateKey] ? btn.dataset.labelOn : btn.dataset.labelOff;
       updateQuoteSimulation();
     });
   }
 
-  if (btnToggleMaterials && extraRowMaterials) {
-    btnToggleMaterials.addEventListener('click', () => {
-      state.hasMaterials = !state.hasMaterials;
-      extraRowMaterials.style.display = state.hasMaterials ? 'table-row' : 'none';
-      btnToggleMaterials.style.background = state.hasMaterials ? 'rgba(0, 82, 255, 0.25)' : 'rgba(255, 255, 255, 0.04)';
-      btnToggleMaterials.querySelector('span').textContent = state.hasMaterials ? '✓ Cavi e Forniture aggiunti (+€190)' : '+ Aggiungi Cavi e Forniture (+€190)';
-      updateQuoteSimulation();
-    });
-  }
-
-  if (btnToggleTaxRegime) {
-    btnToggleTaxRegime.addEventListener('click', () => {
-      state.isForfettario = !state.isForfettario;
-      btnToggleTaxRegime.style.background = state.isForfettario ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.04)';
-      btnToggleTaxRegime.querySelector('span').textContent = state.isForfettario ? '✓ Regime Forfettario attivo (IVA 0%)' : 'Passa a Regime Forfettario (IVA 0%)';
-      updateQuoteSimulation();
-    });
-  }
+  bindToggle(btnToggleLabor, extraRowLabor, 'hasLabor', 'rgba(0, 82, 255, 0.25)');
+  bindToggle(btnToggleMaterials, extraRowMaterials, 'hasMaterials', 'rgba(0, 82, 255, 0.25)');
+  bindToggle(btnToggleTaxRegime, null, 'isForfettario', 'rgba(16, 185, 129, 0.2)');
 });

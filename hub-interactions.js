@@ -1,7 +1,8 @@
 // ==========================================================================
 // KHARONTE STUDIO HUB — MOTION LAYER
-// Cursor spotlight, card glare-follow, featured screenshot tilt and
-// scroll-reveal. Inert on touch/coarse pointers and fully skipped under
+// Scroll reveal, nav scroll state, trailing cursor glow, magnetic CTAs,
+// hero spotlight, card glare-follow and featured screenshot tilt. Pointer
+// effects are inert on touch/coarse pointers and fully skipped under
 // prefers-reduced-motion.
 // ==========================================================================
 
@@ -27,9 +28,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // 2. Nav gains presence on scroll (cheap, safe under reduced motion too)
+  const nav = document.querySelector('.site-nav');
+  if (nav) {
+    const toggleNavState = () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    };
+    toggleNavState();
+    window.addEventListener('scroll', toggleNavState, { passive: true });
+  }
+
   if (reduceMotion || !finePointer) return;
 
-  // 2. Hero cursor spotlight
+  // 3. Trailing cursor glow (additive — native cursor stays visible)
+  const glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  glow.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(glow);
+
+  let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+  window.addEventListener('pointermove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    glow.classList.add('is-active');
+  });
+  document.addEventListener('pointerleave', () => glow.classList.remove('is-active'));
+
+  function trackGlow() {
+    currentX += (targetX - currentX) * 0.18;
+    currentY += (targetY - currentY) * 0.18;
+    glow.style.left = `${currentX}px`;
+    glow.style.top = `${currentY}px`;
+    requestAnimationFrame(trackGlow);
+  }
+  requestAnimationFrame(trackGlow);
+
+  document.querySelectorAll('a, button, .bento-card').forEach((el) => {
+    el.addEventListener('pointerenter', () => glow.classList.add('is-hovering'));
+    el.addEventListener('pointerleave', () => glow.classList.remove('is-hovering'));
+  });
+
+  // 4. Magnetic pull on primary CTAs
+  document.querySelectorAll('.magnetic').forEach((el) => {
+    el.addEventListener('pointermove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
+      el.style.transform = `translate(${x * 0.18}px, ${y * 0.28}px)`;
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // 5. Hero cursor spotlight
   const hero = document.querySelector('.hero');
   const spotlight = document.querySelector('.hero-spotlight');
   if (hero && spotlight) {
@@ -46,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Bento card glare-follow
+  // 6. Bento card glare-follow
   document.querySelectorAll('.bento-card').forEach((card) => {
     card.addEventListener('pointermove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -57,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Featured screenshot tilt
+  // 7. Featured screenshot tilt
   const visual = document.querySelector('.featured-card-visual');
   const screenshot = document.querySelector('.featured-screenshot');
   if (visual && screenshot) {

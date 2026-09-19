@@ -93,6 +93,19 @@ body {
   min-height: 100vh;
 }
 
+/* Subtle film-grain wash — cheap tactile depth used across most premium
+   dark UIs (Stripe, Linear, Vercel). Pure CSS, no extra HTTP request. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 /* Sophisticated Background Grid & Glows */
 .bg-grid-pattern {
   position: fixed;
@@ -477,6 +490,68 @@ body {
   .hero-spotlight,
   .bento-card::after {
     display: none;
+  }
+}
+
+/* Staggered entrance delays for the hero's own reveal-up children */
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.14s; }
+.d3 { transition-delay: 0.23s; }
+.d4 { transition-delay: 0.32s; }
+.d5 { transition-delay: 0.41s; }
+.d6 { transition-delay: 0.5s; }
+
+/* Nav gains presence once the page has scrolled past the hero */
+.site-nav.is-scrolled {
+  top: 10px;
+  background: rgba(6, 8, 14, 0.88);
+  box-shadow: 0 14px 44px -12px rgba(0, 0, 0, 0.7);
+}
+
+.site-nav.is-scrolled .nav-inner {
+  height: 58px;
+}
+
+/* Trailing cursor glow — additive, never replaces the native cursor */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(125, 211, 248, 0.55), transparent 70%);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate3d(-50%, -50%, 0);
+  opacity: 0;
+  transition: opacity 0.25s ease, width 0.25s var(--ease-spring), height 0.25s var(--ease-spring);
+}
+
+.cursor-glow.is-active {
+  opacity: 1;
+}
+
+.cursor-glow.is-hovering {
+  width: 52px;
+  height: 52px;
+  background: radial-gradient(circle, rgba(125, 211, 248, 0.35), transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* Magnetic hover pull on key interactive elements */
+.magnetic {
+  transition: transform 0.25s var(--ease-spring);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic {
+    transition: none;
   }
 }
 

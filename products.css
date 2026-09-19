@@ -2,3 +2,18 @@
 @media(max-width:800px){.product-demo,.product-plans{grid-template-columns:1fr;padding:24px;gap:24px}.studio-grid{grid-template-columns:1fr 1fr}.product-page .brand-name{max-width:160px;line-height:1.2}.product-page .hub-link{font-size:.85rem}.product-page .hero-heading{font-size:clamp(2.3rem,8vw,3.5rem)}.product-page .pill-badge{font-size:.65rem}.product-page .nav-inner{gap:12px}.product-page .brand-logo-img{width:36px;height:36px}}
 @media(max-width:500px){.studio-grid{grid-template-columns:1fr}.product-page .nav-links{display:none}.product-page .hero{padding-top:130px}.product-page .store-buttons-container{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product-page *, .product-page *::before,.product-page *::after{animation:none!important;transition:none!important}.breathing-orb.expanded{transform:none}}
+
+/* Future releases use a quieter treatment than available products. */
+.studio-grid .coming-soon-card{border-style:dashed;background:rgba(255,255,255,.015)}
+.coming-soon-icon{width:64px;height:64px;display:grid;place-items:center;margin-bottom:24px;border:1px dashed var(--border-highlight);border-radius:16px;color:var(--text-secondary);font-size:2rem;font-weight:300}
+.coming-soon-label{display:inline-flex;padding:5px 12px;border-radius:9999px;background:rgba(255,255,255,.06);color:var(--text-secondary);font-size:.8rem;font-weight:600}
+.studio-grid .coming-soon-card:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.015)}
+.studio-grid .coming-soon-card::before{display:none}
+
+/* Clip the gradient to the letters and keep accents within each app palette. */
+.product-page .hero-gradient-text{background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.product-page .pill-badge{color:var(--primary-light);background:var(--primary-glow);border-color:var(--primary-light);box-shadow:none}
+.product-page .pill-dot{background:var(--primary-light);box-shadow:0 0 10px var(--primary-glow)}
+.product-page .section-label{color:var(--primary-light)}
+.product-page .nav-cta-button:hover{box-shadow:0 8px 25px var(--primary-glow)}
+@media(forced-colors:active){.product-page .hero-gradient-text{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}}

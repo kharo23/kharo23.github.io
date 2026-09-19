@@ -277,3 +277,26 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-social-row a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-social-row a:hover {
+  color: #ffffff;
+}
+
+.footer-social-row span {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+}

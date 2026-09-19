@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preventivi Facili — Crea Preventivi e PDF Professionali in 30 Secondi</title>
+  <meta name="description" content="L'app per artigiani, professionisti e freelance. Genera preventivi PDF impeccabili con logo, calcolo automatico IVA e rivalsa, 100% offline e senza abbonamenti.">
+  <meta name="keywords" content="preventivi facili, app preventivi, preventivi artigiani, preventivi idraulico elettricista, generatore pdf preventivi, preventivi offline">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Preventivi Facili — Preventivi e PDF Professionali in 30 Secondi">
+  <meta property="og:description" content="Genera preventivi PDF impeccabili con logo, calcolo tasse automatico, 100% offline e nessun abbonamento mensile.">
+  <meta property="og:image" content="./assets/icon.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Preventivi Facili — Preventivi e PDF Professionali in 30 Secondi">
+  <meta name="twitter:description" content="Genera preventivi PDF impeccabili con logo, calcolo tasse automatico, 100% offline e nessun abbonamento mensile.">
+  <meta name="twitter:image" content="./assets/icon.png">
+
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Ambient light effects -->
+  <div class="ambient-glow">
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="./index.html" class="brand-link">
+        <img src="./assets/icon.png" alt="Preventivi Facili Logo" class="brand-icon">
+        <span class="brand-text">Preventivi <span>Facili</span></span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#funzionalita" class="nav-link">Funzionalità</a></li>
+        <li><a href="#come-funziona" class="nav-link">Anteprima</a></li>
+        <li><a href="#calcolatore" class="nav-link">Risparmio</a></li>
+        <li><a href="#prezzi" class="nav-link">Prezzi</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <a href="#scarica" class="nav-cta-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Scarica Gratis
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        Pensato per Artigiani, Tecnici e Professionisti
+      </div>
+
+      <h1 class="hero-title">
+        Preventivi professionali.<br>
+        <span class="gradient-text">Pronti in 30 secondi.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Dì addio a fogli volanti, Word ed Excel complicati. Crea preventivi impeccabili direttamente dal tuo smartphone, inserisci logo e firme, e condividi il PDF su WhatsApp o email prima ancora di lasciare il cliente.
+      </p>
+
+      <div class="hero-cta-group" id="scarica">
+        <!-- App Store CTA -->
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="btn-store primary-cta" id="btn-app-store">
+          <svg viewBox="0 0 24 24">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-0.9.04-2 .6-2.64 1.36-.57.65-1.06 1.73-0.93 2.77 1 .08 2.04-.51 2.65-1.26z"/>
+          </svg>
+          <div>
+            <span class="btn-text-small">Scarica su</span>
+            <span class="btn-text-large">App Store</span>
+          </div>
+        </a>
+
+        <!-- Google Play CTA -->
+        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="btn-store" id="btn-google-play">
+          <svg viewBox="0 0 24 24">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a1.597 1.597 0 0 1-.61-.986V2.8c0-.395.228-.755.61-.986zm11.243 11.244l2.585 2.586-11.83 6.83 9.245-9.416zm2.585-2.586l-2.585 2.586L5.607 3.644l11.83 6.828zm1.059 1.059l2.452 1.416c.732.423.732 1.111 0 1.534l-2.452 1.416-2.115-2.183 2.115-2.183z"/>
+          </svg>
+          <div>
+            <span class="btn-text-small">Disponibile su</span>
+            <span class="btn-text-large">Google Play</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="hero-guarantees">
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span><strong>100% Offline:</strong> I tuoi dati restano sul tuo telefono</span>
+        </div>
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          <span><strong>Nessun abbonamento</strong> mensile obbligatorio</span>
+        </div>
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span><strong>Primi 3 preventivi</strong> completamente gratuiti</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive App & PDF Mockup Showcase -->
+  <section class="container" id="come-funziona">
+    <div class="mockup-wrapper">
+      <div class="mockup-glow"></div>
+      <div class="device-mockup">
+        <div class="mockup-header-bar">
+          <div class="window-dots">
+            <div class="dot-circle dot-red"></div>
+            <div class="dot-circle dot-yellow"></div>
+            <div class="dot-circle dot-green"></div>
+          </div>
+          <div class="mockup-title">Preventivi Facili — Anteprima Documento PDF</div>
+          <div class="mockup-status-badge">Pronto per l'invio</div>
+        </div>
+
+        <div class="mockup-body">
+          <!-- The Realistic PDF Card -->
+          <div class="invoice-card">
+            <div class="invoice-top">
+              <div class="invoice-brand">
+                IMPIANTI ELETTRICI ROSSI
+                <span>P.IVA 01234567890 • Tel: 340 1234567</span>
+              </div>
+              <div class="invoice-number-badge">
+                PREV #2026-042
+              </div>
+            </div>
+
+            <div class="invoice-client-box">
+              <div class="client-label">Destinatario</div>
+              <div class="client-name">Studio Legale Bianchi & Partners</div>
+              <div class="client-sub">Via Garibaldi 14, Milano (MI)</div>
+            </div>
+
+            <table class="invoice-table">
+              <thead>
+                <tr>
+                  <th>Descrizione</th>
+                  <th>Qtà</th>
+                  <th style="text-align: right;">Totale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rifacimento quadro elettrico salvavita</td>
+                  <td>1 corpo</td>
+                  <td style="text-align: right;">€ 450,00</td>
+                </tr>
+                <tr>
+                  <td>Punti luce LED incasso alta efficienza</td>
+                  <td>12 pz</td>
+                  <td style="text-align: right;">€ 360,00</td>
+                </tr>
+                <tr>
+                  <td>Manodopera certificata e collaudo</td>
+                  <td>6 ore</td>
+                  <td style="text-align: right;">€ 240,00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="invoice-total-section">
+              <div class="total-meta">
+                IVA 22%: € 231,00<br>
+                Rivalsa Cassa / INPS inclusa
+              </div>
+              <div class="total-box">
+                <div class="total-label">TOTALE PREVENTIVO</div>
+                <div class="total-amount">€ 1.281,00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Highlights Beside PDF -->
+          <div class="mockup-feature-list">
+            <div class="preview-feat-item">
+              <div class="feat-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+              <div class="feat-info">
+                <h4>PDF con il tuo Logo</h4>
+                <p>Personalizza con intestazione, timbro, firma su schermo e coordinate bancarie IBAN.</p>
+              </div>
+            </div>
+
+            <div class="preview-feat-item">
+              <div class="feat-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="16" y1="14" x2="16" y2="18"></line>
+                </svg>
+              </div>
+              <div class="feat-info">
+                <h4>Calcolo Tasse Automatico</h4>
+                <p>IVA personalizzata, ritenuta d'acconto, rivalsa INPS o cassa previdenziale senza errori.</p>
+              </div>
+            </div>
+
+            <div class="preview-feat-item">
+              <div class="feat-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </div>
+              <div class="feat-info">
+                <h4>Invia su WhatsApp in 1 Tap</h4>
+                <p>Condividi all'istante con il testo preimpostato o via email appena terminato il sopralluogo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Savings Calculator -->
+  <section class="container" id="calcolatore">
+    <div class="calculator-box">
+      <span class="section-badge">Simula il tuo vantaggio</span>
+      <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Quanto tempo perdi ogni mese a fare preventivi?</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        Scopri quante ore di lavoro d'ufficio e serate al PC puoi risparmiare usando Preventivi Facili direttamente in cantiere.
+      </p>
+
+      <div class="calc-grid">
+        <div class="calc-slider-wrapper">
+          <label for="quoteSlider">Quanti preventivi crei ogni mese?</label>
+          <div class="calc-value-display" id="quoteCountDisplay">12 preventivi</div>
+          <input type="range" min="1" max="40" value="12" class="calc-slider" id="quoteSlider">
+        </div>
+
+        <div class="calc-result-card">
+          <div class="calc-stat-label">Tempo recuperato stimato</div>
+          <div class="calc-stat-number" id="hoursSavedDisplay">~8 ore / mese</div>
+          <div class="calc-stat-sub" id="stressSavedDisplay">Recuperi un intero weekend ogni mese</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Grid -->
+  <section class="section-padding" id="funzionalita">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Funzionalità Pro</span>
+        <h2 class="section-title">Costruito esattamente per come lavori sul campo</h2>
+        <p class="section-subtitle">Tutto ciò che serve per chiudere accordi velocemente, senza distrazioni e senza complessità inutili.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Listino Voci e Materiali</h3>
+          <p class="card-desc">Salva le tue voci ricorrenti (manodopera, trasferta, materiali tipici) per comporre un nuovo preventivo in pochissimi tocchi.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Rubrica Clienti Integrata</h3>
+          <p class="card-desc">Tieni traccia di indirizzo, recapiti, P.IVA/Codice Fiscale e storico preventivi per ogni cliente. Chiama o scrivi direttamente dall'app.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">100% Privacy e Offline</h3>
+          <p class="card-desc">Nessun server esterno legge i tuoi prezzi o i nomi dei tuoi clienti. L'app funziona perfettamente anche in cantieri sotterranei o senza campo.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="card-title">Firma del Cliente su Schermo</h3>
+          <p class="card-desc">Fai firmare il preventivo per accettazione direttamente sullo schermo del tuo smartphone o tablet al termine del sopralluogo.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h3 class="card-title">Backup e Ripristino</h3>
+          <p class="card-desc">Esporta i tuoi dati e il tuo archivio in sicurezza. Quando cambi telefono puoi ripristinare tutti i tuoi preventivi in pochi secondi.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Riepilogo Fiscale & IVA</h3>
+          <p class="card-desc">Tieni sott'occhio il totale dei preventivi accettati e genera un resoconto ordinato da inviare al tuo commercialista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience / Personas -->
+  <section class="container section-padding">
+    <div class="section-header">
+      <span class="section-badge">Per chi è pensata</span>
+      <h2 class="section-title">Ideale per chi lavora ogni giorno con i clienti</h2>
+      <p class="section-subtitle">Creata su misura per i mestieri pratici e le professioni autonome.</p>
+    </div>
+
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-emoji">⚡</div>
+        <h4 class="persona-title">Elettricisti</h4>
+        <p class="persona-desc">Quadri, cablaggi, impianti smart, collaudi con distinta materiali chiara.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-emoji">🔧</div>
+        <h4 class="persona-title">Idraulici e Termoidraulici</h4>
+        <p class="persona-desc">Caldaie, condizionatori, ristrutturazioni bagno con IVA agevolata e rivalsa.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-emoji">🧱</div>
+        <h4 class="persona-title">Edilizia e Imbianchini</h4>
+        <p class="persona-desc">Calcolo a metro quadro o a corpo, capitolati sintetici e condizioni di pagamento.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-emoji">💼</div>
+        <h4 class="persona-title">Freelance & Tecnici</h4>
+        <p class="persona-desc">Consulenti, geometri, manutentori e grafici che vogliono presentarsi al meglio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Comparison -->
+  <section class="section-padding pricing-section" id="prezzi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Prezzi Trasparenti</span>
+        <h2 class="section-title">Inizia gratis, sblocca tutto a vita</h2>
+        <p class="section-subtitle">Nessun costo nascosto. Nessun abbonamento che si rinnova a tua insaputa ogni mese.</p>
+      </div>
+
+      <div class="pricing-cards">
+        <!-- Free Plan -->
+        <div class="plan-card">
+          <h3 class="plan-title">Base Gratuita</h3>
+          <p class="plan-desc">Per provare l'app e testare la qualità dei PDF sul tuo lavoro.</p>
+          
+          <div class="plan-price">
+            <div class="price-val">€ 0</div>
+            <span class="price-sub">Gratis per sempre</span>
+          </div>
+
+          <ul class="plan-features">
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Fino a 3 preventivi completi
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Generazione PDF professionale
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Condivisione WhatsApp & Email
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Funzionamento 100% offline
+            </li>
+            <li>
+              <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Preventivi illimitati
+            </li>
+            <li>
+              <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Logo aziendale personalizzato
+            </li>
+          </ul>
+
+          <a href="#scarica" class="btn-plan btn-plan-outline">Inizia Gratis</a>
+        </div>
+
+        <!-- Premium Lifetime -->
+        <div class="plan-card featured">
+          <div class="plan-badge">Acquisto Singolo a Vita</div>
+          <h3 class="plan-title">Premium Illimitato</h3>
+          <p class="plan-desc">Lo strumento definitivo per la tua attività. Paghi una volta, usi per sempre.</p>
+          
+          <div class="plan-price">
+            <div class="price-val">Una Tantum</div>
+            <span class="price-sub">Zero rinnovi automatici • Nessun canone</span>
+          </div>
+
+          <ul class="plan-features">
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <strong>Preventivi illimitati</strong> per sempre
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Logo aziendale e intestazione su tutti i PDF
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Firma digitale su schermo del cliente
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Backup & Ripristino dati illimitato
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Deducibile al 100% come spesa aziendale
+            </li>
+            <li class="active">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Tutti i futuri aggiornamenti inclusi
+            </li>
+          </ul>
+
+          <a href="#scarica" class="btn-plan btn-plan-primary">Scarica e Sblocca</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Promotion: Other Apps Hub Teaser -->
+  <section class="container">
+    <div class="apps-hub-teaser">
+      <div style="text-align: center; max-width: 620px; margin: 0 auto;">
+        <span class="section-badge">Dallo Stesso Sviluppatore</span>
+        <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">Scopri l'intero ecosistema di app</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          App native, pulite, focalizzate su un problema reale e costruite senza distrazioni.
+        </p>
+      </div>
+
+      <div class="mini-apps-grid">
+        <div class="mini-app-card">
+          <div class="mini-app-icon">🎾</div>
+          <div class="mini-app-info">
+            <h4>Matchday Maker</h4>
+            <p>Gestione partite, tornei e statistiche avanzate di padel e tennis.</p>
+          </div>
+        </div>
+
+        <div class="mini-app-card">
+          <div class="mini-app-icon">🍳</div>
+          <div class="mini-app-info">
+            <h4>Food Cost Pro</h4>
+            <p>Calcolo costi ricette, porzioni e margini per ristoratori e chef.</p>
+          </div>
+        </div>
+
+        <div class="mini-app-card">
+          <div class="mini-app-icon">⚖️</div>
+          <div class="mini-app-info">
+            <h4>Flipeven</h4>
+            <p>Divisione intelligente delle spese di gruppo e bilanci tra amici.</p>
+          </div>
+        </div>
+
+        <div class="mini-app-card">
+          <div class="mini-app-icon">🧘‍♂️</div>
+          <div class="mini-app-info">
+            <h4>Mindfulness / Aegis</h4>
+            <p>Respiro guidato, relax e concentrazione quotidiana in tutta privacy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Domande Frequenti</span>
+        <h2 class="section-title">Hai delle domande? Ecco le risposte</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Come funziona la prova gratuita?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Puoi scaricare l'app gratis e creare fino a 3 preventivi completi senza inserire nessuna carta di credito. Potrai generare i PDF, personalizzarli e testare tutte le funzionalità sul campo prima di decidere se acquistare la versione illimitata.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>I miei dati e i prezzi dei clienti sono al sicuro?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Assolutamente sì. Preventivi Facili è un'app con architettura 100% locale: tutti i tuoi clienti, le tue tariffe e i preventivi risiedono unicamente nella memoria del tuo smartphone. Non vengono inviati su nessun cloud esterno, garantendoti la massima riservatezza.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>È davvero un acquisto unico senza abbonamento?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Sì! Odiamo gli abbonamenti mensili per strumenti di lavoro base. Con Preventivi Facili fai un singolo acquisto in-app tramite il tuo account Apple o Google e hai l'accesso illimitato per sempre, inclusi i futuri aggiornamenti.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Cosa succede se cambio smartphone?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Puoi utilizzare la funzione di Backup integrata nelle impostazioni per esportare il file dei tuoi dati e importarlo sul nuovo dispositivo. Inoltre, premendo "Ripristina acquisti" nella schermata Premium, riotterrai subito la licenza a vita senza dover ripagare nulla.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Posso personalizzare l'aliquota IVA e la cassa previdenziale?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Certamente. Nelle impostazioni aziendali puoi definire l'aliquota IVA predefinita (es. 22%, 10%, 4% o regime forfettario 0%), la percentuale della cassa previdenziale o rivalsa INPS, la ritenuta d'acconto e le condizioni di pagamento standard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="brand-link">
+            <img src="./assets/icon.png" alt="Preventivi Facili Logo" class="brand-icon">
+            <span class="brand-text">Preventivi <span>Facili</span></span>
+          </a>
+          <p>L'app definitiva per creare, gestire e inviare preventivi professionali in PDF in pochi secondi da mobile.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Prodotto</h5>
+          <ul>
+            <li><a href="#funzionalita">Funzionalità</a></li>
+            <li><a href="#come-funziona">Anteprima PDF</a></li>
+            <li><a href="#calcolatore">Calcolatore Tempo</a></li>
+            <li><a href="#prezzi">Prezzi & Piani</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Supporto & Risorse</h5>
+          <ul>
+            <li><a href="./support.html">Assistenza e Supporto</a></li>
+            <li><a href="./support.html#faq">Guida Rapida</a></li>
+            <li><a href="mailto:supporto@preventivifacili.app">Scrivici via Email</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legale</h5>
+          <ul>
+            <li><a href="./privacy.html">Privacy Policy</a></li>
+            <li><a href="./privacy.html#gdpr">Conformità GDPR</a></li>
+            <li><a href="./support.html#termini">Termini di Servizio</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Preventivi Facili. Tutti i diritti riservati.
+        </div>
+        <div>
+          Realizzato con cura per freelance e artigiani.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

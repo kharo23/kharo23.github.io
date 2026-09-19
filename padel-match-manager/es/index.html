@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Padel Match Manager — Menos tiempo organizando turnos. Más tiempo jugando.</title>
+  <meta name="description" content="Organiza torneos, genera emparejamientos y actualiza clasificaciones en vivo desde la pista. Americano, Mexicano, liguillas y cuadros eliminatorios.">
+  <link rel="canonical" href="https://kharo23.github.io/padel-match-manager/es/">
+  <link rel="alternate" hreflang="it" href="https://kharo23.github.io/padel-match-manager/">
+  <link rel="alternate" hreflang="en" href="https://kharo23.github.io/padel-match-manager/en/">
+  <link rel="alternate" hreflang="es" href="https://kharo23.github.io/padel-match-manager/es/">
+  <link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/padel-match-manager/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Padel Match Manager">
+  <meta property="og:title" content="Padel Match Manager — Menos tiempo organizando turnos. Más tiempo jugando.">
+  <meta property="og:description" content="Organiza torneos, genera emparejamientos y actualiza clasificaciones en vivo desde la pista. Americano, Mexicano, liguillas y cuadros eliminatorios.">
+  <meta property="og:url" content="https://kharo23.github.io/padel-match-manager/es/">
+  <meta property="og:image" content="https://kharo23.github.io/padel-match-manager/icon.png">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Padel Match Manager — Torneos Americano y Mexicano de Pádel">
+  <meta name="twitter:description" content="Generador automático de turnos, liguillas, clasificaciones en vivo y cuadros eliminatorios sin conexión.">
+  <meta name="twitter:image" content="https://kharo23.github.io/padel-match-manager/icon.png">
+  <link rel="icon" href="../icon.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../products.css">
+  <script src="../../products.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Padel Match Manager",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "SportsApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "App para organizar torneos de pádel formato Americano, Mexicano, liguillas y eliminatorias con marcadores y clasificaciones al instante."
+  }
+  </script>
+</head>
+<body class="product-page padel">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <nav class="container nav-inner" aria-label="Navegación principal">
+      <a class="brand-wrapper" href="./">
+        <img class="brand-logo-img" src="../icon.png" alt="Padel Match Manager Icon">
+        <span class="brand-name">Padel Match Manager</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-item-link" href="#vista-previa">Vista previa</a></li>
+        <li><a class="nav-item-link" href="#funciones">Funciones</a></li>
+        <li><a class="nav-item-link" href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-right-group">
+        <div class="lang-switch" aria-label="Idioma / Language / Lingua">
+          <a href="../" class="lang-link">IT</a>
+          <a href="../en/" class="lang-link">EN</a>
+          <a href="./" class="lang-link active" aria-current="page">ES</a>
+        </div>
+        <a class="hub-link" href="../../es/apps.html">Todas las apps ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="descarga">
+      <div class="container">
+        <div class="pill-badge"><span class="pill-dot"></span>DEL GRUPO DE WHATSAPP A LA PISTA</div>
+        <h1 class="hero-heading">Menos tiempo con los turnos.<br><span class="hero-gradient-text">Más tiempo jugando.</span></h1>
+        <p class="hero-subtext">Organiza el torneo, genera los cruces y actualiza la clasificación en directo. Americano, Mexicano, liguillas y cuadros: elige la fórmula, la app se encarga del resto.</p>
+        <div class="store-buttons-container">
+          <a class="apple-store-btn" href="https://apps.apple.com/app/id6775152321" target="_blank" rel="noopener noreferrer">
+            <div class="btn-typography">
+              <span class="store-tagline">Descárgalo en el</span>
+              <span class="store-name">App Store</span>
+            </div>
+          </a>
+          <a class="google-play-btn" href="https://play.google.com/store/apps/details?id=it.kharonte.padel_tournament_organizer&amp;hl=es" target="_blank" rel="noopener noreferrer">
+            <div class="btn-typography">
+              <span class="store-tagline">Disponible en</span>
+              <span class="store-name">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="vista-previa" aria-label="Vista previa interactiva">
+      <div class="product-demo">
+        <div>
+          <span class="section-label">PRUEBA UNA RONDA</span>
+          <h2>Ocho amigos. Dos pistas. A jugar.</h2>
+          <p>Un ejemplo de rotación Americano: cambia de turno para descubrir nuevos compañeros y rivales.</p>
+          <button class="nav-cta-button" id="next-round" type="button">Mostrar siguiente ronda</button>
+        </div>
+        <div class="demo-result" aria-live="polite">
+          <span id="round-label">Ronda 1 de 3</span>
+          <div id="matches">
+            <p class="match">Pista 1<br><b>Ana + Lucas</b> vs <b>Sara + Marcos</b></p>
+            <p class="match">Pista 2<br><b>Julia + Pablo</b> vs <b>Elena + Fabio</b></p>
+          </div>
+          <small>Calendario de demostración con nombres de ejemplo.</small>
+        </div>
+      </div>
+      <noscript><p>Activa JavaScript para usar esta demo interactiva.</p></noscript>
+    </section>
+
+    <section class="section-wrapper" id="funciones">
+      <div class="container">
+        <div class="section-title-area">
+          <span class="section-label">DENTRO DE PADEL MATCH MANAGER</span>
+          <h2 class="section-title">Todo lo que importa, siempre al alcance de tu mano.</h2>
+        </div>
+        <div class="bento-grid">
+          <article class="bento-card col-4">
+            <span class="feature-number">01</span>
+            <h3 class="bento-title">Americano y Mexicano</h3>
+            <p class="bento-text">Rotación de compañeros o emparejamientos dinámicos por puntuación: marca el ritmo de la competición.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">02</span>
+            <h3 class="bento-title">Liguillas y cuadros eliminatorios</h3>
+            <p class="bento-text">Round Robin y eliminación directa para organizar el formato de torneo que necesitas.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">03</span>
+            <h3 class="bento-title">Turnos automáticos</h3>
+            <p class="bento-text">Añade a los jugadores y distribuye las partidas entre las pistas disponibles sin repetir parejas.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">04</span>
+            <h3 class="bento-title">Clasificaciones en tiempo real</h3>
+            <p class="bento-text">Introduce los resultados a pie de pista y consulta de inmediato la tabla de posiciones.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">05</span>
+            <h3 class="bento-title">Comparte con el grupo</h3>
+            <p class="bento-text">Envía el calendario, los resultados y los cuadros del torneo a los participantes con un solo toque.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">06</span>
+            <h3 class="bento-title">Funciona sin conexión</h3>
+            <p class="bento-text">Gestiona tus torneos sin necesidad de conexión ni registros de usuario obligatorios.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="planes">
+      <div class="product-plans">
+        <div>
+          <span class="section-label">EMPIEZA AQUÍ</span>
+          <h2>Descubre Padel Match Manager</h2>
+          <p>Descarga la app y comprueba lo sencillo que es organizar tu torneo de pádel.</p>
+        </div>
+        <div>
+          <h3>¿Quieres ir más allá?</h3>
+          <p>Consulta en la app las funciones Pro y opciones avanzadas disponibles.</p>
+          <a href="#descarga" class="hub-link">Descubre la app en las tiendas →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrapper" id="faq">
+      <div class="container">
+        <div class="section-title-area">
+          <span class="section-label">ANTES DE EMPEZAR</span>
+          <h2 class="section-title">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-accordion-group">
+          <details class="product-faq">
+            <summary>¿Es la misma app que Padel Americano & Mexicano?</summary>
+            <p>Sí. Padel Match Manager está publicada en las tiendas de aplicaciones con el nombre Padel Americano & Mexicano.</p>
+          </details>
+          <details class="product-faq">
+            <summary>¿Necesito conexión a internet en el club?</summary>
+            <p>La gestión de torneos funciona 100% sin conexión. Solo necesitas internet para descargar la app, realizar compras o compartir archivos.</p>
+          </details>
+          <details class="product-faq">
+            <summary>¿Qué formatos de torneo puedo organizar?</summary>
+            <p>Americano, Mexicano, liguillas Round Robin y cuadros eliminatorios. En la app también encontrarás variantes mixtas y por equipos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div>
+          <a class="brand-wrapper" href="./">
+            <img src="../icon.png" class="brand-logo-img" alt="Padel Match Manager Icon">
+            <span class="brand-name">Padel Match Manager</span>
+          </a>
+          <p class="footer-bio-p">Una app de Kharonte Studio.</p>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Explora</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#vista-previa">Vista previa interactiva</a></li>
+            <li><a href="#funciones">Funciones</a></li>
+            <li><a href="#descarga">Descarga la app</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Nuestras apps</h3>
+          <ul class="footer-nav-list">
+            <li><a href="../../es/index.html">Preventivi Facili</a></li>
+            <li><a href="../../foodlio/es/">Foodlio</a></li>
+            <li><a href="./">Padel Match Manager</a></li>
+            <li><a href="../../aegis/es/">Aegis</a></li>
+            <li><a href="../../flipeven/es/">FlipEven</a></li>
+            <li><a href="../../es/apps.html">Todas las apps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Soporte</h3>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:kharonte.appdev@gmail.com">Asistencia</a></li>
+            <li><a href="https://kharo23.github.io/padel-organizer-legal/privacy.html">Privacidad</a></li>
+            <li><a href="mailto:kharonte.appdev@gmail.com">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">© 2026 Kharonte Studio</div>
+    </div>
+  </footer>
+</body>
+</html>

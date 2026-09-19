@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Preventivi Facili (Root) -->
+  <url>
+    <loc>https://kharo23.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Kharonte App Hub -->
+  <url>
+    <loc>https://kharo23.github.io/apps.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/apps.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/apps.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/apps.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/apps.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/en/apps.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/apps.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/apps.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/apps.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/apps.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/es/apps.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/apps.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/apps.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/apps.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/apps.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Foodlio -->
+  <url>
+    <loc>https://kharo23.github.io/foodlio/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/foodlio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/foodlio/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/foodlio/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/foodlio/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/foodlio/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/foodlio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/foodlio/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/foodlio/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/foodlio/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/foodlio/es/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/foodlio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/foodlio/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/foodlio/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/foodlio/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Padel Match Manager -->
+  <url>
+    <loc>https://kharo23.github.io/padel-match-manager/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/padel-match-manager/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/padel-match-manager/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/padel-match-manager/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/padel-match-manager/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/padel-match-manager/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/padel-match-manager/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/padel-match-manager/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/padel-match-manager/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/padel-match-manager/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/padel-match-manager/es/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/padel-match-manager/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/padel-match-manager/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/padel-match-manager/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/padel-match-manager/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Aegis -->
+  <url>
+    <loc>https://kharo23.github.io/aegis/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/aegis/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/aegis/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/aegis/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/aegis/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/aegis/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/aegis/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/aegis/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/aegis/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/aegis/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/aegis/es/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/aegis/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/aegis/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/aegis/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/aegis/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- FlipEven -->
+  <url>
+    <loc>https://kharo23.github.io/flipeven/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/flipeven/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/flipeven/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/flipeven/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/flipeven/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/flipeven/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/flipeven/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/flipeven/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/flipeven/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/flipeven/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/flipeven/es/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/flipeven/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/flipeven/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/flipeven/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/flipeven/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Legal & Support -->
+  <url>
+    <loc>https://kharo23.github.io/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/es/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/support.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/support.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/support.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/en/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/support.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/support.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/support.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharo23.github.io/es/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharo23.github.io/support.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharo23.github.io/en/support.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharo23.github.io/es/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/support.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

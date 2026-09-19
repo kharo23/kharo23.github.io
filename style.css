@@ -177,6 +177,15 @@ body {
   }
 }
 
+@media (max-width: 640px) {
+  /* The hero section right below already has the real store badges;
+     the nav CTA is redundant here and has no room to sit next to the
+     language switch without being clipped off-screen. */
+  .nav-cta-button {
+    display: none;
+  }
+}
+
 .nav-item-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -558,6 +567,16 @@ body {
   .stage-body-grid {
     grid-template-columns: 1fr;
     padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* The status title is decorative "browser chrome" text; at narrow
+     widths it wraps to multiple lines and collides with the traffic-
+     light dots, which stay vertically centered on the row. Hiding it
+     keeps the dots and the live badge on one clean line. */
+  .stage-status-title {
+    display: none;
   }
 }
 

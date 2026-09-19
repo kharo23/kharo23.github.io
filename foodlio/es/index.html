@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foodlio — Cada plato tiene un coste. Descubre cuánto te rinde.</title>
+  <meta name="description" content="Ingredientes, recetas y precios de venta en un solo lugar. Controla el food cost y diseña menús con márgenes más claros.">
+  <link rel="canonical" href="https://kharo23.github.io/foodlio/es/">
+  <link rel="alternate" hreflang="it" href="https://kharo23.github.io/foodlio/">
+  <link rel="alternate" hreflang="en" href="https://kharo23.github.io/foodlio/en/">
+  <link rel="alternate" hreflang="es" href="https://kharo23.github.io/foodlio/es/">
+  <link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/foodlio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Foodlio">
+  <meta property="og:title" content="Foodlio — Cada plato tiene un coste. Descubre cuánto te rinde.">
+  <meta property="og:description" content="Ingredientes, recetas y precios de venta en un solo lugar. Controla el food cost y diseña menús con márgenes más claros.">
+  <meta property="og:url" content="https://kharo23.github.io/foodlio/es/">
+  <meta property="og:image" content="https://kharo23.github.io/foodlio/icon.png">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Foodlio — Calcula el food cost y margen de tus recetas">
+  <meta name="twitter:description" content="Ingredientes, recetas, porcentaje de food cost y márgenes calculados para restaurantes, bares y pastelerías.">
+  <meta name="twitter:image" content="https://kharo23.github.io/foodlio/icon.png">
+  <link rel="icon" href="../icon.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../products.css">
+  <script src="../../products.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Foodlio",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "BusinessApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "App para restaurantes y chefs para calcular el food cost de cada plato, fijar precios de venta y maximizar beneficios."
+  }
+  </script>
+</head>
+<body class="product-page food">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <nav class="container nav-inner" aria-label="Navegación principal">
+      <a class="brand-wrapper" href="./">
+        <img class="brand-logo-img" src="../icon.png" alt="Foodlio Icon">
+        <span class="brand-name">Foodlio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-item-link" href="#vista-previa">Vista previa</a></li>
+        <li><a class="nav-item-link" href="#funciones">Funciones</a></li>
+        <li><a class="nav-item-link" href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-right-group">
+        <div class="lang-switch" aria-label="Idioma / Language / Lingua">
+          <a href="../" class="lang-link">IT</a>
+          <a href="../en/" class="lang-link">EN</a>
+          <a href="./" class="lang-link active" aria-current="page">ES</a>
+        </div>
+        <a class="hub-link" href="../../es/apps.html">Todas las apps ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="descarga">
+      <div class="container">
+        <div class="pill-badge"><span class="pill-dot"></span>PARA RESTAURANTES, CHEFS Y NEGOCIOS GASTRONÓMICOS</div>
+        <h1 class="hero-heading">Cada plato tiene un coste.<br><span class="hero-gradient-text">Descubre cuánto te rinde.</span></h1>
+        <p class="hero-subtext">Ingredientes, recetas y precios de venta en un solo lugar. Controla el food cost y diseña menús con márgenes más claros.</p>
+        <div class="store-buttons-container">
+          <a class="apple-store-btn" href="https://apps.apple.com/app/id6777711571" target="_blank" rel="noopener noreferrer">
+            <div class="btn-typography">
+              <span class="store-tagline">Descárgalo en el</span>
+              <span class="store-name">App Store</span>
+            </div>
+          </a>
+          <a class="google-play-btn" href="https://play.google.com/store/apps/details?id=com.kharonte.food_cost_pro&amp;hl=es" target="_blank" rel="noopener noreferrer">
+            <div class="btn-typography">
+              <span class="store-tagline">Disponible en</span>
+              <span class="store-name">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="vista-previa" aria-label="Vista previa interactiva">
+      <div class="product-demo">
+        <div>
+          <span class="section-label">UN PLATO, NÚMEROS CLAROS</span>
+          <h2>Tu próximo plato en la carta</h2>
+          <p>Modifica los valores y observa el food cost actualizarse en tiempo real.</p>
+          <label for="cost">Coste de ingredientes por ración (€)</label>
+          <input id="cost" type="number" min="0" step="0.10" value="3.60">
+          <label for="price">Precio de venta por ración (€)</label>
+          <input id="price" type="number" min="0.01" step="0.50" value="12">
+        </div>
+        <div class="demo-result" aria-live="polite">
+          <span>Food cost</span>
+          <strong id="food-percent">30,0%</strong>
+          <p id="food-margin">Diferencia precio − ingredientes: 8,40 €</p>
+          <small>Ejemplo simplificado: no incluye IVA, personal ni gastos generales. No representa el beneficio neto.</small>
+        </div>
+      </div>
+      <noscript><p>Activa JavaScript para usar esta demo interactiva.</p></noscript>
+    </section>
+
+    <section class="section-wrapper" id="funciones">
+      <div class="container">
+        <div class="section-title-area">
+          <span class="section-label">DENTRO DE FOODLIO</span>
+          <h2 class="section-title">Todo lo que importa, siempre al alcance de tu mano.</h2>
+        </div>
+        <div class="bento-grid">
+          <article class="bento-card col-4">
+            <span class="feature-number">01</span>
+            <h3 class="bento-title">Ingredientes siempre actualizados</h3>
+            <p class="bento-text">Modifica el precio de una materia prima y verás el coste recalculado en todas las recetas vinculadas.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">02</span>
+            <h3 class="bento-title">El coste de cada ración</h3>
+            <p class="bento-text">Ingredientes y cantidades se transforman en cifras claras: coste de receta, porcentaje de food cost y margen.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">03</span>
+            <h3 class="bento-title">Ingeniería de menús</h3>
+            <p class="bento-text">Descubre la posición de tus platos por popularidad y rentabilidad: Estrellas, Caballos de batalla, Rompecabezas y Perros.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">04</span>
+            <h3 class="bento-title">Precio recomendado</h3>
+            <p class="bento-text">Parte de tu food cost objetivo para fijar con precisión el precio de venta sugerido.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">05</span>
+            <h3 class="bento-title">Informes en PDF</h3>
+            <p class="bento-text">Exporta tus datos fuera de la app para compartirlos con socios y equipo de cocina.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">06</span>
+            <h3 class="bento-title">Valor del almacén</h3>
+            <p class="bento-text">Supervisa en tiempo real el valor económico total de tus existencias de materias primas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="planes">
+      <div class="product-plans">
+        <div>
+          <span class="section-label">EMPIEZA AQUÍ</span>
+          <h2>Descubre Foodlio</h2>
+          <p>Comienza gratis con tus primeras recetas e ingredientes.</p>
+        </div>
+        <div>
+          <h3>¿Quieres ir más allá?</h3>
+          <p>Recetas e ingredientes ilimitados, ingeniería de menús e informes en PDF.</p>
+          <a href="#descarga" class="hub-link">Descubre la app en las tiendas →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrapper" id="faq">
+      <div class="container">
+        <div class="section-title-area">
+          <span class="section-label">ANTES DE EMPEZAR</span>
+          <h2 class="section-title">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-accordion-group">
+          <details class="product-faq">
+            <summary>¿Para quién es Foodlio?</summary>
+            <p>Restaurantes, pizzerías, bares, caterings, obradores, pastelerías y cualquiera que quiera controlar el coste real de sus recetas.</p>
+          </details>
+          <details class="product-faq">
+            <summary>¿El margen equivale al beneficio neto?</summary>
+            <p>No. La diferencia entre precio y coste de ingredientes no incluye salarios, alquiler, luz, impuestos ni otros costes fijos del negocio.</p>
+          </details>
+          <details class="product-faq">
+            <summary>¿Puedo probar la app antes de pasar a Pro?</summary>
+            <p>Sí, puedes empezar gratis con tus primeras recetas e ingredientes. Las opciones de compra están detalladas en la app.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div>
+          <a class="brand-wrapper" href="./">
+            <img src="../icon.png" class="brand-logo-img" alt="Foodlio Icon">
+            <span class="brand-name">Foodlio</span>
+          </a>
+          <p class="footer-bio-p">Una app de Kharonte Studio.</p>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Explora</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#vista-previa">Vista previa interactiva</a></li>
+            <li><a href="#funciones">Funciones</a></li>
+            <li><a href="#descarga">Descarga la app</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Nuestras apps</h3>
+          <ul class="footer-nav-list">
+            <li><a href="../../es/index.html">Preventivi Facili</a></li>
+            <li><a href="./">Foodlio</a></li>
+            <li><a href="../../padel-match-manager/es/">Padel Match Manager</a></li>
+            <li><a href="../../aegis/es/">Aegis</a></li>
+            <li><a href="../../flipeven/es/">FlipEven</a></li>
+            <li><a href="../../es/apps.html">Todas las apps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Soporte</h3>
+          <ul class="footer-nav-list">
+            <li><a href="https://kharo23.github.io/foodlio-legal/support">Asistencia</a></li>
+            <li><a href="https://kharo23.github.io/foodlio-legal/">Privacidad</a></li>
+            <li><a href="mailto:kharonte.appdev@gmail.com">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">© 2026 Kharonte Studio</div>
+    </div>
+  </footer>
+</body>
+</html>

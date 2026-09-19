@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlipEven — Break-Even Point, Profit Margin & Reselling Calculator</title>
+  <meta name="description" content="Calculate break-even prices, ROI, and real net profit for Vinted, eBay, Wallapop, and second-hand sales. Never sell at a loss again.">
+  <link rel="canonical" href="https://kharo23.github.io/flipeven/en/">
+  <link rel="alternate" hreflang="it" href="https://kharo23.github.io/flipeven/">
+  <link rel="alternate" hreflang="en" href="https://kharo23.github.io/flipeven/en/">
+  <link rel="alternate" hreflang="es" href="https://kharo23.github.io/flipeven/es/">
+  <link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/flipeven/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FlipEven">
+  <meta property="og:title" content="FlipEven — Break-Even & Profit Calculator for Resellers">
+  <meta property="og:description" content="Calculate break-even prices, ROI, and real net profit for Vinted, eBay, Wallapop, and second-hand sales. Never sell at a loss again.">
+  <meta property="og:url" content="https://kharo23.github.io/flipeven/en/">
+  <meta property="og:image" content="https://kharo23.github.io/flipeven/icon.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FlipEven — Reselling Profit & Break-Even Calculator">
+  <meta name="twitter:description" content="Instant minimum selling prices, fee breakdowns, and net margins for Vinted, eBay, and second-hand flippers.">
+  <meta name="twitter:image" content="https://kharo23.github.io/flipeven/icon.png">
+  <link rel="icon" href="../icon.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../products.css">
+  <script src="../../products.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FlipEven",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "The profit calculator and inventory tracker for second-hand sellers on Vinted, eBay, and resale marketplaces."
+  }
+  </script>
+</head>
+<body class="product-page flipeven">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <nav class="container nav-inner" aria-label="Main navigation">
+      <a class="brand-wrapper" href="./">
+        <img class="brand-logo-img" src="../icon.png" alt="FlipEven Icon">
+        <span class="brand-name">FlipEven</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-item-link" href="#preview">Preview</a></li>
+        <li><a class="nav-item-link" href="#features">Features</a></li>
+        <li><a class="nav-item-link" href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-right-group">
+        <div class="lang-switch" aria-label="Language / Lingua / Idioma">
+          <a href="../" class="lang-link">IT</a>
+          <a href="./" class="lang-link active" aria-current="page">EN</a>
+          <a href="../es/" class="lang-link">ES</a>
+        </div>
+        <a class="hub-link" href="../../en/apps.html">All apps ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="download">
+      <div class="container">
+        <div class="pill-badge"><span class="pill-dot"></span>FOR FLIPPERS & RESELLERS</div>
+        <h1 class="hero-heading">Every sale has a cost.<br><span class="hero-gradient-text">Discover your true net profit.</span></h1>
+        <p class="hero-subtext">Instantly calculate break-even points, platform fees, and net gains for Vinted, eBay, Wallapop, and local sales. Stop guessing prices and start flipping with clarity.</p>
+        <div class="store-buttons-container">
+          <a class="apple-store-btn" href="https://apps.apple.com/app/id6777711571" target="_blank" rel="noopener noreferrer">
+            <div class="btn-typography">
+              <span class="store-tagline">Download on the</span>
+              <span class="store-name">App Store</span>
+            </div>
+          </a>
+          <a class="google-play-btn" href="https://play.google.com/store/apps/details?id=com.kharonte.flipeven&amp;hl=en" target="_blank" rel="noopener noreferrer">
+            <div class="btn-typography">
+              <span class="store-tagline">Get it on</span>
+              <span class="store-name">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="preview" aria-label="Interactive preview">
+      <div class="product-demo">
+        <div>
+          <span class="section-label">QUICK CALCULATION</span>
+          <h2>Simulate your next flip</h2>
+          <p>Change your purchase cost and target sale price to calculate profit margin and break-even point.</p>
+          <label for="flip-buy">Purchase cost (€)</label>
+          <input id="flip-buy" type="number" min="0" step="1" value="15">
+          <label for="flip-sell">Target selling price (€)</label>
+          <input id="flip-sell" type="number" min="1" step="1" value="35">
+          <label for="flip-fee">Estimated platform fee (%)</label>
+          <input id="flip-fee" type="number" min="0" max="90" step="1" value="10">
+        </div>
+        <div class="demo-result" aria-live="polite">
+          <span>Estimated net profit</span>
+          <strong id="flip-net">+€16.50</strong>
+          <p id="flip-roi">+110.0% ROI</p>
+          <small id="flip-breakeven">Minimum break-even price: €16.67</small>
+        </div>
+      </div>
+      <noscript><p>Enable JavaScript to use this interactive demo.</p></noscript>
+    </section>
+
+    <section class="section-wrapper" id="features">
+      <div class="container">
+        <div class="section-title-area">
+          <span class="section-label">INSIDE FLIPEVEN</span>
+          <h2 class="section-title">The essential numbers for online sellers.</h2>
+        </div>
+        <div class="bento-grid">
+          <article class="bento-card col-4">
+            <span class="feature-number">01</span>
+            <h3 class="bento-title">Instant break-even point</h3>
+            <p class="bento-text">Enter purchase cost and expenses to immediately find the floor price needed to avoid losses.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">02</span>
+            <h3 class="bento-title">Real margin & ROI</h3>
+            <p class="bento-text">Automatically subtracts percentage cuts and fixed transaction fees to reveal your actual take-home profit.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">03</span>
+            <h3 class="bento-title">Inventory & item tracker</h3>
+            <p class="bento-text">Track listings by status: Selling, Draft, Sold, or Withdrawn, with item photos and key dates.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">04</span>
+            <h3 class="bento-title">Multi-platform support</h3>
+            <p class="bento-text">Customizable fee presets for Vinted, eBay, Wallapop, Depop, Etsy, Poshmark, and cash deals.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">05</span>
+            <h3 class="bento-title">Financial dashboard</h3>
+            <p class="bento-text">Monthly revenue, invested capital, and trends comparing performance against the previous month.</p>
+          </article>
+          <article class="bento-card col-4">
+            <span class="feature-number">06</span>
+            <h3 class="bento-title">100% Offline & Private</h3>
+            <p class="bento-text">Zero cloud requirements and zero analytics: your sales and financial records stay exclusively on your phone.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="plans">
+      <div class="product-plans">
+        <div>
+          <span class="section-label">START HERE</span>
+          <h2>Discover FlipEven</h2>
+          <p>Get started for free tracking items and calculating profit thresholds.</p>
+        </div>
+        <div>
+          <h3>Want to unlock more?</h3>
+          <p>Unlimited inventory, CSV/Excel export, and advanced analytics for Pro sellers.</p>
+          <a href="#download" class="hub-link">Explore the app on the stores →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrapper" id="faq">
+      <div class="container">
+        <div class="section-title-area">
+          <span class="section-label">BEFORE YOU START</span>
+          <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+        <div class="faq-accordion-group">
+          <details class="product-faq">
+            <summary>Who is FlipEven built for?</summary>
+            <p>Anyone reselling clothes, sneakers, collectibles, electronics, or vintage goods on Vinted, eBay, Wallapop, and similar marketplaces.</p>
+          </details>
+          <details class="product-faq">
+            <summary>How are marketplace fees calculated?</summary>
+            <p>You can adjust flat fees and percentage cuts freely or use standard profiles matching each marketplace you sell on.</p>
+          </details>
+          <details class="product-faq">
+            <summary>Are my financial numbers private?</summary>
+            <p>Yes, completely. FlipEven operates 100% offline-first. No financial numbers are ever sent to external cloud servers.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div>
+          <a class="brand-wrapper" href="./">
+            <img src="../icon.png" class="brand-logo-img" alt="FlipEven Icon">
+            <span class="brand-name">FlipEven</span>
+          </a>
+          <p class="footer-bio-p">An app by Kharonte Studio.</p>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Explore</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#preview">Interactive preview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#download">Download app</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Our apps</h3>
+          <ul class="footer-nav-list">
+            <li><a href="../../en/index.html">Preventivi Facili</a></li>
+            <li><a href="../../foodlio/en/">Foodlio</a></li>
+            <li><a href="../../padel-match-manager/en/">Padel Match Manager</a></li>
+            <li><a href="../../aegis/en/">Aegis</a></li>
+            <li><a href="./">FlipEven</a></li>
+            <li><a href="../../en/apps.html">All apps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-nav-header">Support</h3>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:kharonte.appdev@gmail.com">Support</a></li>
+            <li><a href="../../en/privacy.html">Privacy</a></li>
+            <li><a href="mailto:kharonte.appdev@gmail.com">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">© 2026 Kharonte Studio</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -642,10 +642,12 @@ body {
 }
 
 .hero-heading {
-  font-size: clamp(2.8rem, 6.6vw, 5.4rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-style: normal;
+  font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   margin-bottom: 1.6rem;
   max-width: 980px;
   margin-left: auto;
@@ -654,7 +656,15 @@ body {
 }
 
 .hero-gradient-text {
+  font-style: italic;
+  font-weight: 440;
   color: var(--text-highlight);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .hero-subtext {
@@ -1180,9 +1190,10 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: clamp(2rem, 3.6vw, 2.9rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-weight: 560;
+  letter-spacing: -0.02em;
   line-height: 1.18;
   margin-bottom: 1rem;
 }

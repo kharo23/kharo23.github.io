@@ -59,7 +59,7 @@ function initHubInteractions() {
 
   if (reduceMotion || !finePointer) return;
 
-  // 3. Trailing cursor glow (GPU composited with translate3d & idle sleep)
+  // 3. Cursor glow (GPU composited with translate3d & snappy responsiveness)
   const glow = document.createElement('div');
   glow.className = 'cursor-glow';
   glow.setAttribute('aria-hidden', 'true');
@@ -70,14 +70,18 @@ function initHubInteractions() {
   let isTracking = false;
 
   function trackGlow() {
-    currentX += (targetX - currentX) * 0.2;
-    currentY += (targetY - currentY) * 0.2;
+    // Snappy responsiveness (0.65) so it feels instantaneous and tightly attached to pointer
+    currentX += (targetX - currentX) * 0.65;
+    currentY += (targetY - currentY) * 0.65;
     glow.style.transform = `translate3d(${currentX.toFixed(1)}px, ${currentY.toFixed(1)}px, 0)`;
 
-    // Only keep loop active while moving to save CPU/GPU cycles when mouse is still
-    if (Math.abs(targetX - currentX) > 0.2 || Math.abs(targetY - currentY) > 0.2) {
+    // Keep loop active only while moving to save CPU/GPU cycles when mouse is stationary
+    if (Math.abs(targetX - currentX) > 0.4 || Math.abs(targetY - currentY) > 0.4) {
       requestAnimationFrame(trackGlow);
     } else {
+      currentX = targetX;
+      currentY = targetY;
+      glow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
       isTracking = false;
     }
   }
@@ -117,7 +121,7 @@ function initHubInteractions() {
     });
   });
 
-  // 5. Ambient cursor spotlight across entire page (rAF-throttled)
+  // 5. Ambient cursor spotlight across entire page (Instant GPU translate3d)
   const spotlight = document.querySelector('.hero-spotlight');
   if (spotlight) {
     let spotTicking = false;
@@ -126,10 +130,7 @@ function initHubInteractions() {
         const clientX = e.clientX;
         const clientY = e.clientY;
         requestAnimationFrame(() => {
-          const x = (clientX / window.innerWidth) * 100;
-          const y = (clientY / window.innerHeight) * 100;
-          spotlight.style.setProperty('--mx', `${x.toFixed(1)}%`);
-          spotlight.style.setProperty('--my', `${y.toFixed(1)}%`);
+          spotlight.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
           spotTicking = false;
         });
         spotTicking = true;

@@ -98,46 +98,6 @@ body {
   z-index: 0;
 }
 
-.ambient-aurora {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.aurora-1 {
-  position: absolute;
-  top: -20%;
-  left: 15%;
-  width: 750px;
-  height: 750px;
-  background: radial-gradient(circle, rgba(0, 82, 255, 0.22) 0%, rgba(0, 242, 254, 0.08) 50%, transparent 70%);
-  filter: blur(100px);
-  border-radius: 50%;
-  animation: floatOrb 18s ease-in-out infinite alternate;
-}
-
-.aurora-2 {
-  position: absolute;
-  top: 35%;
-  right: -10%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0, 82, 255, 0.12) 50%, transparent 70%);
-  filter: blur(110px);
-  border-radius: 50%;
-  animation: floatOrb 22s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes floatOrb {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(40px, 60px) scale(1.08); }
-}
-
 .container {
   width: 100%;
   max-width: 1200px;
@@ -201,9 +161,7 @@ body {
 }
 
 .brand-name span {
-  background: linear-gradient(135deg, #38bdf8 0%, #0052ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-highlight);
 }
 
 .nav-links {
@@ -322,9 +280,7 @@ body {
 }
 
 .hero-gradient-text {
-  background: linear-gradient(135deg, #ffffff 30%, #7dd3fc 70%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-highlight);
 }
 
 .hero-subtext {

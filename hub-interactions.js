@@ -6,13 +6,21 @@
 // prefers-reduced-motion.
 // ==========================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+function initHubInteractions() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(pointer: fine)').matches;
 
   // 1. Scroll reveal (safe to run regardless of pointer type)
   const revealEls = document.querySelectorAll('.reveal-up');
   if (revealEls.length) {
+    // Immediately reveal anything already in or near the viewport so there is never an invisible flash
+    revealEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.95) {
+        el.classList.add('is-visible');
+      }
+    });
+
     if (reduceMotion || !('IntersectionObserver' in window)) {
       revealEls.forEach(el => el.classList.add('is-visible'));
     } else {
@@ -23,8 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-      revealEls.forEach(el => io.observe(el));
+      }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
+      revealEls.forEach(el => {
+        if (!el.classList.contains('is-visible')) {
+          io.observe(el);
+        }
+      });
     }
   }
 
@@ -125,4 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
       screenshot.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
     });
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHubInteractions);
+} else {
+  initHubInteractions();
+}

@@ -446,6 +446,22 @@ body::after {
   transform: translateY(0);
 }
 
+/* Pure CSS entrance for above-the-fold hero elements so they are never stuck invisible */
+@keyframes heroEntranceFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bio-profile-header .reveal-up {
+  animation: heroEntranceFade 0.7s var(--ease-spring) forwards;
+}
+
 .bento-card {
   --mx: 50%;
   --my: 50%;
@@ -474,10 +490,12 @@ body::after {
   .hero-mesh-blob {
     animation: none;
   }
-  .reveal-up {
+  .reveal-up,
+  .bio-profile-header .reveal-up {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
   .hero-spotlight {
     display: none;
@@ -495,12 +513,12 @@ body::after {
 }
 
 /* Staggered entrance delays for the hero's own reveal-up children */
-.d1 { transition-delay: 0.05s; }
-.d2 { transition-delay: 0.14s; }
-.d3 { transition-delay: 0.23s; }
-.d4 { transition-delay: 0.32s; }
-.d5 { transition-delay: 0.41s; }
-.d6 { transition-delay: 0.5s; }
+.d1 { transition-delay: 0.05s; animation-delay: 0.05s; }
+.d2 { transition-delay: 0.14s; animation-delay: 0.14s; }
+.d3 { transition-delay: 0.23s; animation-delay: 0.23s; }
+.d4 { transition-delay: 0.32s; animation-delay: 0.32s; }
+.d5 { transition-delay: 0.41s; animation-delay: 0.41s; }
+.d6 { transition-delay: 0.5s; animation-delay: 0.5s; }
 
 /* Nav gains presence once the page has scrolled past the hero */
 .site-nav.is-scrolled {
@@ -1583,7 +1601,7 @@ body::after {
 
 .footer-columns-grid {
   display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 2.5rem;
   margin-bottom: 3.5rem;
 }

@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../products.css">
   <link rel="icon" href="../assets/studio-favicon.png">
+  <script src="../hub-interactions.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,6 +66,12 @@
 
   <main id="main">
     <section class="hero">
+      <div class="hero-mesh" aria-hidden="true">
+        <div class="hero-mesh-blob b1"></div>
+        <div class="hero-mesh-blob b2"></div>
+        <div class="hero-mesh-blob b3"></div>
+      </div>
+      <div class="hero-spotlight" aria-hidden="true"></div>
       <div class="container bio-profile-header">
         <div class="bio-avatar-wrapper">
           <img class="bio-avatar" src="../assets/studio-icon.png" alt="Kharonte Studio Icon" width="84" height="84">
@@ -122,7 +129,7 @@
     <!-- Apps Bento Showcase -->
     <section class="container studio-grid" aria-label="Our applications">
       <!-- Preventivi Facili (featured) -->
-      <article class="bento-card col-8 featured-card">
+      <article class="bento-card col-8 featured-card reveal-up">
         <div class="featured-card-grid">
           <div class="featured-card-copy">
         <div class="card-top-row">
@@ -157,7 +164,7 @@
       </article>
 
       <!-- Foodlio -->
-      <article class="bento-card col-4">
+      <article class="bento-card col-4 reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" src="../foodlio/icon.png" alt="Foodlio Icon" width="58" height="58">
           <div class="card-title-group">
@@ -185,7 +192,7 @@
       </article>
 
       <!-- Padel Match Manager -->
-      <article class="bento-card col-4">
+      <article class="bento-card col-4 reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" src="../padel-match-manager/icon.png" alt="Padel Match Manager Icon" width="58" height="58">
           <div class="card-title-group">
@@ -213,7 +220,7 @@
       </article>
 
       <!-- Aegis -->
-      <article class="bento-card col-4">
+      <article class="bento-card col-4 reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" loading="lazy" src="../aegis/icon.png" alt="Aegis Icon" width="58" height="58">
           <div class="card-title-group">
@@ -241,7 +248,7 @@
       </article>
 
       <!-- FlipEven -->
-      <article class="bento-card col-4">
+      <article class="bento-card col-4 reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" loading="lazy" src="../flipeven/icon.png" alt="FlipEven Icon" width="58" height="58">
           <div class="card-title-group">

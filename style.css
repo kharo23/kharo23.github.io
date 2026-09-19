@@ -347,6 +347,139 @@ body {
   position: relative;
 }
 
+/* ==========================================================================
+   MOTION LAYER — animated hero mesh, cursor spotlight, scroll reveal,
+   card glare and tilt. All effects are inert without their JS hook
+   (hub-interactions.js) and fully disabled under reduced motion.
+   ========================================================================== */
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.6;
+}
+
+.hero-mesh-blob.b1 {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  left: -100px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 72%);
+  animation: driftA 17s ease-in-out infinite alternate;
+}
+
+.hero-mesh-blob.b2 {
+  width: 380px;
+  height: 380px;
+  top: -80px;
+  right: -110px;
+  background: radial-gradient(circle, var(--cyan-accent) 0%, transparent 72%);
+  animation: driftB 21s ease-in-out infinite alternate;
+}
+
+.hero-mesh-blob.b3 {
+  width: 340px;
+  height: 340px;
+  top: 140px;
+  left: 36%;
+  background: radial-gradient(circle, #a78bfa 0%, transparent 72%);
+  animation: driftC 25s ease-in-out infinite alternate;
+}
+
+@keyframes driftA {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(50px, 40px) scale(1.18); }
+}
+@keyframes driftB {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-40px, 50px) scale(0.88); }
+}
+@keyframes driftC {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(30px, -40px) scale(1.12); }
+}
+
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 15%), rgba(125, 211, 252, 0.16), transparent 60%);
+}
+
+.hero-spotlight.is-active {
+  opacity: 1;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease-spring), transform 0.7s var(--ease-spring);
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bento-card {
+  --mx: 50%;
+  --my: 50%;
+}
+
+.bento-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(260px circle at var(--mx) var(--my), rgba(255, 255, 255, 0.09), transparent 72%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.bento-card:hover::after {
+  opacity: 1;
+}
+
+.featured-screenshot {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mesh-blob {
+    animation: none;
+  }
+  .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-spotlight {
+    display: none;
+  }
+  .featured-screenshot {
+    transition: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .hero-spotlight,
+  .bento-card::after {
+    display: none;
+  }
+}
+
 .pill-badge {
   display: inline-flex;
   align-items: center;

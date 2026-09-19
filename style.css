@@ -94,18 +94,6 @@ body {
   min-height: 100vh;
 }
 
-/* Subtle film-grain wash — cheap tactile depth used across most premium
-   dark UIs (Stripe, Linear, Vercel). Pure CSS, no extra HTTP request. */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
 
 /* Sophisticated Background Grid & Glows */
 .bg-grid-pattern {
@@ -373,14 +361,16 @@ body::after {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  contain: strict;
 }
 
 .hero-mesh-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(72px);
-  opacity: 0.55;
+  filter: blur(28px);
+  opacity: 0.52;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 #main {
@@ -392,7 +382,7 @@ body::after {
   height: 480px;
   top: -100px;
   left: -80px;
-  background: radial-gradient(circle, var(--primary) 0%, transparent 72%);
+  background: radial-gradient(circle, var(--primary) 0%, rgba(0, 82, 255, 0.3) 40%, transparent 72%);
   animation: driftA 18s ease-in-out infinite alternate;
 }
 
@@ -401,7 +391,7 @@ body::after {
   height: 420px;
   top: -60px;
   right: -90px;
-  background: radial-gradient(circle, var(--cyan-accent) 0%, transparent 72%);
+  background: radial-gradient(circle, var(--cyan-accent) 0%, rgba(0, 242, 254, 0.25) 40%, transparent 72%);
   animation: driftB 22s ease-in-out infinite alternate;
 }
 
@@ -410,7 +400,7 @@ body::after {
   height: 380px;
   top: 28%;
   left: 35%;
-  background: radial-gradient(circle, #a78bfa 0%, transparent 72%);
+  background: radial-gradient(circle, #a78bfa 0%, rgba(167, 139, 250, 0.25) 40%, transparent 72%);
   animation: driftC 25s ease-in-out infinite alternate;
 }
 
@@ -419,7 +409,7 @@ body::after {
   height: 460px;
   top: 55%;
   left: -90px;
-  background: radial-gradient(circle, rgba(0, 82, 255, 0.45) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 82, 255, 0.45) 0%, rgba(0, 82, 255, 0.2) 40%, transparent 70%);
   animation: driftA 24s ease-in-out infinite alternate;
 }
 
@@ -428,7 +418,7 @@ body::after {
   height: 440px;
   top: 60%;
   right: -90px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.32) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.32) 0%, rgba(16, 185, 129, 0.15) 40%, transparent 70%);
   animation: driftB 28s ease-in-out infinite alternate;
 }
 
@@ -437,21 +427,21 @@ body::after {
   height: 460px;
   bottom: -60px;
   left: 30%;
-  background: radial-gradient(circle, rgba(207, 161, 94, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(207, 161, 94, 0.35) 0%, rgba(207, 161, 94, 0.15) 40%, transparent 70%);
   animation: driftC 26s ease-in-out infinite alternate;
 }
 
 @keyframes driftA {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(50px, 40px) scale(1.18); }
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(50px, 40px, 0) scale(1.18); }
 }
 @keyframes driftB {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(-40px, 50px) scale(0.88); }
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-40px, 50px, 0) scale(0.88); }
 }
 @keyframes driftC {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(30px, -40px) scale(1.12); }
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(30px, -40px, 0) scale(1.12); }
 }
 
 .hero-spotlight {
@@ -564,20 +554,23 @@ body::after {
   height: 58px;
 }
 
-/* Trailing cursor glow — additive, never replaces the native cursor */
+/* Trailing cursor glow — additive, GPU-accelerated via transform: translate3d */
 .cursor-glow {
   position: fixed;
   top: 0;
   left: 0;
   width: 26px;
   height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(125, 211, 248, 0.55), transparent 70%);
   pointer-events: none;
   z-index: 9998;
-  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+  transform: translate3d(-100px, -100px, 0);
   opacity: 0;
-  transition: opacity 0.25s ease, width 0.25s var(--ease-spring), height 0.25s var(--ease-spring);
+  transition: opacity 0.25s ease, width 0.25s var(--ease-spring), height 0.25s var(--ease-spring), margin 0.25s var(--ease-spring);
 }
 
 .cursor-glow.is-active {
@@ -587,6 +580,8 @@ body::after {
 .cursor-glow.is-hovering {
   width: 52px;
   height: 52px;
+  margin-left: -26px;
+  margin-top: -26px;
   background: radial-gradient(circle, rgba(125, 211, 248, 0.35), transparent 70%);
 }
 
@@ -598,6 +593,7 @@ body::after {
 
 /* Magnetic hover pull on key interactive elements */
 .magnetic {
+  will-change: transform;
   transition: transform 0.25s var(--ease-spring);
 }
 

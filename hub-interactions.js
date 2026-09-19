@@ -1,9 +1,10 @@
 // ==========================================================================
 // KHARONTE STUDIO HUB — MOTION LAYER
 // Scroll reveal, nav scroll state, trailing cursor glow, magnetic CTAs,
-// hero spotlight, card glare-follow and featured screenshot tilt. Pointer
-// effects are inert on touch/coarse pointers and fully skipped under
-// prefers-reduced-motion.
+// hero spotlight, card glare-follow and featured screenshot tilt.
+// Tuned for native 60fps/120fps hardware acceleration on all platforms.
+// All pointer effects are inert on touch/coarse pointers and fully skipped
+// under prefers-reduced-motion.
 // ==========================================================================
 
 function initHubInteractions() {
@@ -13,7 +14,6 @@ function initHubInteractions() {
   // 1. Scroll reveal (safe to run regardless of pointer type)
   const revealEls = document.querySelectorAll('.reveal-up');
   if (revealEls.length) {
-    // Immediately reveal anything already in or near the viewport so there is never an invisible flash
     revealEls.forEach(el => {
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight * 0.95) {
@@ -40,99 +40,163 @@ function initHubInteractions() {
     }
   }
 
-  // 2. Nav gains presence on scroll (cheap, safe under reduced motion too)
+  // 2. Nav gains presence on scroll
   const nav = document.querySelector('.site-nav');
   if (nav) {
+    let scrollTicking = false;
     const toggleNavState = () => {
       nav.classList.toggle('is-scrolled', window.scrollY > 40);
+      scrollTicking = false;
     };
     toggleNavState();
-    window.addEventListener('scroll', toggleNavState, { passive: true });
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(toggleNavState);
+        scrollTicking = true;
+      }
+    }, { passive: true });
   }
 
   if (reduceMotion || !finePointer) return;
 
-  // 3. Trailing cursor glow (additive — native cursor stays visible)
+  // 3. Trailing cursor glow (GPU composited with translate3d & idle sleep)
   const glow = document.createElement('div');
   glow.className = 'cursor-glow';
   glow.setAttribute('aria-hidden', 'true');
   document.body.appendChild(glow);
 
-  let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+  let targetX = -100, targetY = -100;
+  let currentX = -100, currentY = -100;
+  let isTracking = false;
+
+  function trackGlow() {
+    currentX += (targetX - currentX) * 0.2;
+    currentY += (targetY - currentY) * 0.2;
+    glow.style.transform = `translate3d(${currentX.toFixed(1)}px, ${currentY.toFixed(1)}px, 0)`;
+
+    // Only keep loop active while moving to save CPU/GPU cycles when mouse is still
+    if (Math.abs(targetX - currentX) > 0.2 || Math.abs(targetY - currentY) > 0.2) {
+      requestAnimationFrame(trackGlow);
+    } else {
+      isTracking = false;
+    }
+  }
+
   window.addEventListener('pointermove', (e) => {
     targetX = e.clientX;
     targetY = e.clientY;
     glow.classList.add('is-active');
-  });
-  document.addEventListener('pointerleave', () => glow.classList.remove('is-active'));
+    if (!isTracking) {
+      isTracking = true;
+      requestAnimationFrame(trackGlow);
+    }
+  }, { passive: true });
 
-  function trackGlow() {
-    currentX += (targetX - currentX) * 0.18;
-    currentY += (targetY - currentY) * 0.18;
-    glow.style.left = `${currentX}px`;
-    glow.style.top = `${currentY}px`;
-    requestAnimationFrame(trackGlow);
-  }
-  requestAnimationFrame(trackGlow);
+  document.addEventListener('pointerleave', () => glow.classList.remove('is-active'));
 
   document.querySelectorAll('a, button, .bento-card').forEach((el) => {
     el.addEventListener('pointerenter', () => glow.classList.add('is-hovering'));
     el.addEventListener('pointerleave', () => glow.classList.remove('is-hovering'));
   });
 
-  // 4. Magnetic pull on primary CTAs
+  // 4. Magnetic pull on primary CTAs (cached bounding box)
   document.querySelectorAll('.magnetic').forEach((el) => {
+    let rect = null;
+    el.addEventListener('pointerenter', () => {
+      rect = el.getBoundingClientRect();
+    });
     el.addEventListener('pointermove', (e) => {
-      const rect = el.getBoundingClientRect();
+      if (!rect) rect = el.getBoundingClientRect();
       const x = e.clientX - (rect.left + rect.width / 2);
       const y = e.clientY - (rect.top + rect.height / 2);
-      el.style.transform = `translate(${x * 0.18}px, ${y * 0.28}px)`;
+      el.style.transform = `translate3d(${(x * 0.18).toFixed(1)}px, ${(y * 0.28).toFixed(1)}px, 0)`;
     });
     el.addEventListener('pointerleave', () => {
-      el.style.transform = 'translate(0, 0)';
+      rect = null;
+      el.style.transform = 'translate3d(0, 0, 0)';
     });
   });
 
-  // 5. Ambient cursor spotlight across entire page
+  // 5. Ambient cursor spotlight across entire page (rAF-throttled)
   const spotlight = document.querySelector('.hero-spotlight');
   if (spotlight) {
+    let spotTicking = false;
     window.addEventListener('pointermove', (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      spotlight.style.setProperty('--mx', `${x}%`);
-      spotlight.style.setProperty('--my', `${y}%`);
+      if (!spotTicking) {
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        requestAnimationFrame(() => {
+          const x = (clientX / window.innerWidth) * 100;
+          const y = (clientY / window.innerHeight) * 100;
+          spotlight.style.setProperty('--mx', `${x.toFixed(1)}%`);
+          spotlight.style.setProperty('--my', `${y.toFixed(1)}%`);
+          spotTicking = false;
+        });
+        spotTicking = true;
+      }
       spotlight.classList.add('is-active');
     }, { passive: true });
+
     document.addEventListener('pointerleave', () => {
       spotlight.classList.remove('is-active');
     });
   }
 
-  // 6. Bento card glare-follow
+  // 6. Bento card glare-follow (rAF throttled & cached rect)
   document.querySelectorAll('.bento-card').forEach((card) => {
+    let rect = null;
+    let cardTicking = false;
+    card.addEventListener('pointerenter', () => {
+      rect = card.getBoundingClientRect();
+    });
     card.addEventListener('pointermove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty('--mx', `${x}%`);
-      card.style.setProperty('--my', `${y}%`);
+      if (!cardTicking) {
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        requestAnimationFrame(() => {
+          if (!rect) rect = card.getBoundingClientRect();
+          const x = ((clientX - rect.left) / rect.width) * 100;
+          const y = ((clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty('--mx', `${x.toFixed(1)}%`);
+          card.style.setProperty('--my', `${y.toFixed(1)}%`);
+          cardTicking = false;
+        });
+        cardTicking = true;
+      }
+    });
+    card.addEventListener('pointerleave', () => {
+      rect = null;
     });
   });
 
-  // 7. Featured screenshot tilt
+  // 7. Featured screenshot tilt (rAF throttled & 3D accelerated)
   const visual = document.querySelector('.featured-card-visual');
   const screenshot = document.querySelector('.featured-screenshot');
   if (visual && screenshot) {
+    let visualRect = null;
+    let tiltTicking = false;
+    visual.addEventListener('pointerenter', () => {
+      visualRect = visual.getBoundingClientRect();
+    });
     visual.addEventListener('pointermove', (e) => {
-      const rect = visual.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width - 0.5;
-      const py = (e.clientY - rect.top) / rect.height - 0.5;
-      const rotateY = px * 16;
-      const rotateX = py * -16;
-      screenshot.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
+      if (!tiltTicking) {
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        requestAnimationFrame(() => {
+          if (!visualRect) visualRect = visual.getBoundingClientRect();
+          const px = (clientX - visualRect.left) / visualRect.width - 0.5;
+          const py = (clientY - visualRect.top) / visualRect.height - 0.5;
+          const rotateY = px * 16;
+          const rotateX = py * -16;
+          screenshot.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.04, 1.04, 1)`;
+          tiltTicking = false;
+        });
+        tiltTicking = true;
+      }
     });
     visual.addEventListener('pointerleave', () => {
-      screenshot.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      visualRect = null;
+      screenshot.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     });
   }
 }

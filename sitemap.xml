@@ -43,8 +43,30 @@
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/idraulici/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/idraulici/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/idraulici/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/idraulici/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/preventivi-facili/idraulici/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/preventivi-facili/idraulici/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/idraulici/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/idraulici/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/idraulici/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/preventivi-facili/idraulici/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/preventivi-facili/idraulici/es/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/idraulici/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/idraulici/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/idraulici/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/preventivi-facili/idraulici/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/en/</loc>

@@ -11,8 +11,25 @@
 .studio-grid .coming-soon-card:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.015)}
 .studio-grid .coming-soon-card::before{display:none}
 
-/* Clip the gradient to the letters and keep accents within each app palette. */
-.product-page .hero-gradient-text{background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+/* Clip the gradient to the letters and keep accents within each app palette without cutting off italic swashes or descenders. */
+.product-page .hero-gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  vertical-align: baseline;
+  padding-right: 0.25em;
+  padding-bottom: 0.12em;
+  padding-top: 0.05em;
+  margin-right: -0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.product-page .hero-heading {
+  line-height: 1.18;
+  overflow: visible;
+}
 .product-page .pill-badge{color:var(--primary-light);background:var(--primary-glow);border-color:var(--primary-light);box-shadow:none}
 .product-page .pill-dot{background:var(--primary-light);box-shadow:0 0 10px var(--primary-glow)}
 .product-page .section-label{color:var(--primary-light)}
@@ -47,11 +64,12 @@
   font-style: normal;
   font-size: clamp(2.5rem, 5.2vw, 4.4rem);
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.18;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   text-wrap: balance;
+  overflow: visible;
 }
 
 .hub-page .hero-gradient-text {

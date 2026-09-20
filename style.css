@@ -667,18 +667,27 @@ body {
   font-style: normal;
   font-size: clamp(2.5rem, 5.2vw, 4.4rem);
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.18;
   margin-bottom: 1.6rem;
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
   text-wrap: balance;
+  overflow: visible;
 }
 
 .hero-gradient-text {
   font-style: italic;
   font-weight: 440;
   color: var(--text-highlight);
+  display: inline-block;
+  vertical-align: baseline;
+  padding-right: 0.25em;
+  padding-bottom: 0.12em;
+  padding-top: 0.05em;
+  margin-right: -0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .brand-name {

@@ -375,9 +375,10 @@
   white-space: nowrap;
 }
 
-.trust-strip-item svg {
-  width: 16px;
-  height: 16px;
+.trust-strip-index {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
   color: var(--primary-light);
   flex-shrink: 0;
 }

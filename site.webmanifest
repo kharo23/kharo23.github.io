@@ -2,19 +2,19 @@
   "name": "Kharonte Studio",
   "short_name": "Kharonte",
   "description": "App innovative per professionisti, ristoratori, atleti e rivenditori.",
-  "start_url": "/apps.html",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0c10",
-  "theme_color": "#11141c",
+  "background_color": "#080c14",
+  "theme_color": "#080c14",
   "icons": [
     {
-      "src": "/assets/icon.png",
+      "src": "/assets/studio-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/favicon.png",
+      "src": "/assets/studio-favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     }

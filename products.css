@@ -1234,47 +1234,14 @@
 }
 
 /* ==========================================================================
-   LINEAR-STYLE BORDER-BEAM (FLAGSHIP CARD GLOW)
+   BORDER-BEAM (DISABLED - REPLACED BY CLEAN STATIC BENTO CARD BORDER)
    ========================================================================== */
 .border-beam-container {
   position: relative;
-  overflow: hidden;
 }
 
 .border-beam {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.border-beam::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  transform: translate(-50%, -50%);
-  background: conic-gradient(from 0deg, transparent 0deg 280deg, rgba(56, 189, 248, 0.4) 320deg, #38bdf8 345deg, #0052ff 360deg);
-  animation: borderBeamSpin 7s linear infinite;
-}
-
-@keyframes borderBeamSpin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .border-beam::after {
-    animation: none;
-    display: none;
-  }
+  display: none !important;
 }
 
 /* ==========================================================================

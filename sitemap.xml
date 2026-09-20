@@ -178,6 +178,33 @@
 
   <!-- Legal & Support -->
   <url>
+    <loc>https://kharonte.dev/flipeven/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/flipeven/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/flipeven/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/flipeven/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/flipeven/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/flipeven/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/flipeven/es/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/flipeven/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/flipeven/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://kharonte.dev/privacy.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/privacy.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/privacy.html" />

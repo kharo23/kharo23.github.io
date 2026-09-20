@@ -1153,10 +1153,10 @@
 }
 
 /* ==========================================================================
-   HERO APP COSMOS / FLOATING 3D DEVICE FAN
+   HERO APP COSMOS / FLOATING 3D DEVICE FAN & MOBILE TOUCH REEL
    ========================================================================== */
 .hero-cosmos-wrapper {
-  margin: 32px auto 0;
+  margin: 28px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1180,7 +1180,7 @@
   position: absolute;
   width: 154px;
   height: 108px;
-  background: rgba(14, 20, 36, 0.82);
+  background: rgba(14, 20, 36, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
   padding: 12px;
@@ -1189,7 +1189,7 @@
   box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   transform-origin: bottom center;
   cursor: pointer;
   will-change: transform;
@@ -1239,26 +1239,29 @@
   text-overflow: ellipsis;
 }
 
-/* Fan positioning in rest state */
-.cosmos-card-1 { transform: rotate(-14deg) translate3d(-150px, 12px, 0); z-index: 1; }
-.cosmos-card-2 { transform: rotate(-7deg) translate3d(-75px, 4px, 0); z-index: 2; }
-.cosmos-card-3 { transform: rotate(0deg) translate3d(0, -6px, 0); z-index: 5; border-color: rgba(56, 189, 248, 0.35); }
-.cosmos-card-4 { transform: rotate(7deg) translate3d(75px, 4px, 0); z-index: 3; }
-.cosmos-card-5 { transform: rotate(14deg) translate3d(150px, 12px, 0); z-index: 1; }
+/* Fan positioning in rest state on Desktop */
+@media (min-width: 769px) {
+  .cosmos-card-1 { transform: rotate(-12deg) translate3d(-155px, 10px, 0); z-index: 1; }
+  .cosmos-card-2 { transform: rotate(-6deg) translate3d(-78px, 4px, 0); z-index: 2; }
+  .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -6px, 0); z-index: 5; border-color: rgba(56, 189, 248, 0.35); }
+  .cosmos-card-4 { transform: rotate(6deg) translate3d(78px, 4px, 0); z-index: 2; }
+  .cosmos-card-5 { transform: rotate(12deg) translate3d(155px, 10px, 0); z-index: 1; }
+}
 
-/* Expanded Fan State on deck hover */
-.hero-cosmos-deck:hover .cosmos-card-1 { transform: rotate(-8deg) translate3d(-200px, 0, 0); }
-.hero-cosmos-deck:hover .cosmos-card-2 { transform: rotate(-4deg) translate3d(-100px, 0, 0); }
-.hero-cosmos-deck:hover .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -10px, 0); }
-.hero-cosmos-deck:hover .cosmos-card-4 { transform: rotate(4deg) translate3d(100px, 0, 0); }
-.hero-cosmos-deck:hover .cosmos-card-5 { transform: rotate(8deg) translate3d(200px, 0, 0); }
+/* Expanded Fan State on deck hover (Strictly Pointer/Desktop to prevent mobile sticky hover) */
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  .hero-cosmos-deck:hover .cosmos-card-1 { transform: rotate(-9deg) translate3d(-210px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-2 { transform: rotate(-4.5deg) translate3d(-105px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -12px, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-4 { transform: rotate(4.5deg) translate3d(105px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-5 { transform: rotate(9deg) translate3d(210px, 0, 0); }
 
-/* Individual Card Hover */
-.cosmos-card:hover {
-  z-index: 10 !important;
-  transform: rotate(0deg) translate3d(0, -26px, 0) scale(1.12) !important;
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 28px 60px -15px rgba(0, 82, 255, 0.5), 0 0 25px rgba(56, 189, 248, 0.3);
+  .cosmos-card:hover {
+    z-index: 20 !important;
+    transform: rotate(0deg) translate3d(0, -28px, 0) scale(1.1) !important;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 28px 60px -15px rgba(0, 82, 255, 0.5), 0 0 25px rgba(56, 189, 248, 0.3);
+  }
 }
 
 .hero-cosmos-hint {
@@ -1279,30 +1282,90 @@
   animation: microPulse 1.8s infinite;
 }
 
-@media (max-width: 640px) {
-  .hero-cosmos-deck {
-    height: 125px;
-  }
-  .cosmos-card {
-    width: 128px;
-    height: 98px;
-    padding: 10px;
-  }
-  .cosmos-card-1 { transform: rotate(-12deg) translate3d(-105px, 10px, 0); }
-  .cosmos-card-2 { transform: rotate(-6deg) translate3d(-52px, 3px, 0); }
-  .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -4px, 0); }
-  .cosmos-card-4 { transform: rotate(6deg) translate3d(52px, 3px, 0); }
-  .cosmos-card-5 { transform: rotate(12deg) translate3d(105px, 10px, 0); }
+.cosmos-hint-mobile {
+  display: none;
+}
 
-  .hero-cosmos-deck:hover .cosmos-card-1 { transform: rotate(-6deg) translate3d(-125px, 0, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-2 { transform: rotate(-3deg) translate3d(-62px, 0, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -6px, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-4 { transform: rotate(3deg) translate3d(62px, 0, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-5 { transform: rotate(6deg) translate3d(125px, 0, 0); }
+.cosmos-hint-desktop {
+  display: inline;
 }
 
 /* ==========================================================================
-   NAV ACTION BUTTONS (COMMAND PALETTE & SOUND TOGGLE)
+   MOBILE & TOUCH EXPERIENCE (SMOOTH SNAP CAROUSEL REEL)
+   Flawless legibility, zero awkward overlap, native horizontal momentum scroll
+   ========================================================================== */
+@media (max-width: 768px), (hover: none) {
+  .hero-cosmos-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 22px;
+  }
+
+  .hero-cosmos-deck {
+    position: relative;
+    height: auto;
+    perspective: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 18px 14px;
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
+    scrollbar-width: none;
+  }
+
+  .hero-cosmos-deck::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cosmos-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    flex: 0 0 162px !important;
+    width: 162px !important;
+    height: 110px !important;
+    padding: 12px !important;
+    scroll-snap-align: center;
+    border-radius: 18px !important;
+    margin: 0 !important;
+    z-index: 1 !important;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+    opacity: 1 !important;
+  }
+
+  .cosmos-card-1,
+  .cosmos-card-2,
+  .cosmos-card-3,
+  .cosmos-card-4,
+  .cosmos-card-5 {
+    transform: none !important;
+    z-index: 1 !important;
+  }
+
+  .cosmos-card:active {
+    transform: scale(0.96) !important;
+    opacity: 0.92;
+  }
+
+  .cosmos-hint-mobile {
+    display: inline !important;
+  }
+
+  .cosmos-hint-desktop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   NAV ACTION BUTTONS & MOBILE NAVBAR FIXES
    ========================================================================== */
 .nav-cmd-btn {
   display: inline-flex;
@@ -1317,6 +1380,7 @@
   font-family: inherit;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .nav-cmd-btn:hover {
@@ -1347,17 +1411,37 @@
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
-.nav-sound-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.nav-sound-btn.is-active {
-  color: #38bdf8;
-  border-color: rgba(56, 189, 248, 0.4);
+/* Mobile Navbar Optimization (Eliminates text crunch on screens <= 680px) */
+@media (max-width: 680px) {
+  .site-nav .nav-inner {
+    gap: 8px !important;
+  }
+  .site-nav .hub-link {
+    display: none !important;
+  }
+  .nav-cmd-btn {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    justify-content: center !important;
+  }
+  .nav-cmd-btn .cmd-label,
+  .nav-cmd-btn .cmd-key-hint {
+    display: none !important;
+  }
+  .nav-right-group {
+    gap: 6px !important;
+  }
+  .brand-wrapper {
+    gap: 8px !important;
+  }
+  .brand-name {
+    font-size: 0.98rem !important;
+  }
 }
 
 /* ==========================================================================

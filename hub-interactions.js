@@ -563,8 +563,8 @@ function initHubInteractions() {
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
           <div class="cmd-item-info">
-            <span class="cmd-item-title">${isEn ? 'About Me — Davide' : isEs ? 'Sobre Mí — Davide' : 'Chi Sono — Davide'}</span>
-            <span class="cmd-item-sub">${isEn ? 'Story, philosophy & solo indie dev' : isEs ? 'Historia, filosofía y desarrollador solo' : 'Storia, filosofia e sviluppatore indie'}</span>
+            <span class="cmd-item-title">${isEn ? 'About Me — @kharonteAppDev' : isEs ? 'Sobre Mí — @kharonteAppDev' : 'Chi Sono — @kharonteAppDev'}</span>
+            <span class="cmd-item-sub">${isEn ? 'Mobile, Full-Stack Web & AI Engineering' : isEs ? 'Móvil, Web Full-Stack e Inteligencia Artificial' : 'Mobile nativo, Web Full-Stack & Intelligenza Artificiale'}</span>
           </div>
           <span class="cmd-item-kbd">↵ Jump</span>
         </a>

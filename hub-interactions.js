@@ -210,7 +210,11 @@ function initHubInteractions() {
         }
 
         if (tagsRow && tags.length) {
-          tagsRow.innerHTML = tags.map(t => `<span class="micro-tag">${t}</span>`).join('');
+          const SVG_CHECK = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+          const SVG_BOLT  = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+          const SVG_CHAT  = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
+          const icons = [SVG_CHECK, SVG_BOLT, SVG_CHAT];
+          tagsRow.innerHTML = tags.map((t, i) => `<span class="micro-tag">${icons[i] || SVG_CHECK} ${t}</span>`).join('');
         }
       });
     });

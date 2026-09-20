@@ -4,7 +4,7 @@
 
 ## Apps
 
-- [Preventivi Facili](https://kharonte.dev/preventivi-facili/): Professional quotes and invoices as PDF, ready in 30 seconds from a phone, for tradespeople, contractors and freelancers. 100% offline.
+- [Preventivi Facili](https://kharonte.dev/preventivi-facili/): Professional quotes and invoices as PDF, ready in 30 seconds from a phone, for tradespeople, contractors and freelancers. 100% offline. Also has a dedicated page for plumbers: [Preventivi Facili per Idraulici](https://kharonte.dev/preventivi-facili/idraulici/).
 - [Foodlio](https://kharonte.dev/foodlio/): Real food cost calculation, profit margins and menu engineering for restaurants, chefs and bars.
 - [Padel Match Manager](https://kharonte.dev/padel-match-manager/): Americano, Mexicano and round-robin padel tournament organizer with automatic balanced rotations and live leaderboards.
 - [Aegis](https://kharonte.dev/aegis/): Private mindfulness app with guided breathing exercises, calming meditations and a personal journal. No ads, no tracking.

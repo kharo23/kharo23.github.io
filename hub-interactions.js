@@ -57,6 +57,92 @@ function initHubInteractions() {
     }, { passive: true });
   }
 
+  // 2b. Bento Micro-Widgets Controller (available on all devices including touch)
+  // Foodlio Recipe Margin Switcher
+  document.querySelectorAll('.food-margin-widget').forEach((widget) => {
+    const pills = widget.querySelectorAll('.micro-pill');
+    const nameEl = widget.querySelector('.recipe-name');
+    const costEl = widget.querySelector('.recipe-cost');
+    const badgeEl = widget.querySelector('.widget-badge');
+    const fillEl = widget.querySelector('.margin-fill');
+    pills.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        pills.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        if (nameEl) nameEl.textContent = btn.getAttribute('data-name');
+        if (costEl) costEl.textContent = btn.getAttribute('data-cost-text');
+        if (badgeEl) badgeEl.textContent = btn.getAttribute('data-margin') + ' ' + (btn.getAttribute('data-margin-label') || 'Margine');
+        if (fillEl) fillEl.style.width = btn.getAttribute('data-margin');
+      });
+    });
+  });
+
+  // Padel Match Manager Score Incrementer
+  document.querySelectorAll('.padel-score-widget').forEach((widget) => {
+    const scoreB = widget.querySelector('.padel-score-b');
+    const pointBtn = widget.querySelector('.btn-micro-point');
+    const statusEl = widget.querySelector('.padel-point-indicator');
+    if (pointBtn && scoreB) {
+      let ptsB = 4;
+      pointBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        ptsB++;
+        if (ptsB > 6) {
+          ptsB = 4;
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-start') || 'Match Point 🔥';
+        } else if (ptsB === 5) {
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-mid') || 'Punto Decisivo 🎾';
+        } else if (ptsB === 6) {
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-tie') || 'Tie Break! ⚡';
+        }
+        scoreB.textContent = ptsB;
+        scoreB.classList.add('score-bump');
+        setTimeout(() => scoreB.classList.remove('score-bump'), 180);
+      });
+    }
+  });
+
+  // FlipEven Reselling ROI Preset Switcher
+  document.querySelectorAll('.flipeven-calc-widget').forEach((widget) => {
+    const pills = widget.querySelectorAll('.micro-pill');
+    const buyEl = widget.querySelector('.fe-buy-val');
+    const sellEl = widget.querySelector('.fe-sell-val');
+    const netEl = widget.querySelector('.fe-net-val');
+    const roiBadge = widget.querySelector('.widget-badge');
+    pills.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        pills.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        if (buyEl) buyEl.textContent = btn.getAttribute('data-buy');
+        if (sellEl) sellEl.textContent = btn.getAttribute('data-sell');
+        if (netEl) netEl.textContent = btn.getAttribute('data-net');
+        if (roiBadge) roiBadge.textContent = btn.getAttribute('data-roi');
+      });
+    });
+  });
+
+  // Aegis Breathing Orb Label Synchronizer
+  const aegisBreathLabel = document.querySelector('.aegis-breath-label');
+  if (aegisBreathLabel) {
+    const lang = document.documentElement.lang || 'it';
+    const phrases = lang === 'en'
+      ? ['Inhale', 'Hold', 'Exhale', 'Rest']
+      : lang === 'es'
+      ? ['Inhala', 'Mantén', 'Exhala', 'Calma']
+      : ['Inspira', 'Trattieni', 'Espira', 'Pausa'];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % phrases.length;
+      aegisBreathLabel.style.opacity = '0';
+      setTimeout(() => {
+        aegisBreathLabel.textContent = phrases[idx];
+        aegisBreathLabel.style.opacity = '1';
+      }, 250);
+    }, 4000);
+  }
+
   if (reduceMotion || !finePointer) return;
 
   // 3. Cursor glow (GPU composited with translate3d & snappy responsiveness)
@@ -143,8 +229,8 @@ function initHubInteractions() {
     });
   }
 
-  // 6. Bento card glare-follow (rAF throttled & cached rect)
-  document.querySelectorAll('.bento-card').forEach((card) => {
+  // 6. Bento card 3D perspective tilt & glare-follow (rAF throttled & cached rect)
+  document.querySelectorAll('.studio-grid .bento-card').forEach((card) => {
     let rect = null;
     let cardTicking = false;
     card.addEventListener('pointerenter', () => {
@@ -160,6 +246,13 @@ function initHubInteractions() {
           const y = ((clientY - rect.top) / rect.height) * 100;
           card.style.setProperty('--mx', `${x.toFixed(1)}%`);
           card.style.setProperty('--my', `${y.toFixed(1)}%`);
+
+          // 3D Perspective Tilt (-5 to +5 deg)
+          const px = (clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          const py = (clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          const rotY = px * 5.5;
+          const rotX = py * -5.5;
+          card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
           cardTicking = false;
         });
         cardTicking = true;
@@ -167,6 +260,7 @@ function initHubInteractions() {
     });
     card.addEventListener('pointerleave', () => {
       rect = null;
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     });
   });
 

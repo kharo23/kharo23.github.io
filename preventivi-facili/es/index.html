@@ -27,6 +27,7 @@
 
   <link rel="icon" type="image/png" href="../../assets/favicon.png">
   <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../products.css">
   <link rel="canonical" href="https://kharo23.github.io/preventivi-facili/es/">
   <link rel="alternate" hreflang="it" href="https://kharo23.github.io/preventivi-facili/">
   <link rel="alternate" hreflang="en" href="https://kharo23.github.io/preventivi-facili/en/">
@@ -49,14 +50,14 @@
   "author": {
     "@type": "Organization",
     "name": "Kharonte Studio",
-    "url": "https://kharo23.github.io/es/",
+    "url": "https://kharo23.github.io/",
     "sameAs": [
       "https://www.tiktok.com/@kharonteappdev",
       "https://www.instagram.com/kharonte.appdev/",
       "https://github.com/kharo23"
     ]
   },
-  "description": "App para autónomos y profesionales para crear presupuestos en PDF con logo y cálculo automático de impuestos."
+  "description": "App para profesionales y autónomos: crea presupuestos en PDF con tu logo y cálculo automático de impuestos en 30 segundos."
 }
   </script>
   <meta name="apple-itunes-app" content="app-id=6775595665">
@@ -70,23 +71,23 @@
       "name": "¿Cómo funciona la prueba gratuita?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Puedes descargar la app gratis y crear tus primeros 3 presupuestos sin introducir ninguna tarjeta de crédito. Si te gusta la app, puedes desbloquear la versión ilimitada con una única compra dentro de la app gestionada por tu cuenta de Apple o Google."
+        "text": "Puedes descargar la aplicación gratis y generar tus primeros 3 presupuestos sin ingresar tarjeta de crédito. Si te convence, desbloquea la versión ilimitada con una compra integrada gestionada por Apple or Google."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Los datos y precios de mis clientes están seguros?",
+      "name": "¿Están seguros los datos de mis clientes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Al 100%. Preventivi Facili funciona con almacenamiento exclusivamente local en tu smartphone. Ningún servidor externo recoge los nombres de tus clientes ni tus listas de precios, lo que garantiza total privacidad."
+        "text": "Al 100%. Preventivi Facili guarda todo localmente en tu dispositivo. Ningún servidor externo recopila nombres o listas de precios, garantizando máxima privacidad."
       }
     },
     {
       "@type": "Question",
-      "name": "Si cambio de móvil, ¿tengo que volver a comprar la app?",
+      "name": "Si cambio de móvil, ¿tengo que volver a pagar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "¡No! Basta con pulsar \"Restaurar compras anteriores\" en la pantalla Premium del nuevo dispositivo con la misma cuenta de la tienda: la licencia de por vida se reactivará al instante sin coste adicional."
+        "text": "¡No! Simplemente pulsa \"Restaurar compras\" en los ajustes de la app en tu nuevo dispositivo con la misma cuenta de la tienda y tu licencia vitalicia se reactivará sin coste."
       }
     }
   ]
@@ -94,7 +95,7 @@
   </script>
   <script src="../../hub-interactions.js" defer></script>
 </head>
-<body>
+<body class="product-page">
 
   <!-- Background Canvas -->
   
@@ -111,7 +112,7 @@
 
   <!-- Navigation Bar -->
   <header class="site-nav">
-    <div class="container nav-inner">
+    <nav class="container nav-inner" aria-label="Navegación principal">
       <a href="./" class="brand-wrapper">
         <img src="../../assets/icon.png" alt="Preventivi Facili" class="brand-logo-img">
         <span class="brand-name">Preventivi <span>Facili</span></span>
@@ -132,6 +133,8 @@
           <a href="./index.html" class="lang-link active" aria-current="page">ES</a>
         </div>
 
+        <a class="hub-link" href="../../es/">Todas las apps ↗</a>
+
         <a href="#scarica" class="nav-cta-button">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -141,7 +144,7 @@
           Descargar App
         </a>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Hero Section -->

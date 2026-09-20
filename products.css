@@ -2109,3 +2109,97 @@
   width: fit-content;
   margin-top: 2px;
 }
+
+/* ==========================================================================
+   GLOBAL UNIFIED HEADER SPECIFICATION (100% Consistent on all pages)
+   ========================================================================== */
+.site-nav {
+  position: sticky !important;
+  top: 14px !important;
+  z-index: 100 !important;
+  width: calc(100% - 28px) !important;
+  max-width: 1120px !important;
+  margin: 14px auto 0 !important;
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: 0 12px 40px -14px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.site-nav .nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 64px !important;
+  padding: 0 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+.site-nav.is-scrolled {
+  top: 10px !important;
+  background: rgba(6, 8, 14, 0.88) !important;
+  box-shadow: 0 14px 44px -12px rgba(0, 0, 0, 0.7) !important;
+}
+
+.site-nav.is-scrolled .nav-inner {
+  height: 58px !important;
+}
+
+.site-nav .brand-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+}
+
+.site-nav .brand-logo-img {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 11px !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+  transition: width 0.2s ease, height 0.2s ease !important;
+}
+
+.site-nav .brand-name {
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+  letter-spacing: -0.02em !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+.site-nav .nav-right-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+@media (max-width: 680px) {
+  .site-nav {
+    top: 10px !important;
+    margin-top: 10px !important;
+    width: calc(100% - 20px) !important;
+  }
+  .site-nav .nav-inner {
+    height: 58px !important;
+    padding: 0 1rem !important;
+    gap: 8px !important;
+  }
+  .site-nav .brand-logo-img {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 9px !important;
+  }
+  .site-nav .brand-name {
+    font-size: 1.02rem !important;
+  }
+  .site-nav .nav-right-group {
+    gap: 8px !important;
+  }
+}
+

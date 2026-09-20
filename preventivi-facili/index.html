@@ -27,36 +27,27 @@
 
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../products.css">
   <link rel="canonical" href="https://kharo23.github.io/preventivi-facili/">
   <link rel="alternate" hreflang="it" href="https://kharo23.github.io/preventivi-facili/">
   <link rel="alternate" hreflang="en" href="https://kharo23.github.io/preventivi-facili/en/">
   <link rel="alternate" hreflang="es" href="https://kharo23.github.io/preventivi-facili/es/">
   <link rel="alternate" hreflang="x-default" href="https://kharo23.github.io/preventivi-facili/">
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Structured Data / JSON-LD -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Preventivi Facili",
-  "operatingSystem": "iOS, Android",
+  "operatingSystem": "iOS, iPadOS, Android",
   "applicationCategory": "BusinessApplication",
   "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": "0.00",
     "priceCurrency": "EUR"
   },
-  "author": {
-    "@type": "Organization",
-    "name": "Kharonte Studio",
-    "url": "https://kharo23.github.io/",
-    "sameAs": [
-      "https://www.tiktok.com/@kharonteappdev",
-      "https://www.instagram.com/kharonte.appdev/",
-      "https://github.com/kharo23"
-    ]
-  },
-  "description": "L'app per artigiani, freelance e professionisti per creare preventivi PDF con logo e calcolo tasse immediato."
+  "description": "L'app definitiva per creare preventivi professionali, fatture proforma e PDF con logo in 30 secondi. Calcolo automatico tasse, totale privacy e nessun abbonamento vincolante."
 }
   </script>
   <meta name="apple-itunes-app" content="app-id=6775595665">
@@ -67,15 +58,7 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Come funziona la prova gratuita?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Puoi scaricare l'app gratuitamente e creare i primi 3 preventivi senza dover inserire nessuna carta di credito. Se l'app ti piace, potrai sbloccare la versione illimitata con un singolo acquisto in-app gestito dal tuo account Apple o Google."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "I dati e i prezzi dei miei clienti sono al sicuro?",
+      "name": "I miei dati e quelli dei miei clienti sono al sicuro?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Al 100%. Preventivi Facili funziona con memorizzazione unicamente locale sul tuo smartphone. Nessun server esterno raccoglie i nomi dei tuoi clienti o i tuoi listini prezzi, garantendo totale riservatezza."
@@ -94,7 +77,7 @@
   </script>
   <script src="../hub-interactions.js" defer></script>
 </head>
-<body>
+<body class="product-page">
 
   <!-- Background Canvas -->
   
@@ -111,7 +94,7 @@
 
   <!-- Navigation Bar -->
   <header class="site-nav">
-    <div class="container nav-inner">
+    <nav class="container nav-inner" aria-label="Navigazione principale">
       <a href="./" class="brand-wrapper">
         <img src="../assets/icon.png" alt="Preventivi Facili" class="brand-logo-img">
         <span class="brand-name">Preventivi <span>Facili</span></span>
@@ -132,6 +115,8 @@
           <a href="./es/" class="lang-link">ES</a>
         </div>
 
+        <a class="hub-link" href="../">Tutte le app ↗</a>
+
         <a href="#scarica" class="nav-cta-button">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -141,7 +126,7 @@
           Scarica l'App
         </a>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Hero Section -->

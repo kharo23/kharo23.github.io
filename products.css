@@ -1241,26 +1241,55 @@
 
 /* Fan positioning in rest state on Desktop */
 @media (min-width: 769px) {
-  .cosmos-card-1 { transform: rotate(-12deg) translate3d(-155px, 10px, 0); z-index: 1; }
-  .cosmos-card-2 { transform: rotate(-6deg) translate3d(-78px, 4px, 0); z-index: 2; }
-  .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -6px, 0); z-index: 5; border-color: rgba(56, 189, 248, 0.35); }
-  .cosmos-card-4 { transform: rotate(6deg) translate3d(78px, 4px, 0); z-index: 2; }
-  .cosmos-card-5 { transform: rotate(12deg) translate3d(155px, 10px, 0); z-index: 1; }
+  .hero-cosmos-wrapper {
+    max-width: 760px;
+  }
+
+  .hero-cosmos-deck {
+    height: 155px;
+  }
+
+  .cosmos-card-1 { transform: rotate(-10deg) translate3d(-180px, 8px, 0); z-index: 1; }
+  .cosmos-card-2 { transform: rotate(-5deg) translate3d(-90px, 3px, 0); z-index: 2; }
+  .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -4px, 0); z-index: 5; border-color: rgba(56, 189, 248, 0.35); }
+  .cosmos-card-4 { transform: rotate(5deg) translate3d(90px, 3px, 0); z-index: 2; }
+  .cosmos-card-5 { transform: rotate(10deg) translate3d(180px, 8px, 0); z-index: 1; }
 }
 
 /* Expanded Fan State on deck hover (Strictly Pointer/Desktop to prevent mobile sticky hover) */
 @media (min-width: 769px) and (hover: hover) and (pointer: fine) {
-  .hero-cosmos-deck:hover .cosmos-card-1 { transform: rotate(-9deg) translate3d(-210px, 0, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-2 { transform: rotate(-4.5deg) translate3d(-105px, 0, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -12px, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-4 { transform: rotate(4.5deg) translate3d(105px, 0, 0); }
-  .hero-cosmos-deck:hover .cosmos-card-5 { transform: rotate(9deg) translate3d(210px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-1 { transform: rotate(-6deg) translate3d(-260px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-2 { transform: rotate(-3deg) translate3d(-130px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -6px, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-4 { transform: rotate(3deg) translate3d(130px, 0, 0); }
+  .hero-cosmos-deck:hover .cosmos-card-5 { transform: rotate(6deg) translate3d(260px, 0, 0); }
 
+  /* Hovering individual card elevates it cleanly at its OWN slot with top z-index */
   .cosmos-card:hover {
-    z-index: 20 !important;
-    transform: rotate(0deg) translate3d(0, -28px, 0) scale(1.1) !important;
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 28px 60px -15px rgba(0, 82, 255, 0.5), 0 0 25px rgba(56, 189, 248, 0.3);
+    z-index: 30 !important;
+    border-color: rgba(56, 189, 248, 0.55) !important;
+    box-shadow: 0 26px 54px -12px rgba(0, 82, 255, 0.5), 0 0 24px rgba(56, 189, 248, 0.3) !important;
+  }
+
+  .cosmos-card-1:hover,
+  .hero-cosmos-deck:hover .cosmos-card-1:hover {
+    transform: rotate(0deg) translate3d(-260px, -24px, 0) scale(1.08) !important;
+  }
+  .cosmos-card-2:hover,
+  .hero-cosmos-deck:hover .cosmos-card-2:hover {
+    transform: rotate(0deg) translate3d(-130px, -24px, 0) scale(1.08) !important;
+  }
+  .cosmos-card-3:hover,
+  .hero-cosmos-deck:hover .cosmos-card-3:hover {
+    transform: rotate(0deg) translate3d(0px, -26px, 0) scale(1.08) !important;
+  }
+  .cosmos-card-4:hover,
+  .hero-cosmos-deck:hover .cosmos-card-4:hover {
+    transform: rotate(0deg) translate3d(130px, -24px, 0) scale(1.08) !important;
+  }
+  .cosmos-card-5:hover,
+  .hero-cosmos-deck:hover .cosmos-card-5:hover {
+    transform: rotate(0deg) translate3d(260px, -24px, 0) scale(1.08) !important;
   }
 }
 
@@ -1268,7 +1297,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  margin-top: 14px;
+  margin-top: 26px;
   font-size: 0.74rem;
   color: var(--text-muted);
 }

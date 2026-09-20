@@ -143,6 +143,77 @@ function initHubInteractions() {
     }, 4000);
   }
 
+  // Preventivi Facili Live Mode Switcher (Craftsman vs Freelance)
+  document.querySelectorAll('.interactive-mode-switch').forEach((switcher) => {
+    const card = switcher.closest('.featured-card');
+    if (!card) return;
+    const preview = card.querySelector('.invoice-pill-preview');
+    const pillTitle = preview ? preview.querySelector('.micro-pill-title') : null;
+    const amountEl = preview ? preview.querySelector('.micro-amount') : null;
+    const tagsRow = preview ? preview.querySelector('.micro-tags-row') : null;
+    const buttons = switcher.querySelectorAll('.mode-switch-btn');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (btn.classList.contains('is-active')) return;
+        buttons.forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        playHapticTick(1.15);
+
+        if (preview) {
+          preview.classList.remove('mode-switching');
+          void preview.offsetWidth; // force DOM reflow
+          preview.classList.add('mode-switching');
+        }
+
+        const titleText = btn.getAttribute('data-pill-title');
+        const amount = btn.getAttribute('data-amount');
+        const countupVal = parseInt(btn.getAttribute('data-countup') || '3450', 10);
+        let tags = [];
+        try {
+          tags = JSON.parse(btn.getAttribute('data-tags') || '[]');
+        } catch (err) {}
+
+        if (pillTitle && titleText) {
+          pillTitle.textContent = titleText;
+        }
+
+        if (amountEl) {
+          amountEl.setAttribute('data-countup', countupVal);
+          const start = countupVal > 2500 ? 1000 : 500;
+          const duration = 400;
+          const startTime = performance.now();
+          const prefix = amountEl.getAttribute('data-prefix') || '+€ ';
+          const suffix = amountEl.getAttribute('data-suffix') || '';
+
+          function animateNum(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.round(start + (countupVal - start) * ease);
+            amountEl.textContent = `${prefix}${currentVal.toLocaleString()}${suffix}`;
+            if (progress < 1) {
+              requestAnimationFrame(animateNum);
+            } else {
+              amountEl.textContent = amount;
+            }
+          }
+          requestAnimationFrame(animateNum);
+        }
+
+        if (tagsRow && tags.length) {
+          tagsRow.innerHTML = tags.map(t => `<span class="micro-tag">${t}</span>`).join('');
+        }
+      });
+    });
+  });
+
   if (reduceMotion || !finePointer) return;
 
   // 3. Cursor glow (GPU composited with translate3d & snappy responsiveness)
@@ -229,13 +300,26 @@ function initHubInteractions() {
     });
   }
 
-  // 6. Bento card 3D perspective tilt & glare-follow (rAF throttled & cached rect)
+  // 6. Bento card Holographic 3D perspective tilt & specular glare-follow
   document.querySelectorAll('.studio-grid .bento-card').forEach((card) => {
     let rect = null;
     let cardTicking = false;
+
+    // Inject card-glare sheen element if not already present
+    let glare = card.querySelector('.card-glare');
+    if (!glare) {
+      glare = document.createElement('div');
+      glare.className = 'card-glare';
+      glare.setAttribute('aria-hidden', 'true');
+      card.appendChild(glare);
+    }
+
     card.addEventListener('pointerenter', () => {
       rect = card.getBoundingClientRect();
+      card.classList.add('is-tilting');
+      card.style.setProperty('--glare-o', '1');
     });
+
     card.addEventListener('pointermove', (e) => {
       if (!cardTicking) {
         const clientX = e.clientX;
@@ -246,21 +330,32 @@ function initHubInteractions() {
           const y = ((clientY - rect.top) / rect.height) * 100;
           card.style.setProperty('--mx', `${x.toFixed(1)}%`);
           card.style.setProperty('--my', `${y.toFixed(1)}%`);
+          card.style.setProperty('--glare-x', `${x.toFixed(1)}%`);
+          card.style.setProperty('--glare-y', `${y.toFixed(1)}%`);
+          card.style.setProperty('--glare-o', '1');
 
-          // 3D Perspective Tilt (-5 to +5 deg)
+          // Subtle, smooth 3D Perspective Tilt (-4.5 to +4.5 deg)
           const px = (clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
           const py = (clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-          const rotY = px * 5.5;
-          const rotX = py * -5.5;
-          card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+          const rotY = (px * 4.5).toFixed(2);
+          const rotX = (py * -4.5).toFixed(2);
+
+          card.style.setProperty('--tilt-x', `${rotX}deg`);
+          card.style.setProperty('--tilt-y', `${rotY}deg`);
+          card.style.setProperty('--tilt-ty', '-4px');
           cardTicking = false;
         });
         cardTicking = true;
       }
     });
+
     card.addEventListener('pointerleave', () => {
       rect = null;
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      card.classList.remove('is-tilting');
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+      card.style.setProperty('--tilt-ty', '0px');
+      card.style.setProperty('--glare-o', '0');
     });
   });
 
@@ -355,7 +450,7 @@ function initHubInteractions() {
   }
 
   // Attach haptic feedback to interactive elements
-  document.querySelectorAll('.micro-pill, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
+  document.querySelectorAll('.micro-pill, .mode-switch-btn, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
     el.addEventListener('pointerdown', () => playHapticTick(1));
   });
 

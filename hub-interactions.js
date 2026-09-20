@@ -124,8 +124,8 @@ function initHubInteractions() {
   });
 
   // Aegis Breathing Orb Label Synchronizer
-  const aegisBreathLabel = document.querySelector('.aegis-breath-label');
-  if (aegisBreathLabel) {
+  const aegisBreathLabels = document.querySelectorAll('.aegis-breath-label');
+  if (aegisBreathLabels.length > 0) {
     const lang = document.documentElement.lang || 'it';
     const phrases = lang === 'en'
       ? ['Inhale', 'Hold', 'Exhale', 'Rest']
@@ -135,11 +135,13 @@ function initHubInteractions() {
     let idx = 0;
     setInterval(() => {
       idx = (idx + 1) % phrases.length;
-      aegisBreathLabel.style.opacity = '0';
-      setTimeout(() => {
-        aegisBreathLabel.textContent = phrases[idx];
-        aegisBreathLabel.style.opacity = '1';
-      }, 250);
+      aegisBreathLabels.forEach(lbl => {
+        lbl.style.opacity = '0';
+        setTimeout(() => {
+          lbl.textContent = phrases[idx];
+          lbl.style.opacity = '1';
+        }, 250);
+      });
     }, 4000);
   }
 

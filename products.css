@@ -1365,6 +1365,31 @@
 
 /* Expanded Fan State on deck hover (Strictly Pointer/Desktop to prevent mobile sticky hover) */
 @media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  /* Deck buffer hit bridge: maintains deck expansion continuously when moving near or between cards */
+  .hero-cosmos-deck::before {
+    content: '';
+    position: absolute;
+    inset: -20px -30px -25px -30px;
+    pointer-events: auto;
+    z-index: 0;
+  }
+
+  /* Anti-flicker hit bridge: extends around the card and below it (-38px).
+     When a card elevates upwards by -24px, the cursor remains continuously inside its hit area,
+     completely eliminating the corner hover-drop-hover trembling loop */
+  .cosmos-card::after {
+    content: '';
+    position: absolute;
+    inset: -14px -14px -38px -14px;
+    border-radius: 26px;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  .cosmos-card-inner * {
+    pointer-events: none;
+  }
+
   .hero-cosmos-deck:hover .cosmos-card-1 { transform: rotate(-6deg) translate3d(-260px, 0, 0); }
   .hero-cosmos-deck:hover .cosmos-card-2 { transform: rotate(-3deg) translate3d(-130px, 0, 0); }
   .hero-cosmos-deck:hover .cosmos-card-3 { transform: rotate(0deg) translate3d(0, -6px, 0); }

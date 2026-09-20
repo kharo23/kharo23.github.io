@@ -294,6 +294,321 @@ function initHubInteractions() {
       screenshot.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     });
   }
+
+  // ==========================================================================
+  // 8. WEB AUDIO API SYNTHESIZER (MICRO-HAPTIC FEEDBACK)
+  // ==========================================================================
+  let audioCtx = null;
+  let soundEnabled = localStorage.getItem('kh_sound') !== '0';
+
+  function playHapticTick(pitch = 1) {
+    if (!soundEnabled) return;
+    try {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const now = audioCtx.currentTime;
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(750 * pitch, now);
+      osc.frequency.exponentialRampToValueAtTime(180 * pitch, now + 0.024);
+
+      gain.gain.setValueAtTime(0.045, now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.025);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.028);
+    } catch (e) {}
+  }
+
+  // Sound Toggle Button Handler
+  const soundBtn = document.querySelector('#toggle-sound');
+  if (soundBtn) {
+    const updateSoundBtn = () => {
+      soundBtn.classList.toggle('is-active', soundEnabled);
+      const onIcon = soundBtn.querySelector('.sound-icon-on');
+      const offIcon = soundBtn.querySelector('.sound-icon-off');
+      if (onIcon && offIcon) {
+        onIcon.style.display = soundEnabled ? 'block' : 'none';
+        offIcon.style.display = soundEnabled ? 'none' : 'block';
+      }
+    };
+    updateSoundBtn();
+    soundBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      soundEnabled = !soundEnabled;
+      localStorage.setItem('kh_sound', soundEnabled ? '1' : '0');
+      updateSoundBtn();
+      if (soundEnabled) playHapticTick(1.2);
+    });
+  }
+
+  // Attach haptic feedback to interactive elements
+  document.querySelectorAll('.micro-pill, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
+    el.addEventListener('pointerdown', () => playHapticTick(1));
+  });
+
+  // ==========================================================================
+  // 9. COUNT-UP DINAMICO PER STAT E CIFRE CHIAVE
+  // ==========================================================================
+  const countEls = document.querySelectorAll('[data-countup]');
+  if (countEls.length && 'IntersectionObserver' in window && !reduceMotion) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.getAttribute('data-countup'));
+          const prefix = el.getAttribute('data-prefix') || '';
+          const suffix = el.getAttribute('data-suffix') || '';
+          const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+          const duration = 1200;
+          const startTime = performance.now();
+
+          function animateCount(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = (target * easeProgress).toFixed(decimals);
+            const formatted = decimals === 0 ? Number(current).toLocaleString('it-IT') : current;
+            el.textContent = `${prefix}${formatted}${suffix}`;
+            if (progress < 1) {
+              requestAnimationFrame(animateCount);
+            }
+          }
+          requestAnimationFrame(animateCount);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1 });
+    countEls.forEach(el => countObserver.observe(el));
+  }
+
+  // ==========================================================================
+  // 10. RAYCAST-STYLE COMMAND PALETTE (⌘K / CTRL+K)
+  // ==========================================================================
+  const lang = document.documentElement.lang || 'it';
+  const isEn = lang === 'en';
+  const isEs = lang === 'es';
+  const rootPath = isEn || isEs ? '../' : './';
+
+  // Build Command Palette Modal dynamically
+  const paletteBackdrop = document.createElement('div');
+  paletteBackdrop.className = 'cmd-palette-backdrop';
+  paletteBackdrop.setAttribute('role', 'dialog');
+  paletteBackdrop.setAttribute('aria-modal', 'true');
+  paletteBackdrop.setAttribute('aria-label', isEn ? 'Quick Command Palette' : isEs ? 'Paleta de Comandos Rápidos' : 'Ricerca e Comandi Rapidi');
+
+  const placeholderText = isEn ? 'Search apps, features or shortcuts... (Esc to close)' : isEs ? 'Buscar apps, funciones o accesos... (Esc para salir)' : 'Cerca app, funzioni o scorciatoie... (Esc per uscire)';
+  const appsHeader = isEn ? 'Studio Apps' : isEs ? 'Aplicaciones del Estudio' : 'Applicazioni Studio';
+  const linksHeader = isEn ? 'Quick Navigation & Dev' : isEs ? 'Navegación Rápida & Dev' : 'Navigazione & Sviluppatore';
+  const langHeader = isEn ? 'Language / Lingua' : isEs ? 'Idioma / Lingua' : 'Lingua / Language';
+
+  paletteBackdrop.innerHTML = `
+    <div class="cmd-palette-modal">
+      <div class="cmd-search-row">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" class="cmd-search-input" placeholder="${placeholderText}" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="cmd-results-list" role="listbox">
+        <div class="cmd-group-label">${appsHeader}</div>
+        <a href="${rootPath}preventivi-facili/${isEn ? 'en/' : isEs ? 'es/' : ''}" class="cmd-item is-selected" role="option">
+          <img src="${rootPath}assets/icon.png" alt="Preventivi Facili" width="28" height="28">
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">Preventivi Facili</span>
+            <span class="cmd-item-sub">${isEn ? 'PDF quotes & invoices in 30 seconds' : isEs ? 'Presupuestos y facturas en PDF en 30s' : 'Fatture e preventivi PDF in 30 secondi'}</span>
+          </div>
+          <span class="cmd-item-kbd">↵ Jump</span>
+        </a>
+        <a href="${rootPath}foodlio/${isEn ? 'en/' : isEs ? 'es/' : ''}" class="cmd-item" role="option">
+          <img src="${rootPath}foodlio/icon.png" alt="Foodlio" width="28" height="28">
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">Foodlio</span>
+            <span class="cmd-item-sub">${isEn ? 'Culinary food cost & recipe margins' : isEs ? 'Food cost y cálculo de márgenes para chefs' : 'Food cost reale e margini ricetta'}</span>
+          </div>
+          <span class="cmd-item-kbd">↵ Jump</span>
+        </a>
+        <a href="${rootPath}padel-match-manager/${isEn ? 'en/' : isEs ? 'es/' : ''}" class="cmd-item" role="option">
+          <img src="${rootPath}padel-match-manager/icon.png" alt="Padel Match Manager" width="28" height="28">
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">Padel Match Manager</span>
+            <span class="cmd-item-sub">${isEn ? 'Americano & Mexicano court tournaments' : isEs ? 'Torneos Americano y liguillas en pista' : 'Tornei Americano e partite di padel'}</span>
+          </div>
+          <span class="cmd-item-kbd">↵ Jump</span>
+        </a>
+        <a href="${rootPath}aegis/${isEn ? 'en/' : isEs ? 'es/' : ''}" class="cmd-item" role="option">
+          <img src="${rootPath}aegis/icon.png" alt="Aegis" width="28" height="28">
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">Aegis</span>
+            <span class="cmd-item-sub">${isEn ? 'Guided breathing & peaceful sanctuary' : isEs ? 'Respiración guiada y calma personal' : 'Respiro armonico e serenità quotidiana'}</span>
+          </div>
+          <span class="cmd-item-kbd">↵ Jump</span>
+        </a>
+        <a href="${rootPath}flipeven/${isEn ? 'en/' : isEs ? 'es/' : ''}" class="cmd-item" role="option">
+          <img src="${rootPath}flipeven/icon.png" alt="FlipEven" width="28" height="28">
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">FlipEven</span>
+            <span class="cmd-item-sub">${isEn ? 'Reselling margins & platform break-even' : isEs ? 'Punto de equilibrio para Vinted y eBay' : 'Margini reali per reselling e Vinted'}</span>
+          </div>
+          <span class="cmd-item-kbd">↵ Jump</span>
+        </a>
+
+        <div class="cmd-group-label">${linksHeader}</div>
+        <a href="mailto:kharonte.appdev@gmail.com" class="cmd-item" role="option">
+          <div class="cmd-item-icon" style="background:rgba(56,189,248,0.15); color:#38bdf8;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"/></svg>
+          </div>
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">${isEn ? 'Email Developer' : isEs ? 'Contactar Desarrollador' : 'Scrivi allo Sviluppatore'}</span>
+            <span class="cmd-item-sub">kharonte.appdev@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://github.com/kharo23" target="_blank" rel="noopener noreferrer" class="cmd-item" role="option">
+          <div class="cmd-item-icon" style="background:rgba(255,255,255,0.08); color:#fff;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </div>
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">GitHub @kharo23</span>
+            <span class="cmd-item-sub">Repository &amp; open-source</span>
+          </div>
+        </a>
+
+        <div class="cmd-group-label">${langHeader}</div>
+        <a href="${rootPath}" class="cmd-item" role="option">
+          <div class="cmd-item-icon" style="background:rgba(16,185,129,0.15); color:#34d399; font-weight:800; font-size:0.75rem;">IT</div>
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">Italiano</span>
+          </div>
+        </a>
+        <a href="${rootPath}en/" class="cmd-item" role="option">
+          <div class="cmd-item-icon" style="background:rgba(56,189,248,0.15); color:#38bdf8; font-weight:800; font-size:0.75rem;">EN</div>
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">English</span>
+          </div>
+        </a>
+        <a href="${rootPath}es/" class="cmd-item" role="option">
+          <div class="cmd-item-icon" style="background:rgba(240,100,0,0.15); color:#ff7a1a; font-weight:800; font-size:0.75rem;">ES</div>
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">Español</span>
+          </div>
+        </a>
+      </div>
+      <div class="cmd-palette-footer">
+        <span>Studio Command Palette</span>
+        <div class="cmd-shortcuts-tips">
+          <span><kbd class="cmd-item-kbd">↑↓</kbd> Naviga</span>
+          <span><kbd class="cmd-item-kbd">↵</kbd> Seleziona</span>
+          <span><kbd class="cmd-item-kbd">Esc</kbd> Chiudi</span>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(paletteBackdrop);
+
+  const searchInput = paletteBackdrop.querySelector('.cmd-search-input');
+  const items = paletteBackdrop.querySelectorAll('.cmd-item');
+  let isPaletteOpen = false;
+
+  const openPalette = () => {
+    isPaletteOpen = true;
+    paletteBackdrop.classList.add('is-open');
+    searchInput.value = '';
+    filterItems('');
+    playHapticTick(1.2);
+    setTimeout(() => searchInput.focus(), 50);
+  };
+
+  const closePalette = () => {
+    isPaletteOpen = false;
+    paletteBackdrop.classList.remove('is-open');
+    searchInput.blur();
+    playHapticTick(0.8);
+  };
+
+  const togglePalette = () => {
+    if (isPaletteOpen) closePalette();
+    else openPalette();
+  };
+
+  // Filter items based on query
+  function filterItems(query) {
+    const q = query.toLowerCase().trim();
+    let firstVisible = null;
+    items.forEach((item) => {
+      const text = item.textContent.toLowerCase();
+      const matches = !q || text.includes(q);
+      item.style.display = matches ? 'flex' : 'none';
+      if (matches && !firstVisible) firstVisible = item;
+    });
+    items.forEach(i => i.classList.remove('is-selected'));
+    if (firstVisible) firstVisible.classList.add('is-selected');
+  }
+
+  searchInput.addEventListener('input', (e) => {
+    filterItems(e.target.value);
+  });
+
+  // Keyboard navigation within the palette
+  searchInput.addEventListener('keydown', (e) => {
+    const visibleItems = Array.from(items).filter(i => i.style.display !== 'none');
+    if (!visibleItems.length) return;
+    const currentIndex = visibleItems.findIndex(i => i.classList.contains('is-selected'));
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const nextIndex = (currentIndex + 1) % visibleItems.length;
+      visibleItems.forEach(i => i.classList.remove('is-selected'));
+      visibleItems[nextIndex].classList.add('is-selected');
+      visibleItems[nextIndex].scrollIntoView({ block: 'nearest' });
+      playHapticTick(1.1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prevIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      visibleItems.forEach(i => i.classList.remove('is-selected'));
+      visibleItems[prevIndex].classList.add('is-selected');
+      visibleItems[prevIndex].scrollIntoView({ block: 'nearest' });
+      playHapticTick(1.1);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      const selected = visibleItems[currentIndex] || visibleItems[0];
+      if (selected) {
+        playHapticTick(1.3);
+        selected.click();
+      }
+    }
+  });
+
+  // Close when clicking outside modal
+  paletteBackdrop.addEventListener('click', (e) => {
+    if (e.target === paletteBackdrop) closePalette();
+  });
+
+  // Open triggers
+  document.querySelectorAll('#open-cmd-palette, .open-cmd-trigger').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPalette();
+    });
+  });
+
+  // Global Keyboard listener for ⌘K / Ctrl+K
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      togglePalette();
+    } else if (e.key === 'Escape' && isPaletteOpen) {
+      closePalette();
+    }
+  });
 }
 
 if (document.readyState === 'loading') {
@@ -301,3 +616,4 @@ if (document.readyState === 'loading') {
 } else {
   initHubInteractions();
 }
+

@@ -63,6 +63,15 @@
         <span class="brand-name">Kharonte <span>Studio</span></span>
       </a>
       <div class="nav-right-group">
+        <button type="button" class="nav-cmd-btn" id="open-cmd-palette" aria-label="Buscar y comandos rápidos (⌘K)">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="cmd-label">Buscar</span>
+          <kbd class="cmd-key-hint">⌘K</kbd>
+        </button>
+        <button type="button" class="nav-sound-btn" id="toggle-sound" aria-label="Respuesta de audio microháptica">
+          <svg class="sound-icon-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          <svg class="sound-icon-off" style="display:none;" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" x2="1" y1="9" y2="15"/></svg>
+        </button>
         <div class="lang-switch" aria-label="Idioma / Language / Lingua">
           <a href="../" class="lang-link">IT</a>
           <a href="../en/" class="lang-link">EN</a>
@@ -109,7 +118,7 @@
         <div class="trust-strip reveal-up d5">
           <div class="trust-strip-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>4 apps activas en App Store y Google Play</span>
+            <span><strong data-countup="4">4</strong> apps activas en App Store y Google Play</span>
           </div>
           <div class="trust-strip-divider" aria-hidden="true"></div>
           <div class="trust-strip-item">
@@ -122,33 +131,94 @@
             <span>Creadas por un único desarrollador independiente</span>
           </div>
         </div>
+
+        <!-- Hero App Cosmos / Floating Device Fan -->
+        <div class="hero-cosmos-wrapper reveal-up d6" aria-label="Colección interactiva de nuestras 5 apps nativas">
+          <div class="hero-cosmos-deck" id="hero-cosmos-deck">
+            <a href="../preventivi-facili/es/" class="cosmos-card cosmos-card-1" aria-label="Preventivi Facili">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../assets/icon.png" alt="Preventivi Facili" width="30" height="30">
+                  <span class="cosmos-badge pill-work">Negocios</span>
+                </div>
+                <strong class="cosmos-card-title">Preventivi Facili</strong>
+                <span class="cosmos-card-tag">Facturas en 30s</span>
+              </div>
+            </a>
+            <a href="../foodlio/es/" class="cosmos-card cosmos-card-2" aria-label="Foodlio">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../foodlio/icon.png" alt="Foodlio" width="30" height="30">
+                  <span class="cosmos-badge pill-food">Cocina</span>
+                </div>
+                <strong class="cosmos-card-title">Foodlio</strong>
+                <span class="cosmos-card-tag">Food Cost Real</span>
+              </div>
+            </a>
+            <a href="../padel-match-manager/es/" class="cosmos-card cosmos-card-3" aria-label="Padel Match Manager">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../padel-match-manager/icon.png" alt="Padel Match Manager" width="30" height="30">
+                  <span class="cosmos-badge pill-sport">Deporte</span>
+                </div>
+                <strong class="cosmos-card-title">Padel Match</strong>
+                <span class="cosmos-card-tag">Torneos en Pista</span>
+              </div>
+            </a>
+            <a href="../aegis/es/" class="cosmos-card cosmos-card-4" aria-label="Aegis">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../aegis/icon.png" alt="Aegis" width="30" height="30">
+                  <span class="cosmos-badge pill-wellness">Mindfulness</span>
+                </div>
+                <strong class="cosmos-card-title">Aegis</strong>
+                <span class="cosmos-card-tag">Respiración y Calma</span>
+              </div>
+            </a>
+            <a href="../flipeven/es/" class="cosmos-card cosmos-card-5" aria-label="FlipEven">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../flipeven/icon.png" alt="FlipEven" width="30" height="30">
+                  <span class="cosmos-badge pill-reselling">Reventa</span>
+                </div>
+                <strong class="cosmos-card-title">FlipEven</strong>
+                <span class="cosmos-card-tag">Punto de Equilibrio</span>
+              </div>
+            </a>
+          </div>
+          <div class="hero-cosmos-hint">
+            <span class="cosmos-hint-dot"></span>
+            <span class="cosmos-hint-text">Pasa el ratón para desplegar el abanico de apps</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Apps Bento Showcase -->
     <section class="container studio-grid" aria-label="Todas nuestras aplicaciones">
       <!-- Preventivi Facili (featured) -->
-      <article class="bento-card col-8 featured-card reveal-up">
+      <article class="bento-card col-8 featured-card border-beam-container reveal-up">
+        <div class="border-beam" aria-hidden="true"></div>
         <div class="featured-card-grid">
           <div class="featured-card-copy">
-        <div class="card-top-row">
-          <img class="card-app-icon" src="../assets/icon.png" alt="Icono Preventivi Facili" width="58" height="58">
-          <div class="card-title-group">
-            <span class="card-category-pill pill-work">Negocios &amp; Facturación</span>
-            <h2 class="card-app-title">Preventivi Facili</h2>
-          </div>
-        </div>
-        <p class="bento-text">Presupuestos y facturas en PDF profesionales en 30 segundos directamente desde el móvil. 100% offline y sin suscripción.</p>
-        <div class="card-micro-preview invoice-pill-preview">
-          <div class="micro-status-pill">
-            <span class="micro-pulse-dot"></span>
-            <span class="micro-pill-title">Presupuesto #104 · Aceptado</span>
-            <strong class="micro-amount">+€ 3.450</strong>
-          </div>
-          <div class="micro-tags-row">
-            <span class="micro-tag">✓ Firma con el dedo</span>
-            <span class="micro-tag">⚡ PDF en 30 seg</span>
-            <span class="micro-tag">💬 Listo para WhatsApp</span>
+            <div class="card-top-row">
+              <img class="card-app-icon" src="../assets/icon.png" alt="Icono Preventivi Facili" width="58" height="58">
+              <div class="card-title-group">
+                <span class="card-category-pill pill-work">Negocios &amp; Facturación</span>
+                <h2 class="card-app-title">Preventivi Facili</h2>
+                         <p class="bento-text">Presupuestos y facturas en PDF profesionales en 30 segundos directamente desde el móvil. 100% offline y sin suscripción.</p>
+            <div class="card-micro-preview invoice-pill-preview">
+              <div class="micro-status-pill">
+                <span class="micro-pulse-dot"></span>
+                <span class="micro-pill-title">Presupuesto #104 · Aceptado</span>
+                <strong class="micro-amount" data-countup="3450" data-prefix="+€ ">+€ 3.450</strong>
+              </div>
+              <div class="micro-tags-row">
+                <span class="micro-tag">✓ Firma con el dedo</span>
+                <span class="micro-tag">⚡ PDF en 30 seg</span>
+                <span class="micro-tag">💬 Listo para WhatsApp</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card-actions-wrapper">

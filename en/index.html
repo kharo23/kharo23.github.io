@@ -63,6 +63,15 @@
         <span class="brand-name">Kharonte <span>Studio</span></span>
       </a>
       <div class="nav-right-group">
+        <button type="button" class="nav-cmd-btn" id="open-cmd-palette" aria-label="Search and quick actions (⌘K)">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="cmd-label">Search</span>
+          <kbd class="cmd-key-hint">⌘K</kbd>
+        </button>
+        <button type="button" class="nav-sound-btn" id="toggle-sound" aria-label="Micro-haptic audio feedback">
+          <svg class="sound-icon-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          <svg class="sound-icon-off" style="display:none;" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" x2="1" y1="9" y2="15"/></svg>
+        </button>
         <div class="lang-switch" aria-label="Language / Lingua / Idioma">
           <a href="../" class="lang-link">IT</a>
           <a href="./" class="lang-link active" aria-current="page">EN</a>
@@ -109,7 +118,7 @@
         <div class="trust-strip reveal-up d5">
           <div class="trust-strip-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>4 apps live on the App Store &amp; Google Play</span>
+            <span><strong data-countup="4">4</strong> apps live on the App Store &amp; Google Play</span>
           </div>
           <div class="trust-strip-divider" aria-hidden="true"></div>
           <div class="trust-strip-item">
@@ -122,13 +131,74 @@
             <span>Built solo by one independent developer</span>
           </div>
         </div>
+
+        <!-- Hero App Cosmos / Floating Device Fan -->
+        <div class="hero-cosmos-wrapper reveal-up d6" aria-label="Interactive fan of our 5 native apps">
+          <div class="hero-cosmos-deck" id="hero-cosmos-deck">
+            <a href="../preventivi-facili/en/" class="cosmos-card cosmos-card-1" aria-label="Preventivi Facili">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../assets/icon.png" alt="Preventivi Facili" width="30" height="30">
+                  <span class="cosmos-badge pill-work">Business</span>
+                </div>
+                <strong class="cosmos-card-title">Preventivi Facili</strong>
+                <span class="cosmos-card-tag">PDF Invoices in 30s</span>
+              </div>
+            </a>
+            <a href="../foodlio/en/" class="cosmos-card cosmos-card-2" aria-label="Foodlio">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../foodlio/icon.png" alt="Foodlio" width="30" height="30">
+                  <span class="cosmos-badge pill-food">Culinary</span>
+                </div>
+                <strong class="cosmos-card-title">Foodlio</strong>
+                <span class="cosmos-card-tag">Real Food Cost</span>
+              </div>
+            </a>
+            <a href="../padel-match-manager/en/" class="cosmos-card cosmos-card-3" aria-label="Padel Match Manager">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../padel-match-manager/icon.png" alt="Padel Match Manager" width="30" height="30">
+                  <span class="cosmos-badge pill-sport">Sports</span>
+                </div>
+                <strong class="cosmos-card-title">Padel Match</strong>
+                <span class="cosmos-card-tag">Live Tournaments</span>
+              </div>
+            </a>
+            <a href="../aegis/en/" class="cosmos-card cosmos-card-4" aria-label="Aegis">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../aegis/icon.png" alt="Aegis" width="30" height="30">
+                  <span class="cosmos-badge pill-wellness">Mindfulness</span>
+                </div>
+                <strong class="cosmos-card-title">Aegis</strong>
+                <span class="cosmos-card-tag">Breath &amp; Calm</span>
+              </div>
+            </a>
+            <a href="../flipeven/en/" class="cosmos-card cosmos-card-5" aria-label="FlipEven">
+              <div class="cosmos-card-inner">
+                <div class="cosmos-card-top">
+                  <img src="../flipeven/icon.png" alt="FlipEven" width="30" height="30">
+                  <span class="cosmos-badge pill-reselling">Reselling</span>
+                </div>
+                <strong class="cosmos-card-title">FlipEven</strong>
+                <span class="cosmos-card-tag">Break-Even Point</span>
+              </div>
+            </a>
+          </div>
+          <div class="hero-cosmos-hint">
+            <span class="cosmos-hint-dot"></span>
+            <span class="cosmos-hint-text">Hover to expand the app collection fan</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Apps Bento Showcase -->
     <section class="container studio-grid" aria-label="Our applications">
       <!-- Preventivi Facili (featured) -->
-      <article class="bento-card col-8 featured-card reveal-up">
+      <article class="bento-card col-8 featured-card border-beam-container reveal-up">
+        <div class="border-beam" aria-hidden="true"></div>
         <div class="featured-card-grid">
           <div class="featured-card-copy">
             <div class="card-top-row">
@@ -143,7 +213,7 @@
               <div class="micro-status-pill">
                 <span class="micro-pulse-dot"></span>
                 <span class="micro-pill-title">Quote #104 · Accepted</span>
-                <strong class="micro-amount">+$ 3,450</strong>
+                <strong class="micro-amount" data-countup="3450" data-prefix="+$ ">+$ 3,450</strong>
               </div>
               <div class="micro-tags-row">
                 <span class="micro-tag">✓ On-screen Signature</span>

@@ -90,11 +90,11 @@ function initHubInteractions() {
         ptsB++;
         if (ptsB > 6) {
           ptsB = 4;
-          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-start') || 'Match Point 🔥';
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-start') || 'Match Point';
         } else if (ptsB === 5) {
-          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-mid') || 'Punto Decisivo 🎾';
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-mid') || 'Punto Decisivo';
         } else if (ptsB === 6) {
-          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-tie') || 'Tie Break! ⚡';
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-tie') || 'Tie Break!';
         }
         scoreB.textContent = ptsB;
         scoreB.classList.add('score-bump');

@@ -306,6 +306,7 @@ function initHubInteractions() {
   document.querySelectorAll('.studio-grid .bento-card').forEach((card) => {
     let rect = null;
     let cardTicking = false;
+    let leaveTimer = null;
 
     // Inject card-glare sheen element if not already present
     let glare = card.querySelector('.card-glare');
@@ -317,6 +318,8 @@ function initHubInteractions() {
     }
 
     card.addEventListener('pointerenter', () => {
+      // Cancel any pending reset — mouse came back before debounce fired
+      if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
       rect = card.getBoundingClientRect();
       card.classList.add('is-tilting');
       card.style.setProperty('--glare-o', '1');
@@ -352,12 +355,17 @@ function initHubInteractions() {
     });
 
     card.addEventListener('pointerleave', () => {
-      rect = null;
-      card.classList.remove('is-tilting');
-      card.style.setProperty('--tilt-x', '0deg');
-      card.style.setProperty('--tilt-y', '0deg');
-      card.style.setProperty('--tilt-ty', '0px');
-      card.style.setProperty('--glare-o', '0');
+      // Debounce: wait 80ms before resetting — prevents jitter when the card's
+      // own translateY(-4px) briefly pushes the border away from the cursor.
+      leaveTimer = setTimeout(() => {
+        leaveTimer = null;
+        rect = null;
+        card.classList.remove('is-tilting');
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+        card.style.setProperty('--tilt-ty', '0px');
+        card.style.setProperty('--glare-o', '0');
+      }, 80);
     });
   });
 

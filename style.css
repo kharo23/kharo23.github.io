@@ -145,7 +145,7 @@ body {
   top: 14px;
   z-index: 100;
   width: calc(100% - 28px);
-  max-width: 1120px;
+  max-width: 1260px;
   margin: 14px auto 0;
   background: var(--bg-glass);
   backdrop-filter: blur(24px);
@@ -210,7 +210,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
   list-style: none;
 }
 
@@ -222,6 +222,7 @@ body {
   transition: var(--transition);
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
 }
 
 .nav-item-link:hover {
@@ -247,7 +248,7 @@ body {
 .nav-right-group {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .lang-switch {

@@ -2025,7 +2025,7 @@
   top: 14px !important;
   z-index: 100 !important;
   width: calc(100% - 28px) !important;
-  max-width: 1120px !important;
+  max-width: 1260px !important;
   margin: 14px auto 0 !important;
   background: var(--bg-glass) !important;
   backdrop-filter: blur(24px) !important;

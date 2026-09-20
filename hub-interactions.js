@@ -145,77 +145,6 @@ function initHubInteractions() {
     }, 4000);
   }
 
-  // Preventivi Facili Live Mode Switcher (Craftsman vs Freelance)
-  document.querySelectorAll('.interactive-mode-switch').forEach((switcher) => {
-    const card = switcher.closest('.featured-card');
-    if (!card) return;
-    const preview = card.querySelector('.invoice-pill-preview');
-    const pillTitle = preview ? preview.querySelector('.micro-pill-title') : null;
-    const amountEl = preview ? preview.querySelector('.micro-amount') : null;
-    const tagsRow = preview ? preview.querySelector('.micro-tags-row') : null;
-    const buttons = switcher.querySelectorAll('.mode-switch-btn');
-
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (btn.classList.contains('is-active')) return;
-        buttons.forEach(b => {
-          b.classList.remove('is-active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('is-active');
-        btn.setAttribute('aria-selected', 'true');
-
-        playHapticTick(1.15);
-
-        if (preview) {
-          preview.classList.remove('mode-switching');
-          void preview.offsetWidth; // force DOM reflow
-          preview.classList.add('mode-switching');
-        }
-
-        const titleText = btn.getAttribute('data-pill-title');
-        const amount = btn.getAttribute('data-amount');
-        const countupVal = parseInt(btn.getAttribute('data-countup') || '3450', 10);
-        let tags = [];
-        try {
-          tags = JSON.parse(btn.getAttribute('data-tags') || '[]');
-        } catch (err) {}
-
-        if (pillTitle && titleText) {
-          pillTitle.textContent = titleText;
-        }
-
-        if (amountEl) {
-          amountEl.setAttribute('data-countup', countupVal);
-          const start = countupVal > 2500 ? 1000 : 500;
-          const duration = 400;
-          const startTime = performance.now();
-          const prefix = amountEl.getAttribute('data-prefix') || '+€ ';
-          const suffix = amountEl.getAttribute('data-suffix') || '';
-
-          function animateNum(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const ease = 1 - Math.pow(1 - progress, 3);
-            const currentVal = Math.round(start + (countupVal - start) * ease);
-            amountEl.textContent = `${prefix}${currentVal.toLocaleString()}${suffix}`;
-            if (progress < 1) {
-              requestAnimationFrame(animateNum);
-            } else {
-              amountEl.textContent = amount;
-            }
-          }
-          requestAnimationFrame(animateNum);
-        }
-
-        if (tagsRow && tags.length) {
-          tagsRow.innerHTML = tags.map(t => `<span class="micro-tag">${t}</span>`).join('');
-        }
-      });
-    });
-  });
-
   if (reduceMotion || !finePointer) return;
 
   // 3. Cursor glow (GPU composited with translate3d & snappy responsiveness)
@@ -452,7 +381,7 @@ function initHubInteractions() {
   }
 
   // Attach haptic feedback to interactive elements
-  document.querySelectorAll('.micro-pill, .mode-switch-btn, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
+  document.querySelectorAll('.micro-pill, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
     el.addEventListener('pointerdown', () => playHapticTick(1));
   });
 

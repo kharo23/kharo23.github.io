@@ -95,23 +95,29 @@ body {
 }
 
 
-/* Sophisticated Background Grid & Glows */
+/* Deep Velvet Aurora Canvas — pure organic atmospheric depth (zero rigid grid lines) */
 .bg-grid-pattern {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 12% 14%, rgba(0, 82, 255, 0.28), transparent 42%),
-    radial-gradient(circle at 88% 12%, rgba(0, 242, 254, 0.20), transparent 40%),
-    radial-gradient(circle at 50% 36%, rgba(167, 139, 250, 0.14), transparent 46%),
-    radial-gradient(circle at 14% 68%, rgba(0, 82, 255, 0.22), transparent 45%),
-    radial-gradient(circle at 86% 76%, rgba(16, 185, 129, 0.16), transparent 42%),
-    radial-gradient(circle at 48% 90%, rgba(207, 161, 94, 0.18), transparent 46%);
-  background-size: 56px 56px, 56px 56px, auto, auto, auto, auto, auto, auto;
+  background:
+    /* Top horizon spotlight aura */
+    radial-gradient(120% 80% at 50% -10%, rgba(56, 189, 248, 0.16) 0%, rgba(0, 82, 255, 0.08) 35%, transparent 70%),
+    /* Upper-left celestial indigo wash */
+    radial-gradient(70% 60% at 10% 15%, rgba(0, 82, 255, 0.24) 0%, transparent 60%),
+    /* Upper-right electric cyan bloom */
+    radial-gradient(65% 55% at 90% 12%, rgba(0, 242, 254, 0.18) 0%, transparent 60%),
+    /* Mid-canvas amethyst aura */
+    radial-gradient(80% 65% at 50% 45%, rgba(167, 139, 250, 0.13) 0%, transparent 65%),
+    /* Lower-left deep cobalt depth */
+    radial-gradient(70% 60% at 15% 72%, rgba(0, 82, 255, 0.20) 0%, transparent 60%),
+    /* Lower-right emerald ambient pulse */
+    radial-gradient(65% 55% at 85% 78%, rgba(16, 185, 129, 0.14) 0%, transparent 60%),
+    /* Bottom warm bronze / champagne finish */
+    radial-gradient(90% 70% at 50% 98%, rgba(207, 161, 94, 0.16) 0%, transparent 65%),
+    /* Deep velvety obsidian base */
+    radial-gradient(circle at 50% 50%, #060913 0%, #030408 100%);
   pointer-events: none;
   z-index: 0;
 }

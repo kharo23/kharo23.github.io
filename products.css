@@ -991,7 +991,7 @@
   color: var(--text-secondary);
 }
 
-/* 4. Aegis Sacred Kinetic Lotus Mandala (Addio alla sfera!) */
+/* 4. Aegis Sacred Kinetic Lotus Mandala (Centratura matematica perfetta) */
 .card-micro-widget.aegis-breath-widget {
   display: flex;
   align-items: center;
@@ -1014,11 +1014,15 @@
   flex-shrink: 0;
 }
 
-/* Outer Celestial Orbit Ring */
+/* Outer Celestial Orbit Ring - Centrato al millimetro */
 .lotus-celestial-ring {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 58px;
   height: 58px;
+  margin-top: -29px;
+  margin-left: -29px;
   border-radius: 50%;
   border: 1px dashed rgba(216, 180, 254, 0.35);
   box-shadow: 0 0 16px rgba(167, 139, 250, 0.2);
@@ -1026,28 +1030,30 @@
   pointer-events: none;
 }
 
-/* Cluster containing the 6 petals */
+/* Cluster ancorato esattamente al punto (0, 0) centrale */
 .lotus-petals-cluster {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
 }
 
-/* Base Petal: Translucent Frosted Glass with Iridescent Violet Gradient */
+/* Base Petal: base ancorata a (0, 0) e pivot identico al centro */
 .lotus-petal {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 16px;
-  height: 28px;
+  height: 24px;
+  margin-left: -8px;
+  margin-top: -24px;
+  transform-origin: 8px 24px;
   border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
-  background: linear-gradient(180deg, rgba(233, 213, 255, 0.85) 0%, rgba(167, 139, 250, 0.58) 45%, rgba(124, 58, 237, 0.25) 100%);
+  background: linear-gradient(180deg, rgba(233, 213, 255, 0.88) 0%, rgba(167, 139, 250, 0.6) 45%, rgba(124, 58, 237, 0.28) 100%);
   border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 0 12px rgba(167, 139, 250, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.75);
   mix-blend-mode: screen;
-  transform-origin: bottom center;
-  transition: transform 0.4s ease;
   pointer-events: none;
 }
 
@@ -1060,46 +1066,50 @@
 .lotus-petal.p6 { animation: petalBloomP6 16s infinite cubic-bezier(0.4, 0, 0.2, 1); }
 
 @keyframes petalBloomP1 {
-  0%, 75%, 100% { transform: rotate(0deg) translateY(0px) scale(0.72); opacity: 0.7; }
-  25%, 50% { transform: rotate(15deg) translateY(-9px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
+  0%, 75%, 100% { transform: rotate(0deg) translateY(-2px) scale(0.78); opacity: 0.75; }
+  25%, 50% { transform: rotate(15deg) translateY(-8px) scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
 }
 @keyframes petalBloomP2 {
-  0%, 75%, 100% { transform: rotate(60deg) translateY(0px) scale(0.72); opacity: 0.7; }
-  25%, 50% { transform: rotate(75deg) translateY(-9px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
+  0%, 75%, 100% { transform: rotate(60deg) translateY(-2px) scale(0.78); opacity: 0.75; }
+  25%, 50% { transform: rotate(75deg) translateY(-8px) scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
 }
 @keyframes petalBloomP3 {
-  0%, 75%, 100% { transform: rotate(120deg) translateY(0px) scale(0.72); opacity: 0.7; }
-  25%, 50% { transform: rotate(135deg) translateY(-9px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
+  0%, 75%, 100% { transform: rotate(120deg) translateY(-2px) scale(0.78); opacity: 0.75; }
+  25%, 50% { transform: rotate(135deg) translateY(-8px) scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
 }
 @keyframes petalBloomP4 {
-  0%, 75%, 100% { transform: rotate(180deg) translateY(0px) scale(0.72); opacity: 0.7; }
-  25%, 50% { transform: rotate(195deg) translateY(-9px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
+  0%, 75%, 100% { transform: rotate(180deg) translateY(-2px) scale(0.78); opacity: 0.75; }
+  25%, 50% { transform: rotate(195deg) translateY(-8px) scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
 }
 @keyframes petalBloomP5 {
-  0%, 75%, 100% { transform: rotate(240deg) translateY(0px) scale(0.72); opacity: 0.7; }
-  25%, 50% { transform: rotate(255deg) translateY(-9px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
+  0%, 75%, 100% { transform: rotate(240deg) translateY(-2px) scale(0.78); opacity: 0.75; }
+  25%, 50% { transform: rotate(255deg) translateY(-8px) scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
 }
 @keyframes petalBloomP6 {
-  0%, 75%, 100% { transform: rotate(300deg) translateY(0px) scale(0.72); opacity: 0.7; }
-  25%, 50% { transform: rotate(315deg) translateY(-9px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
+  0%, 75%, 100% { transform: rotate(300deg) translateY(-2px) scale(0.78); opacity: 0.75; }
+  25%, 50% { transform: rotate(315deg) translateY(-8px) scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px rgba(196, 181, 253, 0.85)); }
 }
 
-/* Luminous Starlight Core at Center of Lotus */
+/* Luminous Starlight Core: centrato perfettamente al millimetro su (0, 0) */
 .lotus-starlight-core {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
   border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 10px #fff, 0 0 20px #c084fc, 0 0 32px #a855f7;
-  z-index: 3;
+  background: radial-gradient(circle, #ffffff 40%, #e9d5ff 75%, #c084fc 100%);
+  box-shadow: 0 0 8px #ffffff, 0 0 16px #c084fc, 0 0 28px #9333ea;
+  z-index: 5;
   animation: starlightPulse 16s infinite ease-in-out;
   pointer-events: none;
 }
 
 @keyframes starlightPulse {
-  0%, 75%, 100% { transform: scale(0.8); opacity: 0.65; }
-  25%, 50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 14px #fff, 0 0 28px #c084fc, 0 0 45px #9333ea; }
+  0%, 75%, 100% { transform: scale(0.85); opacity: 0.75; }
+  25%, 50% { transform: scale(1.35); opacity: 1; box-shadow: 0 0 12px #fff, 0 0 22px #c084fc, 0 0 38px #9333ea; }
 }
 
 @keyframes celestialRingSpin {

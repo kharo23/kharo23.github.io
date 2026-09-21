@@ -1859,6 +1859,23 @@ body {
   gap: 1rem;
 }
 
+.footer-freelance-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+.footer-freelance-note a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-freelance-note a:hover {
+  color: var(--text-main);
+}
+
 /* ==========================================================================
    LEGAL / SUPPORT SHEETS
    ========================================================================== */

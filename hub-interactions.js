@@ -57,6 +57,50 @@ function initHubInteractions() {
     }, { passive: true });
   }
 
+  // 2a. Mobile nav menu toggle (hamburger, shown <= 1040px where .nav-links collapses)
+  if (nav) {
+    const menuToggle = nav.querySelector('.nav-menu-toggle');
+    const navLinks = nav.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+      const closeMenu = () => {
+        nav.classList.remove('is-menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      };
+      const openMenu = () => {
+        nav.classList.add('is-menu-open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      };
+      menuToggle.addEventListener('click', () => {
+        if (nav.classList.contains('is-menu-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.closest('.nav-item-link')) {
+          closeMenu();
+        }
+      });
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('is-menu-open') && !nav.contains(e.target)) {
+          closeMenu();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('is-menu-open')) {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1040 && nav.classList.contains('is-menu-open')) {
+          closeMenu();
+        }
+      });
+    }
+  }
+
   // 2b. Bento Micro-Widgets Controller (available on all devices including touch)
   // Foodlio Recipe Margin Switcher
   document.querySelectorAll('.food-margin-widget').forEach((widget) => {

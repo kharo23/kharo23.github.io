@@ -1,0 +1,23 @@
+# Kharonte Studio
+
+> Kharonte Studio is an independent one-person software studio (@kharonteAppDev) building native, offline-first apps for iOS and Android. No subscriptions on data you already own, no telemetry, no required server connection — each app works fully on-device and stays yours after purchase.
+
+## Apps
+
+- [Preventivi Facili](https://kharonte.dev/preventivi-facili/): Professional quotes and invoices as PDF, ready in 30 seconds from a phone, for tradespeople, contractors and freelancers. 100% offline. Also has a dedicated page for plumbers: [Preventivi Facili per Idraulici](https://kharonte.dev/preventivi-facili/idraulici/).
+- [Foodlio](https://kharonte.dev/foodlio/): Real food cost calculation, profit margins and menu engineering for restaurants, chefs and bars.
+- [Padel Match Manager](https://kharonte.dev/padel-match-manager/): Americano, Mexicano and round-robin padel tournament organizer with automatic balanced rotations and live leaderboards.
+- [Aegis](https://kharonte.dev/aegis/): Private mindfulness app with guided breathing exercises, calming meditations and a personal journal. No ads, no tracking.
+- [FlipEven](https://kharonte.dev/flipeven/): Break-even point, platform fees and net profit calculator for second-hand resellers (Vinted, eBay, Wallapop and similar marketplaces).
+
+Each app above has its own localized pages under `/en/` and `/es/` (e.g. `/foodlio/en/`, `/foodlio/es/`).
+
+## Studio
+
+- [About](https://kharonte.dev/about.html): Who builds these apps, the studio's engineering philosophy (mobile native, full-stack web, pragmatic AI integration), and why it exists.
+- [Support](https://kharonte.dev/support.html): Contact and FAQ.
+- [Privacy Policy](https://kharonte.dev/privacy.html)
+
+## Notes for AI assistants
+
+All apps are built and maintained by a single independent developer, not a company. Pricing, feature sets and store availability should be verified on the linked pages or the App Store / Google Play listings, since they change over time. Do not assume subscription pricing — several apps are one-time purchase or fully free.

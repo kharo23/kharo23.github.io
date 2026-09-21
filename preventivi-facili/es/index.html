@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&amp;family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560;9..144,650&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preventivi Facili — Presupuestos y PDF Profesionales en 30 Segundos</title>
-  <meta name="description" content="La app definitiva para autónomos, artesanos y profesionales. Crea presupuestos en PDF con tu logo y cálculo automático de impuestos. Tus datos siempre en tu dispositivo, sin suscripción.">
+  <title>Preventivi Facili — Presupuestos PDF para Fontaneros y Electricistas</title>
+  <meta name="description" content="Presupuestos PDF profesionales en 30 segundos para fontaneros, electricistas y autónomos. Cálculo de IVA automático, logo personalizado, sin suscripciones.">
   <meta name="keywords" content="app de presupuestos, presupuesto electricista, presupuesto fontanero, generador pdf presupuesto, app autonomos presupuestos">
   <meta name="google-site-verification" content="1a0cAiTA-WZ7sMMRC3xgLdN3Pe8T8sZED02hS9oVVIo">
 
@@ -26,8 +27,11 @@
   <meta name="twitter:image" content="https://kharonte.dev/assets/icon.png">
 
   <link rel="icon" type="image/png" href="../../assets/favicon.png">
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="../../products.css">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#06080e">
+  <link rel="stylesheet" href="../../style.css?v=20260921">
+  <link rel="stylesheet" href="../../products.css?v=20260921">
   <link rel="canonical" href="https://kharonte.dev/preventivi-facili/es/">
   <link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/">
   <link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/en/">
@@ -89,11 +93,39 @@
         "@type": "Answer",
         "text": "¡No! Simplemente pulsa \"Restaurar compras\" en los ajustes de la app en tu nuevo dispositivo con la misma cuenta de la tienda y tu licencia vitalicia se reactivará sin coste."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Soy fontanero, ¿hay algo específico para mí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí: la página Preventivi Facili para Fontaneros (kharonte.dev/preventivi-facili/idraulici/es/) tiene un presupuesto de ejemplo para trabajos de fontanería y las preguntas más comunes de quien trabaja sobre el terreno."
+      }
     }
   ]
 }
   </script>
-  <script src="../../hub-interactions.js" defer></script>
+  <script src="../../hub-interactions.js?v=20260921" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://kharonte.dev/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Preventivi Facili",
+      "item": "https://kharonte.dev/preventivi-facili/es/"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="product-page">
 
@@ -118,14 +150,24 @@
         <span class="brand-name">Preventivi <span>Facili</span></span>
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav-links">
         <li><a href="#anteprima" class="nav-item-link">Simulador</a></li>
         <li><a href="#bento-features" class="nav-item-link">Funciones</a></li>
         <li><a href="#calcolatore" class="nav-item-link">Tiempo Ahorrado</a></li>
         <li><a href="#prezzi" class="nav-item-link">Precios</a></li>
         <li><a href="#faq" class="nav-item-link">FAQ</a></li>
+      <li class="nav-links-lang-item"><div class="lang-switch" aria-label="Idioma / Language / Lingua">
+          <a href="../" class="lang-link">IT</a>
+          <a href="../en/" class="lang-link">EN</a>
+          <a href="./" class="lang-link active" aria-current="page">ES</a>
+        </div></li>
       </ul>
 
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Abrir el menú">
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+      </button>
       <div class="nav-right-group">
         <div class="lang-switch" aria-label="Idioma / Language / Lingua">
           <a href="../" class="lang-link">IT</a>
@@ -161,7 +203,7 @@
       </h1>
 
       <p class="hero-subtext">
-        Se acabaron las noches perdidas peleando con Excel o Word. Crea presupuestos en PDF impecables en 30 segundos con tu logo y cálculo automático de IVA. Tus datos se quedan en tu dispositivo, sin suscripciones mensuales.
+        Pensada para fontaneros, electricistas, albañiles y cualquier autónomo que hace presupuestos sobre el terreno. Crea presupuestos en PDF impecables en 30 segundos con tu logo y cálculo automático de IVA. Tus datos se quedan en tu dispositivo, sin suscripciones mensuales.
       </p>
 
       <!-- Authentic Store Buttons -->
@@ -305,21 +347,21 @@
             <div class="sim-buttons-group">
               <button type="button" class="sim-trigger-btn" id="btnToggleLabor"
                 data-label-off="+ Añadir 4 horas de mano de obra (+€160)"
-                data-label-on="✓ 4 horas de mano de obra añadidas (+€160)">
+                data-label-on="4 horas de mano de obra añadidas (+€160)">
                 <span>+ Añadir 4 horas de mano de obra (+€160)</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </button>
 
               <button type="button" class="sim-trigger-btn" id="btnToggleMaterials"
                 data-label-off="+ Añadir cables y materiales (+€190)"
-                data-label-on="✓ Cables y materiales añadidos (+€190)">
+                data-label-on="Cables y materiales añadidos (+€190)">
                 <span>+ Añadir cables y materiales (+€190)</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </button>
 
               <button type="button" class="sim-trigger-btn" id="btnToggleTaxRegime"
                 data-label-off="Cambiar a régimen simplificado (0% IVA)"
-                data-label-on="✓ Régimen simplificado activo (0% IVA)">
+                data-label-on="Régimen simplificado activo (0% IVA)">
                 <span>Cambiar a régimen simplificado (0% IVA)</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
               </button>
@@ -603,6 +645,16 @@
             <p>¡No! Basta con pulsar "Restaurar compras anteriores" en la pantalla Premium del nuevo dispositivo con la misma cuenta de la tienda: la licencia de por vida se reactivará al instante sin coste adicional.</p>
           </div>
         </div>
+
+        <div class="faq-card-unit">
+          <button class="faq-trigger-button" type="button">
+            <span>Soy fontanero, ¿hay algo específico para mí?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-collapsible-body">
+            <p>Sí: tenemos una página dedicada con un presupuesto de ejemplo para trabajos de fontanería (cambio de caldera, revisión de instalación, desplazamiento) y las preguntas más comunes de quien trabaja sobre el terreno. <a href="../idraulici/es/" style="color: var(--text-highlight); text-decoration: underline; text-underline-offset: 3px;">Míralo aquí</a>.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -666,6 +718,6 @@
     </div>
   </footer>
 
-  <script src="../../main.js"></script>
+  <script src="../../main.js?v=20260921"></script>
 </body>
 </html>

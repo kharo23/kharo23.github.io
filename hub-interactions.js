@@ -57,6 +57,50 @@ function initHubInteractions() {
     }, { passive: true });
   }
 
+  // 2a. Mobile nav menu toggle (hamburger, shown <= 1040px where .nav-links collapses)
+  if (nav) {
+    const menuToggle = nav.querySelector('.nav-menu-toggle');
+    const navLinks = nav.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+      const closeMenu = () => {
+        nav.classList.remove('is-menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      };
+      const openMenu = () => {
+        nav.classList.add('is-menu-open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      };
+      menuToggle.addEventListener('click', () => {
+        if (nav.classList.contains('is-menu-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.closest('.nav-item-link')) {
+          closeMenu();
+        }
+      });
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('is-menu-open') && !nav.contains(e.target)) {
+          closeMenu();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('is-menu-open')) {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1040 && nav.classList.contains('is-menu-open')) {
+          closeMenu();
+        }
+      });
+    }
+  }
+
   // 2b. Bento Micro-Widgets Controller (available on all devices including touch)
   // Foodlio Recipe Margin Switcher
   document.querySelectorAll('.food-margin-widget').forEach((widget) => {
@@ -90,11 +134,11 @@ function initHubInteractions() {
         ptsB++;
         if (ptsB > 6) {
           ptsB = 4;
-          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-start') || 'Match Point 🔥';
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-start') || 'Match Point';
         } else if (ptsB === 5) {
-          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-mid') || 'Punto Decisivo 🎾';
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-mid') || 'Punto Decisivo';
         } else if (ptsB === 6) {
-          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-tie') || 'Tie Break! ⚡';
+          if (statusEl) statusEl.textContent = statusEl.getAttribute('data-status-tie') || 'Tie Break!';
         }
         scoreB.textContent = ptsB;
         scoreB.classList.add('score-bump');
@@ -144,81 +188,6 @@ function initHubInteractions() {
       });
     }, 4000);
   }
-
-  // Preventivi Facili Live Mode Switcher (Craftsman vs Freelance)
-  document.querySelectorAll('.interactive-mode-switch').forEach((switcher) => {
-    const card = switcher.closest('.featured-card');
-    if (!card) return;
-    const preview = card.querySelector('.invoice-pill-preview');
-    const pillTitle = preview ? preview.querySelector('.micro-pill-title') : null;
-    const amountEl = preview ? preview.querySelector('.micro-amount') : null;
-    const tagsRow = preview ? preview.querySelector('.micro-tags-row') : null;
-    const buttons = switcher.querySelectorAll('.mode-switch-btn');
-
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (btn.classList.contains('is-active')) return;
-        buttons.forEach(b => {
-          b.classList.remove('is-active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('is-active');
-        btn.setAttribute('aria-selected', 'true');
-
-        playHapticTick(1.15);
-
-        if (preview) {
-          preview.classList.remove('mode-switching');
-          void preview.offsetWidth; // force DOM reflow
-          preview.classList.add('mode-switching');
-        }
-
-        const titleText = btn.getAttribute('data-pill-title');
-        const amount = btn.getAttribute('data-amount');
-        const countupVal = parseInt(btn.getAttribute('data-countup') || '3450', 10);
-        let tags = [];
-        try {
-          tags = JSON.parse(btn.getAttribute('data-tags') || '[]');
-        } catch (err) {}
-
-        if (pillTitle && titleText) {
-          pillTitle.textContent = titleText;
-        }
-
-        if (amountEl) {
-          amountEl.setAttribute('data-countup', countupVal);
-          const start = countupVal > 2500 ? 1000 : 500;
-          const duration = 400;
-          const startTime = performance.now();
-          const prefix = amountEl.getAttribute('data-prefix') || '+€ ';
-          const suffix = amountEl.getAttribute('data-suffix') || '';
-
-          function animateNum(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const ease = 1 - Math.pow(1 - progress, 3);
-            const currentVal = Math.round(start + (countupVal - start) * ease);
-            amountEl.textContent = `${prefix}${currentVal.toLocaleString()}${suffix}`;
-            if (progress < 1) {
-              requestAnimationFrame(animateNum);
-            } else {
-              amountEl.textContent = amount;
-            }
-          }
-          requestAnimationFrame(animateNum);
-        }
-
-        if (tagsRow && tags.length) {
-          const SVG_CHECK = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
-          const SVG_BOLT  = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
-          const SVG_CHAT  = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
-          const icons = [SVG_CHECK, SVG_BOLT, SVG_CHAT];
-          tagsRow.innerHTML = tags.map((t, i) => `<span class="micro-tag">${icons[i] || SVG_CHECK} ${t}</span>`).join('');
-        }
-      });
-    });
-  });
 
   if (reduceMotion || !finePointer) return;
 
@@ -464,7 +433,7 @@ function initHubInteractions() {
   }
 
   // Attach haptic feedback to interactive elements
-  document.querySelectorAll('.micro-pill, .mode-switch-btn, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
+  document.querySelectorAll('.micro-pill, .btn-micro-point, .nav-cmd-btn, .cosmos-card, .magnetic, .nav-sound-btn').forEach((el) => {
     el.addEventListener('pointerdown', () => playHapticTick(1));
   });
 

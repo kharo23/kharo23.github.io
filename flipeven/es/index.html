@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&amp;family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560;9..144,650&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FlipEven — Punto de Equilibrio, Margen y Ganancia Neta para Reselling</title>
-  <meta name="description" content="Calcula el punto de equilibrio, margen de beneficio y ganancia neta en Vinted, Wallapop y eBay. Calcula comisiones y vende con rentabilidad segura.">
+  <meta name="description" content="Calcula el punto de equilibrio, margen de beneficio y ganancia neta en Vinted, Wallapop, eBay y Milanuncios. Calcula comisiones y vende con rentabilidad segura.">
   <link rel="canonical" href="https://kharonte.dev/flipeven/es/">
   <link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/">
   <link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/">
@@ -24,9 +25,12 @@
   <meta name="twitter:description" content="Calcula al instante comisiones, precio mínimo y margen real para Vinted, Wallapop y segunda mano.">
   <meta name="twitter:image" content="https://kharonte.dev/flipeven/icon.png">
   <link rel="icon" href="../icon.png">
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="../../products.css">
-  <script src="../../products.js" defer></script>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#06080e">
+  <link rel="stylesheet" href="../../style.css?v=20260921">
+  <link rel="stylesheet" href="../../products.css?v=20260921">
+  <script src="../../products.js?v=20260921" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,7 +88,27 @@
   ]
 }
   </script>
-  <script src="../../hub-interactions.js" defer></script>
+  <script src="../../hub-interactions.js?v=20260921" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://kharonte.dev/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FlipEven",
+      "item": "https://kharonte.dev/flipeven/es/"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="product-page flipeven">
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -106,11 +130,21 @@
         <img class="brand-logo-img" src="../icon.png" alt="FlipEven Icon">
         <span class="brand-name">FlipEven</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav-links">
         <li><a class="nav-item-link" href="#vista-previa">Vista previa</a></li>
         <li><a class="nav-item-link" href="#funciones">Funciones</a></li>
         <li><a class="nav-item-link" href="#faq">FAQ</a></li>
+      <li class="nav-links-lang-item"><div class="lang-switch" aria-label="Idioma / Language / Lingua">
+          <a href="../" class="lang-link">IT</a>
+          <a href="../en/" class="lang-link">EN</a>
+          <a href="./" class="lang-link active" aria-current="page">ES</a>
+        </div></li>
       </ul>
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Abrir el menú">
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+      </button>
       <div class="nav-right-group">
         <div class="lang-switch" aria-label="Idioma / Language / Lingua">
           <a href="../" class="lang-link">IT</a>

@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&amp;family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560;9..144,650&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Foodlio — Recipe Costing &amp; Menu Engineering for Restaurants</title>
-  <meta name="description" content="Calculate recipe food costs, track ingredient prices, and engineer a profitable restaurant menu with Foodlio for iOS and Android.">
+  <title>Foodlio — Food Cost &amp; Menu Engineering for Restaurants</title>
+  <meta name="description" content="Calculate the food cost of every recipe and protect margins for restaurants, pizzerias, bars and bakeries. Menu engineering on iOS and Android.">
   <link rel="canonical" href="https://kharonte.dev/foodlio/en/">
   <link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/">
   <link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/en/">
@@ -24,9 +25,12 @@
   <meta name="twitter:description" content="Ingredients, recipes, food cost percentage and live margins for restaurants, bakeries, and chefs.">
   <meta name="twitter:image" content="https://kharonte.dev/foodlio/icon.png">
   <link rel="icon" href="../icon.png">
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="../../products.css">
-  <script src="../../products.js" defer></script>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#06080e">
+  <link rel="stylesheet" href="../../style.css?v=20260921">
+  <link rel="stylesheet" href="../../products.css?v=20260921">
+  <script src="../../products.js?v=20260921" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,7 +89,27 @@
   ]
 }
   </script>
-  <script src="../../hub-interactions.js" defer></script>
+  <script src="../../hub-interactions.js?v=20260921" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kharonte.dev/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Foodlio",
+      "item": "https://kharonte.dev/foodlio/en/"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="product-page food">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -107,11 +131,21 @@
         <img class="brand-logo-img" src="../icon.png" alt="Foodlio Icon">
         <span class="brand-name">Foodlio</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav-links">
         <li><a class="nav-item-link" href="#preview">Preview</a></li>
         <li><a class="nav-item-link" href="#features">Features</a></li>
         <li><a class="nav-item-link" href="#faq">FAQ</a></li>
+      <li class="nav-links-lang-item"><div class="lang-switch" aria-label="Language / Lingua / Idioma">
+          <a href="../" class="lang-link">IT</a>
+          <a href="./" class="lang-link active" aria-current="page">EN</a>
+          <a href="../es/" class="lang-link">ES</a>
+        </div></li>
       </ul>
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Open menu">
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+      </button>
       <div class="nav-right-group">
         <div class="lang-switch" aria-label="Language / Lingua / Idioma">
           <a href="../" class="lang-link">IT</a>

@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&amp;family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560;9..144,650&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preventivi Facili — Preventivi & PDF Professionali in 30 Secondi</title>
-  <meta name="description" content="L'app definitiva per artigiani, freelance e professionisti. Crea preventivi PDF con logo, calcolo automatico tasse. Dati sempre sul dispositivo, nessun abbonamento.">
+  <title>Preventivi Facili — Preventivi PDF per Idraulici ed Elettricisti</title>
+  <meta name="description" content="Preventivi PDF professionali in 30 secondi per idraulici, elettricisti e artigiani. Calcolo IVA automatico, logo personalizzato, offline, senza abbonamenti.">
   <meta name="keywords" content="preventivi facili, app preventivi artigiani, calcolo preventivo edile, preventivo idraulico, preventivo elettricista, pdf preventivo mobile">
   <meta name="google-site-verification" content="1a0cAiTA-WZ7sMMRC3xgLdN3Pe8T8sZED02hS9oVVIo">
 
@@ -26,8 +27,11 @@
   <meta name="twitter:image" content="https://kharonte.dev/assets/icon.png">
 
   <link rel="icon" type="image/png" href="../assets/favicon.png">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../products.css">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#06080e">
+  <link rel="stylesheet" href="../style.css?v=20260921">
+  <link rel="stylesheet" href="../products.css?v=20260921">
   <link rel="canonical" href="https://kharonte.dev/preventivi-facili/">
   <link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/">
   <link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/en/">
@@ -71,11 +75,39 @@
         "@type": "Answer",
         "text": "No! Basta premere il tasto \"Ripristina acquisti precedenti\" nella schermata Premium del nuovo dispositivo con lo stesso account store: la licenza a vita verrà riattivata all'istante senza alcun costo aggiuntivo."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Sono idraulico, c'è qualcosa di specifico per me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì: la pagina Preventivi Facili per Idraulici (kharonte.dev/preventivi-facili/idraulici/) ha un esempio di preventivo per interventi idraulici e le domande più comuni di chi lavora sul campo."
+      }
     }
   ]
 }
   </script>
-  <script src="../hub-interactions.js" defer></script>
+  <script src="../hub-interactions.js?v=20260921" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kharonte.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Preventivi Facili",
+      "item": "https://kharonte.dev/preventivi-facili/"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="product-page">
 
@@ -100,14 +132,24 @@
         <span class="brand-name">Preventivi <span>Facili</span></span>
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav-links">
         <li><a href="#anteprima" class="nav-item-link">Simulatore</a></li>
         <li><a href="#bento-features" class="nav-item-link">Funzionalità</a></li>
         <li><a href="#calcolatore" class="nav-item-link">Risparmio Tempo</a></li>
         <li><a href="#prezzi" class="nav-item-link">Prezzi</a></li>
         <li><a href="#faq" class="nav-item-link">FAQ</a></li>
+      <li class="nav-links-lang-item"><div class="lang-switch" aria-label="Lingua / Language / Idioma">
+          <a href="./" class="lang-link active" aria-current="page">IT</a>
+          <a href="./en/" class="lang-link">EN</a>
+          <a href="./es/" class="lang-link">ES</a>
+        </div></li>
       </ul>
 
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Apri il menu">
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+        <span class="nav-menu-toggle-bar"></span>
+      </button>
       <div class="nav-right-group">
         <div class="lang-switch" aria-label="Lingua / Language / Idioma">
           <a href="./" class="lang-link active" aria-current="page">IT</a>
@@ -143,7 +185,7 @@
       </h1>
 
       <p class="hero-subtext">
-        Basta serate perse su Word o Excel dopo una giornata di lavoro. Crea preventivi PDF impeccabili in 30 secondi con logo, calcolo automatico di IVA e rivalsa. 100% offline, per sempre tuoi e senza abbonamenti.
+        Pensata per idraulici, elettricisti, muratori e ogni artigiano che prepara preventivi sul campo. Basta serate perse su Word o Excel: crea PDF impeccabili in 30 secondi con logo, calcolo automatico di IVA e rivalsa. 100% offline, per sempre tuoi e senza abbonamenti.
       </p>
 
       <!-- Authentic Store Buttons -->
@@ -287,21 +329,21 @@
             <div class="sim-buttons-group">
               <button type="button" class="sim-trigger-btn" id="btnToggleLabor"
                 data-label-off="+ Aggiungi 4 ore Manodopera (+€160)"
-                data-label-on="✓ 4 ore Manodopera aggiunte (+€160)">
+                data-label-on="4 ore Manodopera aggiunte (+€160)">
                 <span>+ Aggiungi 4 ore Manodopera (+€160)</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </button>
 
               <button type="button" class="sim-trigger-btn" id="btnToggleMaterials"
                 data-label-off="+ Aggiungi Cavi e Forniture (+€190)"
-                data-label-on="✓ Cavi e Forniture aggiunti (+€190)">
+                data-label-on="Cavi e Forniture aggiunti (+€190)">
                 <span>+ Aggiungi Cavi e Forniture (+€190)</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </button>
 
               <button type="button" class="sim-trigger-btn" id="btnToggleTaxRegime"
                 data-label-off="Passa a Regime Forfettario (IVA 0%)"
-                data-label-on="✓ Regime Forfettario attivo (IVA 0%)">
+                data-label-on="Regime Forfettario attivo (IVA 0%)">
                 <span>Passa a Regime Forfettario (IVA 0%)</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
               </button>
@@ -585,6 +627,16 @@
             <p>No! Basta premere il tasto "Ripristina acquisti precedenti" nella schermata Premium del nuovo dispositivo con lo stesso account store: la licenza a vita verrà riattivata all'istante senza alcun costo aggiuntivo.</p>
           </div>
         </div>
+
+        <div class="faq-card-unit">
+          <button class="faq-trigger-button" type="button">
+            <span>Sono idraulico, c'è qualcosa di specifico per me?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-collapsible-body">
+            <p>Sì: abbiamo una pagina dedicata con un esempio di preventivo per interventi idraulici (sostituzione boiler, verifica impianto, diritto di chiamata) e le domande più comuni di chi lavora sul campo. <a href="./idraulici/" style="color: var(--text-highlight); text-decoration: underline; text-underline-offset: 3px;">Guardala qui</a>.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -648,6 +700,6 @@
     </div>
   </footer>
 
-  <script src="../main.js"></script>
+  <script src="../main.js?v=20260921"></script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+{
+  "name": "Kharonte Studio",
+  "short_name": "Kharonte",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#06080e",
+  "theme_color": "#06080e",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/studio-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

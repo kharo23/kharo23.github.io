@@ -5,6 +5,7 @@
   <!-- Kharonte Studio Hub (Root) -->
   <url>
     <loc>https://kharonte.dev/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/" />
@@ -14,6 +15,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/" />
@@ -23,6 +25,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/" />
@@ -34,6 +37,7 @@
   <!-- Preventivi Facili -->
   <url>
     <loc>https://kharonte.dev/preventivi-facili/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/es/" />
@@ -43,6 +47,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/idraulici/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/idraulici/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/idraulici/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/idraulici/es/" />
@@ -52,6 +57,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/idraulici/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/idraulici/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/idraulici/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/idraulici/es/" />
@@ -61,6 +67,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/idraulici/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/idraulici/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/idraulici/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/idraulici/es/" />
@@ -70,6 +77,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/es/" />
@@ -79,6 +87,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/preventivi-facili/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/es/" />
@@ -90,6 +99,7 @@
   <!-- Foodlio -->
   <url>
     <loc>https://kharonte.dev/foodlio/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/foodlio/es/" />
@@ -99,6 +109,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/foodlio/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/foodlio/es/" />
@@ -108,6 +119,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/foodlio/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/foodlio/es/" />
@@ -119,6 +131,7 @@
   <!-- Padel Match Manager -->
   <url>
     <loc>https://kharonte.dev/padel-match-manager/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/padel-match-manager/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/padel-match-manager/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/padel-match-manager/es/" />
@@ -128,6 +141,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/padel-match-manager/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/padel-match-manager/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/padel-match-manager/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/padel-match-manager/es/" />
@@ -137,6 +151,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/padel-match-manager/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/padel-match-manager/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/padel-match-manager/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/padel-match-manager/es/" />
@@ -148,6 +163,7 @@
   <!-- Aegis -->
   <url>
     <loc>https://kharonte.dev/aegis/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/aegis/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/aegis/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/aegis/es/" />
@@ -157,6 +173,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/aegis/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/aegis/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/aegis/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/aegis/es/" />
@@ -166,6 +183,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/aegis/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/aegis/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/aegis/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/aegis/es/" />
@@ -177,6 +195,7 @@
   <!-- FlipEven -->
   <url>
     <loc>https://kharonte.dev/flipeven/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/flipeven/es/" />
@@ -186,6 +205,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/flipeven/en/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/flipeven/es/" />
@@ -195,6 +215,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/flipeven/es/</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/flipeven/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/flipeven/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/flipeven/es/" />
@@ -206,6 +227,7 @@
   <!-- Legal & Support -->
   <url>
     <loc>https://kharonte.dev/privacy.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/privacy.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/privacy.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/privacy.html" />
@@ -215,6 +237,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/en/privacy.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/privacy.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/privacy.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/privacy.html" />
@@ -224,6 +247,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/es/privacy.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/privacy.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/privacy.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/privacy.html" />
@@ -233,6 +257,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/support.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/support.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/support.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/support.html" />
@@ -242,6 +267,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/en/support.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/support.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/support.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/support.html" />
@@ -251,6 +277,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/es/support.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/support.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/support.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/support.html" />
@@ -262,6 +289,7 @@
   <!-- About Pages -->
   <url>
     <loc>https://kharonte.dev/about.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/about.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/about.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/about.html" />
@@ -271,6 +299,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/en/about.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/about.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/about.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/about.html" />
@@ -280,6 +309,7 @@
   </url>
   <url>
     <loc>https://kharonte.dev/es/about.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/about.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/about.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/about.html" />

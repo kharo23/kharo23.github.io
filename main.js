@@ -112,16 +112,34 @@ document.addEventListener('DOMContentLoaded', () => {
   function bindToggle(btn, extraRow, stateKey, activeBg) {
     if (!btn) return;
     const span = btn.querySelector('span');
-    btn.addEventListener('click', () => {
+    const toggle = () => {
       state[stateKey] = !state[stateKey];
-      if (extraRow) extraRow.style.display = state[stateKey] ? 'table-row' : 'none';
-      btn.style.background = state[stateKey] ? activeBg : 'rgba(255, 255, 255, 0.04)';
+      if (extraRow) {
+        extraRow.style.display = state[stateKey] ? 'table-row' : 'none';
+      }
+      btn.style.background = state[stateKey] ? activeBg : 'rgba(255, 255, 255, 0.05)';
+      btn.classList.toggle('is-active', state[stateKey]);
       if (span) span.textContent = state[stateKey] ? btn.dataset.labelOn : btn.dataset.labelOff;
       updateQuoteSimulation();
-    });
+    };
+
+    btn.addEventListener('click', toggle);
+
+    if (extraRow) {
+      extraRow.style.cursor = 'pointer';
+      extraRow.addEventListener('click', toggle);
+    }
   }
 
   bindToggle(btnToggleLabor, extraRowLabor, 'hasLabor', 'rgba(0, 82, 255, 0.25)');
   bindToggle(btnToggleMaterials, extraRowMaterials, 'hasMaterials', 'rgba(0, 82, 255, 0.25)');
   bindToggle(btnToggleTaxRegime, null, 'isForfettario', 'rgba(16, 185, 129, 0.2)');
+
+  const taxCalculationMeta = document.getElementById('taxCalculationMeta');
+  if (taxCalculationMeta && btnToggleTaxRegime) {
+    taxCalculationMeta.style.cursor = 'pointer';
+    taxCalculationMeta.addEventListener('click', () => {
+      btnToggleTaxRegime.click();
+    });
+  }
 });

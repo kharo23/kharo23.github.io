@@ -1587,8 +1587,14 @@
   .nav-cmd-btn .cmd-key-hint {
     display: none !important;
   }
-  .nav-right-group {
-    gap: 6px !important;
+  .nav-right-group,
+  .site-nav .nav-right-group {
+    display: none !important;
+  }
+  .nav-menu-toggle,
+  .site-nav .nav-menu-toggle {
+    display: inline-flex !important;
+    margin-left: auto !important;
   }
   .brand-wrapper {
     gap: 8px !important;
@@ -2123,7 +2129,27 @@
     font-size: 1.02rem !important;
   }
   .site-nav .nav-right-group {
-    gap: 8px !important;
+    display: none !important;
+  }
+  .site-nav .nav-menu-toggle {
+    display: inline-flex !important;
+    margin-left: auto !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  .site-nav .nav-links {
+    background: #080c16 !important;
+    background: rgba(8, 12, 22, 0.98) !important;
+    backdrop-filter: blur(32px) !important;
+    -webkit-backdrop-filter: blur(32px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.92), 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 36px rgba(0, 82, 255, 0.15) !important;
+  }
+  .site-nav .nav-item-link {
+    color: #f1f5f9 !important;
+    font-weight: 600 !important;
   }
 }
 

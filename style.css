@@ -1093,13 +1093,13 @@ body {
     align-items: flex-start;
     gap: 10px;
     text-align: left;
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     line-height: 1.45;
   }
 
   .trust-item svg {
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     margin-top: 2px;
     flex-shrink: 0;
   }
@@ -1405,27 +1405,14 @@ body {
 .sim-headline {
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 2px;
-}
-
-@media (max-width: 640px) {
-  .sim-headline {
-    font-size: 1.05rem;
-  }
+  margin-bottom: 4px;
 }
 
 .sim-desc {
   font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.5;
-  margin-bottom: 8px;
-}
-
-@media (max-width: 640px) {
-  .sim-desc {
-    font-size: 0.8rem;
-    margin-bottom: 4px;
-  }
+  margin-bottom: 12px;
 }
 
 .sim-buttons-group {
@@ -1451,13 +1438,6 @@ body {
   user-select: none;
 }
 
-@media (max-width: 640px) {
-  .sim-trigger-btn {
-    padding: 11px 14px;
-    font-size: 0.82rem;
-  }
-}
-
 .sim-trigger-btn:hover {
   background: rgba(0, 82, 255, 0.15);
   border-color: var(--border-glow);
@@ -1478,13 +1458,11 @@ body {
   height: 18px;
   color: #38bdf8;
   flex-shrink: 0;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .sim-trigger-btn.is-active svg {
   color: #34d399;
-  transform: scale(1.1);
-}
 }
 
 /* ==========================================================================

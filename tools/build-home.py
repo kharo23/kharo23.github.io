@@ -36,7 +36,7 @@ TR = [
  ('<span class="w">Una sola <em>mano.</em></span>', '<span class="w">One <em>maker.</em></span>', '<span class="w">Una sola <em>mano.</em></span>'),
  ('<strong>Design, codice, store. Tutto da solo.</strong> Cinque prodotti reali per lavoro, sport e benessere. Non ti chiedo di crederci: qui sotto funzionano davvero.',
   '<strong>Design, code, store. All by myself.</strong> Five real products for work, sport and wellbeing. I won\'t ask you to take my word for it: down below, they actually work.',
-  '<strong>Diseño, código, tiendas. Todo yo solo.</strong> Cinco productos reales para trabajo, deporte y bienestar. No te pido que me creas: aquí abajo funcionan de verdad.'),
+  '<strong>Diseño, código, tiendas. Todo en solitario.</strong> Cinco productos reales para trabajo, deporte y bienestar. No te pido que me creas: aquí abajo funcionan de verdad.'),
  ('Prova le app <span', 'Try the apps <span', 'Prueba las apps <span'),
  ('Il codice su GitHub ↗', 'Code on GitHub ↗', 'El código en GitHub ↗'),
  ('aria-label="Le cinque app in orbita attorno a Caronte. Scegline una per provarla."', 'aria-label="The five apps orbiting Charon. Pick one to try it."', 'aria-label="Las cinco apps orbitando Caronte. Elige una para probarla."'),
@@ -53,7 +53,7 @@ TR = [
  ('<small>Calcola il margine</small>', '<small>Work out the margin</small>', '<small>Calcula el margen</small>'),
  ('<small>Organizza un torneo</small>', '<small>Run a tournament</small>', '<small>Organiza un torneo</small>'),
  ('<small>Respira con me</small>', '<small>Breathe with me</small>', '<small>Respira conmigo</small>'),
- ('<small>Vendi senza perdere</small>', '<small>Sell without losing</small>', '<small>Vende sin perder</small>'),
+ ('<small>Vendi senza perdere</small>', '<small>Never sell at a loss</small>', '<small>Vende sin pérdidas</small>'),
  ('Preventivi e fatture in PDF dal telefono, 100% offline. Quanto ci metti a farne uno?', 'Quotes and invoices as PDF straight from your phone, 100% offline. How long does it take you to make one?', 'Presupuestos y facturas en PDF desde el móvil, 100% offline. ¿Cuánto tardas en hacer uno?'),
  ('secondi · parte alla prima battuta', 'seconds · starts at your first keystroke', 'segundos · empieza con la primera pulsación'),
  ('<label for="pv-client">Cliente</label>', '<label for="pv-client">Client</label>', '<label for="pv-client">Cliente</label>'),
@@ -108,16 +108,16 @@ TR = [
  ('></i>Utile</span>', '></i>Profit</span>', '></i>Beneficio</span>'),
  ('<span>Pareggio</span>', '<span>Break-even</span>', '<span>Equilibrio</span>'),
  ('<span>Margine</span>', '<span>Margin</span>', '<span>Margen</span>'),
- ("Nell'app: inventario, storico vendite, cataloghi.", 'In the app: inventory, sales history, catalogues.', 'En la app: inventario, historial de ventas, catálogos.'),
+ ("Nell'app: inventario, storico vendite, cataloghi.", 'In the app: inventory, sales history, catalogs.', 'En la app: inventario, historial de ventas, catálogos.'),
  # ---- manifesto ----
  ('aria-label="Manifesto"', 'aria-label="Manifesto"', 'aria-label="Manifiesto"'),
- ("Chi c'è dietro", "Who's behind it", 'Quién hay detrás'),
- ("Un designer, uno sviluppatore e un responsabile store. Sono la stessa persona. Per questo ogni app è piccola, veloce, privata e finita fino all'ultimo pixel.",
-  'A designer, a developer and a store manager. They are the same person. That is why every app is small, fast, private and finished down to the last pixel.',
-  'Un diseñador, un desarrollador y un responsable de tiendas. Son la misma persona. Por eso cada app es pequeña, rápida, privada y está acabada hasta el último píxel.'),
+ ("mani-lead rv\">Chi c'è dietro</p>", "mani-lead rv\">Who's behind it</p>", 'mani-lead rv\">Quién hay detrás</p>'),
+ ("Un designer, uno sviluppatore e chi gestisce gli store. Sono la stessa persona. Per questo ogni app è piccola, veloce, privata e finita fino all'ultimo pixel.",
+  'A designer, a developer and whoever manages the app stores. They are the same person. That is why every app is small, fast, private and finished down to the last pixel.',
+  'Un diseñador, un desarrollador y quien gestiona las tiendas de apps. Son la misma persona. Por eso cada app es pequeña, rápida, privada y está acabada hasta el último píxel.'),
  # ---- sugli store ----
- ('aria-label="Le app sugli store"', 'aria-label="The apps on the stores"', 'aria-label="Las apps en las tiendas"'),
- ('Sugli store, <em>per davvero.</em>', 'On the stores, <em>for real.</em>', 'En las tiendas, <em>de verdad.</em>'),
+ ('aria-label="Le app sul telefono"', 'aria-label="The apps on your phone"', 'aria-label="Las apps en tu móvil"'),
+ ('Così appaiono <em>sul telefono.</em>', 'This is how they look <em>on your phone.</em>', 'Así se ven <em>en tu móvil.</em>'),
  ('Schermate reali, non mockup. Trascina per scorrere e tocca per aprire la scheda.', 'Real screenshots, not mockups. Drag to scroll and tap to open the page.', 'Capturas reales, no mockups. Arrastra para desplazarte y toca para abrir la ficha.'),
  ('aria-label="Scorri le schermate"', 'aria-label="Scroll the screenshots"', 'aria-label="Desplazar las capturas"'),
  ('aria-label="Precedente"', 'aria-label="Previous"', 'aria-label="Anterior"'),
@@ -128,6 +128,8 @@ TR = [
  ('alt="Aegis: respirazione guidata"', 'alt="Aegis: guided breathing"', 'alt="Aegis: respiración guiada"'),
  ('<span class="mono">Lavoro</span>', '<span class="mono">Work</span>', '<span class="mono">Trabajo</span>'),
  ('<span class="mono">Cucina</span>', '<span class="mono">Kitchen</span>', '<span class="mono">Cocina</span>'),
+ ('<span class="mono">Reselling</span>', '<span class="mono">Reselling</span>', '<span class="mono">Reventa</span>'),
+ ('FlipEven · Reselling', 'FlipEven · Reselling', 'FlipEven · Reventa'),
  ('<span class="mono">Sport</span>', '<span class="mono">Sport</span>', '<span class="mono">Deporte</span>'),
  ('aria-label="FlipEven: guadagno netto reale +65,00 € su una vendita a 110 €"', 'aria-label="FlipEven: real net profit of €65.00 on a €110 sale"', 'aria-label="FlipEven: beneficio neto real de 65,00 € en una venta de 110 €"'),
  ('<strong>Sai quanto<br>guadagni davvero</strong>', '<strong>Know what<br>you really earn</strong>', '<strong>Sabe cuánto<br>ganas de verdad</strong>'),
@@ -146,7 +148,7 @@ TR = [
  ('<em>Un solo dato in primo piano</em>', '<em>One number up front</em>', '<em>Un solo dato en primer plano</em>'),
  ('<em>Etichette piccole, numeri grandi</em>', '<em>Small labels, big numbers</em>', '<em>Etiquetas pequeñas, números grandes</em>'),
  ('<em>Azioni in basso, a portata di pollice</em>', '<em>Actions at the bottom, within thumb reach</em>', '<em>Acciones abajo, al alcance del pulgar</em>'),
- ('<em>Colore = stato: verde bene, rosso attenzione</em>', '<em>Colour = status: green good, red warning</em>', '<em>Color = estado: verde bien, rojo atención</em>'),
+ ('<em>Colore = stato: verde bene, rosso attenzione</em>', '<em>Color = status: green good, red warning</em>', '<em>Color = estado: verde bien, rojo atención</em>'),
  ('La logica della demo di Foodlio, semplificata', 'Foodlio demo logic, simplified', 'La lógica de la demo de Foodlio, simplificada'),
  ('aria-label="Codice di esempio"', 'aria-label="Example code"', 'aria-label="Código de ejemplo"'),
  ('''<span class="c">// Il calcolo che hai appena visto</span>
@@ -187,6 +189,21 @@ TR = [
  ('<span>Pubblicata</span>', '<span>Published</span>', '<span>Publicada</span>'),
  ('<span>Food cost, margini e menu engineering</span>', '<span>Food cost, margins and menu engineering</span>', '<span>Food cost, márgenes e ingeniería de menú</span>'),
  ('class="get" href="./foodlio/">Scheda</a>', 'class="get" href="./foodlio/">Details</a>', 'class="get" href="./foodlio/">Ficha</a>'),
+ # ---- FAQ e social ----
+ ('Domande <em>frequenti.</em>', 'Frequently asked <em>questions.</em>', 'Preguntas <em>frecuentes.</em>'),
+ ('Le risposte brevi a quello che mi chiedono più spesso.', 'Short answers to what people ask me most.', 'Respuestas breves a lo que más me preguntan.'),
+ ('aria-label="Domande frequenti"', 'aria-label="Frequently asked questions"', 'aria-label="Preguntas frecuentes"'),
+ ("Chi c'è dietro Kharonte Studio?", 'Who is behind Kharonte Studio?', '¿Quién está detrás de Kharonte Studio?'),
+ ("Kharonte Studio è uno studio indipendente di una sola persona (@kharonteAppDev): progetto, sviluppo e pubblico ogni app, dall'interfaccia agli store.", 'Kharonte Studio is an independent one-person studio (@kharonteAppDev): I design, build and publish every app, from the interface to the stores.', 'Kharonte Studio es un estudio independiente de una sola persona (@kharonteAppDev): diseño, desarrollo y publico cada app, desde la interfaz hasta las tiendas.'),
+ ('Su quali piattaforme sono disponibili le app?', 'Which platforms are the apps available on?', '¿En qué plataformas están disponibles las apps?'),
+ ('Preventivi Facili, Foodlio, Padel Match Manager e Aegis sono su App Store e Google Play. FlipEven è in fase di rilascio sugli store.', 'Preventivi Facili, Foodlio, Padel Match Manager and Aegis are on the App Store and Google Play. FlipEven is currently being released on the stores.', 'Preventivi Facili, Foodlio, Padel Match Manager y Aegis están en App Store y Google Play. FlipEven está en proceso de lanzamiento en las tiendas.'),
+ ('Le app funzionano offline e rispettano la privacy?', 'Do the apps work offline and respect privacy?', '¿Las apps funcionan sin conexión y respetan la privacidad?'),
+ ("Sono progettate per lavorare sul tuo dispositivo e senza tracciamento: Preventivi Facili salva i dati solo sul telefono, Padel Match Manager gestisce i tornei offline e Aegis non ha pubblicità né tracciamento. I dettagli sono nella scheda di ogni app e nell'informativa privacy. Questo sito non usa cookie né tracker.", "They are designed to work on your device and without tracking: Preventivi Facili stores data only on the phone, Padel Match Manager runs tournaments offline, and Aegis has no ads and no tracking. Details are on each app's page and in its privacy policy. This site uses no cookies or trackers.", 'Están pensadas para funcionar en tu dispositivo y sin rastreo: Preventivi Facili guarda los datos solo en el móvil, Padel Match Manager gestiona los torneos sin conexión y Aegis no tiene publicidad ni rastreo. Los detalles están en la ficha de cada app y en su política de privacidad. Este sitio no usa cookies ni rastreadores.'),
+ ('Le app sono gratuite?', 'Are the apps free?', '¿Las apps son gratuitas?'),
+ ("Le app già pubblicate si scaricano gratuitamente. Preventivi Facili prevede un acquisto singolo a vita, senza canoni; Aegis offre abbonamenti mensili e annuali; per Foodlio e Padel Match Manager le opzioni Pro sono mostrate nell'app. Prezzi e condizioni aggiornati sono sempre indicati negli store.", 'The published apps can be downloaded for free. Preventivi Facili offers a one-time lifetime purchase with no recurring fees; Aegis offers monthly and annual subscriptions; for Foodlio and Padel Match Manager the Pro options are shown in the app. Current prices and terms are always listed in the stores.', 'Las apps ya publicadas se descargan gratis. Preventivi Facili ofrece una compra única de por vida, sin cuotas; Aegis ofrece suscripciones mensuales y anuales; en Foodlio y Padel Match Manager las opciones Pro se muestran en la app. Los precios y condiciones actualizados siempre figuran en las tiendas.'),
+ ('Realizzi anche software su misura?', 'Do you also build custom software?', '¿También haces software a medida?'),
+ ('Sì. Oltre alle app dello studio progetto e sviluppo app native per iOS e Android, piattaforme web full-stack e integrazioni di intelligenza artificiale. Scrivimi a kharonte.appdev@gmail.com con una breve descrizione del progetto.', "Yes. Besides the studio's own apps, I design and build native iOS and Android apps, full-stack web platforms and AI integrations. Write to me at kharonte.appdev@gmail.com with a short description of your project.", 'Sí. Además de las apps del estudio, diseño y desarrollo apps nativas para iOS y Android, plataformas web full-stack e integraciones de inteligencia artificial. Escríbeme a kharonte.appdev@gmail.com con una breve descripción de tu proyecto.'),
+ ('Kharonte Studio: cinque app, una sola mano', 'Kharonte Studio: five apps, one maker', 'Kharonte Studio: cinco apps, una sola mano'),
  # ---- contatti / footer ----
  ('aria-label="Contatti"', 'aria-label="Contact"', 'aria-label="Contacto"'),
  ('>Progetti su misura</p>', '>Custom projects</p>', '>Proyectos a medida</p>'),
@@ -194,8 +211,8 @@ TR = [
  ('>Scrivimi</a>', '>Write to me</a>', '>Escríbeme</a>'),
  ('>Assistenza e FAQ</a>', '>Support &amp; FAQ</a>', '>Soporte y FAQ</a>'),
  ('Applicazioni native indipendenti per iOS e Android. Prodotti veloci, curati nel dettaglio e senza abbonamenti nascosti.', 'Independent native apps for iOS and Android. Fast, carefully crafted products with no hidden subscriptions.', 'Aplicaciones nativas independientes para iOS y Android. Productos rápidos, cuidados al detalle y sin suscripciones ocultas.'),
- ('<h5>Applicazioni</h5>', '<h5>Applications</h5>', '<h5>Aplicaciones</h5>'),
- ('<h5>Supporto &amp; Info</h5>', '<h5>Support &amp; Info</h5>', '<h5>Soporte e Info</h5>'),
+ ('<h3>Applicazioni</h3>', '<h3>Applications</h3>', '<h3>Aplicaciones</h3>'),
+ ('<h3>Supporto &amp; Info</h3>', '<h3>Support &amp; Info</h3>', '<h3>Soporte e Info</h3>'),
  ('>Contattami</a>', '>Contact me</a>', '>Contáctame</a>'),
  ('>Informativa Privacy</a>', '>Privacy Policy</a>', '>Política de privacidad</a>'),
  ('Questa pagina: verifica in corso…', 'This page: checking…', 'Esta página: comprobando…'),
@@ -219,6 +236,7 @@ def build(lang, cfg):
             missing.append(it[:60]); continue
         s = s.replace(it, tr)
     s = re.sub(r'aria-label="Prova ([^"]+)"', ('aria-label="Try \\1"' if lang == 'en' else 'aria-label="Probar \\1"'), s)
+    s = s.replace('og-card-it.jpg', f'og-card-{lang}.jpg')
     # lingua, canonical, og
     s = s.replace('<html lang="it">', f'<html lang="{cfg["htmllang"]}">')
     s = s.replace('<link rel="canonical" href="https://kharonte.dev/">', f'<link rel="canonical" href="{cfg["canon"]}">')

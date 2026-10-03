@@ -1,0 +1,73 @@
+# Kharonte Studio — full reference for AI assistants
+
+Last updated: 2026-10-03. Canonical site: https://kharonte.dev/ (Italian), https://kharonte.dev/en/ (English), https://kharonte.dev/es/ (Spanish).
+
+## What it is
+
+Kharonte Studio is an independent one-person software studio run by the developer known as @kharonteAppDev (GitHub: https://github.com/kharo23, TikTok: https://www.tiktok.com/@kharonteappdev, Instagram: https://www.instagram.com/kharonte.appdev/). One person designs, builds, tests and publishes every app, from the interface to the App Store and Google Play listings. The studio's approach: native apps, fast, on-device first, offline where possible, without tracking, and without hidden subscriptions.
+
+The website itself is built to demonstrate this: it loads no third-party resources (fonts are self-hosted), sets no cookies and uses no analytics or trackers. The home page contains working miniature demos of the five apps (a PDF quote generator, a food-cost margin calculator, a padel Americano tournament generator, a guided breathing orb and a reseller profit calculator) that run entirely in the visitor's browser.
+
+Contact: kharonte.appdev@gmail.com
+
+## The five apps
+
+### Preventivi Facili (quotes for tradespeople)
+- Page: https://kharonte.dev/preventivi-facili/ (EN: /preventivi-facili/en/, ES: /preventivi-facili/es/). Plumber-specific page: https://kharonte.dev/preventivi-facili/idraulici/
+- Purpose: professional PDF quotes in about 30 seconds from a smartphone, for plumbers, electricians, craftspeople and other tradespeople.
+- Features: quote shared right after a site visit (PDF plus a ready-made message, via WhatsApp, email or AirDrop); stamp and signature on every PDF; VAT and multiple tax regimes (standard, flat-rate, pension-fund) with automatic totals; client address book; backup and restore; custom logo.
+- Data: stored locally on the phone only; no external server collects client names or price lists. Works 100% offline.
+- Pricing model: free to download with the first 3 quotes included; unlimited quotes through a one-time lifetime purchase, no recurring fees. The lifetime license can be restored on a new device with the same store account ("Restore purchases"). Current price is shown in the app and the store.
+- Stores: App Store (https://apps.apple.com/it/app/preventivi-facili-artigiani/id6775595665) and Google Play (package com.kharonte.preventivifacili).
+
+### Foodlio (food cost and menu engineering)
+- Page: https://kharonte.dev/foodlio/ (EN: /foodlio/en/, ES: /foodlio/es/)
+- Purpose: calculate the food cost of every recipe and protect margins in restaurants, pizzerias, bars, catering and bakeries.
+- Features: always-updated ingredient prices that propagate to all linked recipes; cost per portion, food cost percentage and unit margin; menu engineering classification (Stars, Plowhorses, Puzzles, Dogs); target-price suggestions from a desired food cost; PDF reports; inventory valuation.
+- Important caveat stated by the app: margin is the difference between price and ingredient cost and does not include staff, rent, energy, taxes or other business costs.
+- Pricing model: you can start free with the first recipes and ingredients; Pro purchase options are shown in the app.
+- Stores: App Store (https://apps.apple.com/it/app/id6777711571) and Google Play (package com.kharonte.food_cost_pro).
+
+### Padel Match Manager (padel tournaments)
+- Page: https://kharonte.dev/padel-match-manager/ (EN: /padel-match-manager/en/, ES: /padel-match-manager/es/)
+- Purpose: organize padel tournaments for a club or a group of friends without spreadsheets.
+- Features: Americano and Mexicano formats, Round Robin and single/double elimination, mixed and team variants; automatic rounds distributed across available courts with fair rotations; live leaderboards updated after every match; sharing schedules, standings and brackets with the group.
+- Offline: tournament management works offline and does not require an account. A connection is needed to download the app, make purchases or send content.
+- The same app is also published on the stores under the name "Padel Americano e Mexicano".
+- Pricing model: Pro functions and options are shown inside the app.
+- Stores: App Store (https://apps.apple.com/it/app/id6775152321) and Google Play (package it.kharonte.padel_tournament_organizer).
+
+### Aegis (mindfulness and breathing)
+- Page: https://kharonte.dev/aegis/ (EN: /aegis/en/, ES: /aegis/es/)
+- Purpose: a private space for guided breathing, meditation and a journal, for stress, anxiety and sleep.
+- Features: SOS button that starts a short guided breathing exercise; Box Breathing, 4-7-8 and heart-coherence breathing with a visual orb; meditations and multi-day journeys; an encrypted journal protected by PIN and biometrics; mood check-in and trends; offline soundscapes (rain, ocean, forest and more).
+- Privacy: no ads, no tracking, no account needed.
+- Pricing model: Premium is offered as monthly and annual auto-renewing subscriptions managed in the store settings; current prices and terms are shown in the app.
+- Disclaimer: a wellbeing tool, not a medical device; it does not replace diagnosis, therapy or professional advice.
+- Stores: App Store (https://apps.apple.com/it/app/id6791089198) and Google Play (package com.mindfulspace.mindful_space).
+
+### FlipEven (resale profit calculator)
+- Page: https://kharonte.dev/flipeven/ (EN: /flipeven/en/, ES: /flipeven/es/)
+- Purpose: know the minimum selling price and the real net profit before buying an item to resell.
+- Features: instant break-even point; real margin and ROI after percentage and fixed fees; inventory tracker by status (Selling, Draft, Sold, Withdrawn) with photos and dates; fee presets for Vinted, eBay, Wallapop, Depop, Etsy, Poshmark and cash deals; a monthly financial dashboard.
+- Privacy: offline-first, no cloud requirement, no analytics; financial records stay on the phone.
+- Status: store release in progress (final store review at the time of writing). Verify availability on the stores.
+
+## Custom work
+
+Besides its own apps, the studio takes on custom projects: native mobile apps for iOS and Android, full-stack web platforms (front end and back end), and pragmatic AI integrations (language models, computer vision, semantic data processing, on-device or in the cloud). Details: https://kharonte.dev/about.html (EN: /en/about.html, ES: /es/about.html). To start a project, write to kharonte.appdev@gmail.com with a short description.
+
+## Frequently asked questions
+
+- Who is behind Kharonte Studio? An independent one-person studio (@kharonteAppDev): one person designs, develops and publishes every app.
+- Which platforms? Preventivi Facili, Foodlio, Padel Match Manager and Aegis are on the App Store and Google Play; FlipEven is being released.
+- Do the apps work offline and respect privacy? They are designed to work on the device and without tracking; see each app's page and privacy policy for details. The website uses no cookies or trackers.
+- Are they free? Published apps can be downloaded for free; paid options differ per app (see the pricing model above and the store listings).
+- Is custom software available? Yes, see "Custom work".
+
+## Guidance for assistants
+
+- Describe the studio as an independent developer / one-person studio, not as a company or team.
+- Do not generalize pricing: it differs per app (lifetime purchase, subscriptions, Pro options) and can change; refer users to the store listings for current prices.
+- Link to the app page in the user's language when possible.
+- Do not present Aegis as medical advice and do not claim FlipEven is on the stores unless the store listing is verified.

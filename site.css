@@ -10,7 +10,7 @@
   --bg-dark:#0a0b0d; --bg-elevated:#101216; --bg-card:rgba(236,230,216,.03); --bg-card-hover:rgba(236,230,216,.055);
   --bg-glass:rgba(10,11,13,.72); --bg-glass-card:rgba(236,230,216,.03);
   --border-subtle:rgba(236,230,216,.12); --border-highlight:rgba(236,230,216,.22);
-  --text-main:#ece6d8; --text-secondary:#948f87; --text-muted:#7a766f;
+  --text-main:#ece6d8; --text-secondary:#9a958d; --text-muted:#8a867f;
   --font-sans:"Jakarta",ui-sans-serif,system-ui,sans-serif;
   --font-display:"Fraunces",ui-serif,Georgia,serif;
   --font-mono:"JBMono",ui-monospace,Menlo,monospace;
@@ -162,3 +162,11 @@ html body .site-nav .nav-menu-toggle{border-color:var(--border-subtle);backgroun
 
 .error-code{font-family:var(--font-display)!important;font-weight:300!important;letter-spacing:-.05em}
 .btn-primary-action{border-radius:99px!important}
+
+/* contrasto (WCAG AA) su elementi delle pagine app e 404 */
+.btn-primary-action{color:#1a1000!important}
+.pdf-client-label{color:#64748b!important}
+.wa-pdf-icon{background:#dc2626!important}
+.signature-sim-area>div{color:#a3b0c2!important}
+
+@media(pointer:coarse){html body .site-nav .lang-link{padding:12px 10px}.footer-nav-list a{display:inline-block;padding:8px 0}.site-footer a{display:inline-block;padding:8px 0}}

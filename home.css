@@ -5,7 +5,7 @@
 
 :root{
   --ink:#0a0b0d; --ink-2:#101216; --ink-3:#171a20;
-  --bone:#ece6d8; --mute:#948f87; --dim:#7a766f;
+  --bone:#ece6d8; --mute:#9a958d; --dim:#8a867f;
   --line:rgba(236,230,216,.12); --line-2:rgba(236,230,216,.22);
   --lamp:#ffb347; --accent:var(--lamp);
   --serif:"Fraunces",ui-serif,Georgia,serif;
@@ -105,7 +105,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--lamp)}
 .ring .sat:hover,.ring .sat:focus-visible{scale:1.35;border-color:var(--lamp);z-index:5}
 .sat::after{content:attr(data-name);position:absolute;left:50%;top:calc(100% + 8px);translate:-50% 0;padding:3px 9px;border-radius:99px;background:var(--bone);color:#000;font:600 .68rem var(--sans);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 .sat:hover::after{opacity:1}
-.orbit:hover .ring,.orbit:hover .sat{animation-play-state:paused}
+.orbit:hover .ring,.orbit:hover .sat,.orbit:active .ring,.orbit:active .sat,.orbit:focus-within .ring,.orbit:focus-within .sat{animation-play-state:paused}
 .ring,.ring .sat{animation-delay:calc(var(--o,0)*-1s)}
 .r1{--k:0;inset:22%;--t:30s;--o:4}.r2{--k:1;inset:13%;--t:46s;--o:21}.r3{--k:2;inset:4%;--t:64s;--o:40}.r4{--k:3;inset:-5%;--t:86s;--o:12}.r5{--k:4;inset:-13%;--t:112s;--o:70}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -153,6 +153,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--lamp)}
 .field label{font:500 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
 input[type=text],input[type=number],select{width:100%;min-width:0;padding:11px 13px;border-radius:12px;border:1px solid var(--line);background:rgba(236,230,216,.04);outline:none;transition:border-color .2s,background .2s}
 input:focus,select:focus{border-color:var(--accent);background:rgba(236,230,216,.07)}
+input:focus-visible,select:focus-visible{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 38%,transparent)}
 select option{background:#111}
 input[type=number]{-moz-appearance:textfield}
 input[type=range]{width:100%;accent-color:var(--accent);height:28px}
@@ -271,7 +272,7 @@ input[type=range]{width:100%;accent-color:var(--accent);height:28px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
 footer{border-top:1px solid var(--line);padding:50px 0 40px;color:var(--mute);font-size:.88rem}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
-.fgrid h5{font:500 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.fgrid h3{font:500 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
 .fgrid li{list-style:none;margin:6px 0}
 .fgrid a:hover{color:var(--bone)}
 .fgrid p{max-width:38ch;margin-top:12px}
@@ -406,3 +407,21 @@ footer{border-top:1px solid var(--line);padding:50px 0 40px;color:var(--mute);fo
   .legend{gap:8px}
   .peek-pop{right:auto;left:0;transform-origin:bottom left}
 }
+
+/* FAQ in home */
+.faq-sec{padding-bottom:clamp(40px,6vw,80px)}
+.faq-home{max-width:860px;border-top:1px solid var(--line)}
+.faq-d{border-bottom:1px solid var(--line)}
+.faq-d summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 2px;
+  font:400 clamp(1.15rem,2.2vw,1.55rem)/1.25 var(--serif);letter-spacing:-.015em;transition:color .2s}
+.faq-d summary::-webkit-details-marker{display:none}
+.faq-d summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font:300 1.3rem/1 var(--sans);color:var(--lamp);transition:transform .35s var(--ease),background .2s}
+.faq-d[open] summary::after{transform:rotate(45deg);background:rgba(255,179,71,.12)}
+.faq-d summary:hover{color:var(--lamp)}
+.faq-d p{color:var(--mute);max-width:70ch;padding:0 2px 26px;line-height:1.7}
+
+/* bersagli tattili piu' comodi */
+.fgrid a,.fbot a{display:inline-block;padding:8px 0}
+.fgrid li{margin:0}
+.brand{padding:6px 0}
+@media(pointer:coarse){.lang a{padding:12px 10px}.nav-links a{padding:12px 14px}.hat-btn,.rail-btn{min-height:56px}}

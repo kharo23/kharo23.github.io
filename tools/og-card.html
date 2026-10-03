@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><title>og</title>
+<style>
+@font-face{font-family:F;src:url(../assets/fonts/fraunces.woff2);font-weight:300 700}
+@font-face{font-family:J;src:url(../assets/fonts/jakarta.woff2);font-weight:400 800}
+@font-face{font-family:M;src:url(../assets/fonts/jetbrains-mono.woff2);font-weight:400 600}
+*{margin:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:#0a0b0d;color:#ece6d8;font-family:J;position:relative;overflow:hidden}
+.glow{position:absolute;right:-120px;top:-60px;width:900px;height:900px;background:radial-gradient(closest-side,rgba(255,179,71,.30),rgba(255,179,71,.07) 55%,transparent 75%)}
+.rings{position:absolute;right:-250px;top:-110px;width:900px;height:900px}
+.rings i{position:absolute;border:1.5px dashed rgba(236,230,216,.16);border-radius:50%}
+.moon{position:absolute;right:-70px;top:70px;width:500px;height:500px;border-radius:50%;box-shadow:0 0 120px rgba(255,179,71,.25)}
+.moon img{width:100%;height:100%;border-radius:50%}
+.left{position:absolute;left:72px;top:70px;width:640px}
+.tag{font:500 20px M;letter-spacing:.12em;text-transform:uppercase;color:#948f87;display:flex;align-items:center;gap:14px}
+.tag:before{content:"";width:46px;height:2px;background:#ffb347}
+h1{font:340 112px/1.0 F;letter-spacing:-.04em;margin-top:44px;font-variation-settings:"opsz" 144}
+h1 span{display:block;padding-left:46px}
+h1 em{font-style:italic;font-weight:300;color:#ffb347}
+.apps{position:absolute;left:72px;bottom:70px;display:flex;gap:16px;align-items:center}
+.apps img{width:72px;height:72px;border-radius:20px;border:1.5px solid rgba(236,230,216,.22)}
+.url{position:absolute;left:72px;bottom:166px;font:500 22px M;letter-spacing:.08em;color:#ece6d8}
+.url b{color:#ffb347;font-weight:500}
+</style></head><body>
+<div class="glow"></div>
+<div class="rings"><i style="inset:150px"></i><i style="inset:80px"></i><i style="inset:10px"></i></div>
+<div class="moon"><img src="../assets/charon.webp"></div>
+<div class="left"><div class="tag">Kharonte Studio · @kharonteAppDev</div><h1 id="h"></h1></div>
+<div class="apps"><img src="../assets/icon.png"><img src="../foodlio/icon.png"><img src="../padel-match-manager/icon.png"><img src="../aegis/icon.png"><img src="../flipeven/icon.png"></div>
+<div class="url"><b>kharonte.dev</b> · iOS &amp; Android</div>
+<script>
+const L={it:['Cinque app.','Una sola <em>mano.</em>'],en:['Five apps.','One <em>maker.</em>'],es:['Cinco apps.','Una sola <em>mano.</em>']};
+const l=new URLSearchParams(location.search).get('lang')||'it';
+document.getElementById('h').innerHTML=L[l][0]+'<span>'+L[l][1]+'</span>';
+document.fonts.ready.then(()=>document.title='ready');
+</script></body></html>

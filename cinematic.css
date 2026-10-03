@@ -1,0 +1,171 @@
+.cinematic-page {
+  --cinema-ink: #f4f7fb;
+  --cinema-bg: #05070c;
+  background: var(--cinema-bg);
+  color: var(--cinema-ink);
+  overflow-x: clip;
+}
+
+.cinematic-page .site-nav {
+  max-width: 1280px;
+  background: rgba(6, 9, 15, .78);
+  border-color: rgba(255,255,255,.12);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.cinematic-page .hero {
+  min-height: min(100dvh, 1040px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  padding: 8rem 0 3.5rem;
+  overflow: clip;
+}
+
+.cinematic-page .hero::before {
+  content: "KHARONTE";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.065);
+  font: 800 clamp(8rem, 18vw, 18rem)/.7 var(--font-sans);
+  letter-spacing: -.08em;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+}
+
+.cinematic-page .hero-heading {
+  font-size: clamp(4.6rem, 8.5vw, 8.5rem);
+  line-height: .86;
+  letter-spacing: -.065em;
+}
+
+.cinematic-page .hero-subtext { max-width: 42ch; }
+.cinematic-page .trust-strip { border-color: rgba(255,255,255,.12); }
+
+.cinematic-page .studio-grid {
+  display: block;
+  max-width: none;
+  width: 100%;
+  padding: 0;
+}
+
+.cinematic-page .studio-grid .bento-card {
+  position: sticky;
+  top: 5.5rem;
+  width: 100%;
+  min-height: calc(100dvh - 5.5rem);
+  margin: 0;
+  padding: clamp(3rem, 7vw, 8rem);
+  overflow: hidden;
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.16);
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -32px 100px rgba(0,0,0,.42);
+  transform: none !important;
+  isolation: isolate;
+}
+
+.cinematic-page .studio-grid .bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: .9;
+}
+
+.cinematic-page .studio-grid .bento-card::after {
+  content: "";
+  position: absolute;
+  top: clamp(1.5rem, 4vw, 4rem);
+  right: clamp(1rem, 4vw, 4rem);
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.1);
+  font: 800 clamp(7rem, 16vw, 17rem)/.72 var(--font-sans);
+  letter-spacing: -.09em;
+  white-space: nowrap;
+  opacity: .8;
+  pointer-events: none;
+}
+
+.cinematic-page .studio-grid .chapter-preventivi::after { content: "PREVENTIVI"; }
+.cinematic-page .studio-grid .chapter-foodlio::after { content: "FOODLIO"; }
+.cinematic-page .studio-grid .chapter-padel::after { content: "PADEL"; }
+.cinematic-page .studio-grid .chapter-aegis::after { content: "AEGIS"; }
+.cinematic-page .studio-grid .chapter-flipeven::after { content: "FLIPEVEN"; }
+
+.cinematic-page .studio-grid .bento-card:nth-child(1) { background: #071b46; }
+.cinematic-page .studio-grid .bento-card:nth-child(1)::before { background: radial-gradient(circle at 76% 44%, #155dff 0, #071b46 42%, #040914 76%), linear-gradient(90deg, rgba(3,6,11,.5), transparent); }
+.cinematic-page .studio-grid .bento-card:nth-child(2) { background: #03291f; }
+.cinematic-page .studio-grid .bento-card:nth-child(2)::before { background: radial-gradient(circle at 74% 42%, #00a66f 0, #053b2d 38%, #03120e 78%), linear-gradient(90deg, rgba(3,6,11,.56), transparent); }
+.cinematic-page .studio-grid .bento-card:nth-child(3) { background: #3b1607; }
+.cinematic-page .studio-grid .bento-card:nth-child(3)::before { background: radial-gradient(circle at 74% 42%, #ed5a0c 0, #552008 38%, #160704 78%), linear-gradient(90deg, rgba(3,6,11,.56), transparent); }
+.cinematic-page .studio-grid .bento-card:nth-child(4) { background: #171044; }
+.cinematic-page .studio-grid .bento-card:nth-child(4)::before { background: radial-gradient(circle at 74% 42%, #6547ef 0, #22175f 38%, #090716 78%), linear-gradient(90deg, rgba(3,6,11,.56), transparent); }
+.cinematic-page .studio-grid .bento-card:nth-child(5) { background: #250837; }
+.cinematic-page .studio-grid .bento-card:nth-child(5)::before { background: radial-gradient(circle at 74% 42%, #9c35d5 0, #3b0e53 38%, #110416 78%), linear-gradient(90deg, rgba(3,6,11,.56), transparent); }
+
+.cinematic-page .studio-grid .bento-card:not(.featured-card) {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(420px, 1.2fr);
+  grid-template-areas:
+    "top widget"
+    "text widget"
+    "actions widget";
+  align-content: center;
+  gap: 1.5rem 8vw;
+}
+
+.cinematic-page .studio-grid .card-top-row { grid-area: top; }
+.cinematic-page .studio-grid .bento-text { grid-area: text; max-width: 42ch; color: rgba(244,247,251,.72); font-size: 1.2rem; line-height: 1.6; }
+.cinematic-page .studio-grid .card-micro-widget { grid-area: widget; align-self: center; min-height: 360px; display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem,4vw,4rem); background: rgba(5,8,14,.55); border: 1px solid rgba(255,255,255,.18); border-radius: 24px; box-shadow: 0 40px 100px rgba(0,0,0,.34); }
+.cinematic-page .studio-grid .card-actions-wrapper { grid-area: actions; max-width: 540px; }
+.cinematic-page .studio-grid .card-app-title { color: #fff; font-size: clamp(3.8rem,6vw,7rem); line-height: .88; letter-spacing: -.06em; }
+.cinematic-page .studio-grid .card-app-icon { width: 76px; height: 76px; }
+.cinematic-page .studio-grid .card-category-pill { background: rgba(5,8,14,.62); border-color: rgba(255,255,255,.18); }
+
+.cinematic-page .featured-card-grid { min-height: calc(100dvh - 16rem); align-items: center; gap: 8vw; }
+.cinematic-page .featured-card-content { max-width: 650px; }
+.cinematic-page .featured-card-visual { min-height: 620px; border: 0; background: transparent; }
+.cinematic-page .featured-screenshot { width: min(310px, 70%); height: auto; filter: drop-shadow(0 40px 70px rgba(0,0,0,.45)); }
+.cinematic-page .studio-grid .featured-card .card-app-title { font-size: clamp(4rem,7vw,8rem); }
+.cinematic-page .studio-grid .card-primary-action { min-height: 56px; background: rgba(5,8,14,.72); border: 1px solid rgba(255,255,255,.2); }
+.cinematic-page .studio-grid .card-primary-action:hover { background: #fff; color: #080b12; }
+.cinematic-page .studio-grid .card-store-btn { background: rgba(5,8,14,.7); border-color: rgba(255,255,255,.16); }
+.cinematic-page .global-footer { position: relative; z-index: 10; background: #05070c; }
+
+@media (max-width: 820px) {
+  .cinematic-page .hero { min-height: auto; padding: 7rem 0 4rem; }
+  .cinematic-page .bio-profile-header { width: 100%; min-width: 0; max-width: 100vw; padding-inline: 1rem; overflow: hidden; }
+  .cinematic-page .hub-eyebrow-row { max-width: 100%; padding-right: 12px; }
+  .cinematic-page .hub-eyebrow-label { min-width: 0; font-size: .74rem; }
+  .cinematic-page .hero-heading { width: 100%; min-width: 0; max-width: calc(100vw - 2rem); font-size: clamp(3.1rem,14vw,5.2rem); line-height: .9; letter-spacing: -.055em; overflow-wrap: anywhere; }
+  .cinematic-page .hero-subtext { max-width: 32ch; padding-inline: .25rem; }
+  .cinematic-page .bio-social-bar { width: 100%; gap: 8px; }
+  .cinematic-page .bio-social-pill { padding: 8px 12px; }
+  .cinematic-page .trust-strip { width: calc(100% - 1rem); }
+  .cinematic-page .trust-strip-item { white-space: normal; justify-content: center; }
+  .cinematic-page .hero-cosmos-wrapper { width: 100%; min-width: 0; max-width: 100%; }
+  .cinematic-page .hero-cosmos-deck { width: calc(100% + 2rem); margin-inline: -1rem; padding-inline: 1rem; }
+  .cinematic-page .studio-grid .bento-card { position: relative; top: auto; min-height: auto; padding: 4rem 1.25rem; border-radius: 22px 22px 0 0; }
+  .cinematic-page .studio-grid .bento-card:not(.featured-card) { display: flex; flex-direction: column; gap: 1.5rem; }
+  .cinematic-page .studio-grid .card-micro-widget { width: 100%; min-height: 260px; padding: 1.4rem; }
+  .cinematic-page .studio-grid .card-app-title,.cinematic-page .studio-grid .featured-card .card-app-title { font-size: clamp(3.5rem,14vw,5.5rem); }
+  .cinematic-page .featured-card-grid { min-height: auto; flex-direction: column; }
+  .cinematic-page .featured-card-visual { min-height: 430px; }
+}
+
+@media (max-width: 430px) {
+  .cinematic-page .hero-heading { font-size: clamp(2.85rem, 13.5vw, 4rem); }
+  .cinematic-page .bio-social-pill { flex: 1 1 42%; justify-content: center; }
+  .cinematic-page .studio-grid .bento-card { padding-inline: 1rem; }
+  .cinematic-page .studio-grid .card-app-title,
+  .cinematic-page .studio-grid .featured-card .card-app-title { font-size: clamp(3rem, 13vw, 4.4rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-page .studio-grid .bento-card { position: relative; top: auto; }
+}

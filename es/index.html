@@ -26,12 +26,14 @@
   <meta name="twitter:image" content="https://kharonte.dev/assets/studio-icon.png">
   <link rel="stylesheet" href="../style.css?v=20260924e">
   <link rel="stylesheet" href="../products.css?v=20260924e">
-  <link rel="stylesheet" href="../cinematic.css?v=20261003d">
+  <link rel="stylesheet" href="../cinematic.css?v=20261003e">
   <link rel="icon" href="../assets/studio-favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#06080e">
-  <script src="../hub-interactions.js?v=20261003d" defer></script>
+  <script src="../assets/three.min.js?v=0.149.0" defer></script>
+  <script src="../kharonte-engine.js?v=20261003c" defer></script>
+  <script src="../hub-interactions.js?v=20261003e" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -136,6 +138,11 @@
 
         <!-- Hero App Cosmos / Floating Device Fan -->
         <div class="hero-cosmos-wrapper reveal-up d6" aria-label="Colección interactiva de apps nativas">
+          <div class="kharonte-engine" data-kharonte-engine aria-label="Kharonte Engine: un motor 3D procedural que ensambla cinco productos digitales">
+            <canvas aria-hidden="true"></canvas>
+            <div class="engine-readout" aria-hidden="true"><span>KHARONTE / BUILD ENGINE</span><strong>05 PRODUCTS · 01 DEVELOPER</strong></div>
+            <div class="engine-status" aria-hidden="true"><i></i> SYSTEM ONLINE</div>
+          </div>
           <div class="hero-product-wall" aria-label="Cinco productos publicados">
             <a class="product-shot shot-foodlio" href="../foodlio/es/" aria-label="Descubre Foodlio"><img src="../foodlio/screenshot-es.webp" alt="Foodlio funcionando en un smartphone" width="270" height="540"><span>Foodlio</span></a>
             <a class="product-shot shot-padel" href="../padel-match-manager/es/" aria-label="Descubre Padel Match Manager"><img src="../padel-match-manager/screenshot-es.webp" alt="Padel Match Manager funcionando en un smartphone" width="270" height="540"><span>Padel</span></a>

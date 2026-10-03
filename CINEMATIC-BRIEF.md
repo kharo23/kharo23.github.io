@@ -1,4 +1,4 @@
-# Kharonte Studio: Product Chapters
+# Kharonte Studio: Product Stage
 
 ## Objective
 
@@ -14,14 +14,14 @@ One developer can build products with radically different personalities while ma
 
 ## Central idea
 
-The homepage is a sequence of product chapters. After the atmospheric opening, every app occupies the viewport and replaces the previous chapter while scrolling. Each chapter inherits the real app color, content and interaction. The experience feels closer to a product launch film than a card catalogue.
+The homepage has one shared product stage after the atmospheric opening. Visitors switch between five real apps without leaving the studio surface. The frame, typography, spacing and controls stay constant; only the product content changes. This makes the range feel intentional instead of fragmented.
 
 ## Non-negotiables
 
 - Preserve the original logo, copy, URLs, SEO metadata and product interactions.
 - Use real app assets and existing widgets.
-- Keep each product recognisable; do not flatten all apps into one blue brand palette.
-- Desktop should feel cinematic. Mobile must become a clean linear product story without sticky traps.
+- Keep each product recognisable through its icon, screenshot and interactive preview, not through a full-page color change.
+- Desktop should feel like a focused product gallery. Mobile uses the same interaction with a horizontally scrollable tab rail.
 - Respect reduced motion and keyboard focus.
 
 ## Explicitly rejected
@@ -29,10 +29,11 @@ The homepage is a sequence of product chapters. After the atmospheric opening, e
 - Split hero with copy left and phone right.
 - Bento catalogue.
 - Dashboard, terminal, control deck or fake IDE metaphors.
+- Sticky card stacks and scroll hijacking.
 - Beige editorial styling.
 - Generic neon SaaS cards and decorative glass.
 - A large headline as the only creative idea.
 
 ## Motion identity
 
-Confident and cinematic. Product chapters settle over 500ms with `cubic-bezier(0.16, 1, 0.3, 1)`. Interactive feedback stays under 160ms. Motion uses transform and opacity only. Reduced motion removes sticky stacking and automatic reveals.
+Confident and direct. A selected product settles over 480ms with `cubic-bezier(0.16, 1, 0.3, 1)`. Interactive feedback stays under 160ms. Motion uses transform and opacity only. Reduced motion switches content instantly.

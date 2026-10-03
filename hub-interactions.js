@@ -697,6 +697,48 @@ function initHubInteractions() {
       closePalette();
     }
   });
+
+  // Product stage: one coherent surface, one active product at a time.
+  const productTabs = Array.from(document.querySelectorAll('[data-product-target]'));
+  const productPanels = Array.from(document.querySelectorAll('[data-product]'));
+  if (productTabs.length && productPanels.length) {
+    document.body.classList.add('cinematic-ready');
+
+    const activateProduct = (name, focusPanel = false) => {
+      productTabs.forEach((tab) => {
+        const active = tab.dataset.productTarget === name;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+
+      productPanels.forEach((panel) => {
+        const active = panel.dataset.product === name;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+        if (active && focusPanel) panel.focus({ preventScroll: true });
+      });
+    };
+
+    productPanels.forEach((panel) => panel.tabIndex = -1);
+    activateProduct('preventivi');
+
+    productTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateProduct(tab.dataset.productTarget));
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        let nextIndex = index;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + productTabs.length) % productTabs.length;
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % productTabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = productTabs.length - 1;
+        const nextTab = productTabs[nextIndex];
+        activateProduct(nextTab.dataset.productTarget);
+        nextTab.focus();
+      });
+    });
+  }
 }
 
 if (document.readyState === 'loading') {
@@ -704,4 +746,3 @@ if (document.readyState === 'loading') {
 } else {
   initHubInteractions();
 }
-

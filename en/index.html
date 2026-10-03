@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&amp;family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560;9..144,650&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kharonte Studio — All Apps by @kharonteAppDev</title>
+  <title>Kharonte Studio - All Apps by @kharonteAppDev</title>
   <meta name="description" content="Discover native iOS &amp; Android apps crafted by @kharonteAppDev: Preventivi Facili, Foodlio, Padel Match Manager, Aegis, and FlipEven.">
   <link rel="canonical" href="https://kharonte.dev/en/">
   <link rel="alternate" hreflang="it" href="https://kharonte.dev/">
@@ -15,23 +15,23 @@
   <link rel="alternate" hreflang="x-default" href="https://kharonte.dev/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kharonte Studio">
-  <meta property="og:title" content="Kharonte Studio — All Apps by @kharonteAppDev">
+  <meta property="og:title" content="Kharonte Studio - All Apps by @kharonteAppDev">
   <meta property="og:description" content="Discover native iOS &amp; Android apps crafted by @kharonteAppDev: Preventivi Facili, Foodlio, Padel Match Manager, Aegis, and FlipEven.">
   <meta property="og:url" content="https://kharonte.dev/en/">
   <meta property="og:image" content="https://kharonte.dev/assets/studio-icon.png">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Kharonte Studio — @kharonteAppDev">
+  <meta name="twitter:title" content="Kharonte Studio - @kharonteAppDev">
   <meta name="twitter:description" content="Native apps for productivity, sports, and daily mindfulness by @kharonteAppDev.">
   <meta name="twitter:image" content="https://kharonte.dev/assets/studio-icon.png">
   <link rel="stylesheet" href="../style.css?v=20260924e">
   <link rel="stylesheet" href="../products.css?v=20260924e">
-  <link rel="stylesheet" href="../cinematic.css?v=20261003a">
+  <link rel="stylesheet" href="../cinematic.css?v=20261003b">
   <link rel="icon" href="../assets/studio-favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#06080e">
-  <script src="../hub-interactions.js?v=20260924e" defer></script>
+  <script src="../hub-interactions.js?v=20261003b" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -194,8 +194,15 @@
 
     <!-- Apps Bento Showcase -->
     <section class="container studio-grid" aria-label="Our applications">
+      <div class="product-switcher" role="tablist" aria-label="Select an app">
+        <button class="product-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preventivi-chapter" data-product-target="preventivi"><img src="../assets/icon.png" alt="" width="30" height="30"><span>Preventivi</span></button>
+        <button class="product-tab" type="button" role="tab" aria-selected="false" aria-controls="foodlio-chapter" data-product-target="foodlio"><img src="../foodlio/icon.png" alt="" width="30" height="30"><span>Foodlio</span></button>
+        <button class="product-tab" type="button" role="tab" aria-selected="false" aria-controls="padel-chapter" data-product-target="padel"><img src="../padel-match-manager/icon.png" alt="" width="30" height="30"><span>Padel</span></button>
+        <button class="product-tab" type="button" role="tab" aria-selected="false" aria-controls="aegis-chapter" data-product-target="aegis"><img src="../aegis/icon.png" alt="" width="30" height="30"><span>Aegis</span></button>
+        <button class="product-tab" type="button" role="tab" aria-selected="false" aria-controls="flipeven-chapter" data-product-target="flipeven"><img src="../flipeven/icon.png" alt="" width="30" height="30"><span>FlipEven</span></button>
+      </div>
       <!-- Preventivi Facili (featured) -->
-      <article id="preventivi-chapter" class="bento-card col-8 featured-card chapter-preventivi reveal-up">
+      <article id="preventivi-chapter" data-product="preventivi" role="tabpanel" class="bento-card col-8 featured-card chapter-preventivi is-active reveal-up">
         <div class="featured-card-grid">
           <div class="featured-card-copy">
             <div class="card-top-row">
@@ -242,7 +249,7 @@
       </article>
 
       <!-- Foodlio -->
-      <article id="foodlio-chapter" class="bento-card col-4 chapter-foodlio reveal-up">
+      <article id="foodlio-chapter" data-product="foodlio" role="tabpanel" class="bento-card col-4 chapter-foodlio reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" src="../foodlio/icon.png" alt="Foodlio Icon" width="58" height="58" loading="lazy">
           <div class="card-title-group">
@@ -288,7 +295,7 @@
       </article>
 
       <!-- Padel Match Manager -->
-      <article id="padel-chapter" class="bento-card col-4 chapter-padel reveal-up">
+      <article id="padel-chapter" data-product="padel" role="tabpanel" class="bento-card col-4 chapter-padel reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" src="../padel-match-manager/icon.png" alt="Padel Match Manager Icon" width="58" height="58" loading="lazy">
           <div class="card-title-group">
@@ -337,7 +344,7 @@
       </article>
 
       <!-- Aegis -->
-      <article id="aegis-chapter" class="bento-card col-4 chapter-aegis reveal-up">
+      <article id="aegis-chapter" data-product="aegis" role="tabpanel" class="bento-card col-4 chapter-aegis reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" loading="lazy" src="../aegis/icon.png" alt="Aegis Icon" width="58" height="58">
           <div class="card-title-group">
@@ -388,7 +395,7 @@
       </article>
 
       <!-- FlipEven -->
-      <article id="flipeven-chapter" class="bento-card col-4 chapter-flipeven reveal-up">
+      <article id="flipeven-chapter" data-product="flipeven" role="tabpanel" class="bento-card col-4 chapter-flipeven reveal-up">
         <div class="card-top-row">
           <img class="card-app-icon" loading="lazy" src="../flipeven/icon.png" alt="FlipEven Icon" width="58" height="58">
           <div class="card-title-group">

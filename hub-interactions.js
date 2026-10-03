@@ -11,6 +11,28 @@ function initHubInteractions() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(pointer: fine)').matches;
 
+  // The shipped-product wall responds like one physical object. It uses real
+  // screenshots, so the motion reveals the work instead of decorating it.
+  const productWall = document.querySelector('.hero-product-wall');
+  if (productWall && finePointer && !reduceMotion) {
+    let wallFrame = 0;
+    productWall.addEventListener('pointermove', (event) => {
+      if (wallFrame) cancelAnimationFrame(wallFrame);
+      wallFrame = requestAnimationFrame(() => {
+        const rect = productWall.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        productWall.style.setProperty('--rx', `${(-y * 3.5).toFixed(2)}deg`);
+        productWall.style.setProperty('--ry', `${(x * 5).toFixed(2)}deg`);
+      });
+    });
+    productWall.addEventListener('pointerleave', () => {
+      if (wallFrame) cancelAnimationFrame(wallFrame);
+      productWall.style.setProperty('--rx', '0deg');
+      productWall.style.setProperty('--ry', '0deg');
+    });
+  }
+
   // 1. Scroll reveal (safe to run regardless of pointer type)
   const revealEls = document.querySelectorAll('.reveal-up');
   if (revealEls.length) {

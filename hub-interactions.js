@@ -499,7 +499,10 @@ function initHubInteractions() {
   const lang = document.documentElement.lang || 'it';
   const isEn = lang === 'en';
   const isEs = lang === 'es';
-  const rootPath = isEn || isEs ? '../' : './';
+  // La radice del sito si ricava dalla posizione di questo script (il vecchio calcolo
+  // dava percorsi sbagliati dalle pagine annidate, es. /aegis/ o /foodlio/en/).
+  const selfScript = document.currentScript || Array.from(document.scripts).find((el) => /hub-interactions\.js/.test(el.src));
+  const rootPath = selfScript && selfScript.src ? new URL('./', selfScript.src).href : (isEn || isEs ? '../' : './');
 
   // Build Command Palette Modal dynamically
   const paletteBackdrop = document.createElement('div');

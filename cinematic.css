@@ -101,10 +101,16 @@
 .cinematic-page .hero-cosmos-hint { display: none; }
 
 .cinematic-page .kharonte-engine {
+  --orbit-x: 0px;
+  --orbit-y: 0px;
+  --orbit-rx: 0deg;
+  --orbit-ry: 0deg;
   position: absolute;
   inset: 0;
   z-index: 3;
   min-height: 560px;
+  overflow: hidden;
+  border-radius: 36px;
   opacity: 0;
   pointer-events: none;
   transition: opacity .6s cubic-bezier(.16,1,.3,1);
@@ -113,13 +119,10 @@
 .cinematic-page .kharonte-engine::before {
   content: "";
   position: absolute;
-  inset: 8% 5% 4%;
-  z-index: -1;
-  border: 1px solid rgba(111,247,255,.1);
-  border-radius: 46% 54% 51% 49% / 51% 44% 56% 49%;
-  background: radial-gradient(circle at 44% 50%, rgba(255,134,24,.11), transparent 26%), radial-gradient(circle at 58% 42%, rgba(52,134,255,.1), transparent 42%);
-  filter: blur(.2px);
-  transform: rotate(-4deg);
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--stage-bg) 0%, rgba(8,13,24,.2) 18%, transparent 42%), linear-gradient(0deg, var(--stage-bg) 0%, transparent 20%);
 }
 
 .cinematic-page .kharonte-engine.is-ready {
@@ -127,12 +130,17 @@
   pointer-events: auto;
 }
 
-.cinematic-page .kharonte-engine canvas {
+.cinematic-page .charon-hero-image {
   display: block;
-  width: 100%;
+  width: calc(100% + 34px);
   height: min(68vh, 670px);
   min-height: 560px;
-  filter: drop-shadow(0 44px 55px rgba(0,0,0,.42));
+  object-fit: cover;
+  object-position: 70% center;
+  transform: translate3d(calc(var(--orbit-x) - 17px), var(--orbit-y), 0) rotateX(var(--orbit-rx)) rotateY(var(--orbit-ry)) scale(1.035);
+  filter: saturate(.86) contrast(1.08) brightness(.84);
+  transition: transform .18s cubic-bezier(.2,0,0,1);
+  will-change: transform;
 }
 
 .cinematic-page .kharonte-engine.is-ready + .hero-product-wall {
@@ -150,13 +158,12 @@
 }
 
 .cinematic-page .engine-readout {
-  left: 50%;
-  bottom: 2.5%;
+  left: 8%;
+  bottom: 7%;
   display: grid;
   gap: .32rem;
   width: max-content;
-  text-align: center;
-  transform: translateX(-50%);
+  text-align: left;
   color: rgba(192,209,232,.52);
   font-size: .58rem;
 }
@@ -164,7 +171,7 @@
 .cinematic-page .engine-readout strong { color: #e9f2ff; font-size: .69rem; font-weight: 600; }
 
 .cinematic-page .engine-status {
-  top: 11%;
+  top: 8%;
   right: 5%;
   display: flex;
   align-items: center;
@@ -183,6 +190,45 @@
 }
 
 @keyframes enginePulse { 50% { opacity: .42; transform: scale(.74); } }
+
+.cinematic-page .orbit-product {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 .62rem;
+  border: 1px solid rgba(159,196,225,.24);
+  border-radius: 999px;
+  background: rgba(4,10,18,.72);
+  color: rgba(230,241,252,.78);
+  font: 600 .57rem/1 "JetBrains Mono", monospace;
+  letter-spacing: .05em;
+  text-decoration: none;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 9px 28px rgba(0,0,0,.3);
+  transform: translate3d(calc(var(--orbit-x) * -.35), calc(var(--orbit-y) * -.35), 0);
+  transition: color .16s ease, border-color .16s ease, background .16s ease, scale .16s ease;
+}
+
+.cinematic-page .orbit-product::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-right: .4rem;
+  border-radius: 50%;
+  background: #64e7ff;
+  box-shadow: 0 0 10px rgba(100,231,255,.8);
+}
+
+.cinematic-page .orbit-product:hover,
+.cinematic-page .orbit-product:focus-visible { border-color: rgba(255,179,78,.7); background: rgba(12,18,29,.94); color: #fff; scale: 1.06; outline: none; }
+.cinematic-page .orbit-1 { top: 19%; left: 25%; }
+.cinematic-page .orbit-2 { top: 9%; right: 8%; }
+.cinematic-page .orbit-3 { top: 48%; right: 1%; }
+.cinematic-page .orbit-4 { bottom: 17%; right: 12%; }
+.cinematic-page .orbit-5 { bottom: 9%; left: 24%; }
 
 .cinematic-page .hero-product-wall {
   --rx: 0deg;

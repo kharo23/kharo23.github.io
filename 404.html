@@ -2,9 +2,6 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&amp;family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560;9..144,650&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 — Pagina non trovata | Kharonte Studio</title>
   <meta name="description" content="Pagina non trovata - Kharonte Studio. Scopri tutte le nostre app per iOS e Android.">
@@ -17,6 +14,7 @@
   <meta name="theme-color" content="#06080e">
   <link rel="stylesheet" href="/style.css?v=20260924e">
   <link rel="stylesheet" href="/products.css?v=20260924e">
+  <link rel="stylesheet" href="/site.css?v=1">
   
   <style>
     .error-wrapper {
@@ -35,11 +33,11 @@
       font-weight: 800;
       line-height: 1;
       letter-spacing: -0.04em;
-      background: linear-gradient(135deg, #38bdf8 0%, #0052ff 50%, #818cf8 100%);
+      background: linear-gradient(135deg, #ffd9a0 0%, #ffb347 55%, #e0802a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
-      filter: drop-shadow(0 0 45px rgba(0, 82, 255, 0.4));
+      filter: drop-shadow(0 0 45px rgba(255, 179, 71, 0.35));
     }
     .error-card {
       max-width: 580px;
@@ -75,13 +73,13 @@
       gap: 8px;
       padding: 12px 24px;
       border-radius: var(--radius-full);
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      background: #ffb347; color: #1a1000; font-weight: 700;
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
-      box-shadow: 0 4px 20px var(--primary-glow);
+      box-shadow: none;
       transition: var(--transition);
     }
     .btn-primary-action:hover {
@@ -128,6 +126,7 @@
     }
   </style>
   <script src="./hub-interactions.js?v=20260924e" defer></script>
+  <script src="/site.js?v=1" defer></script>
 </head>
 <body class="product-page hub-page">
 

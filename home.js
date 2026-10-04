@@ -254,8 +254,22 @@
   (function () {
     const pats = [{ n: 'Box 4-4-4-4', s: [['in', 4], ['hold', 4], ['out', 4], ['hold', 4]] }, { n: '4-7-8', s: [['in', 4], ['hold', 7], ['out', 8]] }, { n: LX.ae.coh, s: [['in', 5], ['out', 5]] }];
     let p = 0, on = false, raf = 0, t0 = 0, cycles = 0, lastCycle = -1;
-    const orb = $('#ae-orb'), wrap = $('#ae-pats'), go = $('#ae-go');
+    const orb = $('#ae-orb'), petals = $('#lt-petals', orb), wrap = $('#ae-pats'), go = $('#ae-go');
     wrap.innerHTML = pats.map((x, i) => `<button class="pill" type="button" aria-pressed="${i === 0}" data-i="${i}">${x.n}</button>`).join('');
+    const PET = 'M0 0C-.55 -.35 -.45 -.78 0 -1C.45 -.78 .55 -.35 0 0Z';
+    petals.innerHTML = [0, 1].map((r) => Array.from({ length: 6 }, (_, i) => `<path d="${PET}" fill="url(#lt-p${r ? 'i' : 'o'})" stroke="#fff" stroke-opacity="${r ? .65 : .55}" stroke-width="1" vector-effect="non-scaling-stroke"/>`).join('')).join('');
+    const pp = petals.children, g = $('#lt-g', orb), sc = $('#lt-sc', orb), cg = $('#lt-cg', orb), cp = $('#lt-cp', orb);
+    function bloom(e) {
+      const s = 0.85 + 0.45 * e, ol = 44 * (0.85 + e * 0.28), il = ol * 0.68, oo = 8 + e * 9, io = 4 + e * 5, core = 12 * (0.85 + e * 0.25);
+      for (let i = 0; i < 6; i++) {
+        pp[i].setAttribute('transform', `rotate(${(i * 60 + e * 4.6).toFixed(2)}) translate(0 ${-oo.toFixed(2)}) scale(${(ol * 0.54).toFixed(2)} ${ol.toFixed(2)})`);
+        pp[6 + i].setAttribute('transform', `rotate(${(i * 60 + 30 - e * 2.9).toFixed(2)}) translate(0 ${-io.toFixed(2)}) scale(${(il * 0.58).toFixed(2)} ${il.toFixed(2)})`);
+      }
+      g.setAttribute('r', (88 * s).toFixed(2)); g.style.opacity = (0.6 + 0.4 * e).toFixed(2);
+      cg.setAttribute('r', (core * 2.2).toFixed(2)); cp.setAttribute('r', (core * 0.45).toFixed(2));
+      sc.setAttribute('transform', `scale(${s.toFixed(3)})`);
+    }
+    bloom(0);
     const lvl = (name, f) => name === 'in' ? f : name === 'out' ? 1 - f : null;
     function loop(now) {
       const steps = pats[p].s, total = steps.reduce((a, s) => a + s[1], 0), t = ((now - t0) / 1000), cyc = Math.floor(t / total); let u = t % total, k = 0;
@@ -263,13 +277,13 @@
       const [name, d] = steps[k], f = u / d; let level = lvl(name, f);
       if (level == null) level = steps[k - 1 >= 0 ? k - 1 : steps.length - 1][0] === 'in' ? 1 : 0;
       const e = level * level * (3 - 2 * level);
-      orb.style.scale = (0.52 + e * 0.48).toFixed(3); stage.style.setProperty('--breath', e.toFixed(3)); orb.parentElement.style.setProperty('--breath', e.toFixed(3)); orb.style.setProperty('--breath', e.toFixed(3));
+      bloom(e); stage.style.setProperty('--breath', e.toFixed(3)); orb.style.setProperty('--breath', e.toFixed(3));
       $('#ae-phase').textContent = LX.ae.ph[name]; $('#ae-sec').textContent = Math.ceil(d - u);
       if (cyc !== lastCycle) { if (lastCycle >= 0) cycles++; lastCycle = cyc; $('#ae-info').textContent = LX.ae.cycles(cycles); }
       raf = requestAnimationFrame(loop);
     }
     function begin() { on = true; cycles = 0; lastCycle = -1; t0 = performance.now(); go.textContent = LX.ae.pause; raf = requestAnimationFrame(loop); }
-    function halt() { on = false; cancelAnimationFrame(raf); go.textContent = LX.ae.go; orb.style.scale = 0.52; stage.style.setProperty('--breath', 0); $('#ae-phase').textContent = LX.ae.ready; $('#ae-sec').textContent = '·'; }
+    function halt() { on = false; cancelAnimationFrame(raf); go.textContent = LX.ae.go; bloom(0); orb.style.setProperty('--breath', 0); stage.style.setProperty('--breath', 0); $('#ae-phase').textContent = LX.ae.ready; $('#ae-sec').textContent = '·'; }
     go.addEventListener('click', () => (on ? halt() : begin()));
     wrap.addEventListener('click', (e) => { const b = e.target.closest('.pill'); if (!b) return; p = +b.dataset.i; $$('.pill', wrap).forEach((x) => x.setAttribute('aria-pressed', x === b)); if (on) begin(); });
     hooks.aegis = { stop: halt };

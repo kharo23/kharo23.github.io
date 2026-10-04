@@ -88,7 +88,7 @@ TR = [
  ('Genera i turni</button>', 'Generate rounds</button>', 'Generar rondas</button>'),
  ('Simula il torneo</button>', 'Simulate the tournament</button>', 'Simular el torneo</button>'),
  ("Nell'app: Mexicano, gironi, classifica live, condivisione.", 'In the app: Mexicano, group stages, live standings, sharing.', 'En la app: Mexicano, grupos, clasificación en vivo, compartir.'),
- ('Respirazione guidata, suoni e diario privato. Segui il cerchio: tutta la scena respira con te.', 'Guided breathing, sounds and a private journal. Follow the circle: the whole scene breathes with you.', 'Respiración guiada, sonidos y diario privado. Sigue el círculo: toda la escena respira contigo.'),
+ ('Respirazione guidata, suoni e diario privato. Segui il fiore di loto: tutta la scena respira con te.', 'Guided breathing, sounds and a private journal. Follow the lotus: the whole scene breathes with you.', 'Respiración guiada, sonidos y diario privado. Sigue el círculo: toda la escena respira contigo.'),
  ('<span id="ae-phase">Pronto</span>', '<span id="ae-phase">Ready</span>', '<span id="ae-phase">Listo</span>'),
  ('aria-label="Schema di respiro"', 'aria-label="Breathing pattern"', 'aria-label="Patrón de respiración"'),
  ('>Inizia a respirare</button>', '>Start breathing</button>', '>Empezar a respirar</button>'),

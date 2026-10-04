@@ -348,4 +348,124 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://kharonte.dev/servizi.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/servizi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/services.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/servicios.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/servizi.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/en/services.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/servizi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/services.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/servicios.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/servizi.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/es/servicios.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/servizi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/services.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/servicios.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/servizi.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/preventivi-facili/elettricisti/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/elettricisti/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/elettricisti/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/elettricisti/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/preventivi-facili/elettricisti/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/preventivi-facili/elettricisti/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/elettricisti/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/elettricisti/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/elettricisti/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/preventivi-facili/elettricisti/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/preventivi-facili/elettricisti/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/preventivi-facili/elettricisti/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/preventivi-facili/elettricisti/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/preventivi-facili/elettricisti/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/preventivi-facili/elettricisti/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/foodlio/pizzerie/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/pizzerie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/pizzerie/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/foodlio/pizzerie/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/foodlio/pizzerie/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/foodlio/pizzerie/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/pizzerie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/pizzerie/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/foodlio/pizzerie/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/foodlio/pizzerie/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/foodlio/pizzerie/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/foodlio/pizzerie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/foodlio/pizzerie/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/foodlio/pizzerie/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/foodlio/pizzerie/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/padel-match-manager/circoli/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/padel-match-manager/circoli/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/padel-match-manager/circoli/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/padel-match-manager/circoli/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/padel-match-manager/circoli/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/padel-match-manager/circoli/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/padel-match-manager/circoli/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/padel-match-manager/circoli/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/padel-match-manager/circoli/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/padel-match-manager/circoli/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/padel-match-manager/circoli/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/padel-match-manager/circoli/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/padel-match-manager/circoli/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/padel-match-manager/circoli/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/padel-match-manager/circoli/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

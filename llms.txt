@@ -14,6 +14,14 @@ For the complete, detailed description of every app (features, pricing model, av
 
 Each app has localized pages: Italian at the app URL, English at `/en/` and Spanish at `/es/` below it (for example `/foodlio/en/`, `/foodlio/es/`).
 
+## Services and trade pages
+
+- [Custom development services](https://kharonte.dev/en/services.html): native mobile apps, full-stack web platforms and practical AI integrations from an independent developer ([IT](https://kharonte.dev/servizi.html), [ES](https://kharonte.dev/es/servicios.html)).
+- [Preventivi Facili for electricians](https://kharonte.dev/preventivi-facili/elettricisti/en/): PDF quotes with VAT, logo and signature, offline.
+- [Foodlio for pizzerias](https://kharonte.dev/foodlio/pizzerie/en/): how food cost of a pizza is calculated, with a worked example.
+- [Padel Match Manager for clubs](https://kharonte.dev/padel-match-manager/circoli/en/): how Americano and Mexicano tournaments work.
+- Same pages in Italian (without /en/) and Spanish (/es/).
+
 ## Studio
 
 - [Home (Italian)](https://kharonte.dev/): Interactive demos of all five apps, FAQ and contacts.

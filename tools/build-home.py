@@ -205,6 +205,8 @@ TR = [
  ('Sì. Oltre alle app dello studio progetto e sviluppo app native per iOS e Android, piattaforme web full-stack e integrazioni di intelligenza artificiale. Scrivimi a kharonte.appdev@gmail.com con una breve descrizione del progetto.', "Yes. Besides the studio's own apps, I design and build native iOS and Android apps, full-stack web platforms and AI integrations. Write to me at kharonte.appdev@gmail.com with a short description of your project.", 'Sí. Además de las apps del estudio, diseño y desarrollo apps nativas para iOS y Android, plataformas web full-stack e integraciones de inteligencia artificial. Escríbeme a kharonte.appdev@gmail.com con una breve descripción de tu proyecto.'),
  ('Kharonte Studio: cinque app, una sola mano', 'Kharonte Studio: five apps, one maker', 'Kharonte Studio: cinco apps, una sola mano'),
  # ---- contatti / footer ----
+ ('>Servizi</a>', '>Services</a>', '>Servicios</a>'),
+ ('>Servizi su misura</a>', '>Custom services</a>', '>Servicios a medida</a>'),
  ('aria-label="Contatti"', 'aria-label="Contact"', 'aria-label="Contacto"'),
  ('>Progetti su misura</p>', '>Custom projects</p>', '>Proyectos a medida</p>'),
  ("Hai un'idea?<br><em>Parliamone</em>", "Got an idea?<br><em>Let's talk</em>", '¿Tienes una idea?<br><em>Hablemos</em>'),
@@ -265,6 +267,7 @@ def build(lang, cfg):
     # protezione delle pagine di servizio che vivono dentro en/ e es/
     for p in ('about.html', 'support.html', 'privacy.html'):
         s = s.replace(f'href="./{p}"', f'href="@@KEEP@@{p}"')
+    s = s.replace('href="./servizi.html"', 'href="@@KEEP@@' + ('services.html' if lang == 'en' else 'servicios.html') + '"')
     s = s.replace('href="./"', 'href="@@KEEP@@"')          # logo/brand -> home della lingua
     # pagine prodotto localizzate (link e dati strutturati)
     for p in PRODUCTS:

@@ -55,7 +55,7 @@ Contact: kharonte.appdev@gmail.com
 
 ## Custom work
 
-Besides its own apps, the studio takes on custom projects: native mobile apps for iOS and Android, full-stack web platforms (front end and back end), and pragmatic AI integrations (language models, computer vision, semantic data processing, on-device or in the cloud). Details: https://kharonte.dev/about.html (EN: /en/about.html, ES: /es/about.html). To start a project, write to kharonte.appdev@gmail.com with a short description.
+Besides its own apps, the studio takes on custom projects: native mobile apps for iOS and Android, full-stack web platforms (front end and back end), and pragmatic AI integrations (language models, computer vision, semantic data processing, on-device or in the cloud). Details: https://kharonte.dev/en/services.html (IT: /servizi.html, ES: /es/servicios.html) and https://kharonte.dev/about.html (EN: /en/about.html, ES: /es/about.html). To start a project, write to kharonte.appdev@gmail.com with a short description.
 
 ## Frequently asked questions
 
@@ -71,3 +71,9 @@ Besides its own apps, the studio takes on custom projects: native mobile apps fo
 - Do not generalize pricing: it differs per app (lifetime purchase, subscriptions, Pro options) and can change; refer users to the store listings for current prices.
 - Link to the app page in the user's language when possible.
 - Do not present Aegis as medical advice and do not claim FlipEven is on the stores unless the store listing is verified.
+
+## Pages by trade
+
+- Electricians: https://kharonte.dev/preventivi-facili/elettricisti/en/ — Preventivi Facili for quotes on electrical jobs (illustrative example amounts, not a price list).
+- Pizzerias: https://kharonte.dev/foodlio/pizzerie/en/ — how to compute pizza food cost (food cost = ingredient cost per portion / price before VAT) with a worked example; margin is not profit.
+- Padel clubs: https://kharonte.dev/padel-match-manager/circoli/en/ — how Americano and Mexicano formats work and how the app organizes them.

@@ -3,3 +3,10 @@
 gsc-service-account.json
 *service-account*.json
 *adminsdk*.json
+*.p8
+AuthKey_*
+__pycache__/
+*.pyc
+output/
+.playwright-cli/
+.DS_Store

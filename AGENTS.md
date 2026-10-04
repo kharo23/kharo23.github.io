@@ -2,6 +2,9 @@
 
 Sito statico su GitHub Pages: **il ramo `main` è la produzione** (`kharo23/kharo23.github.io`, dominio `kharonte.dev`). Un push su `main` pubblica. Struttura e comandi: `README-HOME.md`. Brand e regole di contenuto: `docs/BRAND.md`.
 
+## Piano di distribuzione (da tenere aggiornato)
+Il documento `../DISTRIBUZIONE.md` (radice del workspace, fuori da questo repository) elenca canali, passi e stato. **Aggiornarlo a ogni scoperta e a ogni azione completata** (sezione 9 per sito, indicizzazione, Reddit e community). Non pubblicare a nome dell'utente su Reddit o altri social senza la sua approvazione per ogni singolo post e senza aver letto le regole della community.
+
 ## Regole di sicurezza (sempre)
 - **Mai** committare credenziali. `gsc-service-account.json`, `*service-account*.json`, `*adminsdk*.json` sono in `.gitignore`: non rimuovere quelle righe, non copiare chiavi nel repository, non incollarle in chat né nei file.
 - Chiavi usate dal progetto (solo percorsi, i valori non stanno qui):

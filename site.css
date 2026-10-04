@@ -60,7 +60,7 @@ html body .site-nav .nav-menu-toggle{border-color:var(--border-subtle);backgroun
 }
 
 /* ---------- accento dello studio (pagine non-app) ---------- */
-.hub-page,.about-page{--primary:#ffb347;--primary-light:#ffc46b;--primary-glow:rgba(255,179,71,.2);--cyan-accent:#ffd9a0;--text-highlight:#ffc46b}
+body.product-page.hub-page,body.product-page.about-page,.hub-page,.about-page{--primary:#ffb347;--primary-light:#ffc46b;--primary-glow:rgba(255,179,71,.2);--cyan-accent:#ffd9a0;--text-highlight:#ffc46b}
 .cta-btn-primary,.btn-store.primary-cta{background:var(--lamp)!important;color:#1a1000!important;border:0!important;border-radius:99px!important;box-shadow:none!important;font-weight:700;transition:transform .3s var(--ease-out),background .2s}
 .cta-btn-primary:hover,.btn-store.primary-cta:hover{background:#ffc46b!important;transform:translateY(-2px)}
 .cta-btn-secondary{background:transparent!important;border:1px solid var(--border-highlight)!important;border-radius:99px!important;color:var(--text-main)!important;box-shadow:none!important}

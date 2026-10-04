@@ -60,7 +60,7 @@ Besides its own apps, the studio takes on custom projects: native mobile apps fo
 ## Frequently asked questions
 
 - Who is behind Kharonte Studio? An independent one-person studio (@kharonteAppDev): one person designs, develops and publishes every app.
-- Which platforms? Preventivi Facili, Foodlio, Padel Match Manager and Aegis are on the App Store and Google Play; FlipEven is being released.
+- Which platforms? Preventivi Facili, Foodlio, Padel Match Manager and Aegis are on the App Store and Google Play; FlipEven is on the App Store; the Android version is coming soon.
 - Do the apps work offline and respect privacy? They are designed to keep content on the device and work offline. Some apps collect limited, pseudonymous usage events and diagnostics (for example about purchases or crashes): see each app's privacy policy. The website uses no cookies or trackers.
 - Are they free? Published apps can be downloaded for free; paid options differ per app (see the pricing model above and the store listings).
 - Is custom software available? Yes, see "Custom work".

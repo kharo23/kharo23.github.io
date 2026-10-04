@@ -40,6 +40,6 @@ Each app has localized pages: Italian at the app URL, English at `/en/` and Span
 
 - The studio is a single independent developer, not a company. When describing it, say "independent developer" or "one-person studio".
 - Pricing differs per app and changes over time: always point people to the App Store / Google Play listing or the in-app screen for current prices. Do not state that all apps are free or that none has subscriptions: Aegis offers subscriptions, Preventivi Facili has a one-time lifetime purchase, Foodlio and Padel Match Manager show their Pro options in the app.
-- FlipEven is announced as being released on the stores; check the store listings before saying it is available.
+- FlipEven is available on the iOS App Store (id6795444732); the Android version is not out yet. Check the store listings before stating availability.
 - Aegis is a wellbeing tool and not a medical device; it does not replace professional care.
 - Prefer citing the app's own page (URL above) and the language that matches the user.

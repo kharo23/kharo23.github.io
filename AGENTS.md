@@ -21,7 +21,7 @@ Tutto il materiale è in `../marketing/` (fuori da questo repository): `README.m
 3. **Immagini social**, se cambiano titoli o screenshot: server locale + `python3 tools/render-og.py` (home) e `python3 tools/render-og-apps.py` (pagine app).
 4. **Nuove pagine**: aggiungerle a `sitemap.xml` (con hreflang it/en/es/x-default e `lastmod` aggiornato), a `llms.txt` / `llms-full.txt` e collegarle da almeno una pagina esistente. Ogni pagina indicizzabile deve avere: title ≤ 60 car., description ≤ 160, un solo H1, canonical, hreflang reciproci, Open Graph + Twitter `summary_large_image`, JSON-LD valido, `<main>` e skip-link.
 5. **Aggiornare le date**: `lastmod` nel sitemap per le pagine toccate; "Last updated" in `llms-full.txt`.
-6. **Contenuti sensibili da riallineare** se cambia la realtà: stato di FlipEven (in rilascio → pubblicato), modello di prezzo delle app (Aegis ha abbonamenti), FAQ della home, `llms*.txt`.
+6. **Contenuti sensibili da riallineare** se cambia la realtà: stato di FlipEven (iOS pubblicato dal 20/09/2026, Android in arrivo: aggiornare quando esce), modello di prezzo delle app (Aegis ha abbonamenti), FAQ della home, `llms*.txt`.
 
 ## Verifica (locale: `python3 -m http.server 8765`)
 - Nessun errore in console e **nessun scroll orizzontale a 390 px** su ogni pagina toccata, nelle tre lingue.

@@ -619,6 +619,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://kharonte.dev/guide/respirazione-box-4-7-8/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/respirazione-box-4-7-8/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/respirazione-box-4-7-8/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/respirazione-box-4-7-8/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/respirazione-box-4-7-8/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/respirazione-box-4-7-8/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/respirazione-box-4-7-8/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/respirazione-box-4-7-8/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/respirazione-box-4-7-8/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/respirazione-box-4-7-8/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/respirazione-box-4-7-8/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/respirazione-box-4-7-8/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/respirazione-box-4-7-8/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/respirazione-box-4-7-8/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/respirazione-box-4-7-8/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://kharonte.dev/scritti.html</loc>
     <lastmod>2026-10-04</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/scritti.html" />

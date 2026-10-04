@@ -39,7 +39,7 @@ for lang in ('it', 'en', 'es'):
         appslug, appname = g['app']; appurl = f'/{appslug}/{sub}'
         related = [(f'{appname}', appurl)]
         if g['niche']: related.append((bl.NICHES[g['niche'][1]][lang]['title'].split(' — ')[0], f'/{g["niche"][0]}/{g["niche"][1]}/{sub}'))
-        related.append((LB['demo'], {'it': '/', 'en': '/en/', 'es': '/es/'}[lang] + '#banco'))
+        related.append((LB['demo_breath'] if slug == 'respirazione-box-4-7-8' else LB['demo'], {'it': '/', 'en': '/en/', 'es': '/es/'}[lang] + '#banco'))
         related += [(GUIDES[s][lang]['slug_title'], f'/guide/{s}/{sub}') for s in GUIDES if s != slug][:2]
         ld = [
          {"@context": "https://schema.org", "@type": "Article", "@id": can + "#article", "headline": d['slug_title'], "description": d['desc'], "inLanguage": lang, "datePublished": UPDATED, "dateModified": UPDATED, "mainEntityOfPage": can,

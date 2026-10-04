@@ -13,3 +13,5 @@
 **Nome**: "Kharonte Studio" (con K), handle @kharonteAppDev. Mantenere identico su sito, store e social.
 
 **Da non fare**: dati inventati (città, tempi di risposta, recensioni), "per sempre/100% offline" senza verifica per app (Aegis ha abbonamenti), effetti che appesantiscono la pagina.
+
+**Posizionamento**: uno studio indipendente (sviluppatore indipendente), non una startup: niente «startup», «founder» o linguaggio da venture nei testi.

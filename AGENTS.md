@@ -5,7 +5,7 @@ Sito statico su GitHub Pages: **il ramo `main` è la produzione** (`kharo23/khar
 ## Regole di sicurezza (sempre)
 - **Mai** committare credenziali. `gsc-service-account.json`, `*service-account*.json`, `*adminsdk*.json` sono in `.gitignore`: non rimuovere quelle righe, non copiare chiavi nel repository, non incollarle in chat né nei file.
 - Chiavi usate dal progetto (solo percorsi, i valori non stanno qui):
-  - Google Search Console: `gsc-service-account.json` nella radice (ignorato da git; account `firebase-adminsdk-fbsvc@padel-match-manager`, API via JWT, scope `webmasters`). Se serve, spostarlo fuori dal repo e aggiornare questa riga.
+  - Google Search Console: `~/.config/kharonte/gsc-service-account.json` (fuori dal repo, permessi 600; account `firebase-adminsdk-fbsvc@padel-match-manager`, API via JWT RS256, scope `https://www.googleapis.com/auth/webmasters`, proprietà `https://kharonte.dev/`). Mai rimetterlo nel repository.
   - Bing Webmaster: `~/.config/kharonte/bing-api-key.txt` (permessi 600). API: `https://ssl.bing.com/webmaster/api.svc/json/<Metodo>?apikey=…`.
   - IndexNow: chiave pubblica nel file `426bd80580ca28dd1d4f4de2bbe94a3d.txt` nella radice (deve restare online).
 - Non inventare dati (città, tempi di risposta, recensioni, download, prezzi). Prezzi e disponibilità si verificano sugli store.

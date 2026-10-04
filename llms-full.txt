@@ -77,3 +77,9 @@ Besides its own apps, the studio takes on custom projects: native mobile apps fo
 - Electricians: https://kharonte.dev/preventivi-facili/elettricisti/en/ — Preventivi Facili for quotes on electrical jobs (illustrative example amounts, not a price list).
 - Pizzerias: https://kharonte.dev/foodlio/pizzerie/en/ — how to compute pizza food cost (food cost = ingredient cost per portion / price before VAT) with a worked example; margin is not profit.
 - Padel clubs: https://kharonte.dev/padel-match-manager/circoli/en/ — how Americano and Mexicano formats work and how the app organizes them.
+
+## Guides and technical writing
+
+Guides (IT/EN/ES, updated 2026-10-04): https://kharonte.dev/guide/en/ — food cost formula and worked pizza example; padel Americano rules with an 8-player, 7-round schedule; minimum resale price (break-even) with ROI and margin; what a professional quote should contain. Amounts in examples are illustrative; the guides are not tax or legal advice.
+
+Technical writing by the developer (English, on Medium: https://medium.com/@davide.mib), listed at https://kharonte.dev/en/writing.html — topics: Spring Boot and backend API design (idempotency keys, JWT vs session tokens, security misconfigurations), Java 21 virtual threads vs Node.js, REST vs GraphQL vs gRPC, microservices contracts, Flutter state management, Flutter vs React Native, and an AI coding agent workflow.

@@ -1,0 +1,174 @@
+# -*- coding: utf-8 -*-
+"""Guide pratiche (IT/EN/ES) e pagina "Scritti". Modificare qui, poi: python3 tools/build-content.py
+Regole: formule e passaggi generali; gli importi sono esempi dichiarati tali; nessuna consulenza fiscale/legale/medica."""
+
+UPDATED = '2026-10-04'
+UPDATED_TXT = {'it': '4 ottobre 2026', 'en': 'October 4, 2026', 'es': '4 de octubre de 2026'}
+LAB = {
+ 'it': dict(updated='Aggiornato il', guides='Guide', all='Tutte le guide', related='Per approfondire', try_app='Prova nell\'app', home='Home', writing='Scritti',
+            by='di Kharonte Studio', hub_label='Guide pratiche', hub_h1a='Guide pratiche,', hub_h1b='con formule ed esempi.',
+            hub_sub='Risposte brevi e verificabili alle domande che ricevo più spesso su preventivi, food cost, tornei di padel e rivendita.',
+            read='Leggi la guida', demo='Prova il calcolo nella home'),
+ 'en': dict(updated='Updated', guides='Guides', all='All guides', related='Learn more', try_app='Try it in the app', home='Home', writing='Writing',
+            by='by Kharonte Studio', hub_label='Practical guides', hub_h1a='Practical guides,', hub_h1b='with formulas and examples.',
+            hub_sub='Short, checkable answers to the questions I get asked most about quotes, food cost, padel tournaments and reselling.',
+            read='Read the guide', demo='Try the calculation on the home page'),
+ 'es': dict(updated='Actualizado el', guides='Guías', all='Todas las guías', related='Más información', try_app='Pruébalo en la app', home='Inicio', writing='Escritos',
+            by='de Kharonte Studio', hub_label='Guías prácticas', hub_h1a='Guías prácticas,', hub_h1b='con fórmulas y ejemplos.',
+            hub_sub='Respuestas breves y comprobables a las preguntas que más me hacen sobre presupuestos, food cost, torneos de pádel y reventa.',
+            read='Leer la guía', demo='Prueba el cálculo en la página de inicio'),
+}
+
+def americano_schedule(n=8):
+    """Stesso metodo del cerchio usato dalla demo della home."""
+    ids = list(range(n)); fixed = ids[0]; rest = ids[1:]; out = []; seen = set()
+    for _ in range(n - 1):
+        l = [fixed] + rest; pairs = [(l[i], l[n - 1 - i]) for i in range(n // 2)]
+        for p in pairs: seen.add(frozenset(p))
+        out.append([(pairs[k], pairs[k + 1]) for k in range(0, len(pairs) - 1, 2)])
+        rest = [rest[-1]] + rest[:-1]
+    assert len(seen) == n * (n - 1) // 2          # ogni coppia di compagni compare una sola volta
+    return out
+_L = 'ABCDEFGH'
+def _sched_rows():
+    rows = []
+    for t, matches in enumerate(americano_schedule(8), 1):
+        cells = [f'{_L[a]}+{_L[b]} vs {_L[c]}+{_L[d]}' for (a, b), (c, d) in matches]
+        rows.append([str(t)] + cells)
+    return rows
+SCHED = _sched_rows()
+
+# ---------------------------------------------------------------- GUIDE
+# blocchi: ('p', testo) | ('ul', [..]) | ('ol', [..]) | ('table', [intestazioni], [righe], nota)
+GUIDES = {
+ 'food-cost': dict(app=('foodlio', 'Foodlio'), niche=('foodlio', 'pizzerie'),
+  it=dict(slug_title="Come calcolare il food cost (con esempio)", title="Come calcolare il food cost: formula ed esempio",
+   desc="Come si calcola il food cost di un piatto: formula, esempio con una pizza, prezzo consigliato dal food cost obiettivo e differenza tra margine e utile.",
+   h1="Come si calcola il food cost, con un esempio", lead="Il food cost è la percentuale del prezzo di vendita (senza IVA) che se ne va in ingredienti. Si calcola così: <strong>food cost % = costo degli ingredienti di una porzione ÷ prezzo di vendita senza IVA × 100</strong>.",
+   secs=[("I tre passaggi", [('ol', ["<strong>Costo della porzione.</strong> Per ogni ingrediente moltiplica la quantità usata per il prezzo unitario e somma tutto. Se un ingrediente ha scarti (per esempio la pulizia della verdura), dividi il prezzo per la resa: un chilo che rende l'80% costa il 25% in più per chilo utilizzabile.",
+        "<strong>Prezzo senza IVA.</strong> Dividi il prezzo in menu per 1 più l'aliquota (con il 10%: prezzo ÷ 1,10). L'aliquota dipende dal caso: verifica con il tuo commercialista. Negli esempi uso il 10%.",
+        "<strong>Dividi e moltiplica per 100.</strong> Il risultato è il food cost in percentuale."])]),
+    ("Esempio: una pizza", [('table', ["Voce", "Valore"], [["Farina", "0,25 €"], ["Mozzarella", "0,70 €"], ["Pomodoro", "0,25 €"], ["Altri ingredienti", "0,20 €"], ["Costo ingredienti", "1,40 €"], ["Prezzo in menu (IVA 10% inclusa)", "8,50 €"], ["Prezzo senza IVA", "7,73 €"], ["Food cost", "18,1%"]], "Importi di fantasia a scopo illustrativo: non sono un listino."),
+        ('p', "Calcolo: 1,40 ÷ 7,73 × 100 = 18,1%.")]),
+    ("Dal food cost obiettivo al prezzo", [('p', "Puoi anche partire dall'obiettivo. <strong>Prezzo senza IVA = costo degli ingredienti ÷ food cost obiettivo.</strong> Con 1,40 € di ingredienti e un obiettivo del 30%: 1,40 ÷ 0,30 = 4,67 €, cioè circa 5,13 € con IVA al 10%."),
+        ('p', "Non esiste un valore valido per tutti i locali: molti operatori usano circa il 30% come riferimento di partenza e lo adattano al proprio modello.")]),
+    ("Attenzione: margine non significa utile", [('p', "La differenza tra prezzo e costo degli ingredienti non include personale, affitto, energia, imposte e altri costi dell'attività. Un food cost basso non garantisce da solo un locale in utile.")])],
+   faq=[("Qual è la formula del food cost?", "Costo degli ingredienti di una porzione diviso il prezzo di vendita senza IVA, per 100."), ("Il food cost si calcola con o senza IVA?", "Sul prezzo senza IVA, perché l'IVA non resta all'attività."), ("Quando ricalcolarlo?", "Ogni volta che cambia il prezzo di un ingrediente importante o la ricetta.")]),
+  en=dict(slug_title="How to calculate food cost (with an example)", title="How to Calculate Food Cost: Formula and Example",
+   desc="How to calculate the food cost of a dish: formula, a pizza example, the price you get from a target food cost, and the difference between margin and profit.",
+   h1="How to calculate food cost, with an example", lead="Food cost is the share of the selling price (before VAT) that goes into ingredients. The formula: <strong>food cost % = ingredient cost per portion ÷ selling price before VAT × 100</strong>.",
+   secs=[("The three steps", [('ol', ["<strong>Portion cost.</strong> For each ingredient multiply the quantity used by the unit price and add everything up. If an ingredient has waste (for example trimming vegetables), divide the price by the yield: a kilo with 80% yield costs 25% more per usable kilo.",
+        "<strong>Price before VAT.</strong> Divide the menu price by 1 plus the rate (at 10%: price ÷ 1.10). The applicable rate depends on your case: check with your accountant. The examples use 10%.",
+        "<strong>Divide and multiply by 100.</strong> The result is food cost as a percentage."])]),
+    ("Example: a pizza", [('table', ["Item", "Value"], [["Flour", "€0.25"], ["Mozzarella", "€0.70"], ["Tomato", "€0.25"], ["Other ingredients", "€0.20"], ["Ingredient cost", "€1.40"], ["Menu price (10% VAT included)", "€8.50"], ["Price before VAT", "€7.73"], ["Food cost", "18.1%"]], "Made-up amounts for illustration, not a price list."),
+        ('p', "Calculation: 1.40 ÷ 7.73 × 100 = 18.1%.")]),
+    ("From target food cost to price", [('p', "You can also start from the target. <strong>Price before VAT = ingredient cost ÷ target food cost.</strong> With €1.40 of ingredients and a 30% target: 1.40 ÷ 0.30 = €4.67, about €5.13 with 10% VAT."),
+        ('p', "There is no single value for every venue: many operators use about 30% as a starting reference and adjust it to their own model.")]),
+    ("Careful: margin is not profit", [('p', "The difference between price and ingredient cost does not include staff, rent, energy, taxes or other business costs. A low food cost alone does not guarantee a profitable venue.")])],
+   faq=[("What is the food cost formula?", "Ingredient cost per portion divided by the selling price before VAT, times 100."), ("Is food cost calculated with or without VAT?", "On the price before VAT, because VAT does not stay with the business."), ("When should I recalculate it?", "Whenever the price of a major ingredient or the recipe changes.")]),
+  es=dict(slug_title="Cómo calcular el food cost (con ejemplo)", title="Cómo calcular el food cost: fórmula y ejemplo",
+   desc="Cómo se calcula el food cost de un plato: fórmula, ejemplo con una pizza, precio a partir del food cost objetivo y diferencia entre margen y beneficio.",
+   h1="Cómo se calcula el food cost, con un ejemplo", lead="El food cost es el porcentaje del precio de venta (sin IVA) que se va en ingredientes. Se calcula así: <strong>food cost % = coste de los ingredientes de una ración ÷ precio de venta sin IVA × 100</strong>.",
+   secs=[("Los tres pasos", [('ol', ["<strong>Coste de la ración.</strong> Para cada ingrediente multiplica la cantidad usada por el precio unitario y suma todo. Si un ingrediente tiene mermas (por ejemplo al limpiar verdura), divide el precio entre el rendimiento: un kilo con un 80% de rendimiento cuesta un 25% más por kilo aprovechable.",
+        "<strong>Precio sin IVA.</strong> Divide el precio de la carta entre 1 más el tipo (con el 10%: precio ÷ 1,10). El tipo aplicable depende de tu caso: consúltalo con tu asesor. En los ejemplos uso el 10%.",
+        "<strong>Divide y multiplica por 100.</strong> El resultado es el food cost en porcentaje."])]),
+    ("Ejemplo: una pizza", [('table', ["Concepto", "Valor"], [["Harina", "0,25 €"], ["Mozzarella", "0,70 €"], ["Tomate", "0,25 €"], ["Otros ingredientes", "0,20 €"], ["Coste de ingredientes", "1,40 €"], ["Precio en carta (IVA 10% incluido)", "8,50 €"], ["Precio sin IVA", "7,73 €"], ["Food cost", "18,1%"]], "Importes inventados a modo ilustrativo, no una tarifa."),
+        ('p', "Cálculo: 1,40 ÷ 7,73 × 100 = 18,1%.")]),
+    ("Del food cost objetivo al precio", [('p', "También puedes partir del objetivo. <strong>Precio sin IVA = coste de ingredientes ÷ food cost objetivo.</strong> Con 1,40 € de ingredientes y un objetivo del 30%: 1,40 ÷ 0,30 = 4,67 €, unos 5,13 € con IVA del 10%."),
+        ('p', "No existe un valor válido para todos los locales: muchos profesionales usan alrededor del 30% como referencia inicial y lo adaptan a su modelo.")]),
+    ("Ojo: margen no es beneficio", [('p', "La diferencia entre el precio y el coste de los ingredientes no incluye personal, alquiler, energía, impuestos ni otros costes del negocio. Un food cost bajo no garantiza por sí solo un local rentable.")])],
+   faq=[("¿Cuál es la fórmula del food cost?", "Coste de los ingredientes de una ración dividido entre el precio de venta sin IVA, por 100."), ("¿El food cost se calcula con o sin IVA?", "Sobre el precio sin IVA, porque el IVA no se queda en el negocio."), ("¿Cuándo hay que recalcularlo?", "Cada vez que cambia el precio de un ingrediente importante o la receta.")]),
+ ),
+ 'torneo-americano-padel': dict(app=('padel-match-manager', 'Padel Match Manager'), niche=('padel-match-manager', 'circoli'),
+  it=dict(slug_title="Torneo Americano di padel: regole e turni", title="Torneo Americano di padel: regole, turni ed esempio",
+   desc="Come funziona un torneo Americano di padel: compagni a rotazione, classifica individuale, calendario di esempio per 8 giocatori e differenza con il Mexicano.",
+   h1="Torneo Americano di padel: come funziona", lead="In un torneo Americano <strong>i compagni cambiano a ogni turno e la classifica è individuale</strong>: ogni giocatore accumula i punti delle partite che gioca, e vince chi ne totalizza di più.",
+   secs=[("Come si organizza", [('ol', ["Scegli i giocatori: con un multiplo di 4 tutti giocano a ogni turno; con un numero diverso qualcuno riposa a rotazione.", "Decidi il formato della partita prima di iniziare (per esempio un numero di punti o un tempo fisso) e comunicalo a tutti.", "A ogni turno i giocatori si accoppiano a rotazione e le coppie si affrontano sui campi disponibili.", "Dopo ogni partita ognuno aggiunge a sé i punti fatti dalla propria coppia; la classifica è individuale."])]),
+    ("Esempio: 8 giocatori, 2 campi, 7 turni", [('p', "Con 8 giocatori (A–H) la rotazione a cerchio porta ogni giocatore ad avere tutti gli altri come compagno una sola volta in 7 turni. Ecco un calendario valido:"),
+        ('table', ["Turno", "Campo 1", "Campo 2"], SCHED, "Calendario di esempio con lettere al posto dei nomi.")]),
+    ("Americano e Mexicano: la differenza", [('p', "Nel Mexicano gli abbinamenti dei turni successivi dipendono dalla classifica in corso, così si affrontano giocatori di livello simile. Nell'Americano la rotazione è fissata in partenza e non dipende dai risultati.")])],
+   faq=[("Quanti giocatori servono per un Americano?", "Il minimo è 4. Con multipli di 4 giocano tutti a ogni turno, con altri numeri qualcuno riposa."), ("Come si decide il vincitore?", "Vince chi ha totalizzato più punti individuali alla fine di tutti i turni."), ("Americano e Mexicano sono la stessa cosa?", "No: l'Americano ha una rotazione fissa, il Mexicano usa la classifica per decidere gli abbinamenti.")]),
+  en=dict(slug_title="Padel Americano tournament: rules and rounds", title="Padel Americano Tournament: Rules, Rounds and Example",
+   desc="How a padel Americano tournament works: rotating partners, individual standings, a sample schedule for 8 players on 2 courts, and the difference from Mexicano.",
+   h1="Padel Americano tournament: how it works", lead="In an Americano tournament <strong>partners change every round and the standings are individual</strong>: each player accumulates the points from the matches they play, and whoever scores the most wins.",
+   secs=[("How to run one", [('ol', ["Pick the players: with a multiple of 4 everyone plays every round; with any other number some players rest in turn.", "Decide the match format before starting (for example a fixed number of points or a fixed time) and tell everyone.", "Each round players pair up on a rotation and the pairs face each other on the available courts.", "After each match everyone adds the points scored by their pair; the standings are individual."])]),
+    ("Example: 8 players, 2 courts, 7 rounds", [('p', "With 8 players (A–H) a circle rotation gives every player every other player as a partner exactly once over 7 rounds. A valid schedule:"),
+        ('table', ["Round", "Court 1", "Court 2"], SCHED, "Sample schedule using letters instead of names.")]),
+    ("Americano vs Mexicano", [('p', "In Mexicano, later pairings depend on the current standings, so players of a similar level face each other. In Americano the rotation is set from the start and does not depend on results.")])],
+   faq=[("How many players do you need for an Americano?", "At least 4. With multiples of 4 everyone plays each round; with other numbers some rest."), ("How is the winner decided?", "The player with the most individual points after all rounds."), ("Are Americano and Mexicano the same?", "No: Americano uses a fixed rotation, Mexicano uses the standings to decide pairings.")]),
+  es=dict(slug_title="Torneo Americano de pádel: reglas y rondas", title="Torneo Americano de pádel: reglas, rondas y ejemplo",
+   desc="Cómo funciona un torneo Americano de pádel: compañeros rotativos, clasificación individual, calendario de ejemplo para 8 jugadores y diferencia con el Mexicano.",
+   h1="Torneo Americano de pádel: cómo funciona", lead="En un torneo Americano <strong>los compañeros cambian en cada ronda y la clasificación es individual</strong>: cada jugador acumula los puntos de los partidos que juega, y gana quien más suma.",
+   secs=[("Cómo se organiza", [('ol', ["Elige a los jugadores: con un múltiplo de 4 todos juegan en cada ronda; con otro número alguien descansa por turnos.", "Decide el formato del partido antes de empezar (por ejemplo un número de puntos o un tiempo fijo) y comunícalo a todos.", "En cada ronda los jugadores se emparejan por rotación y las parejas se enfrentan en las pistas disponibles.", "Tras cada partido cada uno suma los puntos de su pareja; la clasificación es individual."])]),
+    ("Ejemplo: 8 jugadores, 2 pistas, 7 rondas", [('p', "Con 8 jugadores (A–H), una rotación en círculo hace que cada jugador tenga a todos los demás como compañero una sola vez en 7 rondas. Un calendario válido:"),
+        ('table', ["Ronda", "Pista 1", "Pista 2"], SCHED, "Calendario de ejemplo con letras en lugar de nombres.")]),
+    ("Americano y Mexicano: la diferencia", [('p', "En el Mexicano, los emparejamientos de las rondas siguientes dependen de la clasificación en curso, así se enfrentan jugadores de nivel similar. En el Americano la rotación se fija desde el principio y no depende de los resultados.")])],
+   faq=[("¿Cuántos jugadores hacen falta para un Americano?", "Mínimo 4. Con múltiplos de 4 juegan todos en cada ronda; con otros números alguien descansa."), ("¿Cómo se decide el ganador?", "Gana quien suma más puntos individuales al final de todas las rondas."), ("¿Americano y Mexicano son lo mismo?", "No: el Americano tiene una rotación fija, el Mexicano usa la clasificación para decidir los emparejamientos.")]),
+ ),
+ 'prezzo-minimo-rivendita': dict(app=('flipeven', 'FlipEven'), niche=None,
+  it=dict(slug_title="Prezzo minimo di rivendita: formula e break-even", title="Prezzo minimo di rivendita: formula del break-even",
+   desc="Come calcolare il prezzo minimo a cui rivendere un oggetto (Vinted, eBay e simili): formula del punto di pareggio, guadagno netto, ROI e margine con un esempio.",
+   h1="Prezzo minimo di rivendita: come calcolarlo", lead="Il prezzo minimo di rivendita è il punto di pareggio: sotto quel prezzo vendi in perdita. <strong>Prezzo minimo = (costo d'acquisto + spedizione + altri costi) ÷ (1 − commissione %)</strong>.",
+   secs=[("Le formule", [('ul', ["<strong>Guadagno netto</strong> = prezzo di vendita − acquisto − spedizione − commissione", "<strong>ROI</strong> = guadagno netto ÷ costo d'acquisto × 100", "<strong>Margine</strong> = guadagno netto ÷ prezzo di vendita × 100"])]),
+    ("Esempio", [('table', ["Voce", "Valore"], [["Acquisto", "25,00 €"], ["Spedizione", "4,50 €"], ["Commissione (10% di 60 €)", "6,00 €"], ["Prezzo di vendita", "60,00 €"], ["Guadagno netto", "24,50 €"], ["ROI", "98%"], ["Margine", "40,8%"], ["Prezzo minimo (pareggio)", "32,78 €"]], "Esempio illustrativo: la commissione del 10% è un valore di fantasia."),
+        ('p', "Pareggio: (25 + 4,50) ÷ (1 − 0,10) = 32,78 €. Sotto questo prezzo ci rimetti.")]),
+    ("Le commissioni cambiano", [('p', "Ogni piattaforma applica regole diverse: alcune trattengono una percentuale al venditore, altre la fanno pagare al compratore. Controlla sempre le condizioni attuali prima di fissare il prezzo.")])],
+   faq=[("Come si calcola il punto di pareggio?", "Somma costo d'acquisto, spedizione e altri costi e dividi per 1 meno la commissione in decimale."), ("Che differenza c'è tra ROI e margine?", "Il ROI si calcola sul costo d'acquisto, il margine sul prezzo di vendita."), ("Devo includere il tempo che impiego?", "Se vuoi un risultato realistico sì: puoi aggiungerlo tra gli altri costi.")]),
+  en=dict(slug_title="Minimum resale price: break-even formula", title="Minimum Resale Price: the Break-Even Formula",
+   desc="How to calculate the minimum price to resell an item (Vinted, eBay and similar): break-even formula, net profit, ROI and margin with a worked example.",
+   h1="Minimum resale price: how to calculate it", lead="The minimum resale price is the break-even point: below it you sell at a loss. <strong>Minimum price = (purchase cost + shipping + other costs) ÷ (1 − fee %)</strong>.",
+   secs=[("The formulas", [('ul', ["<strong>Net profit</strong> = sale price − purchase − shipping − fee", "<strong>ROI</strong> = net profit ÷ purchase cost × 100", "<strong>Margin</strong> = net profit ÷ sale price × 100"])]),
+    ("Example", [('table', ["Item", "Value"], [["Purchase", "€25.00"], ["Shipping", "€4.50"], ["Fee (10% of €60)", "€6.00"], ["Sale price", "€60.00"], ["Net profit", "€24.50"], ["ROI", "98%"], ["Margin", "40.8%"], ["Minimum price (break-even)", "€32.78"]], "Illustrative example: the 10% fee is a made-up value."),
+        ('p', "Break-even: (25 + 4.50) ÷ (1 − 0.10) = €32.78. Below this price you lose money.")]),
+    ("Fees change", [('p', "Each platform has different rules: some charge the seller a percentage, others charge the buyer. Always check the current terms before setting your price.")])],
+   faq=[("How do you calculate the break-even point?", "Add purchase cost, shipping and other costs, then divide by 1 minus the fee as a decimal."), ("What is the difference between ROI and margin?", "ROI is measured against purchase cost, margin against the sale price."), ("Should I include my time?", "For a realistic result, yes: you can add it to the other costs.")]),
+  es=dict(slug_title="Precio mínimo de reventa: fórmula del punto de equilibrio", title="Precio mínimo de reventa: fórmula del punto de equilibrio",
+   desc="Cómo calcular el precio mínimo al que revender un artículo (Vinted, eBay y similares): fórmula del punto de equilibrio, ganancia neta, ROI y margen con un ejemplo.",
+   h1="Precio mínimo de reventa: cómo calcularlo", lead="El precio mínimo de reventa es el punto de equilibrio: por debajo vendes con pérdidas. <strong>Precio mínimo = (coste de compra + envío + otros costes) ÷ (1 − comisión %)</strong>.",
+   secs=[("Las fórmulas", [('ul', ["<strong>Ganancia neta</strong> = precio de venta − compra − envío − comisión", "<strong>ROI</strong> = ganancia neta ÷ coste de compra × 100", "<strong>Margen</strong> = ganancia neta ÷ precio de venta × 100"])]),
+    ("Ejemplo", [('table', ["Concepto", "Valor"], [["Compra", "25,00 €"], ["Envío", "4,50 €"], ["Comisión (10% de 60 €)", "6,00 €"], ["Precio de venta", "60,00 €"], ["Ganancia neta", "24,50 €"], ["ROI", "98%"], ["Margen", "40,8%"], ["Precio mínimo (equilibrio)", "32,78 €"]], "Ejemplo ilustrativo: la comisión del 10% es un valor inventado."),
+        ('p', "Equilibrio: (25 + 4,50) ÷ (1 − 0,10) = 32,78 €. Por debajo de este precio pierdes dinero.")]),
+    ("Las comisiones cambian", [('p', "Cada plataforma aplica reglas distintas: algunas cobran un porcentaje al vendedor, otras al comprador. Comprueba siempre las condiciones vigentes antes de fijar el precio.")])],
+   faq=[("¿Cómo se calcula el punto de equilibrio?", "Suma coste de compra, envío y otros costes y divide entre 1 menos la comisión en decimal."), ("¿Qué diferencia hay entre ROI y margen?", "El ROI se mide sobre el coste de compra, el margen sobre el precio de venta."), ("¿Debo incluir mi tiempo?", "Para un resultado realista, sí: puedes añadirlo a los otros costes.")]),
+ ),
+ 'come-fare-un-preventivo': dict(app=('preventivi-facili', 'Preventivi Facili'), niche=('preventivi-facili', 'elettricisti'),
+  it=dict(slug_title="Come fare un preventivo: cosa scrivere", title="Come fare un preventivo professionale: voci e modello",
+   desc="Cosa deve contenere un preventivo per lavori e servizi: dati, voci, imponibile, IVA, validità e accettazione, con un esempio di struttura.",
+   h1="Come fare un preventivo: cosa scrivere", lead="Un buon preventivo è chiaro, completo e facile da accettare. In sintesi: <strong>dati di chi lo emette e del cliente, numero e data, voci con quantità e prezzi, imponibile, IVA, totale, validità e modalità di accettazione</strong>.",
+   secs=[("Cosa inserire, in ordine", [('ol', ["<strong>Intestazione.</strong> I tuoi dati (nome o ragione sociale, contatti, partita IVA se prevista) e quelli del cliente.", "<strong>Numero e data.</strong> Un numero progressivo ti aiuta a ritrovare il preventivo e a evitare confusioni.", "<strong>Voci di lavoro.</strong> Descrizione chiara, quantità e prezzo: separa materiali e manodopera.", "<strong>Totali.</strong> Imponibile, IVA e totale in evidenza.", "<strong>Validità e condizioni.</strong> Per quanti giorni è valido, tempi indicativi e modalità di pagamento.", "<strong>Accettazione.</strong> Uno spazio per la firma del cliente rende chiaro quando il preventivo diventa un incarico."])]),
+    ("Esempio di struttura delle voci", [('table', ["Descrizione", "Q.tà", "Importo"], [["Materiali", "1", "480,00 €"], ["Manodopera (ore)", "6", "228,00 €"], ["Imponibile", "", "708,00 €"], ["IVA 22%", "", "155,76 €"], ["Totale", "", "863,76 €"]], "Importi di fantasia a scopo illustrativo, non un listino."),
+        ('p', "Questa guida è una traccia pratica, non una consulenza fiscale: aliquote e obblighi dipendono dal tuo caso, verificali con il tuo commercialista.")]),
+    ("Consigli per farlo accettare", [('ul', ["Consegnalo il prima possibile, idealmente subito dopo il sopralluogo.", "Usa un PDF ordinato con il tuo logo: dà un'immagine professionale.", "Scrivi cosa è incluso e cosa no, per evitare discussioni a lavori iniziati."])])],
+   faq=[("Cosa deve contenere un preventivo?", "Dati delle parti, numero e data, voci con quantità e prezzi, imponibile, IVA, totale, validità e accettazione."), ("Il preventivo è vincolante?", "Dipende dal contenuto e dal caso: per le conseguenze legali rivolgiti a un professionista."), ("In che formato inviarlo?", "Un PDF è il formato più comune: si legge su ogni dispositivo e non si modifica per errore.")]),
+  en=dict(slug_title="How to write a quote: what to include", title="How to Write a Professional Quote: Items and Template",
+   desc="What a quote for work or services should contain: details, line items, subtotal, tax, validity and acceptance, with a sample structure.",
+   h1="How to write a quote: what to include", lead="A good quote is clear, complete and easy to accept. In short: <strong>your details and the client's, number and date, line items with quantities and prices, subtotal, tax, total, validity and how to accept it</strong>.",
+   secs=[("What to include, in order", [('ol', ["<strong>Header.</strong> Your details (name or company, contact, tax ID where applicable) and the client's.", "<strong>Number and date.</strong> A sequential number makes quotes easy to find and avoids confusion.", "<strong>Line items.</strong> A clear description, quantity and price: keep materials and labor separate.", "<strong>Totals.</strong> Show subtotal, tax and total clearly.", "<strong>Validity and terms.</strong> How many days it is valid, indicative timing and payment terms.", "<strong>Acceptance.</strong> A space for the client's signature makes clear when the quote becomes a job."])]),
+    ("Sample line-item structure", [('table', ["Description", "Qty", "Amount"], [["Materials", "1", "€480.00"], ["Labor (hours)", "6", "€228.00"], ["Subtotal", "", "€708.00"], ["VAT 22%", "", "€155.76"], ["Total", "", "€863.76"]], "Made-up amounts for illustration, not a price list."),
+        ('p', "This guide is a practical outline, not tax advice: rates and obligations depend on your case, so check with your accountant.")]),
+    ("Tips to get it accepted", [('ul', ["Send it as soon as possible, ideally right after the site visit.", "Use a tidy PDF with your logo: it looks professional.", "State what is included and what is not, to avoid disputes once work has started."])])],
+   faq=[("What should a quote contain?", "Both parties' details, number and date, line items with quantities and prices, subtotal, tax, total, validity and acceptance."), ("Is a quote binding?", "It depends on the content and the case: for legal consequences ask a professional."), ("What format should I send it in?", "PDF is the most common: it opens on any device and cannot be edited by accident.")]),
+  es=dict(slug_title="Cómo hacer un presupuesto: qué escribir", title="Cómo hacer un presupuesto profesional: conceptos y modelo",
+   desc="Qué debe contener un presupuesto para trabajos y servicios: datos, conceptos, base imponible, IVA, validez y aceptación, con un ejemplo de estructura.",
+   h1="Cómo hacer un presupuesto: qué escribir", lead="Un buen presupuesto es claro, completo y fácil de aceptar. En resumen: <strong>datos de quien lo emite y del cliente, número y fecha, conceptos con cantidades y precios, base imponible, IVA, total, validez y forma de aceptación</strong>.",
+   secs=[("Qué incluir, en orden", [('ol', ["<strong>Encabezado.</strong> Tus datos (nombre o razón social, contacto, NIF si procede) y los del cliente.", "<strong>Número y fecha.</strong> Un número correlativo ayuda a encontrar el presupuesto y evita confusiones.", "<strong>Conceptos.</strong> Descripción clara, cantidad y precio: separa materiales y mano de obra.", "<strong>Totales.</strong> Base imponible, IVA y total bien visibles.", "<strong>Validez y condiciones.</strong> Cuántos días es válido, plazos orientativos y forma de pago.", "<strong>Aceptación.</strong> Un espacio para la firma del cliente deja claro cuándo el presupuesto pasa a ser un encargo."])]),
+    ("Ejemplo de estructura de conceptos", [('table', ["Descripción", "Cant.", "Importe"], [["Materiales", "1", "480,00 €"], ["Mano de obra (horas)", "6", "228,00 €"], ["Base imponible", "", "708,00 €"], ["IVA 22%", "", "155,76 €"], ["Total", "", "863,76 €"]], "Importes inventados a modo ilustrativo, no una tarifa."),
+        ('p', "Esta guía es un esquema práctico, no asesoramiento fiscal: los tipos y obligaciones dependen de tu caso, consúltalos con tu asesor.")]),
+    ("Consejos para que lo acepten", [('ul', ["Envíalo cuanto antes, idealmente justo después de la visita.", "Usa un PDF ordenado con tu logo: da imagen profesional.", "Indica qué incluye y qué no, para evitar discusiones con el trabajo ya empezado."])])],
+   faq=[("¿Qué debe contener un presupuesto?", "Datos de las partes, número y fecha, conceptos con cantidades y precios, base imponible, IVA, total, validez y aceptación."), ("¿El presupuesto es vinculante?", "Depende del contenido y del caso: para las consecuencias legales consulta a un profesional."), ("¿En qué formato enviarlo?", "El PDF es el más habitual: se abre en cualquier dispositivo y no se edita por error.")]),
+ ),
+}
+
+# ---------------------------------------------------------------- SCRITTI
+MEDIUM_PROFILE = 'https://medium.com/@davide.mib'
+WRITING = {
+ 'it': dict(file='scritti.html', title="Scritti tecnici su backend, mobile e IA", desc="Articoli tecnici di Kharonte su backend (Spring Boot, API), sviluppo mobile (Flutter, React Native) e flussi di lavoro con l'IA, pubblicati su Medium.",
+  label="Scritti", h1a="Scritti tecnici,", h1b="dal lavoro sul campo.", sub="Articoli su backend, sviluppo mobile e IA nel lavoro di sviluppo. Sono pubblicati su Medium, in inglese.",
+  note="Gli articoli sono in inglese e si aprono su Medium.", read="Leggi su Medium", all="Tutti gli articoli su Medium", topics="Temi", breadcrumb="Scritti"),
+ 'en': dict(file='en/writing.html', title="Technical Writing on Backend, Mobile and AI", desc="Technical articles by Kharonte on backend (Spring Boot, APIs), mobile development (Flutter, React Native) and AI-assisted development workflows, published on Medium.",
+  label="Writing", h1a="Technical writing,", h1b="from the work itself.", sub="Articles on backend, mobile development and AI in day-to-day engineering. Published on Medium.",
+  note="Articles open on Medium.", read="Read on Medium", all="All articles on Medium", topics="Topics", breadcrumb="Writing"),
+ 'es': dict(file='es/escritos.html', title="Escritos técnicos sobre backend, móvil e IA", desc="Artículos técnicos de Kharonte sobre backend (Spring Boot, APIs), desarrollo móvil (Flutter, React Native) y flujos de trabajo con IA, publicados en Medium.",
+  label="Escritos", h1a="Escritos técnicos,", h1b="desde el trabajo real.", sub="Artículos sobre backend, desarrollo móvil e IA en el trabajo diario de desarrollo. Publicados en Medium, en inglés.",
+  note="Los artículos están en inglés y se abren en Medium.", read="Leer en Medium", all="Todos los artículos en Medium", topics="Temas", breadcrumb="Escritos"),
+}

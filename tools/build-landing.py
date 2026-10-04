@@ -5,6 +5,7 @@ Contenuti in tools/landing_data.py.  Uso:  python3 tools/build-landing.py"""
 import re, sys, json, html, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from landing_data import SERVICES, NICHES, APPS, MAIL
+from guides_data import WRITING
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 R = 'https://kharonte.dev'
@@ -15,16 +16,26 @@ L = {  # etichette fisse
  'en': dict(allapps='← All apps', skip='Skip to content', nav='Main navigation', lang='Language', apps='Applications', info='Support & Info', about='About', services='Services', support='Support & FAQ', privacy='Privacy Policy', contact='Contact me', bio="Independent native apps for iOS and Android. Fast, carefully crafted products with no hidden subscriptions.", freelance='Looking for custom software development or a bespoke project?', write='Get in touch', home='Home'),
  'es': dict(allapps='← Todas las apps', skip='Ir al contenido', nav='Navegación principal', lang='Idioma', apps='Aplicaciones', info='Soporte e Info', about='Sobre mí', services='Servicios', support='Soporte y FAQ', privacy='Política de privacidad', contact='Contáctame', bio="Aplicaciones nativas independientes para iOS y Android. Productos rápidos, cuidados al detalle y sin suscripciones ocultas.", freelance='¿Buscas desarrollo de software a medida o un proyecto personalizado?', write='Escríbeme', home='Inicio'),
 }
+GL = {'it': 'Guide', 'en': 'Guides', 'es': 'Guías'}
+WL = {'it': 'Scritti', 'en': 'Writing', 'es': 'Escritos'}
 SUBJ = {'it': 'Progetto%20Custom', 'en': 'Custom%20Project', 'es': 'Proyecto%20Personalizado'}
 e = lambda x: html.escape(x, quote=True)
 
 def url_for(kind, lang, key=None):
+    if kind == 'writing':
+        return R + '/' + WRITING[lang]['file']
+    if kind == 'guides':
+        return f"{R}/guide/" + ('' if lang == 'it' else lang + '/')
+    if kind == 'guide':
+        return f"{R}/guide/{key}/" + ('' if lang == 'it' else lang + '/')
     if kind == 'services':
         return R + '/' + {'it': 'servizi.html', 'en': 'en/services.html', 'es': 'es/servicios.html'}[lang]
     n = NICHES[key]; base = f"{R}/{n['parent']}/{n['sub']}/"
     return base + ('' if lang == 'it' else lang + '/')
 
 def path_for(kind, lang, key=None):
+    if kind == 'writing':
+        return pathlib.Path(WRITING[lang]['file'])
     return pathlib.Path(url_for(kind, lang, key).replace(R + '/', '')) if kind == 'services' else pathlib.Path(url_for(kind, lang, key).replace(R + '/', '')) / 'index.html'
 
 def head(kind, lang, key, title, desc, og, ld):
@@ -90,6 +101,8 @@ def footer(lang, up):
     t = L[lang]; sub = '' if lang == 'it' else lang + '/'
     pre = {'it': '/', 'en': '/en/', 'es': '/es/'}[lang]
     about = {'it': '/about.html', 'en': '/en/about.html', 'es': '/es/about.html'}[lang]
+    guide_hub = {'it': '/guide/', 'en': '/guide/en/', 'es': '/guide/es/'}[lang]
+    writ = '/' + WRITING[lang]['file']
     serv = {'it': '/servizi.html', 'en': '/en/services.html', 'es': '/es/servicios.html'}[lang]
     sup = {'it': '/support.html', 'en': '/en/support.html', 'es': '/es/support.html'}[lang]
     pri = {'it': '/privacy.html', 'en': '/en/privacy.html', 'es': '/es/privacy.html'}[lang]
@@ -113,6 +126,8 @@ def footer(lang, up):
           <ul class="footer-nav-list">
             <li><a href="{about}">{t["about"]}</a></li>
             <li><a href="{serv}">{t["services"]}</a></li>
+            <li><a href="{guide_hub}">{GL[lang]}</a></li>
+            <li><a href="{writ}">{WL[lang]}</a></li>
             <li><a href="mailto:{MAIL}">{t["contact"]}</a></li>
             <li><a href="{sup}">{t["support"]}</a></li>
             <li><a href="{pri}">{t["privacy"]}</a></li>
@@ -189,6 +204,11 @@ def build_services(lang):
 ''' + section(d['s1'][0], d['s1'][1], f'        <div class="bento-grid">\n{cards(d["s1"][2])}        </div>\n') \
       + section(d['s2'][0], d['s2'][1], f'        <div class="bento-grid">\n{cards(d["s2"][2], "col-6", True)}        </div>\n') \
       + section(s3[0], s3[1], f'        <div class="bento-grid">\n{applist}        </div>\n', f'<p class="section-description">{e(s3[2])}</p>') \
+      + section({'it': 'Approfondimenti', 'en': 'Further reading', 'es': 'Para profundizar'}[lang], {'it': 'Scritti tecnici e guide pratiche', 'en': 'Technical writing and practical guides', 'es': 'Escritos técnicos y guías prácticas'}[lang], f'''        <div class="bento-grid">
+          <article class="bento-card col-6"><h3 class="bento-title">{WL[lang]}</h3><p class="bento-text">{ {'it': 'Articoli su backend (Spring Boot, API, microservizi), sviluppo mobile (Flutter, React Native) e flussi di lavoro con IA.', 'en': 'Articles on backend (Spring Boot, APIs, microservices), mobile development (Flutter, React Native) and AI workflows.', 'es': 'Artículos sobre backend (Spring Boot, APIs, microservicios), desarrollo móvil (Flutter, React Native) y flujos de trabajo con IA.'}[lang] }</p><a class="cta-btn-secondary" style="margin-top:14px;display:inline-flex;padding:10px 18px;" href="/{WRITING[lang]['file']}">{WL[lang]} →</a></article>
+          <article class="bento-card col-6"><h3 class="bento-title">{GL[lang]}</h3><p class="bento-text">{ {'it': 'Formule ed esempi su preventivi, food cost, tornei di padel e rivendita.', 'en': 'Formulas and examples on quotes, food cost, padel tournaments and reselling.', 'es': 'Fórmulas y ejemplos sobre presupuestos, food cost, torneos de pádel y reventa.'}[lang] }</p><a class="cta-btn-secondary" style="margin-top:14px;display:inline-flex;padding:10px 18px;" href="/guide/{sub}">{GL[lang]} →</a></article>
+        </div>
+''') \
       + section(d['faq_label'], d['faq_title'], f'        <div class="product-faq-list" style="max-width:820px;margin:0 auto;">\n{faq_html(d["faq"])}        </div>\n') \
       + f'''    <section class="section-wrapper">
       <div class="container">
@@ -221,7 +241,10 @@ def build_niche(key, lang):
     foot = ''.join(f'<tr class="lt-sum"><td colspan="{len(ex[2]) - 1}">{e(a)}</td><td>{e(b)}</td></tr>' for a, b in ex[4])
     table = f'''        <div class="landing-table-wrap" tabindex="0" role="region" aria-label="{e(ex[0])}"><table class="landing-table"><thead><tr>{''.join(f'<th>{e(c)}</th>' for c in ex[2])}</tr></thead><tbody>{rows}{foot}</tbody></table></div>
 '''
-    lk = ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in links[1])
+    from guides_data import GUIDES
+    gslug = {'pizzerie': 'food-cost', 'circoli': 'torneo-americano-padel', 'elettricisti': 'come-fare-un-preventivo'}.get(key)
+    extra = [(GUIDES[gslug][lang]['slug_title'], f'/guide/{gslug}/{sub}')] if gslug else []
+    lk = ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in list(links[1]) + extra)
     body = f'''<body class="{bodycls}">
   <a href="#main" class="skip-link">{L[lang]["skip"]}</a>
 {header('niche', lang, key, up)}  <main id="main">

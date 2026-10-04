@@ -468,4 +468,184 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kharonte.dev/guide/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/food-cost/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/food-cost/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/food-cost/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/food-cost/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/food-cost/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/food-cost/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/food-cost/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/food-cost/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/food-cost/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/food-cost/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/food-cost/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/food-cost/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/food-cost/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/food-cost/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/food-cost/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/torneo-americano-padel/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/torneo-americano-padel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/torneo-americano-padel/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/torneo-americano-padel/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/torneo-americano-padel/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/torneo-americano-padel/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/torneo-americano-padel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/torneo-americano-padel/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/torneo-americano-padel/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/torneo-americano-padel/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/torneo-americano-padel/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/torneo-americano-padel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/torneo-americano-padel/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/torneo-americano-padel/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/torneo-americano-padel/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/prezzo-minimo-rivendita/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/prezzo-minimo-rivendita/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/prezzo-minimo-rivendita/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/prezzo-minimo-rivendita/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/come-fare-un-preventivo/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/come-fare-un-preventivo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/come-fare-un-preventivo/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/come-fare-un-preventivo/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/come-fare-un-preventivo/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/come-fare-un-preventivo/en/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/come-fare-un-preventivo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/come-fare-un-preventivo/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/come-fare-un-preventivo/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/come-fare-un-preventivo/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/guide/come-fare-un-preventivo/es/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/guide/come-fare-un-preventivo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/guide/come-fare-un-preventivo/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/guide/come-fare-un-preventivo/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/guide/come-fare-un-preventivo/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/scritti.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/scritti.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/writing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/escritos.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/scritti.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/en/writing.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/scritti.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/writing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/escritos.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/scritti.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kharonte.dev/es/escritos.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://kharonte.dev/scritti.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kharonte.dev/en/writing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://kharonte.dev/es/escritos.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kharonte.dev/scritti.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

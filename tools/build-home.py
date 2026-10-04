@@ -218,6 +218,10 @@ TR = [
  ('Intelligenza artificiale pratica</h3>', 'Practical artificial intelligence</h3>', 'Inteligencia artificial práctica</h3>'),
  ('Modelli linguistici, visione artificiale ed elaborazione semantica integrati nei flussi di lavoro, in cloud o sul dispositivo, dove portano un vantaggio concreto.', 'Language models, computer vision and semantic processing woven into real workflows, in the cloud or on the device, where they bring a concrete benefit.', 'Modelos de lenguaje, visión artificial y procesamiento semántico integrados en los flujos de trabajo, en la nube o en el dispositivo, donde aportan una ventaja concreta.'),
  ('Scopri i servizi <span', 'Explore services <span', 'Descubre los servicios <span'),
+ # ---- guide e scritti ----
+ ('<li><a href="./guide/">Guide</a></li>', '<li><a href="./guide/">Guides</a></li>', '<li><a href="./guide/">Guías</a></li>'),
+ ('<li><a href="./scritti.html">Scritti</a></li>', '<li><a href="./scritti.html">Writing</a></li>', '<li><a href="./scritti.html">Escritos</a></li>'),
+ ('>Leggi gli scritti tecnici</a>', '>Read the technical writing</a>', '>Lee los escritos técnicos</a>'),
  # ---- contatti / footer ----
  ('>Servizi</a>', '>Services</a>', '>Servicios</a>'),
  ('>Servizi su misura</a>', '>Custom services</a>', '>Servicios a medida</a>'),
@@ -282,6 +286,8 @@ def build(lang, cfg):
     for p in ('about.html', 'support.html', 'privacy.html'):
         s = s.replace(f'href="./{p}"', f'href="@@KEEP@@{p}"')
     s = s.replace('href="./servizi.html"', 'href="@@KEEP@@' + ('services.html' if lang == 'en' else 'servicios.html') + '"')
+    s = s.replace('href="./guide/"', f'href="/guide/{lang}/"')
+    s = s.replace('href="./scritti.html"', 'href="@@KEEP@@' + ('writing.html' if lang == 'en' else 'escritos.html') + '"')
     s = s.replace('href="./"', 'href="@@KEEP@@"')          # logo/brand -> home della lingua
     # pagine prodotto localizzate (link e dati strutturati)
     for p in PRODUCTS:

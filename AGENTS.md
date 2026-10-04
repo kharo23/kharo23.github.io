@@ -14,6 +14,7 @@ Sito statico su GitHub Pages: **il ramo `main` è la produzione** (`kharo23/khar
 ## Prima di ogni pubblicazione
 1. **Home**: `index.html` (italiano) è la fonte. Dopo ogni modifica: `python3 tools/build-home.py` (rigenera `en/index.html` e `es/index.html`; si ferma se una frase italiana cambiata non ha traduzione). Non modificare a mano le home EN/ES.
 2. **Pagine Servizi e per mestiere**: contenuti in `tools/landing_data.py`, poi `python3 tools/build-landing.py`.
+   **Guide e Scritti**: contenuti in `tools/guides_data.py`; per aggiornare l'elenco degli articoli Medium `python3 tools/fetch-medium.py`, poi `python3 tools/build-content.py`. Le guide hanno data visibile e `dateModified` (campo `UPDATED`): aggiornarla quando si rivede una guida. Mai affermazioni fiscali/legali/mediche nelle guide; importi di esempio dichiarati illustrativi.
 3. **Immagini social**, se cambiano titoli o screenshot: server locale + `python3 tools/render-og.py` (home) e `python3 tools/render-og-apps.py` (pagine app).
 4. **Nuove pagine**: aggiungerle a `sitemap.xml` (con hreflang it/en/es/x-default e `lastmod` aggiornato), a `llms.txt` / `llms-full.txt` e collegarle da almeno una pagina esistente. Ogni pagina indicizzabile deve avere: title ≤ 60 car., description ≤ 160, un solo H1, canonical, hreflang reciproci, Open Graph + Twitter `summary_large_image`, JSON-LD valido, `<main>` e skip-link.
 5. **Aggiornare le date**: `lastmod` nel sitemap per le pagine toccate; "Last updated" in `llms-full.txt`.

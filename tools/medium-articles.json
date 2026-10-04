@@ -1,0 +1,116 @@
+[
+ {
+  "title": "Idempotency Keys in Spring Boot: The Header That Turns a Retry Into a No-Op",
+  "url": "https://medium.com/@davide.mib/idempotency-keys-in-spring-boot-the-header-that-turns-a-retry-into-a-no-op-ed1000f12b3b",
+  "date": "2026-09-17",
+  "tags": [
+   "backend-development",
+   "api-design",
+   "java",
+   "spring-boot",
+   "software-engineering"
+  ]
+ },
+ {
+  "title": "JWT vs Session Tokens in Spring Boot: A Senior Dev’s Decision Guide",
+  "url": "https://medium.com/javarevisited/jwt-vs-session-tokens-in-spring-boot-a-senior-devs-decision-guide-afa8a8ec9c7b",
+  "date": "2026-09-13",
+  "tags": [
+   "security",
+   "software-engineering",
+   "backend-development",
+   "java",
+   "spring-boot"
+  ]
+ },
+ {
+  "title": "The 5 Spring Boot Security Misconfigurations We Found in a Real Penetration Test (and How to Fix…",
+  "url": "https://medium.com/@davide.mib/the-5-spring-boot-security-misconfigurations-we-found-in-a-real-penetration-test-and-how-to-fix-7f64a9e34e05",
+  "date": "2026-09-11",
+  "tags": []
+ },
+ {
+  "title": "Java 21 Virtual Threads vs Node.js: Benchmarks, Architecture & Real-World Lessons",
+  "url": "https://medium.com/@davide.mib/java-21-virtual-threads-vs-node-js-benchmarks-architecture-real-world-lessons-3c7b03213eec",
+  "date": "2026-09-11",
+  "tags": [
+   "backend-development",
+   "software-engineering",
+   "performance",
+   "java",
+   "nodejs"
+  ]
+ },
+ {
+  "title": "Flutter State Management in 2026: Why I Stopped Using BLoC for Most Projects",
+  "url": "https://medium.com/@davide.mib/flutter-state-management-in-2026-why-i-stopped-using-bloc-for-most-projects-3701157c4a0d",
+  "date": "2026-09-10",
+  "tags": [
+   "dart",
+   "mobile-development",
+   "software-engineering",
+   "flutter",
+   "programming"
+  ]
+ },
+ {
+  "title": "REST vs GraphQL vs gRPC: When to Use What in 2026",
+  "url": "https://medium.com/@davide.mib/rest-vs-graphql-vs-grpc-when-to-use-what-in-2026-ea3392d41476",
+  "date": "2026-05-29",
+  "tags": [
+   "web-development",
+   "microservices",
+   "api",
+   "software-engineering",
+   "graphql"
+  ]
+ },
+ {
+  "title": "Microservices API Design: The 5 Contracts I Wish I’d Written on Day One",
+  "url": "https://medium.com/@davide.mib/microservices-api-design-the-5-contracts-i-wish-id-written-on-day-one-8c3769b06c26",
+  "date": "2026-05-26",
+  "tags": [
+   "microservices",
+   "software-engineering",
+   "backend-development",
+   "programming",
+   "java"
+  ]
+ },
+ {
+  "title": "Flutter vs React Native in 2026: I Built the Same App in Both",
+  "url": "https://medium.com/@davide.mib/flutter-vs-react-native-in-2026-i-built-the-same-app-in-both-b0b991150602",
+  "date": "2026-05-21",
+  "tags": [
+   "react-native",
+   "software-engineering",
+   "mobile-development",
+   "programming",
+   "flutter"
+  ]
+ },
+ {
+  "title": "JWT vs Session Tokens in Spring Boot: Broke Both in Production (and Fixed Them)",
+  "url": "https://systemweakness.com/jwt-vs-session-tokens-in-spring-boot-a-senior-devs-decision-guide-1c4f1df9df64",
+  "date": "2026-05-20",
+  "tags": [
+   "programming",
+   "security",
+   "java",
+   "spring-boot",
+   "software-engineering"
+  ]
+ },
+ {
+  "title": "The AI Coding Agent Workflow That Actually Works After 1,000 Hours",
+  "url": "https://medium.com/@davide.mib/the-ai-coding-agent-workflow-that-actually-works-after-1-000-hours-8e72e56c99df",
+  "date": "2026-05-19",
+  "tags": [
+   "productivity",
+   "software-engineering",
+   "programming",
+   "artificial-intelligence",
+   "developer-tools"
+  ]
+ }
+]

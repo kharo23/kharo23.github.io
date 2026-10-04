@@ -23,7 +23,7 @@ Sito statico su GitHub Pages: **il ramo `main` è la produzione** (`kharo23/khar
 - Nessun errore in console e **nessun scroll orizzontale a 390 px** su ogni pagina toccata, nelle tre lingue.
 - Accessibilità: zero violazioni axe-core (WCAG 2.1 AA) sulle pagine toccate.
 - Link interni non rotti, ID non duplicati, JSON-LD parsabile.
-- Home: 0 richieste a terzi (font in `assets/fonts`, nessuno script esterno). Le pagine app caricano i badge Launchstag/LaunchBuff: scelta nota, non estenderla alla home.
+- Home: 0 richieste a terzi (font in `assets/fonts`, nessuno script esterno). I badge Launchstag/LaunchBuff stanno nel footer di Padel Match Manager (IT/EN/ES, entrambi) e Preventivi Facili (IT/EN/ES, solo Launchstag → https://launchstag.com/p/preventivi-facili). Richiesti dai siti dove le app sono state presentate: non rimuoverli, non estenderli alla home.
 - Demo della home funzionanti (PDF, Foodlio, Padel, Aegis, FlipEven) in Chromium e WebKit (Firefox se possibile).
 
 ## Pubblicazione

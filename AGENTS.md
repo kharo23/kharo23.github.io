@@ -37,6 +37,9 @@ Sito statico su GitHub Pages: **il ramo `main` è la produzione** (`kharo23/khar
 3. **Bing Webmaster**: verificare con `GetFeeds` che il sitemap sia `Success` con il numero atteso di URL (la proprietà è già verificata e importata da Google).
 4. Dopo 1–2 settimane: controllare indicizzazione e query in Search Console e Bing; segnalare cosa è cambiato.
 
+## File per crawler e assistenti (tutti nella radice, da tenere allineati)
+`robots.txt` (un solo gruppo condiviso), `sitemap.xml`, `llms.txt`, `llms-full.txt`, chiave IndexNow `*.txt`, `.well-known/security.txt` (rinnovare `Expires` ogni anno).
+
 ## Cosa non fare
 - `tools/`, `docs/`, `AGENTS.md`, `CLAUDE.md`, `README-HOME.md` e `sentry-diagnostics.md` sono esclusi dalla pubblicazione tramite `_config.yml`: non toglierli dall'elenco `exclude`, e aggiungere lì ogni nuovo file interno.
 - Non inviare form, iscrizioni o richieste a servizi esterni oltre a quelli elencati sopra senza conferma.

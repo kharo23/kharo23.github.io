@@ -1,0 +1,4 @@
+Contact: mailto:kharonte.appdev@gmail.com
+Expires: 2027-10-04T00:00:00.000Z
+Preferred-Languages: it, en, es
+Canonical: https://kharonte.dev/.well-known/security.txt

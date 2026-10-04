@@ -10,3 +10,7 @@ exclude:
   - README-HOME.md
   - sentry-diagnostics.md
   - gsc-service-account.json
+
+# Jekyll ignora le cartelle che iniziano con un punto: questa serve (security.txt)
+include:
+  - .well-known

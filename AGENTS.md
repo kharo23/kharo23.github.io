@@ -38,6 +38,7 @@ Sito statico su GitHub Pages: **il ramo `main` è la produzione** (`kharo23/khar
 4. Dopo 1–2 settimane: controllare indicizzazione e query in Search Console e Bing; segnalare cosa è cambiato.
 
 ## Cosa non fare
+- `tools/`, `docs/`, `AGENTS.md`, `CLAUDE.md`, `README-HOME.md` e `sentry-diagnostics.md` sono esclusi dalla pubblicazione tramite `_config.yml`: non toglierli dall'elenco `exclude`, e aggiungere lì ogni nuovo file interno.
 - Non inviare form, iscrizioni o richieste a servizi esterni oltre a quelli elencati sopra senza conferma.
 - Non cambiare identificatori/URL già indicizzati senza redirect e senza aggiornare sitemap, hreflang e canonical.
 - Non reintrodurre font o script di terze parti nella home.

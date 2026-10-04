@@ -7,7 +7,7 @@ Ogni stringa italiana della tabella TR deve comparire ALMENO una volta nel sorge
 (altrimenti lo script si ferma): cosi' una frase modificata in italiano non resta
 silenziosamente non tradotta.
 """
-import re, sys, pathlib
+import re, sys, json, html, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = (ROOT / "index.html").read_text()
@@ -15,11 +15,11 @@ SRC = (ROOT / "index.html").read_text()
 # (italiano, inglese, spagnolo) — sottostringhe esatte del sorgente HTML
 TR = [
  # ---- head ----
- ('<title>Kharonte Studio - Tutte le App di @kharonteAppDev</title>', '<title>Kharonte Studio - All Apps by @kharonteAppDev</title>', '<title>Kharonte Studio - Todas las Apps de @kharonteAppDev</title>'),
+ ('<title>Kharonte Studio — App native iOS e Android indipendenti</title>', '<title>Kharonte Studio — Independent native iOS &amp; Android apps</title>', '<title>Kharonte Studio — Apps nativas independientes iOS y Android</title>'),
  ('Scopri le app native di Kharonte Studio create da @kharonteAppDev per iOS e Android: Preventivi Facili, Foodlio, Padel Match Manager, Aegis e FlipEven.',
   'Discover native iOS &amp; Android apps crafted by @kharonteAppDev: Preventivi Facili, Foodlio, Padel Match Manager, Aegis, and FlipEven.',
-  'Descubre las apps móviles nativas de Kharonte Studio creadas por @kharonteAppDev para iOS y Android: Preventivi Facili, Foodlio, Padel Match Manager, Aegis y FlipEven.'),
- ('content="Kharonte Studio - Tutte le App di @kharonteAppDev"', 'content="Kharonte Studio - All Apps by @kharonteAppDev"', 'content="Kharonte Studio - Todas las Apps de @kharonteAppDev"'),
+  'Descubre las apps nativas de Kharonte Studio para iOS y Android: Preventivi Facili, Foodlio, Padel Match Manager, Aegis y FlipEven.'),
+ ('content="Kharonte Studio — App native iOS e Android indipendenti"', 'content="Kharonte Studio — Independent native iOS &amp; Android apps"', 'content="Kharonte Studio — Apps nativas independientes iOS y Android"'),
  ('App native per lavoro, sport e benessere create da @kharonteAppDev per iOS e Android.', 'Native apps for productivity, sports, and daily mindfulness by @kharonteAppDev.', 'Apps nativas para productividad, deporte y bienestar creadas por @kharonteAppDev para iOS y Android.'),
  ('"description": "Kharonte Studio crea app native indipendenti, veloci e senza abbonamenti per lavoro, sport e benessere."',
   '"description": "Kharonte Studio builds independent, fast native apps with no hidden subscriptions for work, sport and wellbeing."',
@@ -226,6 +226,19 @@ LANGS = {
 
 PRODUCTS = ['preventivi-facili', 'foodlio', 'padel-match-manager', 'aegis', 'flipeven']
 
+
+def fix_webpage(s, lang, cfg):
+    """Il blocco WebPage cambia per lingua (url, nome, immagine); Organization e WebSite restano sul dominio radice."""
+    def rep(m):
+        d = json.loads(m.group(1))
+        if d.get('@type') != 'WebPage':
+            return m.group(0)
+        d['@id'] = cfg['canon'] + '#webpage'; d['url'] = cfg['canon']; d['inLanguage'] = lang
+        d['name'] = html.unescape(re.search(r'<title>(.*?)</title>', s, re.S).group(1))
+        d['primaryImageOfPage']['url'] = f'https://kharonte.dev/assets/og-card-{lang}.jpg'
+        return '<script type="application/ld+json">\n' + json.dumps(d, ensure_ascii=False, indent=2) + '\n  </script>'
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', rep, s, flags=re.S)
+
 def build(lang, cfg):
     s = SRC
     missing = []
@@ -242,7 +255,6 @@ def build(lang, cfg):
     s = s.replace('<link rel="canonical" href="https://kharonte.dev/">', f'<link rel="canonical" href="{cfg["canon"]}">')
     s = s.replace('<meta property="og:url" content="https://kharonte.dev/">', f'<meta property="og:url" content="{cfg["canon"]}">')
     s = s.replace('<meta property="og:locale" content="it_IT">', f'<meta property="og:locale" content="{cfg["locale"]}">')
-    s = s.replace('"url": "https://kharonte.dev/",', f'"url": "{cfg["canon"]}",')
     # selettore lingua
     old = '<a href="./" class="on" aria-current="page">IT</a><a href="./en/">EN</a><a href="./es/">ES</a>'
     assert old in s
@@ -267,6 +279,7 @@ def build(lang, cfg):
     s = s.replace('@@KEEP@@', './')
     # store: tracking e lingua dello store
     s = s.replace('ct=kharo23_hub"', f'ct={cfg["ct"]}"').replace('hl=it&amp;', f'hl={cfg["hl"]}&amp;')
+    s = fix_webpage(s, lang, cfg)
     out = ROOT / lang / 'index.html'
     out.write_text(s)
     return missing, out

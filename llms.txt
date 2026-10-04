@@ -1,6 +1,6 @@
 # Kharonte Studio
 
-> Kharonte Studio is an independent one-person software studio (@kharonteAppDev) that designs, builds and publishes native apps for iOS and Android, and also takes on custom software projects (mobile, full-stack web, AI integrations). The apps are built to work on-device, offline-first and without tracking. The website is available in Italian, English and Spanish and itself loads no third-party resources and sets no cookies.
+> Kharonte Studio is an independent one-person software studio (@kharonteAppDev) that designs, builds and publishes native apps for iOS and Android, and also takes on custom software projects (mobile, full-stack web, AI integrations). The apps are built to keep content on-device and work offline-first. The website is available in Italian, English and Spanish and itself loads no third-party resources and sets no cookies.
 
 For the complete, detailed description of every app (features, pricing model, availability, privacy approach, FAQ), read [llms-full.txt](https://kharonte.dev/llms-full.txt).
 
@@ -9,7 +9,7 @@ For the complete, detailed description of every app (features, pricing model, av
 - [Preventivi Facili](https://kharonte.dev/preventivi-facili/): Professional PDF quotes in about 30 seconds from a phone, for plumbers, electricians and other tradespeople. Offline, with a free tier and a one-time lifetime purchase (no recurring fees). Dedicated page for plumbers: [Preventivi Facili per Idraulici](https://kharonte.dev/preventivi-facili/idraulici/).
 - [Foodlio](https://kharonte.dev/foodlio/): Food cost per recipe, margins, target-price suggestions and menu engineering for restaurants, pizzerias, bars and bakeries.
 - [Padel Match Manager](https://kharonte.dev/padel-match-manager/): Organizer for Americano, Mexicano, round-robin and elimination padel tournaments, with automatic court rotations and live leaderboards. Tournament management works offline.
-- [Aegis](https://kharonte.dev/aegis/): Guided breathing, meditations, a private encrypted journal and offline soundscapes. No ads, no tracking. Premium is offered as monthly and annual subscriptions. Not a medical device.
+- [Aegis](https://kharonte.dev/aegis/): Guided breathing, meditations, a private encrypted journal and offline soundscapes. No ads. Premium is offered as monthly and annual subscriptions. Not a medical device.
 - [FlipEven](https://kharonte.dev/flipeven/): Break-even price, ROI and net profit calculator for resellers on Vinted, eBay, Wallapop, Depop and similar marketplaces. Offline and private. Store release in progress.
 
 Each app has localized pages: Italian at the app URL, English at `/en/` and Spanish at `/es/` below it (for example `/foodlio/en/`, `/foodlio/es/`).

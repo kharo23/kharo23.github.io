@@ -4,7 +4,7 @@ Last updated: 2026-10-04. Canonical site: https://kharonte.dev/ (Italian), https
 
 ## What it is
 
-Kharonte Studio is an independent one-person software studio run by the developer known as @kharonteAppDev (GitHub: https://github.com/kharo23, TikTok: https://www.tiktok.com/@kharonteappdev, Instagram: https://www.instagram.com/kharonte.appdev/). One person designs, builds, tests and publishes every app, from the interface to the App Store and Google Play listings. The studio's approach: native apps, fast, on-device first, offline where possible, without tracking, and without hidden subscriptions.
+Kharonte Studio is an independent one-person software studio run by the developer known as @kharonteAppDev (GitHub: https://github.com/kharo23, TikTok: https://www.tiktok.com/@kharonteappdev, Instagram: https://www.instagram.com/kharonte.appdev/). One person designs, builds, tests and publishes every app, from the interface to the App Store and Google Play listings. The studio's approach: native apps, fast, on-device first, offline where possible, and without hidden subscriptions.
 
 The website itself is built to demonstrate this: it loads no third-party resources (fonts are self-hosted), sets no cookies and uses no analytics or trackers. The home page contains working miniature demos of the five apps (a PDF quote generator, a food-cost margin calculator, a padel Americano tournament generator, a guided breathing orb and a reseller profit calculator) that run entirely in the visitor's browser.
 
@@ -16,7 +16,7 @@ Contact: kharonte.appdev@gmail.com
 - Page: https://kharonte.dev/preventivi-facili/ (EN: /preventivi-facili/en/, ES: /preventivi-facili/es/). Plumber-specific page: https://kharonte.dev/preventivi-facili/idraulici/
 - Purpose: professional PDF quotes in about 30 seconds from a smartphone, for plumbers, electricians, craftspeople and other tradespeople.
 - Features: quote shared right after a site visit (PDF plus a ready-made message, via WhatsApp, email or AirDrop); stamp and signature on every PDF; VAT and multiple tax regimes (standard, flat-rate, pension-fund) with automatic totals; client address book; backup and restore; custom logo.
-- Data: stored locally on the phone only; no external server collects client names or price lists. Works 100% offline.
+- Data: quotes, client names and price lists are stored locally on the phone and are not collected by an external server. The app may send limited, pseudonymous usage events (e.g. about the Premium screen and purchases) and diagnostics, as described in its privacy policy. Works offline.
 - Pricing model: free to download with the first 3 quotes included; unlimited quotes through a one-time lifetime purchase, no recurring fees. The lifetime license can be restored on a new device with the same store account ("Restore purchases"). Current price is shown in the app and the store.
 - Stores: App Store (https://apps.apple.com/it/app/preventivi-facili-artigiani/id6775595665) and Google Play (package com.kharonte.preventivifacili).
 
@@ -41,7 +41,7 @@ Contact: kharonte.appdev@gmail.com
 - Page: https://kharonte.dev/aegis/ (EN: /aegis/en/, ES: /aegis/es/)
 - Purpose: a private space for guided breathing, meditation and a journal, for stress, anxiety and sleep.
 - Features: SOS button that starts a short guided breathing exercise; Box Breathing, 4-7-8 and heart-coherence breathing with a visual orb; meditations and multi-day journeys; an encrypted journal protected by PIN and biometrics; mood check-in and trends; offline soundscapes (rain, ocean, forest and more).
-- Privacy: no ads, no tracking, no account needed.
+- Privacy: no ads, no account needed (see the privacy policy for what is collected).
 - Pricing model: Premium is offered as monthly and annual auto-renewing subscriptions managed in the store settings; current prices and terms are shown in the app.
 - Disclaimer: a wellbeing tool, not a medical device; it does not replace diagnosis, therapy or professional advice.
 - Stores: App Store (https://apps.apple.com/it/app/id6791089198) and Google Play (package com.mindfulspace.mindful_space).
@@ -50,7 +50,7 @@ Contact: kharonte.appdev@gmail.com
 - Page: https://kharonte.dev/flipeven/ (EN: /flipeven/en/, ES: /flipeven/es/)
 - Purpose: know the minimum selling price and the real net profit before buying an item to resell.
 - Features: instant break-even point; real margin and ROI after percentage and fixed fees; inventory tracker by status (Selling, Draft, Sold, Withdrawn) with photos and dates; fee presets for Vinted, eBay, Wallapop, Depop, Etsy, Poshmark and cash deals; a monthly financial dashboard.
-- Privacy: offline-first, no cloud requirement, no analytics; financial records stay on the phone.
+- Privacy: offline-first, no cloud requirement; financial records stay on the phone (see the app's privacy policy for any diagnostics).
 - Status: store release in progress (final store review at the time of writing). Verify availability on the stores.
 
 ## Custom work
@@ -61,7 +61,7 @@ Besides its own apps, the studio takes on custom projects: native mobile apps fo
 
 - Who is behind Kharonte Studio? An independent one-person studio (@kharonteAppDev): one person designs, develops and publishes every app.
 - Which platforms? Preventivi Facili, Foodlio, Padel Match Manager and Aegis are on the App Store and Google Play; FlipEven is being released.
-- Do the apps work offline and respect privacy? They are designed to work on the device and without tracking; see each app's page and privacy policy for details. The website uses no cookies or trackers.
+- Do the apps work offline and respect privacy? They are designed to keep content on the device and work offline. Some apps collect limited, pseudonymous usage events and diagnostics (for example about purchases or crashes): see each app's privacy policy. The website uses no cookies or trackers.
 - Are they free? Published apps can be downloaded for free; paid options differ per app (see the pricing model above and the store listings).
 - Is custom software available? Yes, see "Custom work".
 

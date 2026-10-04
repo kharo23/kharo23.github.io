@@ -8,6 +8,12 @@
     q.setAttribute('aria-expanded', 'false');
     q.addEventListener('click', () => { const o = !it.classList.contains('open'); it.classList.toggle('open', o); q.setAttribute('aria-expanded', o); });
   });
+  /* selettore piattaforme (FlipEven): aria-pressed allineato alla classe .active */
+  document.querySelectorAll('.platform-selector-group').forEach((g) => {
+    const btns = Array.from(g.querySelectorAll('.platform-pill-btn'));
+    const sync = () => btns.forEach((b) => b.setAttribute('aria-pressed', b.classList.contains('active')));
+    sync(); new MutationObserver(sync).observe(g, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  });
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(pointer: fine)').matches;
   const bar = document.createElement('div'); bar.className = 'k-progress'; bar.setAttribute('aria-hidden', 'true');

@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><title>og-app</title>
+<style>
+@font-face{font-family:F;src:url(../assets/fonts/fraunces.woff2);font-weight:300 700}
+@font-face{font-family:J;src:url(../assets/fonts/jakarta.woff2);font-weight:400 800}
+@font-face{font-family:M;src:url(../assets/fonts/jetbrains-mono.woff2);font-weight:400 600}
+*{margin:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:#0a0b0d;color:#ece6d8;font-family:J;position:relative;overflow:hidden;--ac:#ffb347}
+.glow{position:absolute;right:-160px;top:-120px;width:980px;height:980px;background:radial-gradient(closest-side,color-mix(in srgb,var(--ac) 34%,transparent),color-mix(in srgb,var(--ac) 8%,transparent) 55%,transparent 75%)}
+.brand{position:absolute;left:72px;top:64px;display:flex;align-items:center;gap:22px}
+.brand img{width:96px;height:96px;border-radius:26px;border:1.5px solid rgba(236,230,216,.25)}
+.brand b{font:600 40px J;letter-spacing:-.02em;display:block}
+.brand span{font:500 18px M;letter-spacing:.12em;text-transform:uppercase;color:#9a958d}
+h1{position:absolute;left:72px;top:228px;width:640px;font:340 64px/1.08 F;letter-spacing:-.03em;font-variation-settings:"opsz" 144}
+.url{position:absolute;left:72px;bottom:60px;font:500 22px M;letter-spacing:.08em}
+.url b{color:var(--ac);font-weight:500}
+.phone{position:absolute;right:92px;top:44px;width:290px;border-radius:44px;padding:11px;background:linear-gradient(145deg,#2a2d33,#0e0f12);border:1.5px solid rgba(236,230,216,.25);box-shadow:0 40px 90px rgba(0,0,0,.65);transform:rotate(4deg)}
+.phone img{display:block;width:100%;border-radius:34px}
+.bar{position:absolute;left:72px;top:206px;width:64px;height:4px;border-radius:4px;background:var(--ac)}
+</style></head><body>
+<div class="glow"></div>
+<div class="brand"><img id="ic"><div><b id="nm"></b><span>Kharonte Studio</span></div></div>
+<div class="bar"></div><h1 id="h"></h1>
+<div class="phone"><img id="sh"></div>
+<div class="url"><b>kharonte.dev</b> · iOS &amp; Android</div>
+<script>
+const q=new URLSearchParams(location.search);
+document.body.style.setProperty('--ac',q.get('ac'));
+document.getElementById('ic').src=q.get('ic');document.getElementById('sh').src=q.get('sh');
+document.getElementById('nm').textContent=q.get('nm');
+const h=document.getElementById('h');h.textContent=q.get('h');
+const n=q.get('h').length;h.style.fontSize=(n>70?52:n>52?58:64)+'px';
+Promise.all([document.fonts.ready,...[...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))]).then(()=>document.title='ready');
+</script></body></html>

@@ -62,7 +62,7 @@ h1{font:340 clamp(3.1rem,8.6vw,8.4rem)/1 var(--serif);font-variation-settings:"o
 h1 em{font-style:italic;font-weight:300;color:var(--lamp)}
 .ln{display:block;overflow:hidden;padding:.04em 0 .12em;margin-bottom:-.1em}
 .l2{padding-left:.6em}
-.w{display:inline-block;transform:translateY(112%);transition:transform 1.25s var(--ease)}
+.w{display:inline-block;transform:translateY(112%);transition:transform 1s var(--ease)}
 .l2 .w{transition-delay:.14s}
 .go .w{transform:none}
 #field,.lantern{opacity:0;transition:opacity 2.2s .2s}
@@ -425,3 +425,6 @@ footer{border-top:1px solid var(--line);padding:50px 0 40px;color:var(--mute);fo
 .fgrid li{margin:0}
 .brand{padding:6px 0}
 @media(pointer:coarse){.lang a{padding:12px 10px}.nav-links a{padding:12px 14px}.hat-btn,.rail-btn{min-height:56px}}
+
+/* hero: apparizione piu' rapida (aiuta LCP) */
+.hero .rv{transition-duration:.6s;transition-delay:calc(var(--d,0)*50ms)}

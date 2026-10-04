@@ -37,10 +37,11 @@
 
   /* ---------- reveal + nav ---------- */
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
-  $$('.rv').forEach((el) => io.observe(el));
+  $$('.hero .rv').forEach((el) => el.classList.add('in'));   // sopra la piega: subito, senza attendere l'osservatore
+  $$('.rv').forEach((el) => { if (!el.classList.contains('in')) io.observe(el); });
   /* apertura coreografata: parte quando i font sono pronti (o dopo 900 ms) */
   let started = false; const go = () => { if (!started) { started = true; document.body.classList.add('go'); } };
-  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => setTimeout(go, 80)); setTimeout(go, 900); } else go();
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(go); setTimeout(go, 450); } else go();
   /* barra di avanzamento + luce globale */
   const prog = $('#progress'), gl2 = $('.g-lantern');
   let gx = 0.6 * innerWidth, gy = 0.3 * innerHeight, gtx = gx, gty = gy, graf = 0;

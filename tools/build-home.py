@@ -263,6 +263,7 @@ def build(lang, cfg):
     s = s.replace('screenshot-it.webp', f'screenshot-{cfg["screens"]}.webp').replace('preventivi-facili-hub-it.webp', f'preventivi-facili-hub-{cfg["screens"]}.webp')
     # percorsi relativi: da ./ a ../
     s = re.sub(r'(href|src)="\./(?!@)', r'\1="../', s)
+    s = re.sub(r'(srcset|imagesrcset)="([^"]+)"', lambda m: m.group(1) + '="' + m.group(2).replace('./assets/', '../assets/') + '"', s)
     s = s.replace('@@KEEP@@', './')
     # store: tracking e lingua dello store
     s = s.replace('ct=kharo23_hub"', f'ct={cfg["ct"]}"').replace('hl=it&amp;', f'hl={cfg["hl"]}&amp;')

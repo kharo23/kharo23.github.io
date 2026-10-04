@@ -170,3 +170,7 @@ body.product-page.hub-page,body.product-page.about-page,.hub-page,.about-page{--
 .signature-sim-area>div{color:#a3b0c2!important}
 
 @media(pointer:coarse){html body .site-nav .lang-link{padding:12px 10px}.footer-nav-list a{display:inline-block;padding:8px 0}.site-footer a{display:inline-block;padding:8px 0}}
+
+/* correzioni di accessibilita' */
+#next-round{background:#c2410c!important;color:#fff!important}
+h2.sim-headline,h3.footer-nav-header{font-family:inherit}

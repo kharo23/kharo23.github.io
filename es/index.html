@@ -28,7 +28,7 @@
   <meta name="twitter:description" content="Apps nativas para productividad, deporte y bienestar creadas por @kharonteAppDev para iOS y Android.">
   <meta name="twitter:image" content="https://kharonte.dev/assets/og-card-es.jpg">
   <meta name="twitter:image:alt" content="Kharonte Studio: cinco apps, una sola mano">
-    <link rel="preload" href="../assets/charon.webp" as="image" type="image/webp">
+    <link rel="preload" as="image" type="image/webp" href="../assets/charon-700.webp" imagesrcset="../assets/charon-700.webp 700w, ../assets/charon.webp 1400w" imagesizes="(max-width: 1020px) 190px, 280px">
   <link rel="preload" href="../assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/jakarta.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../home.css?v=1">
@@ -140,7 +140,7 @@
 <div class="progress" aria-hidden="true"><i id="progress"></i></div>
 <div class="g-lantern" aria-hidden="true"></div>
 <header class="nav" id="nav">
-  <a class="brand" href="./" aria-label="Kharonte Studio"><img src="../assets/studio-icon.png" alt="" width="28" height="28">Kharonte <span>Studio</span></a>
+  <a class="brand" href="./" aria-label="Kharonte Studio"><img src="../assets/studio-96.webp" alt="" width="28" height="28">Kharonte <span>Studio</span></a>
   <nav class="nav-links" aria-label="Navegación principal">
     <div class="lang" aria-label="Lingua / Language / Idioma"><a href="../">IT</a><a href="../en/">EN</a><a href="./" class="on" aria-current="page">ES</a></div>
     <a href="#banco">Productos</a>
@@ -164,12 +164,12 @@
       </div>
     </div>
     <div class="orbit rv" style="--d:2" id="orbit" role="group" aria-label="Las cinco apps orbitando Caronte. Elige una para probarla.">
-      <div class="moon-art" aria-hidden="true"><img src="../assets/charon.webp" alt="" width="1400" height="1400" decoding="async"><div class="moon-lamp"></div></div>
-      <div class="ring r1"><button class="sat" data-app="preventivi" data-name="Preventivi Facili" aria-label="Probar Preventivi Facili"><img src="../assets/icon.png" alt="" width="54" height="54"></button></div>
-      <div class="ring r2"><button class="sat" data-app="foodlio" data-name="Foodlio" aria-label="Probar Foodlio"><img src="../foodlio/icon.png" alt="" width="54" height="54"></button></div>
-      <div class="ring r3"><button class="sat" data-app="padel" data-name="Padel Match Manager" aria-label="Probar Padel Match Manager"><img src="../padel-match-manager/icon.png" alt="" width="54" height="54"></button></div>
-      <div class="ring r4"><button class="sat" data-app="aegis" data-name="Aegis" aria-label="Probar Aegis"><img src="../aegis/icon.png" alt="" width="54" height="54"></button></div>
-      <div class="ring r5"><button class="sat" data-app="flipeven" data-name="FlipEven" aria-label="Probar FlipEven"><img src="../flipeven/icon.png" alt="" width="54" height="54"></button></div>
+      <div class="moon-art" aria-hidden="true"><img src="../assets/charon-700.webp" srcset="../assets/charon-700.webp 700w, ../assets/charon.webp 1400w" sizes="(max-width: 1020px) 190px, 280px" alt="" width="1400" height="1400" decoding="async" fetchpriority="high"><div class="moon-lamp"></div></div>
+      <div class="ring r1"><button class="sat" data-app="preventivi" data-name="Preventivi Facili" aria-label="Probar Preventivi Facili"><img src="../assets/app-icons/preventivi-128.webp" alt="" width="54" height="54"></button></div>
+      <div class="ring r2"><button class="sat" data-app="foodlio" data-name="Foodlio" aria-label="Probar Foodlio"><img src="../assets/app-icons/foodlio-128.webp" alt="" width="54" height="54"></button></div>
+      <div class="ring r3"><button class="sat" data-app="padel" data-name="Padel Match Manager" aria-label="Probar Padel Match Manager"><img src="../assets/app-icons/padel-128.webp" alt="" width="54" height="54"></button></div>
+      <div class="ring r4"><button class="sat" data-app="aegis" data-name="Aegis" aria-label="Probar Aegis"><img src="../assets/app-icons/aegis-128.webp" alt="" width="54" height="54"></button></div>
+      <div class="ring r5"><button class="sat" data-app="flipeven" data-name="FlipEven" aria-label="Probar FlipEven"><img src="../assets/app-icons/flipeven-128.webp" alt="" width="54" height="54"></button></div>
       <span class="orbit-cap mono">Caronte · toca una app</span>
     </div>
   </div>
@@ -184,17 +184,17 @@
     </div>
     <div class="bench rv">
       <div class="rail" role="tablist" aria-label="Elige una app" aria-orientation="vertical">
-        <button class="rail-btn" role="tab" id="tab-preventivi" aria-controls="demo-preventivi" aria-selected="true" data-app="preventivi" style="--ac:#6ea8ff"><img src="../assets/icon.png" alt="" width="38" height="38"><span><b>Preventivi Facili</b><small>Genera un PDF</small></span></button>
-        <button class="rail-btn" role="tab" id="tab-foodlio" aria-controls="demo-foodlio" aria-selected="false" data-app="foodlio" tabindex="-1" style="--ac:#ff7a59"><img src="../foodlio/icon.png" alt="" width="38" height="38"><span><b>Foodlio</b><small>Calcula el margen</small></span></button>
-        <button class="rail-btn" role="tab" id="tab-padel" aria-controls="demo-padel" aria-selected="false" data-app="padel" tabindex="-1" style="--ac:#c6f04a"><img src="../padel-match-manager/icon.png" alt="" width="38" height="38"><span><b>Padel Match Manager</b><small>Organiza un torneo</small></span></button>
-        <button class="rail-btn" role="tab" id="tab-aegis" aria-controls="demo-aegis" aria-selected="false" data-app="aegis" tabindex="-1" style="--ac:#7fe3cf"><img src="../aegis/icon.png" alt="" width="38" height="38"><span><b>Aegis</b><small>Respira conmigo</small></span></button>
-        <button class="rail-btn" role="tab" id="tab-flipeven" aria-controls="demo-flipeven" aria-selected="false" data-app="flipeven" tabindex="-1" style="--ac:#f5c542"><img src="../flipeven/icon.png" alt="" width="38" height="38"><span><b>FlipEven</b><small>Vende sin pérdidas</small></span></button>
+        <button class="rail-btn" role="tab" id="tab-preventivi" aria-controls="demo-preventivi" aria-selected="true" data-app="preventivi" style="--ac:#6ea8ff"><img src="../assets/app-icons/preventivi-128.webp" alt="" width="38" height="38"><span><b>Preventivi Facili</b><small>Genera un PDF</small></span></button>
+        <button class="rail-btn" role="tab" id="tab-foodlio" aria-controls="demo-foodlio" aria-selected="false" data-app="foodlio" tabindex="-1" style="--ac:#ff7a59"><img src="../assets/app-icons/foodlio-128.webp" alt="" width="38" height="38"><span><b>Foodlio</b><small>Calcula el margen</small></span></button>
+        <button class="rail-btn" role="tab" id="tab-padel" aria-controls="demo-padel" aria-selected="false" data-app="padel" tabindex="-1" style="--ac:#c6f04a"><img src="../assets/app-icons/padel-128.webp" alt="" width="38" height="38"><span><b>Padel Match Manager</b><small>Organiza un torneo</small></span></button>
+        <button class="rail-btn" role="tab" id="tab-aegis" aria-controls="demo-aegis" aria-selected="false" data-app="aegis" tabindex="-1" style="--ac:#7fe3cf"><img src="../assets/app-icons/aegis-128.webp" alt="" width="38" height="38"><span><b>Aegis</b><small>Respira conmigo</small></span></button>
+        <button class="rail-btn" role="tab" id="tab-flipeven" aria-controls="demo-flipeven" aria-selected="false" data-app="flipeven" tabindex="-1" style="--ac:#f5c542"><img src="../assets/app-icons/flipeven-128.webp" alt="" width="38" height="38"><span><b>FlipEven</b><small>Vende sin pérdidas</small></span></button>
       </div>
 
       <div class="stage" id="stage">
 
         <div class="demo" id="demo-preventivi" role="tabpanel" aria-labelledby="tab-preventivi" data-accent="#6ea8ff">
-          <div class="demo-head"><div class="demo-title"><img src="../assets/icon.png" alt="" width="56" height="56"><div><h3>Preventivi Facili</h3><p>Presupuestos y facturas en PDF desde el móvil, 100% offline. ¿Cuánto tardas en hacer uno?</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/preventivi-facili-artigiani/id6775595665?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=com.kharonte.preventivifacili&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
+          <div class="demo-head"><div class="demo-title"><img src="../assets/app-icons/preventivi-128.webp" alt="" width="56" height="56"><div><h3>Preventivi Facili</h3><p>Presupuestos y facturas en PDF desde el móvil, 100% offline. ¿Cuánto tardas en hacer uno?</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/preventivi-facili-artigiani/id6775595665?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=com.kharonte.preventivifacili&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
           <div class="cols">
             <div>
               <div class="timer"><b id="pv-time">0,0</b><span class="mono">segundos · empieza con la primera pulsación</span></div>
@@ -217,7 +217,7 @@
         </div>
 
         <div class="demo" id="demo-foodlio" role="tabpanel" aria-labelledby="tab-foodlio" data-accent="#ff7a59" hidden>
-          <div class="demo-head"><div class="demo-title"><img src="../foodlio/icon.png" alt="" width="56" height="56"><div><h3>Foodlio</h3><p>Food cost real, márgenes e ingeniería de menú para chefs, bares y restaurantes. Mueve los precios y mira qué pasa.</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/id6777711571?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=com.kharonte.food_cost_pro&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
+          <div class="demo-head"><div class="demo-title"><img src="../assets/app-icons/foodlio-128.webp" alt="" width="56" height="56"><div><h3>Foodlio</h3><p>Food cost real, márgenes e ingeniería de menú para chefs, bares y restaurantes. Mueve los precios y mira qué pasa.</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/id6777711571?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=com.kharonte.food_cost_pro&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
           <div class="cols">
             <div>
               <span class="mono panel-label">Elige un plato</span>
@@ -235,7 +235,7 @@
         </div>
 
         <div class="demo" id="demo-padel" role="tabpanel" aria-labelledby="tab-padel" data-accent="#c6f04a" hidden>
-          <div class="demo-head"><div class="demo-title"><img src="../padel-match-manager/icon.png" alt="" width="56" height="56"><div><h3>Padel Match Manager</h3><p>Americano sin hojas ni calculadora. Elige los jugadores: cada pareja juega junta una sola vez.</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/id6775152321?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=it.kharonte.padel_tournament_organizer&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
+          <div class="demo-head"><div class="demo-title"><img src="../assets/app-icons/padel-128.webp" alt="" width="56" height="56"><div><h3>Padel Match Manager</h3><p>Americano sin hojas ni calculadora. Elige los jugadores: cada pareja juega junta una sola vez.</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/id6775152321?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=it.kharonte.padel_tournament_organizer&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
           <div class="cols">
             <div>
               <span class="mono panel-label">Jugadores</span>
@@ -250,7 +250,7 @@
         </div>
 
         <div class="demo" id="demo-aegis" role="tabpanel" aria-labelledby="tab-aegis" data-accent="#7fe3cf" hidden>
-          <div class="demo-head"><div class="demo-title"><img src="../aegis/icon.png" alt="" width="56" height="56"><div><h3>Aegis</h3><p>Respiración guiada, sonidos y diario privado. Sigue el círculo: toda la escena respira contigo.</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/id6791089198?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=com.mindfulspace.mindful_space&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
+          <div class="demo-head"><div class="demo-title"><img src="../assets/app-icons/aegis-128.webp" alt="" width="56" height="56"><div><h3>Aegis</h3><p>Respiración guiada, sonidos y diario privado. Sigue el círculo: toda la escena respira contigo.</p></div></div><div class="stores"><a class="chip" href="https://apps.apple.com/it/app/id6791089198?ct=kharo23_hub_es" target="_blank" rel="noopener noreferrer">App Store ↗</a><a class="chip" href="https://play.google.com/store/apps/details?id=com.mindfulspace.mindful_space&amp;hl=es&amp;referrer=utm_source%3Dkharo23_hub%26utm_medium%3Dapps_hub" target="_blank" rel="noopener noreferrer">Google Play ↗</a></div></div>
           <div class="breath">
             <div class="orb-wrap"><div class="orb" id="ae-orb"></div><div class="orb-text"><b id="ae-sec">·</b><span id="ae-phase">Listo</span></div></div>
             <div class="pills" id="ae-pats" role="group" aria-label="Patrón de respiración"></div>
@@ -261,7 +261,7 @@
         </div>
 
         <div class="demo" id="demo-flipeven" role="tabpanel" aria-labelledby="tab-flipeven" data-accent="#f5c542" hidden>
-          <div class="demo-head"><div class="demo-title"><img src="../flipeven/icon.png" alt="" width="56" height="56"><div><h3>FlipEven</h3><p>Antes de comprar, descubre a qué precio debes revender. Se acabaron las ventas con pérdidas.</p></div></div><div class="stores"><a class="chip soon">Próximamente en las tiendas</a></div></div>
+          <div class="demo-head"><div class="demo-title"><img src="../assets/app-icons/flipeven-128.webp" alt="" width="56" height="56"><div><h3>FlipEven</h3><p>Antes de comprar, descubre a qué precio debes revender. Se acabaron las ventas con pérdidas.</p></div></div><div class="stores"><a class="chip soon">Próximamente en las tiendas</a></div></div>
           <div class="cols">
             <div>
               <div class="inline-3">
@@ -355,7 +355,7 @@
             <li style="--i:3"><b></b><span>Publicada</span></li>
           </ol>
           <div class="listing">
-            <img src="../foodlio/icon.png" alt="" width="72" height="72">
+            <img src="../assets/app-icons/foodlio-128.webp" alt="" width="72" height="72">
             <div><strong>Foodlio</strong><span>Food cost, márgenes e ingeniería de menú</span></div>
             <a class="get" href="../foodlio/es/">Ficha</a>
           </div>
@@ -394,7 +394,7 @@
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div><a class="brand" href="./"><img src="../assets/studio-icon.png" alt="" width="28" height="28" loading="lazy">Kharonte <span>Studio</span></a><p>Aplicaciones nativas independientes para iOS y Android. Productos rápidos, cuidados al detalle y sin suscripciones ocultas.</p></div>
+      <div><a class="brand" href="./"><img src="../assets/studio-96.webp" alt="" width="28" height="28" loading="lazy">Kharonte <span>Studio</span></a><p>Aplicaciones nativas independientes para iOS y Android. Productos rápidos, cuidados al detalle y sin suscripciones ocultas.</p></div>
       <div><h3>Aplicaciones</h3><ul><li><a href="../preventivi-facili/es/">Preventivi Facili</a></li><li><a href="../foodlio/es/">Foodlio</a></li><li><a href="../padel-match-manager/es/">Padel Match Manager</a></li><li><a href="../aegis/es/">Aegis</a></li><li><a href="../flipeven/es/">FlipEven</a></li></ul></div>
       <div><h3>Soporte e Info</h3><ul><li><a href="./about.html">Sobre mí</a></li><li><a href="mailto:kharonte.appdev@gmail.com">Contáctame</a></li><li><a href="./support.html">Soporte y FAQ</a></li><li><a href="./privacy.html">Política de privacidad</a></li><li><a href="https://github.com/kharo23" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul></div>
     </div>

@@ -1,6 +1,6 @@
 # Kharonte Studio — full reference for AI assistants
 
-Last updated: 2026-10-03. Canonical site: https://kharonte.dev/ (Italian), https://kharonte.dev/en/ (English), https://kharonte.dev/es/ (Spanish).
+Last updated: 2026-10-04. Canonical site: https://kharonte.dev/ (Italian), https://kharonte.dev/en/ (English), https://kharonte.dev/es/ (Spanish).
 
 ## What it is
 

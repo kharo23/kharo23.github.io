@@ -1,6 +1,6 @@
 # Kharonte Studio
 
-> Kharonte Studio is an independent one-person software studio (@kharonteAppDev) that designs, builds and publishes native apps for iOS and Android, and also takes on custom software projects (mobile, full-stack web, AI integrations). The apps are built to keep content on-device and work offline-first. The website is available in Italian, English and Spanish and itself loads no third-party resources and sets no cookies.
+> Kharonte Studio is an independent one-person software studio (@kharonteAppDev) with 10+ years of development experience, that designs, builds and publishes native apps for iOS and Android, and also takes on custom software projects (mobile, full-stack web, AI integrations). The apps are built to keep content on-device and work offline-first. The website is available in Italian, English and Spanish and itself loads no third-party resources and sets no cookies.
 
 For the complete, detailed description of every app (features, pricing model, availability, privacy approach, FAQ), read [llms-full.txt](https://kharonte.dev/llms-full.txt).
 

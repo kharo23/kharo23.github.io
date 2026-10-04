@@ -4,7 +4,7 @@ Last updated: 2026-10-04. Canonical site: https://kharonte.dev/ (Italian), https
 
 ## What it is
 
-Kharonte Studio is an independent one-person software studio run by the developer known as @kharonteAppDev (GitHub: https://github.com/kharo23, TikTok: https://www.tiktok.com/@kharonteappdev, Instagram: https://www.instagram.com/kharonte.appdev/). One person designs, builds, tests and publishes every app, from the interface to the App Store and Google Play listings. The studio's approach: native apps, fast, on-device first, offline where possible, and without hidden subscriptions.
+Kharonte Studio is an independent one-person software studio run by the developer known as @kharonteAppDev (GitHub: https://github.com/kharo23, TikTok: https://www.tiktok.com/@kharonteappdev, Instagram: https://www.instagram.com/kharonte.appdev/). The developer has 10+ years of experience in software development. One person designs, builds, tests and publishes every app, from the interface to the App Store and Google Play listings. The studio's approach: native apps, fast, on-device first, offline where possible, and without hidden subscriptions.
 
 The website itself is built to demonstrate this: it loads no third-party resources (fonts are self-hosted), sets no cookies and uses no analytics or trackers. The home page contains working miniature demos of the five apps (a PDF quote generator, a food-cost margin calculator, a padel Americano tournament generator, a guided breathing orb and a reseller profit calculator) that run entirely in the visitor's browser.
 

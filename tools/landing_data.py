@@ -11,7 +11,7 @@ SERVICES = {
   file='servizi.html', title="Sviluppo app e software su misura — Kharonte Studio",
   desc="App native iOS e Android, piattaforme web full-stack e integrazioni di IA da uno sviluppatore indipendente: dall'idea alla pubblicazione.",
   eyebrow="Sviluppo su misura", h1a="App e software su misura,", h1b="da chi li progetta e li pubblica.",
-  sub="Lavoro da solo: parli direttamente con chi disegna, sviluppa e porta il prodotto sugli store. App mobile, piattaforme web e intelligenza artificiale, dall'idea al lancio.",
+  sub="Lavoro da solo, con oltre 10 anni di esperienza: parli direttamente con chi disegna, sviluppa e porta il prodotto sugli store. App mobile, piattaforme web e intelligenza artificiale, dall'idea al lancio.",
   cta="Raccontami il progetto", cta2="Guarda le app pubblicate", subj="Progetto%20su%20misura", breadcrumb="Servizi",
   s1=("Cosa costruisco", "Tre ambiti, un unico responsabile.", [
      ("App mobile native", "Applicazioni per iOS e Android pensate per essere veloci e per funzionare anche senza connessione, con i dati sul dispositivo quando ha senso."),
@@ -34,7 +34,7 @@ SERVICES = {
   file='services.html', title="Custom App & Software Development — Kharonte Studio",
   desc="Native iOS and Android apps, full-stack web platforms and AI integrations from an independent developer: from idea to store release.",
   eyebrow="Custom development", h1a="Custom apps and software,", h1b="from the person who designs and ships them.",
-  sub="I work solo: you talk directly to the person who designs, builds and takes the product to the stores. Mobile apps, web platforms and AI, from idea to launch.",
+  sub="I work solo, with 10+ years of experience: you talk directly to the person who designs, builds and takes the product to the stores. Mobile apps, web platforms and AI, from idea to launch.",
   cta="Tell me about your project", cta2="See the published apps", subj="Custom%20Project", breadcrumb="Services",
   s1=("What I build", "Three areas, one person in charge.", [
      ("Native mobile apps", "iOS and Android apps built to be fast and to work offline too, keeping data on the device where it makes sense."),
@@ -57,7 +57,7 @@ SERVICES = {
   file='servicios.html', title="Desarrollo de apps y software a medida — Kharonte Studio",
   desc="Apps nativas iOS y Android, plataformas web full-stack e integraciones de IA de la mano de un desarrollador independiente: de la idea a las tiendas.",
   eyebrow="Desarrollo a medida", h1a="Apps y software a medida,", h1b="de quien los diseña y los publica.",
-  sub="Trabajo en solitario: hablas directamente con quien diseña, desarrolla y lleva el producto a las tiendas. Apps móviles, plataformas web e inteligencia artificial, de la idea al lanzamiento.",
+  sub="Trabajo en solitario, con más de 10 años de experiencia: hablas directamente con quien diseña, desarrolla y lleva el producto a las tiendas. Apps móviles, plataformas web e inteligencia artificial, de la idea al lanzamiento.",
   cta="Cuéntame tu proyecto", cta2="Ver las apps publicadas", subj="Proyecto%20Personalizado", breadcrumb="Servicios",
   s1=("Qué construyo", "Tres ámbitos, un único responsable.", [
      ("Apps móviles nativas", "Aplicaciones para iOS y Android pensadas para ser rápidas y funcionar también sin conexión, con los datos en el dispositivo cuando tiene sentido."),

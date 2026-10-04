@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll legacy): file interni NON pubblicati online.
+# I template e gli script in tools/ servono solo in locale per rigenerare pagine e immagini.
+exclude:
+  - tools
+  - docs
+  - output
+  - node_modules
+  - AGENTS.md
+  - CLAUDE.md
+  - README-HOME.md
+  - sentry-diagnostics.md
+  - gsc-service-account.json

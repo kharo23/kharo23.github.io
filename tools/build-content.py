@@ -20,6 +20,22 @@ def blocks(bs):
         elif k == 'table':
             hd, rows, note = b[1], b[2], b[3]
             out += '          <div class="landing-table-wrap" tabindex="0" role="region" aria-label="' + e(note) + '"><table class="landing-table"><thead><tr>' + ''.join(f'<th>{e(c)}</th>' for c in hd) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{c}</td>' for c in r) + '</tr>' for r in rows) + f'</tbody></table></div>\n          <p class="minor guide-note">{e(note)}</p>\n'
+        elif k == 'foodcalc':
+            c = b[1]
+            out += f'''          <div class="food-cost-calculator" data-locale="{e(c['locale'])}">
+            <div class="food-calc-inputs">
+              <label>{e(c['cost'])}<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>{e(c['price'])}<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>{e(c['target'])}<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+            </div>
+            <p class="food-calc-help" id="food-calc-help">{e(c['help'])}</p>
+            <div class="food-calc-results" aria-live="polite">
+              <p><span>{e(c['result'])}</span><strong data-food-result>18,1%</strong></p>
+              <p><span>{e(c['suggested'])}</span><strong data-food-suggested>4,67 EUR</strong></p>
+            </div>
+            <noscript><p class="minor">{e(c['noscript'])}</p></noscript>
+          </div>
+'''
     return out
 
 def page(kind, lang, key, title, desc, og, ld, main, up):
@@ -52,7 +68,8 @@ for lang in ('it', 'en', 'es'):
         faq = bl.faq_html(d['faq'])
         main = hero(LB['hub_label'], e(d['h1']), f'<p class="hero-subtext">{d["lead"]}</p><p class="minor">{LB["updated"]} {updated_txt} · {LB["by"]}</p>') + \
           f'    <section class="section-wrapper">\n      <div class="container guide-body">\n{secs}        <section class="guide-sec">\n          <h2>{ {"it": "Domande frequenti", "en": "Frequently asked questions", "es": "Preguntas frecuentes"}[lang] }</h2>\n          <div class="product-faq-list">\n{faq}          </div>\n        </section>\n      </div>\n    </section>\n' + \
-          f'    <section class="section-wrapper"><div class="container"><article class="bento-card col-12 about-cta-banner" style="text-align:center;"><h2 class="about-cta-title">{e(LB["try_app"])}: {appname}</h2><p class="minor">{e(LB["related"])}:</p><ul class="landing-links">' + ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in related) + '</ul></article></div></section>\n'
+          f'    <section class="section-wrapper"><div class="container"><article class="bento-card col-12 about-cta-banner" style="text-align:center;"><h2 class="about-cta-title">{e(LB["try_app"])}: {appname}</h2><p class="minor">{e(LB["related"])}:</p><ul class="landing-links">' + ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in related) + '</ul></article></div></section>\n' + \
+          ('    <script src="/guide-calculator.js?v=20261009" defer></script>\n' if slug == 'food-cost' else '')
         made.append(page('guide', lang, slug, d['title'], d['desc'], f'assets/og-card-{lang}.jpg', ld, main, up))
     # ---- hub
     can = bl.url_for('guides', lang); up = '../' * (len(bl.path_for('guides', lang).parts) - 1)

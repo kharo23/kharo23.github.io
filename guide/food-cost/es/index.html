@@ -45,7 +45,7 @@
   "description": "Cómo se calcula el food cost de un plato: fórmula, ejemplo con una pizza, precio a partir del food cost objetivo y diferencia entre margen y beneficio.",
   "inLanguage": "es",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-09",
   "mainEntityOfPage": "https://kharonte.dev/guide/food-cost/es/",
   "author": {
     "@id": "https://kharonte.dev/#author"
@@ -133,7 +133,7 @@
       <div class="container">
         <div class="pill-badge"><span class="pill-dot"></span>Guías prácticas</div>
         <h1 class="hero-heading">Cómo se calcula el food cost, con un ejemplo</h1>
-        <p class="hero-subtext">El food cost es el porcentaje del precio de venta (sin IVA) que se va en ingredientes. Se calcula así: <strong>food cost % = coste de los ingredientes de una ración ÷ precio de venta sin IVA × 100</strong>.</p><p class="minor">Actualizado el 4 de octubre de 2026 · de Kharonte Studio</p>
+        <p class="hero-subtext">El food cost es el porcentaje del precio de venta (sin IVA) que se va en ingredientes. Se calcula así: <strong>food cost % = coste de los ingredientes de una ración ÷ precio de venta sin IVA × 100</strong>.</p><p class="minor">Actualizado el 9 de octubre de 2026 · de Kharonte Studio</p>
       </div>
     </section>
     <section class="section-wrapper">
@@ -141,6 +141,22 @@
         <section class="guide-sec">
           <h2>Los tres pasos</h2>
           <ol><li><strong>Coste de la ración.</strong> Para cada ingrediente multiplica la cantidad usada por el precio unitario y suma todo. Si un ingrediente tiene mermas (por ejemplo al limpiar verdura), divide el precio entre el rendimiento: un kilo con un 80% de rendimiento cuesta un 25% más por kilo aprovechable.</li><li><strong>Precio sin IVA.</strong> Divide el precio de la carta entre 1 más el tipo (con el 10%: precio ÷ 1,10). El tipo aplicable depende de tu caso: consúltalo con tu asesor. En los ejemplos uso el 10%.</li><li><strong>Divide y multiplica por 100.</strong> El resultado es el food cost en porcentaje.</li></ol>
+        </section>
+        <section class="guide-sec">
+          <h2>Calculadora de food cost</h2>
+          <div class="food-cost-calculator" data-locale="es-ES">
+            <div class="food-calc-inputs">
+              <label>Coste de ingredientes por ración<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>Precio de venta sin IVA<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>Food cost objetivo<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+            </div>
+            <p class="food-calc-help" id="food-calc-help">Puedes usar coma o punto. Los importes se calculan en tu navegador y no se envían ni se guardan.</p>
+            <div class="food-calc-results" aria-live="polite">
+              <p><span>Food cost calculado</span><strong data-food-result>18,1%</strong></p>
+              <p><span>Precio sin IVA para el objetivo</span><strong data-food-suggested>4,67 EUR</strong></p>
+            </div>
+            <noscript><p class="minor">Sin JavaScript, utiliza las fórmulas indicadas arriba.</p></noscript>
+          </div>
         </section>
         <section class="guide-sec">
           <h2>Ejemplo: una pizza</h2>
@@ -168,6 +184,7 @@
       </div>
     </section>
     <section class="section-wrapper"><div class="container"><article class="bento-card col-12 about-cta-banner" style="text-align:center;"><h2 class="about-cta-title">Pruébalo en la app: Foodlio</h2><p class="minor">Más información:</p><ul class="landing-links"><li><a href="/foodlio/es/">Foodlio</a></li><li><a href="/foodlio/pizzerie/es/">Food Cost de la Pizza y Márgenes</a></li><li><a href="/es/#banco">Prueba el cálculo en la página de inicio</a></li><li><a href="/guide/torneo-americano-padel/es/">Torneo Americano de pádel: reglas y rondas</a></li><li><a href="/guide/prezzo-minimo-rivendita/es/">Precio mínimo de reventa: fórmula del punto de equilibrio</a></li></ul></article></div></section>
+    <script src="/guide-calculator.js?v=20261009" defer></script>
   </main>
   <footer class="global-footer" style="margin-top: 60px;">
     <div class="container">

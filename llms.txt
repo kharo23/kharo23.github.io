@@ -6,7 +6,7 @@ For the complete, detailed description of every app (features, pricing model, av
 
 ## Apps
 
-- [Preventivi Facili](https://kharonte.dev/preventivi-facili/): Professional PDF quotes in about 30 seconds from a phone, for plumbers, electricians and other tradespeople. Offline, with a free tier and a one-time lifetime purchase (no recurring fees). Dedicated page for plumbers: [Preventivi Facili per Idraulici](https://kharonte.dev/preventivi-facili/idraulici/).
+- [Preventivi Facili](https://kharonte.dev/preventivi-facili/): Professional PDF quotes from a phone, for plumbers, electricians and other tradespeople. Offline, with a free tier and a one-time lifetime purchase (no recurring fees). Dedicated page for plumbers with an illustrative downloadable PDF example: [Preventivi Facili per Idraulici](https://kharonte.dev/preventivi-facili/idraulici/).
 - [Foodlio](https://kharonte.dev/foodlio/): Food cost per recipe, margins, target-price suggestions and menu engineering for restaurants, pizzerias, bars and bakeries.
 - [Padel Match Manager](https://kharonte.dev/padel-match-manager/): Organizer for Americano, Mexicano, round-robin and elimination padel tournaments, with automatic court rotations and live leaderboards. Tournament management works offline.
 - [Aegis](https://kharonte.dev/aegis/): Guided breathing, meditations, a private encrypted journal and offline soundscapes. No ads. Premium is offered as monthly and annual subscriptions. Not a medical device.
@@ -24,7 +24,7 @@ Each app has localized pages: Italian at the app URL, English at `/en/` and Span
 
 ## Guides and writing
 
-- [Guides](https://kharonte.dev/guide/en/): practical, answer-first guides with formulas and worked examples — [how to calculate food cost](https://kharonte.dev/guide/food-cost/en/), [box breathing and 4-7-8](https://kharonte.dev/guide/respirazione-box-4-7-8/en/), [how a padel Americano tournament works](https://kharonte.dev/guide/torneo-americano-padel/en/), [minimum resale price (break-even)](https://kharonte.dev/guide/prezzo-minimo-rivendita/en/), [how to write a quote](https://kharonte.dev/guide/come-fare-un-preventivo/en/). Also in Italian (/guide/…/) and Spanish (/guide/…/es/).
+- [Guides](https://kharonte.dev/guide/en/): practical, answer-first guides with formulas and worked examples — [how to calculate food cost](https://kharonte.dev/guide/food-cost/en/) includes a browser-based calculator; [box breathing and 4-7-8](https://kharonte.dev/guide/respirazione-box-4-7-8/en/); [how a padel Americano tournament works](https://kharonte.dev/guide/torneo-americano-padel/en/); [minimum resale price (break-even)](https://kharonte.dev/guide/prezzo-minimo-rivendita/en/); [how to write a quote](https://kharonte.dev/guide/come-fare-un-preventivo/en/). Also in Italian (/guide/…) and Spanish (/guide/…/es/).
 - [Technical writing](https://kharonte.dev/en/writing.html): articles by the developer on backend (Spring Boot, API design, microservices), mobile (Flutter, React Native) and AI-assisted development, published on Medium (https://medium.com/@davide.mib).
 
 ## Studio

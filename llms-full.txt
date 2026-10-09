@@ -80,6 +80,6 @@ Besides its own apps, the studio takes on custom projects: native mobile apps fo
 
 ## Guides and technical writing
 
-Guides (IT/EN/ES, updated 2026-10-04): https://kharonte.dev/guide/en/ — food cost formula and worked pizza example; padel Americano rules with an 8-player, 7-round schedule; minimum resale price (break-even) with ROI and margin; what a professional quote should contain. Amounts in examples are illustrative; the guides are not tax or legal advice.
+Guides (IT/EN/ES, updated 2026-10-09): https://kharonte.dev/guide/en/ — food cost formula, browser-based calculator and worked pizza example; padel Americano rules with an 8-player, 7-round schedule; minimum resale price (break-even) with ROI and margin; what a professional quote should contain. The plumber page includes an illustrative downloadable quote PDF. Amounts in examples are illustrative; the guides are not tax or legal advice.
 
 Technical writing by the developer (English, on Medium: https://medium.com/@davide.mib), listed at https://kharonte.dev/en/writing.html — topics: Spring Boot and backend API design (idempotency keys, JWT vs session tokens, security misconfigurations), Java 21 virtual threads vs Node.js, REST vs GraphQL vs gRPC, microservices contracts, Flutter state management, Flutter vs React Native, and an AI coding agent workflow.

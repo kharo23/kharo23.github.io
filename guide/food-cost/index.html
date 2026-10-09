@@ -143,6 +143,22 @@
           <ol><li><strong>Calcola il costo della porzione.</strong> Per ogni ingrediente moltiplica la quantità usata per il prezzo unitario e somma tutto. Se un ingrediente ha scarti (per esempio la pulizia della verdura), dividi il prezzo per la resa: un chilo che rende l'80% costa il 25% in più per chilo utilizzabile.</li><li><strong>Prezzo senza IVA.</strong> Dividi il prezzo in menu per 1 più l'aliquota (con il 10%: prezzo ÷ 1,10). L'aliquota dipende dal caso: verifica con il tuo commercialista. Negli esempi uso il 10%.</li><li><strong>Dividi e moltiplica per 100.</strong> Il risultato è il food cost in percentuale.</li></ol>
         </section>
         <section class="guide-sec">
+          <h2>Calcolatore del food cost</h2>
+          <div class="food-cost-calculator" data-locale="it-IT">
+            <div class="food-calc-inputs">
+              <label>Costo ingredienti per porzione<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>Prezzo di vendita senza IVA<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>Food cost obiettivo<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+            </div>
+            <p class="food-calc-help" id="food-calc-help">Puoi usare la virgola o il punto. Gli importi servono solo per il calcolo e non vengono inviati o salvati.</p>
+            <div class="food-calc-results" aria-live="polite">
+              <p><span>Food cost calcolato</span><strong data-food-result>18,1%</strong></p>
+              <p><span>Prezzo senza IVA per l&#x27;obiettivo</span><strong data-food-suggested>4,67 EUR</strong></p>
+            </div>
+            <noscript><p class="minor">Senza JavaScript puoi usare le formule riportate sopra.</p></noscript>
+          </div>
+        </section>
+        <section class="guide-sec">
           <h2>Esempio: una pizza</h2>
           <div class="landing-table-wrap" tabindex="0" role="region" aria-label="Importi di fantasia a scopo illustrativo: non sono un listino."><table class="landing-table"><thead><tr><th>Voce</th><th>Valore</th></tr></thead><tbody><tr><td>Farina</td><td>0,25 €</td></tr><tr><td>Mozzarella</td><td>0,70 €</td></tr><tr><td>Pomodoro</td><td>0,25 €</td></tr><tr><td>Altri ingredienti</td><td>0,20 €</td></tr><tr><td>Costo ingredienti</td><td>1,40 €</td></tr><tr><td>Prezzo in menu (IVA 10% inclusa)</td><td>8,50 €</td></tr><tr><td>Prezzo senza IVA</td><td>7,73 €</td></tr><tr><td>Food cost</td><td>18,1%</td></tr></tbody></table></div>
           <p class="minor guide-note">Importi di fantasia a scopo illustrativo: non sono un listino.</p>
@@ -168,6 +184,7 @@
       </div>
     </section>
     <section class="section-wrapper"><div class="container"><article class="bento-card col-12 about-cta-banner" style="text-align:center;"><h2 class="about-cta-title">Prova nell&#x27;app: Foodlio</h2><p class="minor">Per approfondire:</p><ul class="landing-links"><li><a href="/foodlio/">Foodlio</a></li><li><a href="/foodlio/pizzerie/">Food Cost della Pizza e Margini</a></li><li><a href="/#banco">Prova il calcolo nella home</a></li><li><a href="/guide/torneo-americano-padel/">Torneo Americano di padel: regole e turni</a></li><li><a href="/guide/prezzo-minimo-rivendita/">Prezzo minimo di rivendita: formula e break-even</a></li></ul></article></div></section>
+    <script src="/guide-calculator.js?v=20261009" defer></script>
   </main>
   <footer class="global-footer" style="margin-top: 60px;">
     <div class="container">

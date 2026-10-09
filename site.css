@@ -201,3 +201,38 @@ h2.sim-headline,h3.footer-nav-header{font-family:inherit}
 .guide-note{margin-top:10px!important;opacity:.85}
 .hero .minor{color:var(--text-muted);font-size:.85rem;margin-top:12px}
 .product-faq-list .product-faq{padding:18px 4px}
+.food-cost-calculator{margin-top:20px;padding:26px;border:1px solid var(--border-subtle);border-radius:16px;background:var(--bg-card)}
+.food-calc-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.food-calc-inputs label{display:flex;flex-direction:column;gap:8px;color:var(--text-main);font-size:.86rem;font-weight:600;line-height:1.35}
+.food-calc-inputs input{width:100%;min-height:48px;padding:11px 13px;border:1px solid var(--border-highlight);border-radius:12px;background:var(--bg-deep);color:var(--text-main);font:600 1rem var(--font-body);font-variant-numeric:tabular-nums;outline:none;transition:border-color .2s,box-shadow .2s}
+.food-calc-inputs input:focus-visible{border-color:var(--lamp);box-shadow:0 0 0 3px rgba(255,179,71,.16)}
+.food-calc-suffix{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.food-calc-help{font-size:.82rem!important;margin:14px 0 0!important;color:var(--text-muted)!important}
+.food-calc-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:20px;overflow:hidden;border-radius:12px;background:var(--border-subtle)}
+.food-calc-results p{display:flex;flex-direction:column;gap:7px;margin:0!important;padding:18px;background:var(--bg-deep)}
+.food-calc-results span{color:var(--text-muted);font-size:.78rem;line-height:1.4}
+.food-calc-results strong{font-family:var(--font-display);font-size:clamp(1.55rem,4vw,2.2rem);font-weight:400;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+@media(max-width:720px){.food-cost-calculator{padding:20px}.food-calc-inputs,.food-calc-results{grid-template-columns:1fr}.food-calc-results{gap:1px}}
+
+/* esempio PDF idraulici */
+.plumber-example-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:28px;align-items:start;margin-top:42px}
+.plumber-example-sheet{padding:26px;border-radius:16px;background:#f7f9fc;color:#111827;box-shadow:0 22px 55px rgba(0,0,0,.22)}
+.plumber-example-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:2px solid #2563eb}
+.plumber-example-head div{display:flex;flex-direction:column;gap:4px}.plumber-example-head span{font:600 .68rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:#64748b}
+.plumber-example-head strong{font-size:1.25rem;color:#111827}.plumber-example-number{white-space:nowrap}
+.plumber-example-sheet .landing-table-wrap{margin-top:22px;border-color:#dce3ec;background:#fff;border-radius:12px}
+.plumber-example-sheet .landing-table th{color:#475569;border-color:#dce3ec}.plumber-example-sheet .landing-table td{color:#334155;border-color:#dce3ec}.plumber-example-sheet .landing-table .lt-sum td{color:#111827;background:#eef4ff}
+.plumber-example-note{margin:16px 0 0;color:#64748b;font-size:.78rem;line-height:1.55}
+.plumber-example-actions{padding:6px 0}.plumber-example-actions h3{margin:0 0 12px;font:400 clamp(1.6rem,3vw,2.15rem)/1.08 var(--font-display);letter-spacing:-.02em;color:var(--text-main)}
+.plumber-example-actions p{margin:0 0 22px;color:var(--text-secondary);line-height:1.7}.plumber-example-actions .cta-btn-primary,.plumber-example-actions .cta-btn-secondary{display:flex;justify-content:center;width:100%;margin-top:12px;text-align:center}
+.plumber-guide-link{display:inline-block;margin-top:20px;color:var(--text-secondary);font-size:.86rem;line-height:1.5;text-underline-offset:4px}
+@media(max-width:900px){.plumber-example-layout{grid-template-columns:1fr}.plumber-example-actions{max-width:620px}}
+@media(max-width:520px){
+  .plumber-landing .hero-heading{font-size:clamp(2.05rem,9.4vw,2.7rem)}
+  .plumber-landing .pill-badge{max-width:100%;white-space:normal;text-align:left;line-height:1.45}
+  .plumber-landing .store-buttons-container{flex-wrap:wrap}
+  .plumber-landing .stage-body-grid,.plumber-landing .interactive-simulator,.plumber-landing .pdf-sheet{min-width:0;width:100%}
+  .plumber-example-sheet{padding:16px;min-width:0}
+  .plumber-example-head{align-items:flex-end}
+  .plumber-example-sheet .landing-table{min-width:590px}
+}

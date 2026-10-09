@@ -45,7 +45,7 @@
   "description": "How to calculate the food cost of a dish: formula, a pizza example, the price you get from a target food cost, and the difference between margin and profit.",
   "inLanguage": "en",
   "datePublished": "2026-10-04",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-09",
   "mainEntityOfPage": "https://kharonte.dev/guide/food-cost/en/",
   "author": {
     "@id": "https://kharonte.dev/#author"
@@ -133,7 +133,7 @@
       <div class="container">
         <div class="pill-badge"><span class="pill-dot"></span>Practical guides</div>
         <h1 class="hero-heading">How to calculate food cost, with an example</h1>
-        <p class="hero-subtext">Food cost is the share of the selling price (before VAT) that goes into ingredients. The formula: <strong>food cost % = ingredient cost per portion ÷ selling price before VAT × 100</strong>.</p><p class="minor">Updated October 4, 2026 · by Kharonte Studio</p>
+        <p class="hero-subtext">Food cost is the share of the selling price (before VAT) that goes into ingredients. The formula: <strong>food cost % = ingredient cost per portion ÷ selling price before VAT × 100</strong>.</p><p class="minor">Updated October 9, 2026 · by Kharonte Studio</p>
       </div>
     </section>
     <section class="section-wrapper">
@@ -141,6 +141,22 @@
         <section class="guide-sec">
           <h2>The three steps</h2>
           <ol><li><strong>Portion cost.</strong> For each ingredient multiply the quantity used by the unit price and add everything up. If an ingredient has waste (for example trimming vegetables), divide the price by the yield: a kilo with 80% yield costs 25% more per usable kilo.</li><li><strong>Price before VAT.</strong> Divide the menu price by 1 plus the rate (at 10%: price ÷ 1.10). The applicable rate depends on your case: check with your accountant. The examples use 10%.</li><li><strong>Divide and multiply by 100.</strong> The result is food cost as a percentage.</li></ol>
+        </section>
+        <section class="guide-sec">
+          <h2>Food cost calculator</h2>
+          <div class="food-cost-calculator" data-locale="en-GB">
+            <div class="food-calc-inputs">
+              <label>Ingredient cost per portion<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>Selling price before VAT<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>Target food cost<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+            </div>
+            <p class="food-calc-help" id="food-calc-help">Use a comma or a decimal point. Values are calculated in your browser and are not sent or stored.</p>
+            <div class="food-calc-results" aria-live="polite">
+              <p><span>Calculated food cost</span><strong data-food-result>18,1%</strong></p>
+              <p><span>Price before VAT for the target</span><strong data-food-suggested>4,67 EUR</strong></p>
+            </div>
+            <noscript><p class="minor">Without JavaScript, use the formulas shown above.</p></noscript>
+          </div>
         </section>
         <section class="guide-sec">
           <h2>Example: a pizza</h2>
@@ -168,6 +184,7 @@
       </div>
     </section>
     <section class="section-wrapper"><div class="container"><article class="bento-card col-12 about-cta-banner" style="text-align:center;"><h2 class="about-cta-title">Try it in the app: Foodlio</h2><p class="minor">Learn more:</p><ul class="landing-links"><li><a href="/foodlio/en/">Foodlio</a></li><li><a href="/foodlio/pizzerie/en/">Pizza Food Cost &amp; Margins</a></li><li><a href="/en/#banco">Try the calculation on the home page</a></li><li><a href="/guide/torneo-americano-padel/en/">Padel Americano tournament: rules and rounds</a></li><li><a href="/guide/prezzo-minimo-rivendita/en/">Minimum resale price: break-even formula</a></li></ul></article></div></section>
+    <script src="/guide-calculator.js?v=20261009" defer></script>
   </main>
   <footer class="global-footer" style="margin-top: 60px;">
     <div class="container">

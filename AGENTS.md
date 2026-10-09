@@ -32,7 +32,7 @@ Tutto il materiale è in `../marketing/` (fuori da questo repository): `README.m
 
 ## Pubblicazione
 1. Commit con messaggio chiaro. Prima del push: `git fetch` e unire `origin/main` se è avanti (qualcuno può aver pubblicato modifiche, es. badge o informative privacy): **non sovrascrivere** il lavoro altrui, risolvere i conflitti mantenendo entrambi i contributi.
-2. `git push origin HEAD:main`; attendere la build di Pages (`gh api repos/kharo23/kharo23.github.io/pages/builds/latest`: stato `built`).
+2. Per i push usare **sempre l'account GitHub `kharo23`**. Verificare l'account attivo con `gh auth status`; se necessario, passare temporaneamente a `kharo23` con `gh auth switch --user kharo23`, eseguire `git push origin HEAD:main`, quindi ripristinare l'account precedentemente attivo. Attendere la build di Pages (`gh api repos/kharo23/kharo23.github.io/pages/builds/latest`: stato `built`).
 3. Controllare online: `/`, `/en/`, `/es/`, una pagina app, `/sitemap.xml`, `/llms.txt`, il file chiave IndexNow.
 
 ## Subito dopo la pubblicazione (indicizzazione)

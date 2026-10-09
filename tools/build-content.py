@@ -36,18 +36,21 @@ for lang in ('it', 'en', 'es'):
     # ---- guide
     for slug, g in GUIDES.items():
         d = g[lang]; can = bl.url_for('guide', lang, slug); up = '../' * (len(bl.path_for('guide', lang, slug).parts) - 1)
+        updated_cfg = g.get('updated', UPDATED); updated_txt_cfg = g.get('updated_txt', UPDATED_TXT)
+        updated = updated_cfg.get(lang, UPDATED) if isinstance(updated_cfg, dict) else updated_cfg
+        updated_txt = updated_txt_cfg.get(lang, UPDATED_TXT[lang]) if isinstance(updated_txt_cfg, dict) else updated_txt_cfg
         appslug, appname = g['app']; appurl = f'/{appslug}/{sub}'
         related = [(f'{appname}', appurl)]
         if g['niche']: related.append((bl.NICHES[g['niche'][1]][lang]['title'].split(' — ')[0], f'/{g["niche"][0]}/{g["niche"][1]}/{sub}'))
         related.append((LB['demo_breath'] if slug == 'respirazione-box-4-7-8' else LB['demo'], {'it': '/', 'en': '/en/', 'es': '/es/'}[lang] + '#banco'))
         related += [(GUIDES[s][lang]['slug_title'], f'/guide/{s}/{sub}') for s in GUIDES if s != slug][:2]
         ld = [
-         {"@context": "https://schema.org", "@type": "Article", "@id": can + "#article", "headline": d['slug_title'], "description": d['desc'], "inLanguage": lang, "datePublished": UPDATED, "dateModified": UPDATED, "mainEntityOfPage": can,
+         {"@context": "https://schema.org", "@type": "Article", "@id": can + "#article", "headline": d['slug_title'], "description": d['desc'], "inLanguage": lang, "datePublished": UPDATED, "dateModified": updated, "mainEntityOfPage": can,
           "author": {"@id": AUTH}, "publisher": {"@id": ORG}, "image": f"{R}/assets/og-card-{lang}.jpg", "about": {"@type": "SoftwareApplication", "name": appname, "url": f"{R}/{appslug}/{sub}"}},
          bl.faq_ld(d['faq']), bl.crumbs(lang, d['slug_title'], can)]
         secs = ''.join(f'        <section class="guide-sec">\n          <h2>{e(h2)}</h2>\n{blocks(bs)}        </section>\n' for h2, bs in d['secs'])
         faq = bl.faq_html(d['faq'])
-        main = hero(LB['hub_label'], e(d['h1']), f'<p class="hero-subtext">{d["lead"]}</p><p class="minor">{LB["updated"]} {UPDATED_TXT[lang]} · {LB["by"]}</p>') + \
+        main = hero(LB['hub_label'], e(d['h1']), f'<p class="hero-subtext">{d["lead"]}</p><p class="minor">{LB["updated"]} {updated_txt} · {LB["by"]}</p>') + \
           f'    <section class="section-wrapper">\n      <div class="container guide-body">\n{secs}        <section class="guide-sec">\n          <h2>{ {"it": "Domande frequenti", "en": "Frequently asked questions", "es": "Preguntas frecuentes"}[lang] }</h2>\n          <div class="product-faq-list">\n{faq}          </div>\n        </section>\n      </div>\n    </section>\n' + \
           f'    <section class="section-wrapper"><div class="container"><article class="bento-card col-12 about-cta-banner" style="text-align:center;"><h2 class="about-cta-title">{e(LB["try_app"])}: {appname}</h2><p class="minor">{e(LB["related"])}:</p><ul class="landing-links">' + ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in related) + '</ul></article></div></section>\n'
         made.append(page('guide', lang, slug, d['title'], d['desc'], f'assets/og-card-{lang}.jpg', ld, main, up))

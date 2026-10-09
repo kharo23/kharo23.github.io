@@ -41,11 +41,11 @@ SCHED = _sched_rows()
 # ---------------------------------------------------------------- GUIDE
 # blocchi: ('p', testo) | ('ul', [..]) | ('ol', [..]) | ('table', [intestazioni], [righe], nota)
 GUIDES = {
- 'food-cost': dict(app=('foodlio', 'Foodlio'), niche=('foodlio', 'pizzerie'),
-  it=dict(slug_title="Come calcolare il food cost (con esempio)", title="Come calcolare il food cost: formula ed esempio",
-   desc="Come si calcola il food cost di un piatto: formula, esempio con una pizza, prezzo consigliato dal food cost obiettivo e differenza tra margine e utile.",
-   h1="Come si calcola il food cost, con un esempio", lead="Il food cost è la percentuale del prezzo di vendita (senza IVA) che se ne va in ingredienti. Si calcola così: <strong>food cost % = costo degli ingredienti di una porzione ÷ prezzo di vendita senza IVA × 100</strong>.",
-   secs=[("I tre passaggi", [('ol', ["<strong>Costo della porzione.</strong> Per ogni ingrediente moltiplica la quantità usata per il prezzo unitario e somma tutto. Se un ingrediente ha scarti (per esempio la pulizia della verdura), dividi il prezzo per la resa: un chilo che rende l'80% costa il 25% in più per chilo utilizzabile.",
+ 'food-cost': dict(app=('foodlio', 'Foodlio'), niche=('foodlio', 'pizzerie'), updated={'it': '2026-10-09'}, updated_txt={'it': '9 ottobre 2026'},
+  it=dict(slug_title="Calcolo del food cost: formula ed esempio", title="Calcolo food cost: formula ed esempio pratico",
+   desc="Calcola il food cost di un piatto con la formula, un esempio pratico con una pizza e il calcolo inverso del prezzo dal food cost obiettivo.",
+   h1="Calcolo del food cost: formula ed esempio", lead="Per calcolare il food cost dividi il costo degli ingredienti di una porzione per il prezzo di vendita senza IVA e moltiplica per 100. <strong>Food cost % = costo ingredienti ÷ prezzo senza IVA × 100</strong>.",
+   secs=[("Come calcolare il food cost in tre passaggi", [('ol', ["<strong>Calcola il costo della porzione.</strong> Per ogni ingrediente moltiplica la quantità usata per il prezzo unitario e somma tutto. Se un ingrediente ha scarti (per esempio la pulizia della verdura), dividi il prezzo per la resa: un chilo che rende l'80% costa il 25% in più per chilo utilizzabile.",
         "<strong>Prezzo senza IVA.</strong> Dividi il prezzo in menu per 1 più l'aliquota (con il 10%: prezzo ÷ 1,10). L'aliquota dipende dal caso: verifica con il tuo commercialista. Negli esempi uso il 10%.",
         "<strong>Dividi e moltiplica per 100.</strong> Il risultato è il food cost in percentuale."])]),
     ("Esempio: una pizza", [('table', ["Voce", "Valore"], [["Farina", "0,25 €"], ["Mozzarella", "0,70 €"], ["Pomodoro", "0,25 €"], ["Altri ingredienti", "0,20 €"], ["Costo ingredienti", "1,40 €"], ["Prezzo in menu (IVA 10% inclusa)", "8,50 €"], ["Prezzo senza IVA", "7,73 €"], ["Food cost", "18,1%"]], "Importi di fantasia a scopo illustrativo: non sono un listino."),
@@ -53,7 +53,7 @@ GUIDES = {
     ("Dal food cost obiettivo al prezzo", [('p', "Puoi anche partire dall'obiettivo. <strong>Prezzo senza IVA = costo degli ingredienti ÷ food cost obiettivo.</strong> Con 1,40 € di ingredienti e un obiettivo del 30%: 1,40 ÷ 0,30 = 4,67 €, cioè circa 5,13 € con IVA al 10%."),
         ('p', "Non esiste un valore valido per tutti i locali: molti operatori usano circa il 30% come riferimento di partenza e lo adattano al proprio modello.")]),
     ("Attenzione: margine non significa utile", [('p', "La differenza tra prezzo e costo degli ingredienti non include personale, affitto, energia, imposte e altri costi dell'attività. Un food cost basso non garantisce da solo un locale in utile.")])],
-   faq=[("Qual è la formula del food cost?", "Costo degli ingredienti di una porzione diviso il prezzo di vendita senza IVA, per 100."), ("Il food cost si calcola con o senza IVA?", "Sul prezzo senza IVA, perché l'IVA non resta all'attività."), ("Quando ricalcolarlo?", "Ogni volta che cambia il prezzo di un ingrediente importante o la ricetta.")]),
+   faq=[("Come si calcola il food cost?", "Dividi il costo degli ingredienti di una porzione per il prezzo di vendita senza IVA e moltiplica il risultato per 100."), ("Il food cost si calcola con o senza IVA?", "Sul prezzo senza IVA, perché l'IVA non resta all'attività."), ("Quando ricalcolarlo?", "Ogni volta che cambia il prezzo di un ingrediente importante o la ricetta.")]),
   en=dict(slug_title="How to calculate food cost (with an example)", title="How to Calculate Food Cost: Formula and Example",
    desc="How to calculate the food cost of a dish: formula, a pizza example, the price you get from a target food cost, and the difference between margin and profit.",
    h1="How to calculate food cost, with an example", lead="Food cost is the share of the selling price (before VAT) that goes into ingredients. The formula: <strong>food cost % = ingredient cost per portion ÷ selling price before VAT × 100</strong>.",

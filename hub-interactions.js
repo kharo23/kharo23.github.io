@@ -511,7 +511,7 @@ function initHubInteractions() {
   paletteBackdrop.setAttribute('aria-modal', 'true');
   paletteBackdrop.setAttribute('aria-label', isEn ? 'Quick Command Palette' : isEs ? 'Paleta de Comandos Rápidos' : 'Ricerca e Comandi Rapidi');
 
-  const placeholderText = isEn ? 'Search apps, features or shortcuts... (Esc to close)' : isEs ? 'Buscar apps, funciones o accesos... (Esc para salir)' : 'Cerca app, funzioni o scorciatoie... (Esc per uscire)';
+  const placeholderText = isEn ? 'Search apps, features or shortcuts… (Esc to close)' : isEs ? 'Buscar apps, funciones o accesos… (Esc para salir)' : 'Cerca app, funzioni o scorciatoie… (Esc per uscire)';
   const appsHeader = isEn ? 'Studio Apps' : isEs ? 'Aplicaciones del Estudio' : 'Applicazioni Studio';
   const linksHeader = isEn ? 'Quick Navigation & Dev' : isEs ? 'Navegación Rápida & Dev' : 'Navigazione & Sviluppatore';
   const langHeader = isEn ? 'Language / Lingua' : isEs ? 'Idioma / Lingua' : 'Lingua / Language';
@@ -520,7 +520,7 @@ function initHubInteractions() {
     <div class="cmd-palette-modal">
       <div class="cmd-search-row">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" class="cmd-search-input" placeholder="${placeholderText}" autocomplete="off" spellcheck="false">
+        <input type="text" class="cmd-search-input" name="site-search" aria-label="${placeholderText}" placeholder="${placeholderText}" autocomplete="off" spellcheck="false">
       </div>
       <div class="cmd-results-list" role="listbox" aria-label="${isEn ? 'Results' : isEs ? 'Resultados' : 'Risultati'}">
         <div class="cmd-group-label">${appsHeader}</div>

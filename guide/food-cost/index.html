@@ -146,9 +146,9 @@
           <h2>Calcolatore del food cost</h2>
           <div class="food-cost-calculator" data-locale="it-IT">
             <div class="food-calc-inputs">
-              <label>Costo ingredienti per porzione<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
-              <label>Prezzo di vendita senza IVA<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
-              <label>Food cost obiettivo<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+              <label>Costo ingredienti per porzione<input type="text" inputmode="decimal" name="ingredient-cost" autocomplete="off" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>Prezzo di vendita senza IVA<input type="text" inputmode="decimal" name="selling-price" autocomplete="off" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>Food cost obiettivo<span class="food-calc-suffix"><input type="text" inputmode="decimal" name="target-food-cost" autocomplete="off" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
             </div>
             <p class="food-calc-help" id="food-calc-help">Puoi usare la virgola o il punto. Gli importi servono solo per il calcolo e non vengono inviati o salvati.</p>
             <div class="food-calc-results" aria-live="polite">

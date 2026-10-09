@@ -146,9 +146,9 @@
           <h2>Calculadora de food cost</h2>
           <div class="food-cost-calculator" data-locale="es-ES">
             <div class="food-calc-inputs">
-              <label>Coste de ingredientes por ración<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
-              <label>Precio de venta sin IVA<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
-              <label>Food cost objetivo<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+              <label>Coste de ingredientes por ración<input type="text" inputmode="decimal" name="ingredient-cost" autocomplete="off" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>Precio de venta sin IVA<input type="text" inputmode="decimal" name="selling-price" autocomplete="off" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>Food cost objetivo<span class="food-calc-suffix"><input type="text" inputmode="decimal" name="target-food-cost" autocomplete="off" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
             </div>
             <p class="food-calc-help" id="food-calc-help">Puedes usar coma o punto. Los importes se calculan en tu navegador y no se envían ni se guardan.</p>
             <div class="food-calc-results" aria-live="polite">

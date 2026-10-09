@@ -24,9 +24,9 @@ def blocks(bs):
             c = b[1]
             out += f'''          <div class="food-cost-calculator" data-locale="{e(c['locale'])}">
             <div class="food-calc-inputs">
-              <label>{e(c['cost'])}<input type="text" inputmode="decimal" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
-              <label>{e(c['price'])}<input type="text" inputmode="decimal" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
-              <label>{e(c['target'])}<span class="food-calc-suffix"><input type="text" inputmode="decimal" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
+              <label>{e(c['cost'])}<input type="text" inputmode="decimal" name="ingredient-cost" autocomplete="off" value="1,40" data-food-cost aria-describedby="food-calc-help"></label>
+              <label>{e(c['price'])}<input type="text" inputmode="decimal" name="selling-price" autocomplete="off" value="7,73" data-food-price aria-describedby="food-calc-help"></label>
+              <label>{e(c['target'])}<span class="food-calc-suffix"><input type="text" inputmode="decimal" name="target-food-cost" autocomplete="off" value="30" data-food-target aria-describedby="food-calc-help"><span aria-hidden="true">%</span></span></label>
             </div>
             <p class="food-calc-help" id="food-calc-help">{e(c['help'])}</p>
             <div class="food-calc-results" aria-live="polite">

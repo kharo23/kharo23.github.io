@@ -41,7 +41,7 @@ SCHED = _sched_rows()
 # ---------------------------------------------------------------- GUIDE
 # blocchi: ('p', testo) | ('ul', [..]) | ('ol', [..]) | ('table', [intestazioni], [righe], nota)
 GUIDES = {
- 'food-cost': dict(app=('foodlio', 'Foodlio'), niche=('foodlio', 'pizzerie'), updated={'it': '2026-10-09', 'en': '2026-10-09', 'es': '2026-10-09'}, updated_txt={'it': '9 ottobre 2026', 'en': 'October 9, 2026', 'es': '9 de octubre de 2026'},
+ 'food-cost': dict(app=('foodlio', 'Foodlio'), niche=('foodlio', 'pizzerie'), updated={'it': '2026-10-14', 'en': '2026-10-14', 'es': '2026-10-14'}, updated_txt={'it': '14 ottobre 2026', 'en': 'October 14, 2026', 'es': '14 de octubre de 2026'},
   it=dict(slug_title="Calcolo del food cost: formula ed esempio", title="Calcolo food cost: formula ed esempio pratico",
    desc="Calcola il food cost di un piatto con la formula, un esempio pratico con una pizza e il calcolo inverso del prezzo dal food cost obiettivo.",
    h1="Calcolo del food cost: formula ed esempio", lead="Per calcolare il food cost dividi il costo degli ingredienti di una porzione per il prezzo di vendita senza IVA e moltiplica per 100. <strong>Food cost % = costo ingredienti ÷ prezzo senza IVA × 100</strong>.",

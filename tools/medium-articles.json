@@ -1,5 +1,17 @@
 [
  {
+  "title": "Building Your First AI Agent With MCP: A Practical Spring Boot Guide",
+  "url": "https://levelup.gitconnected.com/building-your-first-ai-agent-with-mcp-a-practical-spring-boot-guide-957368089c45",
+  "date": "2026-10-05",
+  "tags": [
+   "mcp-server",
+   "development",
+   "software-development",
+   "artificial-intelligence",
+   "software-engineering"
+  ]
+ },
+ {
   "title": "Idempotency Keys in Spring Boot: The Header That Turns a Retry Into a No-Op",
   "url": "https://medium.com/@davide.mib/idempotency-keys-in-spring-boot-the-header-that-turns-a-retry-into-a-no-op-ed1000f12b3b",
   "date": "2026-09-17",
@@ -99,18 +111,6 @@
    "java",
    "spring-boot",
    "software-engineering"
-  ]
- },
- {
-  "title": "The AI Coding Agent Workflow That Actually Works After 1,000 Hours",
-  "url": "https://medium.com/@davide.mib/the-ai-coding-agent-workflow-that-actually-works-after-1-000-hours-8e72e56c99df",
-  "date": "2026-05-19",
-  "tags": [
-   "productivity",
-   "software-engineering",
-   "programming",
-   "artificial-intelligence",
-   "developer-tools"
   ]
  }
 ]

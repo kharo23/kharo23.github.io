@@ -415,8 +415,12 @@ footer{border-top:1px solid var(--line);padding:50px 0 40px;color:var(--mute);fo
 .faq-d summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 2px;
   font:400 clamp(1.15rem,2.2vw,1.55rem)/1.25 var(--serif);letter-spacing:-.015em;transition:color .2s}
 .faq-d summary::-webkit-details-marker{display:none}
-.faq-d summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font:300 1.3rem/1 var(--sans);color:var(--lamp);transition:transform .35s var(--ease),background .2s}
-.faq-d[open] summary::after{transform:rotate(45deg);background:rgba(255,179,71,.12)}
+.faq-d summary::after{content:"";flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);
+  background-image:linear-gradient(var(--lamp),var(--lamp)),linear-gradient(var(--lamp),var(--lamp));
+  background-position:center;background-size:12px 1.5px, 1.5px 12px;background-repeat:no-repeat;
+  transition:transform .35s var(--ease),background-color .2s,border-color .2s}
+.faq-d summary:hover::after{border-color:var(--lamp)}
+.faq-d[open] summary::after{transform:rotate(45deg);background-color:rgba(255,179,71,.12);border-color:var(--lamp)}
 .faq-d summary:hover{color:var(--lamp)}
 .faq-d p{color:var(--mute);max-width:70ch;padding:0 2px 26px;line-height:1.7}
 

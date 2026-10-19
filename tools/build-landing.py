@@ -230,6 +230,12 @@ def build_niche(key, lang):
     parent_page = ROOT / n['parent'] / ('index.html' if lang == 'it' else f'{lang}/index.html')
     ps = parent_page.read_text()
     store = balanced_div(ps, r'<div class="store-buttons-container">')
+    cpp_urls = {
+        'elettricisti': 'https://apps.apple.com/app/preventivi-facili-fatture-pdf/id6775595665?ppid=42d9a1d4-cb61-4409-8f31-27cab188dfd8&ct=kharo23_elettricisti',
+        'idraulici': 'https://apps.apple.com/app/preventivi-facili-fatture-pdf/id6775595665?ppid=4b29a6a3-e4b7-4abf-9df9-1cab43687dcd&ct=kharo23_idraulici',
+    }
+    if lang == 'it' and key in cpp_urls:
+        store = re.sub(r'href="https://apps\.apple\.com/[^"]*"', f'href="{cpp_urls[key]}"', store)
     bodycls = re.search(r'<body class="([^"]*)"', ps).group(1)
     parent_can = re.search(r'<link rel="canonical" href="([^"]*)"', ps).group(1)
     ld = [

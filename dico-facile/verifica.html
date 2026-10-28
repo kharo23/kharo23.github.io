@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifica Documento D.M. 37/08 — DiCo Facile</title>
+  <meta name="description" content="Riepilogo e verifica del codice identificativo della Dichiarazione di Conformità redatta ai sensi del D.M. 22 gennaio 2008, n. 37.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #F8FAFC; color: #0F172A; line-height: 1.5; padding: 24px 16px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    .card { background: #FFFFFF; border-radius: 16px; padding: 28px 24px; border: 1px solid #E2E8F0; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05); margin-bottom: 20px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: #DCFCE7; color: #065F46; font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    h1 { font-size: 24px; font-weight: 800; color: #1E3A8A; margin-bottom: 8px; }
+    .subtitle { font-size: 14px; color: #475569; margin-bottom: 20px; }
+    .code-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 12px; padding: 16px; text-align: center; margin-bottom: 20px; }
+    .code-label { font-size: 11px; font-weight: 700; color: #1E40AF; text-transform: uppercase; letter-spacing: 0.6px; }
+    .code-value { font-size: 22px; font-weight: 800; color: #1E3A8A; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin-top: 4px; }
+    .checklist { list-style: none; border-top: 1px solid #E2E8F0; padding-top: 16px; display: grid; gap: 10px; font-size: 13.5px; color: #334155; }
+    .checklist li::before { content: "✓"; color: #059669; font-weight: 800; margin-right: 8px; }
+    .note { font-size: 11.5px; color: #64748B; margin-top: 16px; background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0; }
+    .viral-card { background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%); color: #FFFFFF; border-radius: 16px; padding: 24px; }
+    .viral-tag { font-size: 11px; font-weight: 800; color: #FBBF24; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .viral-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .viral-desc { font-size: 13.5px; color: #CBD5E1; margin-bottom: 18px; }
+    .btn-wa { display: inline-flex; align-items: center; justify-content: center; width: 100%; background: #22C55E; color: #FFFFFF; font-weight: 800; font-size: 15px; padding: 14px 20px; border-radius: 10px; text-decoration: none; }
+    .footer { text-align: center; font-size: 12px; color: #94A3B8; margin-top: 24px; }
+    .footer a { color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="badge">● Formato Conforme D.M. 37/08</div>
+      <h1>Riepilogo Documento DiCo</h1>
+      <p class="subtitle">
+        Il documento scansionato è stato generato in formato digitale strutturato secondo il modello previsto dall'Allegato I del D.M. 22 gennaio 2008, n. 37.
+      </p>
+
+      <div class="code-box">
+        <div class="code-label">Codice Identificativo Dichiarazione</div>
+        <div class="code-value" id="dico-code">DICO-VERIFICA</div>
+      </div>
+
+      <ul class="checklist">
+        <li>Modello Dichiarazione di Conformità dell'Impianto alla Regola dell'Arte (Art. 7 D.M. 37/08)</li>
+        <li>Allegato 1: Relazione Tipologica dei Materiali con marcatura CE</li>
+        <li>Allegato 2: Schema di Impianto Realizzato e note di configurazione</li>
+        <li>Verbale prove strumentali e collaudo funzionale</li>
+      </ul>
+
+      <div class="note">
+        <strong>Nota sulla conservazione dei dati:</strong> DiCo Facile opera in modalità 100% locale sul dispositivo dell'impresa installatrice nel rispetto della riservatezza del committente. La validità legale risiede nel documento PDF firmato dal Responsabile Tecnico e dal Committente.
+      </div>
+    </div>
+
+    <div class="viral-card">
+      <div class="viral-tag">Per Geometri, Architetti e Direttori Lavori</div>
+      <div class="viral-title">Stanco di DiCo scritte a mano, incomplete o illeggibili?</div>
+      <p class="viral-desc">
+        Condividi DiCo Facile con gli elettricisti, idraulici e termotecnici dei tuoi cantieri: compilano il fascicolo completo a 4 pagine con relazione materiali e schema tecnico in 90 secondi.
+      </p>
+      <a class="btn-wa" id="wa-share" href="https://wa.me/?text=Ciao%2C%20per%20le%20Dichiarazioni%20di%20Conformit%C3%A0%20DM%2037%2F08%20del%20cantiere%20puoi%20usare%20DiCo%20Facile%3A%20genera%20il%20PDF%20completo%20con%20relazione%20materiali%20e%20schema%20in%2090%20secondi%3A%20https%3A%2F%2Fkharonte.dev">
+        Condividi su WhatsApp ai tuoi installatori
+      </a>
+    </div>
+
+    <div class="footer">
+      <a href="https://kharonte.dev">Kharonte</a> • <a href="https://kharonte.dev/privacy.html">Privacy Policy</a> • <a href="https://kharonte.dev/support.html">Supporto</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('code');
+      if (code && /^[A-Za-z0-9_-]{3,40}$/.test(code)) {
+        document.getElementById('dico-code').textContent = code;
+      }
+    })();
+  </script>
+</body>
+</html>
+

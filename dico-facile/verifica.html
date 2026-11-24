@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verifica Documento D.M. 37/08 — DiCo Facile</title>
+  <title>Verifica Documento D.M. 37/08 — Giustafirma</title>
   <meta name="description" content="Riepilogo e verifica del codice identificativo della Dichiarazione di Conformità redatta ai sensi del D.M. 22 gennaio 2008, n. 37.">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -32,14 +32,14 @@
   <div class="container">
     <div class="card">
       <div class="badge">● Formato Conforme D.M. 37/08</div>
-      <h1>Riepilogo Documento DiCo</h1>
+      <h1>Riepilogo Documento</h1>
       <p class="subtitle">
         Il documento scansionato è stato generato in formato digitale strutturato secondo il modello previsto dall'Allegato I del D.M. 22 gennaio 2008, n. 37.
       </p>
 
       <div class="code-box">
         <div class="code-label">Codice Identificativo Dichiarazione</div>
-        <div class="code-value" id="dico-code">DICO-VERIFICA</div>
+        <div class="code-value" id="doc-code">DC-VERIFICA</div>
       </div>
 
       <ul class="checklist">
@@ -50,17 +50,17 @@
       </ul>
 
       <div class="note">
-        <strong>Nota sulla conservazione dei dati:</strong> DiCo Facile opera in modalità 100% locale sul dispositivo dell'impresa installatrice nel rispetto della riservatezza del committente. La validità legale risiede nel documento PDF firmato dal Responsabile Tecnico e dal Committente.
+        <strong>Nota sulla conservazione dei dati:</strong> Giustafirma opera in modalità 100% locale sul dispositivo dell'impresa installatrice nel rispetto della riservatezza del committente. La validità legale risiede nel documento PDF firmato dal Responsabile Tecnico e dal Committente.
       </div>
     </div>
 
     <div class="viral-card">
       <div class="viral-tag">Per Geometri, Architetti e Direttori Lavori</div>
-      <div class="viral-title">Stanco di DiCo scritte a mano, incomplete o illeggibili?</div>
+      <div class="viral-title">Stanco di dichiarazioni scritte a mano, incomplete o illeggibili?</div>
       <p class="viral-desc">
-        Condividi DiCo Facile con gli elettricisti, idraulici e termotecnici dei tuoi cantieri: compilano il fascicolo completo a 4 pagine con relazione materiali e schema tecnico in 90 secondi.
+        Condividi Giustafirma con gli elettricisti, idraulici e termotecnici dei tuoi cantieri: compilano il fascicolo completo a 4 pagine con relazione materiali e schema tecnico in 90 secondi.
       </p>
-      <a class="btn-wa" id="wa-share" href="https://wa.me/?text=Ciao%2C%20per%20le%20Dichiarazioni%20di%20Conformit%C3%A0%20DM%2037%2F08%20del%20cantiere%20puoi%20usare%20DiCo%20Facile%3A%20genera%20il%20PDF%20completo%20con%20relazione%20materiali%20e%20schema%20in%2090%20secondi%3A%20https%3A%2F%2Fkharonte.dev">
+      <a class="btn-wa" id="wa-share" href="https://wa.me/?text=Ciao%2C%20per%20le%20Dichiarazioni%20di%20Conformit%C3%A0%20DM%2037%2F08%20del%20cantiere%20puoi%20usare%20Giustafirma%3A%20genera%20il%20PDF%20completo%20con%20relazione%20materiali%20e%20schema%20in%2090%20secondi%3A%20https%3A%2F%2Fkharonte.dev">
         Condividi su WhatsApp ai tuoi installatori
       </a>
     </div>
@@ -75,7 +75,7 @@
       var params = new URLSearchParams(window.location.search);
       var code = params.get('code');
       if (code && /^[A-Za-z0-9_-]{3,40}$/.test(code)) {
-        document.getElementById('dico-code').textContent = code;
+        document.getElementById('doc-code').textContent = code;
       }
     })();
   </script>
